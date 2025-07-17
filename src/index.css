@@ -1,0 +1,27 @@
+@import url("https://fonts.googleapis.com/css?family=Inter:500,400|Plus+Jakarta+Sans:400,600|Montserrat:400,500,600,700");
+
+.custom-pink-button {
+  background-color: #e44782 !important;
+  background: #e44782 !important;
+  color: white !important;
+}
+
+.custom-pink-button:hover {
+  background-color: #c73968 !important;
+  background: #c73968 !important;
+  color: white !important;
+}
+
+/* Override any conflicting hover styles */
+.custom-pink-button:hover,
+.custom-pink-button.hover\:bg-white:hover {
+  background-color: #c73968 !important;
+  background: #c73968 !important;
+  color: white !important;
+}
+
+/* Ensure text stays white on hover */
+.custom-pink-button span,
+.custom-pink-button:hover span {
+  color: white !important;
+}
