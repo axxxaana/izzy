@@ -70,11 +70,50 @@ module.exports = {
           "0%": { transform: "translateX(0)" },
           "100%": { transform: "translateX(-50%)" },
         },
+        "fade-in-up": {
+          "0%": { 
+            opacity: "0", 
+            transform: "translateY(30px) scale(0.95)",
+            filter: "blur(10px)"
+          },
+          "100%": { 
+            opacity: "1", 
+            transform: "translateY(0) scale(1)",
+            filter: "blur(0px)"
+          },
+        },
+        "text-reveal": {
+          "0%": { 
+            opacity: "0", 
+            transform: "translateY(20px)",
+            filter: "blur(5px)"
+          },
+          "100%": { 
+            opacity: "1", 
+            transform: "translateY(0)",
+            filter: "blur(0px)"
+          },
+        },
+        "scale-in": {
+          "0%": { 
+            opacity: "0", 
+            transform: "scale(0.8)",
+            filter: "blur(8px)"
+          },
+          "100%": { 
+            opacity: "1", 
+            transform: "scale(1)",
+            filter: "blur(0px)"
+          },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
         "scroll": "scroll 20s linear infinite",
+        "fade-in-up": "fade-in-up 1.2s cubic-bezier(0.25,0.46,0.45,0.94) forwards",
+        "text-reveal": "text-reveal 0.8s cubic-bezier(0.25,0.46,0.45,0.94) forwards",
+        "scale-in": "scale-in 1s cubic-bezier(0.25,0.46,0.45,0.94) forwards",
       },
     },
     container: { center: true, padding: "2rem", screens: { "2xl": "1400px" } },

@@ -11,4 +11,19 @@ export default defineConfig({
       plugins: [tailwind()],
     },
   },
+  optimizeDeps: {
+    include: ["react", "react-dom"],
+  },
+  build: {
+    outDir: "dist",
+    sourcemap: true,
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          vendor: ["react", "react-dom"],
+          ui: ["@radix-ui/react-slot", "@radix-ui/react-separator", "@radix-ui/react-accordion"],
+        },
+      },
+    },
+  },
 });

@@ -1,12 +1,3 @@
-@tailwind components;
-@tailwind utilities;
-
-@layer components {
-  .all-\[unset\] {
-    all: unset;
-  }
-}
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -15,66 +6,46 @@
   :root {
     --background: 0 0% 100%;
     --foreground: 222.2 47.4% 11.2%;
-
     --muted: 210 40% 96.1%;
     --muted-foreground: 215.4 16.3% 46.9%;
-
     --popover: 0 0% 100%;
     --popover-foreground: 222.2 47.4% 11.2%;
-
     --border: 214.3 31.8% 91.4%;
     --input: 214.3 31.8% 91.4%;
-
     --card: transparent;
     --card-foreground: 222.2 47.4% 11.2%;
-
     --primary: 222.2 47.4% 11.2%;
     --primary-foreground: 210 40% 98%;
-
     --secondary: 210 40% 96.1%;
     --secondary-foreground: 222.2 47.4% 11.2%;
-
     --accent: 210 40% 96.1%;
     --accent-foreground: 222.2 47.4% 11.2%;
-
     --destructive: 0 100% 50%;
     --destructive-foreground: 210 40% 98%;
-
     --ring: 215 20.2% 65.1%;
-
     --radius: 0.5rem;
   }
 
   .dark {
     --background: 224 71% 4%;
     --foreground: 213 31% 91%;
-
     --muted: 223 47% 11%;
     --muted-foreground: 215.4 16.3% 56.9%;
-
     --accent: 216 34% 17%;
     --accent-foreground: 210 40% 98%;
-
     --popover: 224 71% 4%;
     --popover-foreground: 215 20.2% 65.1%;
-
     --border: 216 34% 17%;
     --input: 216 34% 17%;
-
     --card: transparent;
     --card-foreground: 213 31% 91%;
-
     --primary: 210 40% 98%;
     --primary-foreground: 222.2 47.4% 1.2%;
-
     --secondary: 222.2 47.4% 11.2%;
     --secondary-foreground: 210 40% 98%;
-
     --destructive: 0 63% 31%;
     --destructive-foreground: 210 40% 98%;
-
     --ring: 216 34% 17%;
-
     --radius: 0.5rem;
   }
 }
@@ -87,56 +58,5 @@
   body {
     @apply bg-background text-foreground;
     font-feature-settings: "rlig" 1, "calt" 1;
-  }
-}
-
-@layer components {
-  .custom-pink-button {
-    background-color: #e44782 !important;
-    background: #e44782 !important;
-    color: white !important;
-    border: 2px solid #e44782 !important;
-    padding: 14px 18px !important;
-    min-height: auto !important;
-    height: auto !important;
-  }
-
-  .custom-pink-button:hover {
-    background-color: white !important;
-    background: white !important;
-    color: #e44782 !important;
-    border: 2px solid #e44782 !important;
-  }
-
-  /* Override any conflicting hover styles */
-  .custom-pink-button:hover,
-  .custom-pink-button.hover\:bg-white:hover {
-    background-color: white !important;
-    background: white !important;
-    color: #e44782 !important;
-    border: 2px solid #e44782 !important;
-  }
-
-  /* Ensure text changes to pink on hover */
-  .custom-pink-button span {
-    color: white !important;
-  }
-
-  .custom-pink-button:hover span {
-    color: #e44782 !important;
-  }
-
-  /* Remove padding for navigation button (it has specific sizing) */
-  .custom-pink-button.w-20,
-  .custom-pink-button.w-24,
-  .custom-pink-button.w-\[111px\] {
-    padding: 0 !important;
-  }
-
-  /* Override height classes for non-navigation buttons */
-  .custom-pink-button.h-9,
-  .custom-pink-button.h-\[54px\] {
-    height: auto !important;
-    min-height: auto !important;
   }
 }

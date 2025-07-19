@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import {
   Accordion,
   AccordionContent,
@@ -6,17 +7,43 @@ import {
   AccordionTrigger,
 } from "../../../../components/ui/accordion";
 import { Badge } from "../../../../components/ui/badge";
-import { Button } from "../../../../components/ui/button";
+
 import { Card, CardContent } from "../../../../components/ui/card";
 import { Separator } from "../../../../components/ui/separator";
+import { useScrollAnimation } from "../../../../hooks/useScrollAnimation";
+import { BrandSection } from "../../../../components/sections/BrandSection";
+import SpotlightCard from "../../../../components/SpotlightCard";
 
 export const MainContentSection = (): JSX.Element => {
-  // Navigation items
-  const navItems = [
-    { label: "About", width: "w-[72px]" },
-    { label: "Services", width: "w-[88px]" },
-    { label: "Portfolio", width: "w-[86px]" },
-  ];
+  // Rotating words for the h1
+  const [currentWordIndex, setCurrentWordIndex] = useState(0);
+  const [isTransitioning, setIsTransitioning] = useState(false);
+  const [activeCategory, setActiveCategory] = useState("FemTech");
+  const rotatingWords = ["Branding", "Strategy", "Marketing", "Content", "Design"];
+
+  const handleCategoryChange = (category: string) => {
+    setActiveCategory(category);
+  };
+  
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setIsTransitioning(true);
+      setTimeout(() => {
+        setCurrentWordIndex((prevIndex) => (prevIndex + 1) % rotatingWords.length);
+        setIsTransitioning(false);
+      }, 300); // Half of the transition duration
+    }, 3000); // Change word every 3 seconds
+    
+    return () => clearInterval(interval);
+  }, []);
+
+  // Scroll animation hook for the "I'm Izzy" text
+  const { elementRef, isVisible, isAnimating } = useScrollAnimation({
+    threshold: 0.3,
+    rootMargin: '0px 0px -100px 0px',
+    triggerOnce: true,
+    delay: 200
+  });
 
   // Service features data
   const founderBrandFeatures = [
@@ -145,63 +172,33 @@ export const MainContentSection = (): JSX.Element => {
               <div className="absolute w-full h-full top-0 left-0">
                 <div className="relative h-full">
                   <div className="absolute w-full h-full top-0 left-0 bg-white opacity-10 rounded-[15px] sm:rounded-[18px] lg:rounded-[22.5px]" />
-                  <div className="absolute w-full h-full top-0 left-0 [background:url('/Izzy-Prior-Homepage-Heder.png')_50%_40%_/_cover] rounded-[15px] sm:rounded-[18px] lg:rounded-[22.5px]">
-                    {/* Navigation Bar */}
-                    <div className="fixed top-4 sm:top-6 lg:top-[39px] left-1/2 transform -translate-x-1/2 w-[95%] sm:w-[90%] max-w-[1280px] h-12 sm:h-14 lg:h-[66px] mx-auto bg-[#ffffffb2] rounded-2xl sm:rounded-3xl shadow-[0px_1px_1px_-0.5px_#00000008,0px_2px_2px_-1px_#00000008,0px_3px_3px_-1.5px_#00000008,0px_5px_5px_-2.5px_#00000008,0px_10px_10px_-5px_#00000008,0px_16px_16px_-8px_#00000008,0px_0px_0px_1px_#0000001a] backdrop-blur-md backdrop-brightness-[100%] [-webkit-backdrop-filter:blur(12px)_brightness(100%)] z-50 px-3 sm:px-4">
-                      <div className="relative w-full h-8 sm:h-10 lg:h-[54px] top-2 sm:top-2 lg:top-1.5 flex items-center justify-between">
-                        {/* Logo */}
-                        <div className="flex items-center">
-                          <a href="/" className="w-8 sm:w-10 lg:w-[52px] h-6 sm:h-8 lg:h-[43px] block">
-                            <img
-                              className="w-5 sm:w-6 lg:w-[33px] h-6 sm:h-8 lg:h-[43px] object-cover"
-                              alt="Copy of bolt logo"
-                              src="/copy-of-bolt-logo-1.png"
-                            />
-                          </a>
-
-                          {/* Navigation Items */}
-                          <div className="hidden sm:flex h-6 sm:h-8 lg:h-9 relative -top-0.5 ml-2 lg:ml-0">
-                            {navItems.map((item, index) => (
-                              <div key={index} className={`h-6 sm:h-8 lg:h-9 w-16 sm:w-20 lg:${item.width}`}>
-                                <div className="h-full rounded-full">
-                                  <div
-                                    className="w-full h-full rounded-full"
-                                  >
-                                    <a 
-                                      href="#" 
-                                      className="block hover:text-[#e44782] transition-colors duration-200 flex items-center justify-center h-full relative top-0.5"
-                                    >
-                                      <span className="[font-family:'Inter',Helvetica] font-normal text-[#797979] text-xs sm:text-sm lg:text-[13.5px] tracking-[0] leading-5 whitespace-nowrap hover:text-[#e44782] transition-colors duration-200">
-                                        {item.label}
-                                      </span>
-                                    </a>
-                                  </div>
-                                </div>
-                              </div>
-                            ))}
-                          </div>
-                        </div>
-
-                        {/* Contact Button */}
-                        <Button 
-                          className="group w-20 sm:w-24 lg:w-[111px] h-8 sm:h-8 lg:h-9 bg-[#e44782] text-white rounded-full border-2 border-solid border-[#e44782] shadow-[0px_1px_1px_-0.5px_#00000008,0px_2px_2px_-1px_#00000008,0px_3px_3px_-1.5px_#00000008,0px_5px_5px_-2.5px_#00000008,0px_10px_10px_-5px_#00000008,0px_16px_16px_-8px_#00000008] hover:bg-white hover:border-[#e44782] transition-all duration-200 flex-shrink-0"
-                        >
-                          <span className="[font-family:'Inter',Helvetica] font-normal text-xs sm:text-xs lg:text-[13px] text-center tracking-[0] leading-[14px] whitespace-nowrap transition-colors duration-200 group-hover:text-[#e44782]">
-                            Get Started
-                          </span>
-                        </Button>
-                      </div>
-                    </div>
+                                    <div className="absolute w-full h-full top-0 left-0 [background:url('/Izzy-Prior-Homepage-Heder.png')_50%_40%_/_cover] rounded-[15px] sm:rounded-[18px] lg:rounded-[22.5px]">
                   </div>
                 </div>
               </div>
 
               {/* Hero Content - Text Only */}
-              <div className="absolute max-w-[600px] top-[165px] sm:top-[165px] md:top-[205px] lg:top-[165px] xl:top-[205px] left-[80px] sm:left-[100px] lg:left-[120px] px-4">
+              <div className="absolute max-w-[800px] top-[145px] sm:top-[145px] md:top-[185px] lg:top-[145px] xl:top-[185px] left-[25%] sm:left-[25%] md:left-[25%] lg:left-[20%] xl:left-[10.5%] 2xl:left-[16%] px-4">
                 <div className="w-full">
-                  <h1 className="[font-family:'Montserrat',Helvetica] font-semibold text-white text-[80px] text-left tracking-[-1.2px] leading-[1.1] mb-6">
-                    No-Fluff, High-Impact Branding
+                  <h1 className="[font-family:'Montserrat',Helvetica] font-semibold text-white text-[75px] text-left tracking-[-1.2px] leading-[1.1] mb-2 text-shadow-medium animate-fade-in-up">
+                    High-Impact{" "}
+                    <span 
+                      className={`inline-block min-w-[500px] relative overflow-hidden transition-all duration-600 ease-[cubic-bezier(0.4,0,0.2,1)] ${
+                        isTransitioning ? 'opacity-0 transform translate-y-2' : 'opacity-100 transform translate-y-0'
+                      }`}
+                    >
+                      {rotatingWords[currentWordIndex]}
+                    </span>
                   </h1>
+                  <p className="[font-family:'Inter',Helvetica] font-normal text-white text-[18px] text-left tracking-[0] leading-[28px] max-w-[600px] opacity-95 mb-6 text-shadow-subtle animate-fade-in-up-delayed">
+                    Brand systems that captivate your audience, amplify your core message, and deliver measurable growth across every touchpoint.
+                  </p>
+                  <a 
+                    href="#"
+                    className="hero-button animate-fade-in-up-button inline-block bg-white text-[#e44782] border-2 border-[#e44782] rounded-[0.84rem] px-5 py-3 text-[20px] font-['Montserrat'] font-medium transition-all duration-300 ease-out shadow-[0_8px_25px_rgba(228,71,130,0.3)] hover:bg-[#e44782] hover:text-white hover:scale-105 cursor-pointer no-underline"
+                  >
+                    Get Started
+                  </a>
                 </div>
               </div>
             </div>
@@ -272,573 +269,953 @@ export const MainContentSection = (): JSX.Element => {
           {/* Right side fade gradient - fades logos as they enter from right */}
           <div className="absolute right-0 top-0 w-96 h-full bg-gradient-to-l from-white to-transparent z-20 pointer-events-none"></div>
         </div>
-        <div className="w-full max-w-[1580px] h-[400px] mt-24 mx-auto relative flex items-center justify-center">
+
+        {/* I'm Izzy Section */}
+        <div 
+          ref={elementRef}
+          className={`w-full max-w-[1580px] h-[400px] mt-24 pb-[250px] pt-[250px] mx-auto relative flex items-center justify-center transition-all duration-1200 ease-[cubic-bezier(0.25,0.46,0.45,0.94)] ${
+            isVisible 
+              ? 'opacity-100 translate-y-0 scale-100 blur-0' 
+              : 'opacity-0 translate-y-12 scale-95 blur-sm'
+          }`}
+        >
           {/* Content */}
-          <div className="flex flex-col items-center">
-            <h2 className="max-w-[1030px] [font-family:'Montserrat',Helvetica] font-semibold text-[#0f0f10] text-[50px] text-center tracking-[-0.51px] leading-[61.4px] mb-8">
-              I&apos;m Izzy. A fractional CMO and brand strategist. I help
-              femtech, healthtech and social-impact founders strip back bloated
-              messaging and create bold, <span className="bg-gradient-to-r from-[#e4478233] via-[#e4478226] to-[#e447820d] px-3 py-1 rounded-lg relative">heart-felt brands</span>{" "}that move people.
+          <div className={`flex flex-col items-center transition-all duration-1000 ease-out ${
+            isAnimating ? 'animate-fade-in-up' : ''
+          }`}>
+            <h2 className={`max-w-[800px] [font-family:'Montserrat',Helvetica] font-semibold text-[#0f0f10] text-[50px] text-center tracking-[-0.51px] leading-[61.4px] mb-8 transition-all duration-1000 ease-out ${
+              isAnimating ? 'animate-text-reveal' : 'opacity-0 translate-y-8 blur-sm'
+            }`}>
+              I help femtech, healthtech and social-impact founders strip back bloated
+              messaging and create bold, <span className="px-3 py-1 rounded-lg relative bg-gradient-to-r from-[#e447824d] to-[#e4478203]">heart-felt brands</span>{" "}that move people.
             </h2>
-            <Button className="custom-pink-button rounded-full border-2 border-solid border-[#e44782] shadow-[0px_1px_1px_-0.5px_#00000008,0px_2px_2px_-1px_#00000008,0px_3px_3px_-1.5px_#00000008,0px_5px_5px_-2.5px_#00000008,0px_10px_10px_-5px_#00000008,0px_16px_16px_-8px_#00000008] transition-all duration-200">
-              <span className="[font-family:'Inter',Helvetica] font-normal text-[13px] text-center tracking-[0] leading-[14px] whitespace-nowrap">
+            
+            <div className="flex justify-center mt-4">
+              <button className="relative bg-[#e44782] text-white font-['Montserrat'] font-semibold text-[16px] px-5 py-3 rounded-[0.84rem] border-2 border-[#e44782] overflow-hidden group hover:bg-white hover:text-[#e44782] transition-all duration-300 ease-out">
                 About Izzy
-              </span>
-            </Button>
+              </button>
+            </div>
+
           </div>
         </div>
 
-        {/* Services Intro Section */}
-        <div className="w-full max-w-[1512px] mt-16 mx-auto flex flex-col items-center" style={{marginTop: '164px'}}>
-          <h2 className="[font-family:'Montserrat',Helvetica] font-semibold text-[#0f0f10] text-[50px] text-center tracking-[-0.51px] leading-[61.4px] mb-8">
-            Strategy. Voice. Visibility
-          </h2>
-
-          <p className="max-w-[467px] opacity-60 [font-family:'Inter',Helvetica] font-normal text-[#0f0f10] text-[16.9px] text-center tracking-[0] leading-[25.3px] mb-16">
-            End-to-end brand and marketing solutions, refining your core
-            message, building scalable content systems, and executing
-            data-driven campaigns that drive real growth.
-          </p>
+        {/* Brand Section */}
+        <div className="w-full mt-16">
+          <BrandSection />
         </div>
 
         {/* Services Section */}
         <div className="w-full max-w-[1200px] mx-auto mt-8 px-4">
           {/* Founder Brand Strategy */}
-          <div className="flex items-center justify-between mb-16 gap-6">
-            <div className="w-[480px] h-[480px] flex-shrink-0">
+          <motion.div 
+            className="flex items-center justify-between mb-16 gap-6 pb-[150px] pt-[50px]"
+            initial={{ opacity: 0, y: 60 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+            viewport={{ once: true, margin: "-100px" }}
+          >
+                          <motion.div 
+                className="w-[600px] h-[600px] flex-shrink-0"
+                initial={{ opacity: 0, scale: 0.9, rotateY: -15 }}
+                whileInView={{ opacity: 1, scale: 1, rotateY: 0 }}
+                transition={{ duration: 1, ease: "easeOut", delay: 0.2 }}
+                viewport={{ once: true, margin: "-100px" }}
+              >
               <img
                 className="w-full h-full"
                 alt="Founder brand strategy"
-                src="/container-7.svg"
+                src="/izzy-prior-strategy.png"
               />
-            </div>
+              </motion.div>
 
-            <div className="w-[480px] max-w-[480px] flex-shrink-0">
+                          <motion.div 
+                className="w-[480px] max-w-[480px] flex-shrink-0"
+                initial={{ opacity: 0, x: 30 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.8, ease: "easeOut", delay: 0.4 }}
+                viewport={{ once: true, margin: "-100px" }}
+              >
               <div className="mb-0">
-                <h3 className="[font-family:'Montserrat',Helvetica] font-medium text-black text-[40px] tracking-[-1.44px] leading-[55px] mb-2">
+                  <motion.h3 
+                    className="[font-family:'Montserrat',Helvetica] font-semibold text-black text-[40px] tracking-[-1.44px] leading-[50px] mb-2"
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.6, ease: "easeOut", delay: 0.2 }}
+                    viewport={{ once: true, margin: "-100px" }}
+                  >
                   Founder personal <br />
                   brand strategy
-                </h3>
-                <p className="[font-family:'Inter',Helvetica] font-normal text-gray-700 text-[15.9px] tracking-[0] leading-[25.2px] pb-6">
+                  </motion.h3>
+                  <motion.p 
+                    className="[font-family:'Inter',Helvetica] font-normal text-gray-700 text-[15.9px] tracking-[0] leading-[25.2px] pb-6"
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.6, ease: "easeOut", delay: 0.4 }}
+                    viewport={{ once: true, margin: "-100px" }}
+                  >
                   For founders who want to build authority, trust and momentum{" "}
                   <br />
                   without posting daily just for the algorithm gods.
-                </p>
+                  </motion.p>
               </div>
 
               {/* Feature List */}
               <div className="space-y-4">
-                <div className="border-t border-[#0000001a] pt-5">
+                  <motion.div 
+                    className="border-t border-[#0000001a] pt-5"
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.6, ease: "easeOut", delay: 0.6 }}
+                    viewport={{ once: true, margin: "-100px" }}
+                  >
                   <div className="flex items-start gap-5">
-                    <div className="w-[54px] h-[54px] rounded-2xl bg-[#fce7f3] flex items-center justify-center flex-shrink-0">
+                      <motion.div 
+                        className="w-[54px] h-[54px] rounded-2xl bg-[#fce7f3] flex items-center justify-center flex-shrink-0"
+                        initial={{ scale: 0, rotate: -180 }}
+                        whileInView={{ scale: 1, rotate: 0 }}
+                        transition={{ duration: 0.5, ease: "backOut", delay: 0.7 }}
+                        viewport={{ once: true, margin: "-100px" }}
+                      >
                       <img
                         className="w-[22px] h-[18px]"
                         alt="Feature icon"
                         src="/vector-8.svg"
                       />
-                    </div>
-                    <p className="[font-family:'Inter',Helvetica] font-normal text-gray-700 text-[15px] tracking-[0] leading-[25.2px]">
+                      </motion.div>
+                      <motion.p 
+                        className="[font-family:'Inter',Helvetica] font-normal text-gray-700 text-[15px] tracking-[0] leading-[25.2px]"
+                        initial={{ opacity: 0, x: 20 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        transition={{ duration: 0.6, ease: "easeOut", delay: 0.8 }}
+                        viewport={{ once: true, margin: "-100px" }}
+                      >
                       {founderBrandFeatures[0]}
-                    </p>
+                      </motion.p>
                   </div>
-                </div>
+                  </motion.div>
                 
                 {founderBrandFeatures.slice(1).map((feature, index) => (
-                  <div key={index + 1} className="border-t border-[#0000001a] pt-5">
+                  <motion.div 
+                    key={index + 1} 
+                    className="border-t border-[#0000001a] pt-5"
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.6, ease: "easeOut", delay: 0.8 + (index + 1) * 0.2 }}
+                    viewport={{ once: true, margin: "-100px" }}
+                  >
                     <div className="flex items-start gap-5">
-                      <div className="w-[54px] h-[54px] rounded-2xl bg-[#fce7f3] flex items-center justify-center flex-shrink-0">
+                      <motion.div 
+                        className="w-[54px] h-[54px] rounded-2xl bg-[#fce7f3] flex items-center justify-center flex-shrink-0"
+                        initial={{ scale: 0, rotate: -180 }}
+                        whileInView={{ scale: 1, rotate: 0 }}
+                        transition={{ duration: 0.5, ease: "backOut", delay: 0.9 + (index + 1) * 0.2 }}
+                        viewport={{ once: true, margin: "-100px" }}
+                      >
                         <img
                           className="w-[22px] h-[18px]"
                           alt="Feature icon"
                           src="/vector-8.svg"
                         />
-                      </div>
-                      <p className="[font-family:'Inter',Helvetica] font-normal text-gray-700 text-[15px] tracking-[0] leading-[25.2px]">
+                      </motion.div>
+                      <motion.p 
+                        className="[font-family:'Inter',Helvetica] font-normal text-gray-700 text-[15px] tracking-[0] leading-[25.2px]"
+                        initial={{ opacity: 0, x: 20 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        transition={{ duration: 0.6, ease: "easeOut", delay: 1.0 + (index + 1) * 0.2 }}
+                        viewport={{ once: true, margin: "-100px" }}
+                      >
                         {feature}
-                      </p>
+                      </motion.p>
                     </div>
-                  </div>
+                  </motion.div>
                 ))}
-
-                {/* CTA Button */}
-                <div className="border-t border-[#0000001a] pt-5">
-                  <Button className="custom-pink-button h-[54px] rounded-[1920px] transition-all duration-200">
-                    <span className="[font-family:'Inter',Helvetica] font-medium text-white text-[14.3px] text-center tracking-[0] leading-[15.8px]">
-                      Learn more
-                    </span>
-                  </Button>
-                </div>
+                
+                {/* Learn More Button */}
+                <motion.div 
+                  className="border-t border-[#0000001a] pt-5"
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, ease: "easeOut", delay: 1.4 }}
+                  viewport={{ once: true, margin: "-100px" }}
+                >
+                  <div className="flex justify-start">
+                    <motion.button 
+                      className="relative bg-[#e44782] text-white font-['Montserrat'] font-semibold text-[16px] px-5 py-3 rounded-[0.84rem] border-2 border-[#e44782] overflow-hidden group hover:bg-white hover:text-[#e44782] transition-all duration-300 ease-out"
+                      initial={{ opacity: 0, scale: 0.9 }}
+                      whileInView={{ opacity: 1, scale: 1 }}
+                      transition={{ duration: 0.5, ease: "easeOut", delay: 1.6 }}
+                      viewport={{ once: true, margin: "-100px" }}
+                      whileHover={{ scale: 1.05 }}
+                    >
+                      Learn More
+                    </motion.button>
               </div>
+                </motion.div>
             </div>
-          </div>
+            </motion.div>
+          </motion.div>
 
           {/* Fractional Marketing */}
-          <div className="flex items-center justify-between gap-6">
-            <div className="w-[480px] max-w-[480px] flex-shrink-0">
+          <motion.div 
+            className="flex items-center justify-between gap-6 pb-[50px]"
+            initial={{ opacity: 0, y: 60 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+            viewport={{ once: true, margin: "-100px" }}
+          >
+            <motion.div 
+              className="w-[480px] max-w-[480px] flex-shrink-0"
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
+              viewport={{ once: true, margin: "-100px" }}
+            >
               <div className="mb-0">
-                <h3 className="[font-family:'Montserrat',Helvetica] font-medium text-black text-[40px] tracking-[-1.44px] leading-[55px] mb-2">
+                <motion.h3 
+                  className="[font-family:'Montserrat',Helvetica] font-semibold text-black text-[40px] tracking-[-1.44px] leading-[55px] mb-2"
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, ease: "easeOut", delay: 0.4 }}
+                  viewport={{ once: true, margin: "-100px" }}
+                >
                   Fractional marketing <br />
                   &amp; brand direction
-                </h3>
-                <p className="[font-family:'Inter',Helvetica] font-normal text-gray-700 text-[15.9px] tracking-[0] leading-[25.2px] pb-6">
+                </motion.h3>
+                <motion.p 
+                  className="[font-family:'Inter',Helvetica] font-normal text-gray-700 text-[15.9px] tracking-[0] leading-[25.2px] pb-6"
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, ease: "easeOut", delay: 0.6 }}
+                  viewport={{ once: true, margin: "-100px" }}
+                >
                   For startups ready to grow with clarity. I help you refine your messaging, build a content system that performs, and turn brand thinking into strategic execution.
-                </p>
+                </motion.p>
               </div>
 
               {/* Feature List */}
               <div className="space-y-4">
-                <div className="border-t border-[#0000001a] pt-5">
+                <motion.div 
+                  className="border-t border-[#0000001a] pt-5"
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, ease: "easeOut", delay: 0.8 }}
+                  viewport={{ once: true, margin: "-100px" }}
+                >
                   <div className="flex items-start gap-5">
-                    <div className="w-[54px] h-[54px] rounded-2xl bg-[#fce7f3] flex items-center justify-center flex-shrink-0">
+                    <motion.div 
+                      className="w-[54px] h-[54px] rounded-2xl bg-[#fce7f3] flex items-center justify-center flex-shrink-0"
+                      initial={{ scale: 0, rotate: -180 }}
+                      whileInView={{ scale: 1, rotate: 0 }}
+                      transition={{ duration: 0.5, ease: "backOut", delay: 0.9 }}
+                      viewport={{ once: true, margin: "-100px" }}
+                    >
                       <img
                         className="w-[22px] h-[18px]"
                         alt="Feature icon"
                         src="/vector-8.svg"
                       />
-                    </div>
-                    <p className="[font-family:'Inter',Helvetica] font-normal text-gray-700 text-[16px] tracking-[0] leading-[25.2px]">
+                    </motion.div>
+                    <motion.p 
+                      className="[font-family:'Inter',Helvetica] font-normal text-gray-700 text-[16px] tracking-[0] leading-[25.2px]"
+                      initial={{ opacity: 0, x: 20 }}
+                      whileInView={{ opacity: 1, x: 0 }}
+                      transition={{ duration: 0.6, ease: "easeOut", delay: 1.0 }}
+                      viewport={{ once: true, margin: "-100px" }}
+                    >
                       {fractionalMarketingFeatures[0]}
-                    </p>
+                    </motion.p>
                   </div>
-                </div>
+                </motion.div>
                 
                 {fractionalMarketingFeatures.slice(1).map((feature, index) => (
-                  <div key={index + 1} className="border-t border-[#0000001a] pt-5">
+                  <motion.div 
+                    key={index + 1} 
+                    className="border-t border-[#0000001a] pt-5"
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.6, ease: "easeOut", delay: 1.2 + (index + 1) * 0.2 }}
+                    viewport={{ once: true, margin: "-100px" }}
+                  >
                     <div className="flex items-start gap-5">
-                      <div className="w-[54px] h-[54px] rounded-2xl bg-[#fce7f3] flex items-center justify-center flex-shrink-0">
+                      <motion.div 
+                        className="w-[54px] h-[54px] rounded-2xl bg-[#fce7f3] flex items-center justify-center flex-shrink-0"
+                        initial={{ scale: 0, rotate: -180 }}
+                        whileInView={{ scale: 1, rotate: 0 }}
+                        transition={{ duration: 0.5, ease: "backOut", delay: 1.3 + (index + 1) * 0.2 }}
+                        viewport={{ once: true, margin: "-100px" }}
+                      >
                         <img
                           className="w-[22px] h-[18px]"
                           alt="Feature icon"
                           src="/vector-8.svg"
                         />
-                      </div>
-                      <p className="[font-family:'Inter',Helvetica] font-normal text-gray-700 text-[16px] tracking-[0] leading-[25.2px]">
+                      </motion.div>
+                      <motion.p 
+                        className="[font-family:'Inter',Helvetica] font-normal text-gray-700 text-[16px] tracking-[0] leading-[25.2px]"
+                        initial={{ opacity: 0, x: 20 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        transition={{ duration: 0.6, ease: "easeOut", delay: 1.4 + (index + 1) * 0.2 }}
+                        viewport={{ once: true, margin: "-100px" }}
+                      >
                         {feature}
-                      </p>
+                      </motion.p>
                     </div>
-                  </div>
+                  </motion.div>
                 ))}
-
-                {/* CTA Button */}
-                <div className="border-t border-[#0000001a] pt-5">
-                  <Button className="custom-pink-button h-[54px] rounded-[1920px] transition-all duration-200">
-                    <span className="[font-family:'Inter',Helvetica] font-medium text-white text-[14.3px] text-center tracking-[0] leading-[15.8px]">
-                      Learn more
-                    </span>
-                  </Button>
-                </div>
+                
+                {/* Learn More Button */}
+                <motion.div 
+                  className="border-t border-[#0000001a] pt-5"
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, ease: "easeOut", delay: 1.8 }}
+                  viewport={{ once: true, margin: "-100px" }}
+                >
+                  <div className="flex justify-start">
+                    <motion.button 
+                      className="relative bg-[#e44782] text-white font-['Montserrat'] font-semibold text-[16px] px-5 py-3 rounded-[0.84rem] border-2 border-[#e44782] overflow-hidden group hover:bg-white hover:text-[#e44782] transition-all duration-300 ease-out"
+                      initial={{ opacity: 0, scale: 0.9 }}
+                      whileInView={{ opacity: 1, scale: 1 }}
+                      transition={{ duration: 0.5, ease: "easeOut", delay: 2.0 }}
+                      viewport={{ once: true, margin: "-100px" }}
+                      whileHover={{ scale: 1.05 }}
+                    >
+                      Learn More
+                    </motion.button>
               </div>
+                </motion.div>
             </div>
+            </motion.div>
 
-            <div className="w-[480px] h-[480px] flex-shrink-0">
+            <motion.div 
+              className="w-[600px] h-[600px] flex-shrink-0"
+              initial={{ opacity: 0, scale: 0.9, rotateY: 15 }}
+              whileInView={{ opacity: 1, scale: 1, rotateY: 0 }}
+              transition={{ duration: 1, ease: "easeOut", delay: 0.3 }}
+              viewport={{ once: true, margin: "-100px" }}
+            >
               <img
                 className="w-full h-full"
                 alt="Fractional marketing"
-                src="/container-9.svg"
+                src="/Izzy-Marketing.png"
               />
-            </div>
-          </div>
-        </div>
-
-        {/* Brand System Section */}
-        <div className="w-full max-w-[1512px] mx-auto mt-32 relative">
-          <div className="w-full max-w-[585px] mx-auto text-center mb-12">
-            <h2 className="[font-family:'Montserrat',Helvetica] font-medium text-black text-[50px] text-center tracking-[-1.44px] leading-[72px] mb-8">
-              See Your Brand <br />
-              System Come to Life
-            </h2>
-            <p className="[font-family:'Inter',Helvetica] font-normal text-black text-[15.9px] text-center tracking-[0] leading-[25.2px] mb-8">
-              Watch your brand&apos;s Strategy, Voice and Visibility intertwine
-              to guide your audience seamlessly across every channel.
-            </p>
-            <Button className="custom-pink-button h-[54px] rounded-[1920px] transition-all duration-200 mx-auto">
-              <span className="[font-family:'Inter',Helvetica] font-medium text-white text-[14.3px] text-center tracking-[0] leading-[15.8px]">
-                Get started
-              </span>
-            </Button>
-          </div>
-
-          {/* Industry Categories */}
-          <div className="relative w-full h-[1000px]">
-            {/* Mental Health */}
-            <div className="absolute w-[186px] h-[186px] top-[303px] right-[200px]">
-              <div className="relative w-[204px] h-[198px]">
-                <div className="absolute w-[186px] h-[186px] top-0 left-0 rounded-[22.5px] bg-[url(/a-woman-laying-on-top-of-a-couch-next-to-a-man.png)] bg-cover bg-[50%_50%]" />
-                <Badge className="absolute w-[117px] h-9 top-[163px] left-[87px] bg-[#ffdcea] rounded-[1920px] flex items-center justify-center">
-                  <span className="[font-family:'Inter',Helvetica] font-medium text-black text-[12.1px] tracking-[0] leading-[13.5px]">
-                    Mental Health
-                  </span>
-                </Badge>
-              </div>
-            </div>
-
-            {/* Active Life */}
-            <div className="absolute w-[186px] h-[186px] top-[776px] left-[105px]">
-              <div className="relative w-[199px] h-[199px] top-[-13px]">
-                <div className="absolute w-[186px] h-[186px] top-[13px] left-0 rounded-[22.5px] bg-[url(/a-man-riding-a-bike-down-a-curvy-road.png)] bg-cover bg-[50%_50%]" />
-                <Badge className="absolute w-[97px] h-12 top-0 left-[102px] bg-[#d9f4f7] rounded-[1920px] flex items-center justify-center">
-                  <span className="[font-family:'Inter',Helvetica] font-medium text-black text-[12.1px] tracking-[0] leading-[13.5px]">
-                    Active Life
-                  </span>
-                </Badge>
-              </div>
-            </div>
-
-            {/* Personal Care */}
-            <div className="absolute w-[139px] h-[139px] top-[879px] right-[200px]">
-              <div className="relative w-[149px] h-[149px] -top-2.5">
-                <div className="absolute w-[139px] h-[139px] top-2.5 left-0 rounded-[22.5px] bg-[url(/a-woman-getting-a-back-massage-at-a-spa.png)] bg-cover bg-[50%_50%]" />
-                <Badge className="absolute w-[119px] h-12 top-0 left-[30px] bg-[#e8f9dd] rounded-[1920px] flex items-center justify-center">
-                  <span className="[font-family:'Inter',Helvetica] font-medium text-black text-[12.4px] tracking-[0] leading-[13.5px]">
-                    Personal Care
-                  </span>
-                </Badge>
-              </div>
-            </div>
-
-            {/* Pets */}
-            <div className="absolute w-[139px] h-[139px] top-52 left-[890px]">
-              <div className="relative w-[150px] h-[149px] -top-2.5 left-[-11px]">
-                <div className="absolute w-[139px] h-[139px] top-2.5 left-[11px] rounded-[22.5px] bg-[url(/a-man-is-petting-a-white-dog-on-a-leash.png)] bg-cover bg-[50%_50%]" />
-                <Badge className="absolute w-[62px] h-12 top-0 left-0 bg-[#d9f4f7] rounded-[1920px] flex items-center justify-center">
-                  <span className="[font-family:'Inter',Helvetica] font-medium text-black text-[12.4px] tracking-[0] leading-[13.5px]">
-                    Pets
-                  </span>
-                </Badge>
-              </div>
-            </div>
-
-            {/* Dental Care */}
-            <div className="absolute w-[139px] h-[139px] top-[890px] left-[502px]">
-              <div className="relative w-[149px] h-[149px] -left-2.5">
-                <div className="absolute w-[139px] h-[139px] top-0 left-2.5 rounded-[22.5px] bg-[url(/a-woman-getting-her-teeth-checked-by-a-dentist.png)] bg-cover bg-[50%_50%]" />
-                <Badge className="absolute w-[106px] h-9 top-[113px] left-0 bg-[#ffdcea] rounded-[1920px] flex items-center justify-center">
-                  <span className="[font-family:'Inter',Helvetica] font-medium text-black text-[12.3px] tracking-[0] leading-[13.5px]">
-                    Dental Care
-                  </span>
-                </Badge>
-              </div>
-            </div>
-
-            {/* Training */}
-            <div className="absolute w-[186px] h-[186px] top-[776px] left-[1067px]">
-              <div className="relative w-[199px] h-[211px] left-[-13px]">
-                <div className="absolute w-[186px] h-[186px] top-0 left-[13px] rounded-[22.5px] bg-[url(/a-couple-of-people-sitting-on-a-couch-with-a-laptop.png)] bg-cover bg-[50%_50%]" />
-                <Badge className="absolute w-[82px] h-12 top-[163px] left-0 bg-[#fff4d9] rounded-[1920px] flex items-center justify-center">
-                  <span className="[font-family:'Inter',Helvetica] font-medium text-black text-xs tracking-[0] leading-[13.5px]">
-                    Training
-                  </span>
-                </Badge>
-              </div>
-            </div>
-
-            {/* Culinary */}
-            <div className="absolute w-[139px] h-[139px] top-[391px] left-9">
-              <Badge className="absolute w-[117px] h-16 top-[111px] left-[-15px] bg-[#e8f9dd] rounded-[1920px] flex items-center justify-center">
-                <span className="[font-family:'Inter',Helvetica] font-medium text-black text-[12.3px] tracking-[0] leading-[13.5px]">
-                  Culinary
-                  <br />
-                  Subscriptions
-                </span>
-              </Badge>
-            </div>
-
-            {/* Entertainment */}
-            <div className="absolute w-[186px] h-[186px] top-[250px] left-[269px]">
-              <div className="relative w-[204px] h-[211px]">
-                <div className="absolute w-[186px] h-[186px] top-0 left-0 rounded-[22.5px] bg-[url(/a-woman-wearing-a-pair-of-virtual-headsets.png)] bg-cover bg-[50%_50%]" />
-                <Badge className="absolute w-[119px] h-12 top-[163px] left-[85px] bg-[#fff4d9] rounded-[1920px] flex items-center justify-center">
-                  <span className="[font-family:'Inter',Helvetica] font-medium text-black text-[12.2px] tracking-[0] leading-[13.5px]">
-                    Entertainment
-                  </span>
-                </Badge>
-              </div>
-            </div>
-
-            {/* Culinary Image */}
-            <div className="absolute w-[139px] h-[139px] top-[4364px] left-[223px] rounded-[22.5px] bg-[url(/a-table-topped-with-three-plates-of-food.png)] bg-cover bg-[50%_50%]" />
-          </div>
+            </motion.div>
+          </motion.div>
         </div>
 
         {/* Process Section */}
-        <div className="w-full mt-32 pt-16">
+        <motion.div 
+          className="w-full mt-32 pt-16"
+          initial={{ opacity: 0, y: 60 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+          viewport={{ once: true, margin: "-100px" }}
+        >
           <div className="w-full max-w-[848px] mx-auto text-center mb-12">
-            <Badge className="h-[43.2px] bg-[#e44782] rounded-[108px] px-4 py-2 mb-6">
+            <motion.div
+              initial={{ opacity: 0, scale: 0.9 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.5, ease: "easeOut", delay: 0.2 }}
+              viewport={{ once: true, margin: "-100px" }}
+            >
+              <Badge className="h-[43.2px] bg-[#e44782] rounded-[0.84rem] px-4 py-2 mb-6">
               <span className="[font-family:'Inter',Helvetica] font-medium text-white text-[21.6px] tracking-[-0.26px] leading-6">
                 3 Step Process
               </span>
             </Badge>
+            </motion.div>
 
-            <h2 className="[font-family:'Montserrat',Helvetica] font-normal text-[50px] text-center tracking-[-1.73px] leading-[69.1px] mb-8">
-              <span className="text-[#091329] tracking-[-0.97px]">
+            <motion.h2 
+              className="[font-family:'Montserrat',Helvetica] font-semibold text-[50px] text-center tracking-[-1.73px] leading-[60px] mb-8"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, ease: "easeOut", delay: 0.4 }}
+              viewport={{ once: true, margin: "-100px" }}
+            >
+              <span className="text-black tracking-[-0.97px]">
                 Your Brand&apos;s Blueprint <br />
               </span>
-              <span className="text-[#e44782] tracking-[-0.97px]">
+              <span className="text-black tracking-[-0.97px]">
                 for Impact
               </span>
-            </h2>
+            </motion.h2>
 
-            <p className="[font-family:'Inter',Helvetica] font-medium text-[#091329cc] text-[21.6px] text-center tracking-[-0.26px] leading-[32.4px]">
+            <motion.p 
+              className="[font-family:'Inter',Helvetica] font-normal text-gray-700 text-[16px] text-center tracking-[-0.26px] leading-[28px] max-w-[600px] mx-auto"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, ease: "easeOut", delay: 0.6 }}
+              viewport={{ once: true, margin: "-100px" }}
+            >
               A concise three-phase approach to reveal your brand&apos;s
               essence, unify strategy, voice and visibility, and execute
               campaigns driving real impact.
-            </p>
+            </motion.p>
           </div>
 
           {/* Process Steps */}
           <div className="w-full max-w-[1440px] mx-auto">
-            {/* Discover Step */}
-            <Card className="w-full mb-6 shadow-[0px_4.8px_4.8px_-6px_#130c3e40,0px_0px_0px_1.2px_#130c3e1c,0px_2.4px_9.6px_-1.2px_#130c3e0a] bg-[linear-gradient(180deg,rgba(228,71,130,0.4)_0%,rgba(219,232,255,0)_53%)] rounded-3xl overflow-hidden">
+            {/* First Row - Reduced Width */}
+            <div className="flex justify-center mb-6">
+              <Card className="w-full md:w-[calc(80%-12px)] shadow-[0px_4.8px_4.8px_-6px_#130c3e40,0px_0px_0px_1.2px_#130c3e1c,0px_2.4px_9.6px_-1.2px_#130c3e0a] bg-[linear-gradient(180deg,rgba(228,71,130,0.2)_0%,rgba(228,71,130,0.1)_50%,rgba(228,71,130,0)_100%)] rounded-3xl overflow-visible relative">
               <CardContent className="p-0">
                 <div className="flex flex-wrap">
-                  <div className="w-full md:w-1/2 p-12">
-                    <h3 className="[font-family:'Montserrat',Helvetica] font-normal text-[#091329] text-[40px] tracking-[-0.26px] leading-[46.1px] mb-12">
+                    <div className="w-full md:w-1/2 p-8 flex items-center">
+                      <div>
+                        <h3 className="[font-family:'Montserrat',Helvetica] font-semibold text-[#091329] text-[40px] tracking-[-0.26px] leading-[46.1px] mb-6">
                       Discover
                     </h3>
-                    <p className="[font-family:'Inter',Helvetica] font-medium text-[#091329cc] text-[19.2px] tracking-[-0.26px] leading-[27.3px]">
+                        <p className="[font-family:'Inter',Helvetica] font-normal text-[#091329] text-[16px] tracking-[0] leading-[25.2px] pr-4">
                       We audit your brand—interviewing stakeholders, mapping
                       competitors and analyzing every touchpoint—to reveal
                       hidden story gaps and audience needs. These insights
                       become the data-driven foundation for everything we build.
                     </p>
                   </div>
-                  <div className="w-full md:w-1/2 p-6">
+                    </div>
+                    <div className="w-full md:w-1/2 px-6 pt-6 pb-0">
                     <div className="relative">
                       <img
-                        className="w-full"
+                          className="w-full rounded-lg"
                         alt="Discover process"
-                        src="/image.png"
+                          src="/discover.png"
                       />
                     </div>
                   </div>
                 </div>
               </CardContent>
             </Card>
+            </div>
 
+            {/* Second Row - Two Equal Boxes */}
+            <div className="flex flex-wrap gap-6 justify-center mb-[200px]">
             {/* Define Step */}
-            <Card className="w-full mb-6 shadow-[0px_4.8px_4.8px_-6px_#130c3e40,0px_0px_0px_1.2px_#130c3e1c,0px_2.4px_9.6px_-1.2px_#130c3e0a] bg-[linear-gradient(180deg,rgba(228,71,130,0.4)_0%,rgba(219,232,255,0)_53%)] rounded-3xl overflow-hidden">
+              <Card className="w-full md:w-[calc(40%-12px)] shadow-[0px_4.8px_4.8px_-6px_#130c3e40,0px_0px_0px_1.2px_#130c3e1c,0px_2.4px_9.6px_-1.2px_#130c3e0a] bg-[linear-gradient(180deg,rgba(228,71,130,0.2)_0%,rgba(228,71,130,0.1)_50%,rgba(228,71,130,0)_100%)] rounded-3xl overflow-hidden">
               <CardContent className="p-0">
-                <div className="flex flex-col">
-                  <div className="w-full h-[378px] [background:url(..//preview.png)_50%_50%_/_cover] relative">
-                    <h3 className="absolute h-[47px] top-[259px] left-[77px] [font-family:'Montserrat',Helvetica] font-normal text-[#091329] text-[40px] tracking-[-0.26px] leading-[46.1px]">
+                  <div className="px-8 pt-0 pb-2">
+                    <div className="relative mb-2 mt-8">
+                      <img
+                        className="w-full rounded-lg"
+                        alt="File format previews"
+                        src="/define.png"
+                      />
+                    </div>
+                    <h3 className="[font-family:'Montserrat',Helvetica] font-semibold text-[#091329] text-[40px] tracking-[-0.26px] leading-[46px] mb-4">
                       Define
                     </h3>
-                  </div>
-                  <div className="p-12">
-                    <p className="[font-family:'Inter',Helvetica] font-medium text-[#091329cc] text-[19.2px] tracking-[-0.26px] leading-[27.3px]">
+                    <p className="[font-family:'Inter',Helvetica] font-normal text-[#091329] text-[16px] tracking-[0] leading-[25.2px] pr-4">
                       We craft your core brand architecture—messaging pillars,
                       tone guidelines and visual direction—that unites strategy,
                       voice and visibility. This bespoke blueprint guarantees
                       every piece of content and design works together
                       seamlessly.
                     </p>
-                  </div>
                 </div>
               </CardContent>
             </Card>
 
             {/* Deliver Step */}
-            <Card className="w-full mb-6 shadow-[0px_4.8px_4.8px_-6px_#130c3e40,0px_0px_0px_1.2px_#130c3e1c,0px_2.4px_9.6px_-1.2px_#130c3e0a] bg-[linear-gradient(180deg,rgba(228,71,130,0.4)_0%,rgba(219,232,255,0)_53%)] rounded-3xl overflow-hidden">
+              <Card className="w-full md:w-[calc(40%-12px)] shadow-[0px_4.8px_4.8px_-6px_#130c3e40,0px_0px_0px_1.2px_#130c3e1c,0px_2.4px_9.6px_-1.2px_#130c3e0a] bg-[linear-gradient(180deg,rgba(228,71,130,0.2)_0%,rgba(228,71,130,0.1)_50%,rgba(228,71,130,0)_100%)] rounded-3xl overflow-hidden">
               <CardContent className="p-0">
-                <div className="flex flex-col">
-                  <div className="p-12">
-                    <h3 className="[font-family:'Montserrat',Helvetica] font-normal text-[#091329] text-[40px] tracking-[-0.26px] leading-[31.7px] mb-4">
+                  <div className="pl-8 pr-0 pt-8 pb-2">
+                    <h3 className="[font-family:'Montserrat',Helvetica] font-semibold text-[#091329] text-[40px] tracking-[-0.26px] leading-[46px] mb-4">
                       Deliver
                     </h3>
-                    <p className="[font-family:'Inter',Helvetica] font-medium text-[#091329cc] text-[19.2px] tracking-[-0.26px] leading-[27.3px]">
+                    <p className="[font-family:'Inter',Helvetica] font-normal text-[#091329] text-[16px] tracking-[0] leading-[25.2px] mb-6 pr-4">
                       We roll out high-impact campaigns, content systems and
                       assets engineered to convert. Then we measure results in
                       real time and fine-tune tactics so your brand keeps
                       cutting through the fluff.
                     </p>
+                    <div className="relative pl-4">
+                      <img
+                        className="w-full rounded-lg"
+                        alt="Version history tracking"
+                        src="/deliver.png"
+                      />
                   </div>
-                  <div className="w-full h-[323px] bg-[url(/history.png)] bg-cover bg-[50%_50%]" />
                 </div>
               </CardContent>
             </Card>
+            </div>
           </div>
 
-          {/* Testimonial */}
-          <div className="w-full max-w-[1440px] mx-auto mt-16">
-            <Card className="w-full h-[683px] bg-[#e8f9dd] rounded-[33.75px] overflow-hidden">
-              <CardContent className="p-0 flex items-center h-full">
-                <div className="w-full md:w-1/2 p-12 flex flex-col items-center justify-center">
-                  <div className="w-9 h-8 bg-[url(/vector-5.svg)] bg-[100%_100%] mb-12" />
-                  <div className="max-w-[375px] text-center">
-                    <p className="[font-family:'Inter',Helvetica] font-medium text-black text-[22.6px] text-center tracking-[0] leading-[35.3px] mb-6">
-                      Tedy has enabled us to move from
-                      <br />
-                      employee benefits to a<br />
-                      personalized wellness experience.
-                    </p>
-                    <p className="[font-family:'Inter',Helvetica] font-normal text-black text-[11.1px] text-center tracking-[0] leading-[17.6px] opacity-60">
-                      Émilie St-Aubin, Director of Finance
-                    </p>
+          {/* Cut Through The Fluff - Pictures in Letters */}
+          <div className="w-full bg-gradient-to-r from-[#e447821a] via-white to-[#e447821a] rounded-[50px] py-20 mt-16 overflow-hidden relative">
+            {/* Subtle background gradient */}
+            <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent pointer-events-none"></div>
+            
+            {/* Main marquee container */}
+            <div className="relative z-10">
+              <div className="flex items-center animate-scroll whitespace-nowrap">
+                <div className="flex items-center space-x-12">
+                  {[...Array(8)].map((_, index) => (
+                    <motion.div 
+                      key={index} 
+                      className="flex items-center group relative"
+                      initial={{ 
+                        opacity: 0,
+                        y: 20
+                      }}
+                      animate={{ 
+                        opacity: 1,
+                        y: 0
+                      }}
+                      transition={{
+                        duration: 0.8,
+                        delay: index * 0.1,
+                        ease: "easeOut"
+                      }}
+                    >
+                      {/* Text with image inside using CSS background-clip */}
+                      <div 
+                        className="[font-family:'Montserrat',Helvetica] font-black text-[100px] tracking-[-4px] leading-[110px]"
+                        style={{
+                          backgroundImage: "url('/izzy scroll 3.jpg')",
+                          backgroundSize: "cover",
+                          backgroundPosition: "center",
+                          WebkitBackgroundClip: "text",
+                          WebkitTextFillColor: "transparent",
+                          backgroundClip: "text",
+                          color: "transparent",
+                          display: "inline-block",
+                          whiteSpace: "nowrap"
+                        }}
+                      >
+                        Cut Through The Fluff
                   </div>
+                      
+                      {/* Simple dot */}
+                      <div className="ml-8 w-3 h-3 bg-[#e44782] rounded-full opacity-60"></div>
+                    </motion.div>
+                  ))}
                 </div>
-                <div className="hidden md:block w-1/2">
-                  <img
-                    className="w-full h-auto"
-                    alt="Testimonial"
-                    src="/container-8.svg"
-                  />
                 </div>
-              </CardContent>
-            </Card>
           </div>
 
-          {/* Cut Through The Fluff */}
-          <div className="w-full bg-[#e447821a] rounded-[50px] py-16 mt-32">
-            <h2 className="[font-family:'Montserrat',Helvetica] font-medium text-black text-[50px] text-center tracking-[-1.44px] leading-[72px]">
-              Cut through the fluff
-            </h2>
-          </div>
+            {/* Subtle glow effect */}
+            <div className="absolute inset-0 bg-gradient-to-r from-transparent via-[#e447821a] to-transparent pointer-events-none"></div>
         </div>
 
-        {/* Recent Work Section */}
-        <div className="w-full mt-32 text-center">
-          <h2 className="[font-family:'Montserrat',Helvetica] font-normal text-[#091329] text-[50px] text-center tracking-[-1.73px] leading-[69.1px] mb-8">
-            Recent Work
-          </h2>
-          <Button className="custom-pink-button h-[54px] rounded-[1920px] transition-all duration-200 mx-auto">
-            <span className="[font-family:'Inter',Helvetica] font-medium text-white text-[14.3px] text-center tracking-[0] leading-[15.8px]">
-              See more
-            </span>
-          </Button>
-        </div>
 
-        {/* Testimonials Section */}
-        <div className="w-full bg-white rounded-[67.5px_67.5px_0px_0px] mt-32 py-16">
+
+
+
+
+        </motion.div>
+
+        {/* Portfolio Section */}
+        <motion.div 
+          className="w-full mt-32"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.3 }}
+          transition={{ duration: 0.6, ease: "easeOut" }}
+        >
+          <div className="w-full bg-white rounded-[67.5px_67.5px_0px_0px] py-16">
           <div className="w-full max-w-[1200px] mx-auto">
-            <div className="text-center mb-12">
-              <h2 className="[font-family:'Montserrat',Helvetica] font-normal text-[#122345] text-[50px] text-center tracking-[-1.44px] leading-[60px] mb-4">
-                Trusted by over a million users
-              </h2>
-              <p className="[font-family:'Inter',Helvetica] font-medium text-[#122345cc] text-lg tracking-[-0.22px] leading-[27px] mb-6">
-                Our users love us and so will you. Here&apos;s what they are
-                saying.
+            
+            {/* Portfolio Heading */}
+            <motion.div 
+              className="text-center mb-16"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.3 }}
+              transition={{ duration: 0.6, ease: "easeOut" }}
+            >
+              <h3 className="[font-family:'Montserrat',Helvetica] font-semibold text-[#091329] text-[40px] tracking-[-1.73px] leading-[50px] mb-6">
+                Portfolio
+              </h3>
+              <p className="[font-family:'Inter',Helvetica] text-[#091329]/70 text-[16px] leading-[24px] max-w-2xl mx-auto">
+                Explore my work across different industries and services. Each project showcases strategic thinking, creative execution, and measurable results.
               </p>
-              <div className="flex items-center justify-center gap-1">
-                <span className="[font-family:'Inter',Helvetica] font-medium text-[#122345] text-base tracking-[-0.22px] leading-[22.7px]">
-                  4.9/5
-                </span>
-                <span className="[font-family:'Inter',Helvetica] font-normal text-[#122345cc] text-base tracking-[-0.22px] leading-[22.7px]">
-                  based on our user reviews
-                </span>
+            </motion.div>
+              
+              {/* Category Tabs */}
+              <motion.div 
+                className="flex justify-center mb-8"
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.3 }}
+                transition={{ duration: 0.6, ease: "easeOut", delay: 0.2 }}
+              >
+                <div className="flex bg-white/80 backdrop-blur-sm border border-gray-200/50 rounded-3xl p-1.5 gap-1 shadow-lg">
+                  {['FemTech', 'Community'].map((category) => (
+                    <button
+                      key={category}
+                      onClick={() => handleCategoryChange(category)}
+                      className={`px-10 py-4 rounded-2xl font-semibold transition-all duration-500 ease-out ${
+                        activeCategory === category
+                          ? 'bg-gradient-to-r from-[#e44782] to-[#e44782]/90 text-white shadow-xl shadow-[#e44782]/25'
+                          : 'text-gray-500 hover:text-gray-700 hover:bg-gray-50/80'
+                      }`}
+                    >
+                      {category}
+                    </button>
+                  ))}
+                </div>
+              </motion.div>
+
+              {/* FemTech Category */}
+              <AnimatePresence mode="wait">
+                {activeCategory === 'FemTech' && (
+                  <motion.div
+                    key="femtech"
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: -20 }}
+                    transition={{ duration: 0.4 }}
+                    className="mb-16"
+                  >
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-8 p-8 bg-gradient-to-br from-gray-50/50 to-white/30 rounded-3xl backdrop-blur-sm border border-gray-100/50 shadow-xl shadow-gray-200/20">
+                      {/* Nexus Connected */}
+                      <SpotlightCard className="h-[320px] cursor-pointer" spotlightColor="rgba(228, 71, 130, 0.2)">
+                        <div className="h-full flex flex-col justify-center">
+                          <div className="mb-4">
+                            <Badge className="bg-white border border-[#e44782] text-[#e44782] text-xs px-3 py-1.5 rounded-[0.84rem] font-medium shadow-sm mb-3 hover:bg-[#e44782] hover:text-white transition-colors duration-300">
+                              Marketing
+                            </Badge>
+                            <h4 className="[font-family:'Montserrat',Helvetica] font-bold text-[#091329] text-[26px] tracking-tight">
+                              Nexus Connected
+                            </h4>
+                          </div>
+                          <p className="[font-family:'Inter',Helvetica] text-[#091329]/70 text-[15px] leading-[20px] mb-8 font-medium">
+                            Strategic marketing leadership and brand development for innovative femtech platform.
+                          </p>
+                          <div className="flex items-center text-[#e44782] text-sm font-semibold hover:text-[#e44782]/80 transition-colors duration-300">
+                            <span>Read More</span>
+                            <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                            </svg>
+                  </div>
+                </div>
+                      </SpotlightCard>
+
+                      {/* Parent Promise */}
+                      <SpotlightCard className="h-[320px] cursor-pointer" spotlightColor="rgba(228, 71, 130, 0.2)">
+                        <div className="h-full flex flex-col justify-center">
+                          <div className="mb-4">
+                            <Badge className="bg-white border border-[#e44782] text-[#e44782] text-xs px-3 py-1.5 rounded-[0.84rem] font-medium shadow-sm mb-3 hover:bg-[#e44782] hover:text-white transition-colors duration-300">
+                              Ghostwriting
+                            </Badge>
+                            <h4 className="[font-family:'Montserrat',Helvetica] font-bold text-[#091329] text-[26px] tracking-tight">
+                              Parent Promise
+                            </h4>
+                </div>
+                          <p className="[font-family:'Inter',Helvetica] text-[#091329]/70 text-[15px] leading-[20px] mb-8 font-medium">
+                            Content creation and ghostwriting for Dear Bump, connecting parents through authentic storytelling.
+                          </p>
+                          <div className="flex items-center text-[#e44782] text-sm font-semibold hover:text-[#e44782]/80 transition-colors duration-300">
+                            <span>Read More</span>
+                            <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                            </svg>
+          </div>
+                        </div>
+                      </SpotlightCard>
+
+                      {/* Dear Bump */}
+                      <SpotlightCard className="h-[320px] cursor-pointer" spotlightColor="rgba(228, 71, 130, 0.2)">
+                        <div className="h-full flex flex-col justify-center">
+                          <div className="mb-4">
+                            <Badge className="bg-white border border-[#e44782] text-[#e44782] text-xs px-3 py-1.5 rounded-[0.84rem] font-medium shadow-sm mb-3 hover:bg-[#e44782] hover:text-white transition-colors duration-300">
+                              Ghostwriting
+                            </Badge>
+                            <h4 className="[font-family:'Montserrat',Helvetica] font-bold text-[#091329] text-[26px] tracking-tight">
+                              Dear Bump
+                            </h4>
+          </div>
+                          <p className="[font-family:'Inter',Helvetica] text-[#091329]/70 text-[15px] leading-[20px] mb-8 font-medium">
+                            Ghostwriting and content creation for pregnancy and parenting community platform.
+                          </p>
+                          <div className="flex items-center text-[#e44782] text-sm font-semibold hover:text-[#e44782]/80 transition-colors duration-300">
+                            <span>Read More</span>
+                            <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                            </svg>
+        </div>
+                        </div>
+                      </SpotlightCard>
+                    </div>
+                  </motion.div>
+                )}
+
+                {/* Community Category */}
+                {activeCategory === 'Community' && (
+                  <motion.div
+                    key="community"
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: -20 }}
+                    transition={{ duration: 0.4 }}
+                    className="mb-16"
+                  >
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-8 p-8 bg-gradient-to-br from-gray-50/50 to-white/30 rounded-3xl backdrop-blur-sm border border-gray-100/50 shadow-xl shadow-gray-200/20">
+                      {/* GoFounder */}
+                      <SpotlightCard className="h-[320px] cursor-pointer" spotlightColor="rgba(228, 71, 130, 0.2)">
+                        <div className="h-full flex flex-col justify-center">
+                          <div className="mb-4">
+                            <Badge className="bg-white border border-[#e44782] text-[#e44782] text-xs px-3 py-1.5 rounded-[0.84rem] font-medium shadow-sm mb-3 hover:bg-[#e44782] hover:text-white transition-colors duration-300">
+                              Multi-Service
+                            </Badge>
+                            <h4 className="[font-family:'Montserrat',Helvetica] font-bold text-[#091329] text-[26px] tracking-tight">
+                              GoFounder
+                            </h4>
+        </div>
+                          <p className="[font-family:'Inter',Helvetica] text-[#091329]/70 text-[15px] leading-[20px] mb-8 font-medium">
+                            Marketing, content creation, ghostwriting, and founder onboarding for startup community platform.
+                          </p>
+                          <div className="flex items-center text-[#e44782] text-sm font-semibold hover:text-[#e44782]/80 transition-colors duration-300">
+                            <span>Read More</span>
+                            <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                            </svg>
+                          </div>
+                        </div>
+                      </SpotlightCard>
+
+                      {/* Wellnergy */}
+                      <SpotlightCard className="h-[320px] cursor-pointer" spotlightColor="rgba(228, 71, 130, 0.2)">
+                        <div className="h-full flex flex-col justify-center">
+                          <div className="mb-4">
+                            <Badge className="bg-white border border-[#e44782] text-[#e44782] text-xs px-3 py-1.5 rounded-[0.84rem] font-medium shadow-sm mb-3 hover:bg-[#e44782] hover:text-white transition-colors duration-300">
+                              Multi-Service
+                            </Badge>
+                            <h4 className="[font-family:'Montserrat',Helvetica] font-bold text-[#091329] text-[26px] tracking-tight">
+                              Wellnergy
+                            </h4>
+                          </div>
+                          <p className="[font-family:'Inter',Helvetica] text-[#091329]/70 text-[15px] leading-[20px] mb-8 font-medium">
+                            Ghostwriting, branding, and influencer partnership outreach for wellness community.
+                          </p>
+                          <div className="flex items-center text-[#e44782] text-sm font-semibold hover:text-[#e44782]/80 transition-colors duration-300">
+                            <span>Read More</span>
+                            <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                            </svg>
               </div>
             </div>
+                      </SpotlightCard>
 
-            {/* Featured Testimonial */}
-            <Card className="w-full mb-12 bg-white shadow-[0px_0px_0px_1px_#12234513,0px_1px_6.3px_-1px_#1223451a] rounded-3xl overflow-hidden">
-              <CardContent className="p-0">
-                <div className="flex flex-wrap">
-                  <div className="w-full md:w-1/2 p-16">
-                    <div className="w-7 h-7 bg-[url(/quotes.png)] bg-cover bg-[50%_50%] mb-8" />
-                    <p className="[font-family:'Inter',Helvetica] font-normal text-[#122345] text-[27.2px] tracking-[-0.56px] leading-[39.5px] mb-6">
-                      Jumpshare is one of the first apps our team
-                      <br />
-                      insisted on installing on our new laptops.
-                      <br />
-                      We use it every day to communicate
-                      <br />
-                      internally and with our customers.
+                      {/* Enara */}
+                      <SpotlightCard className="h-[320px] cursor-pointer" spotlightColor="rgba(228, 71, 130, 0.2)">
+                        <div className="h-full flex flex-col justify-center">
+                          <div className="mb-4">
+                            <Badge className="bg-white border border-[#e44782] text-[#e44782] text-xs px-3 py-1.5 rounded-[0.84rem] font-medium shadow-sm mb-3 hover:bg-[#e44782] hover:text-white transition-colors duration-300">
+                              Creator Commerce
+                            </Badge>
+                            <h4 className="[font-family:'Montserrat',Helvetica] font-bold text-[#091329] text-[26px] tracking-tight">
+                              Enara
+                            </h4>
+                          </div>
+                          <p className="[font-family:'Inter',Helvetica] text-[#091329]/70 text-[15px] leading-[20px] mb-8 font-medium">
+                            Brand creation, visual identity, social strategy, lead magnets, founder ghostwriting, and creator acquisition.
+                          </p>
+                          <div className="flex items-center text-[#e44782] text-sm font-semibold hover:text-[#e44782]/80 transition-colors duration-300">
+                            <span>Read More</span>
+                            <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                            </svg>
+                          </div>
+                        </div>
+                      </SpotlightCard>
+        </div>
+                  </motion.div>
+                )}
+              </AnimatePresence>
+
+            </div>
+          </div>
+        </motion.div>
+
+        {/* Reviews/Testimonials Section */}
+        <div className="w-full mt-2">
+          <div className="w-full bg-gradient-to-br from-gray-50 to-white rounded-[67.5px_67.5px_0px_0px] py-20 pb-[200px]">
+            <div className="w-full max-w-[1200px] mx-auto px-8">
+              
+                            {/* Reviews Heading */}
+              <motion.div 
+                className="text-center mb-20"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.3 }}
+                transition={{ duration: 0.5, ease: "easeOut" }}
+              >
+                <h3 className="[font-family:'Montserrat',Helvetica] font-semibold text-[#091329] text-[40px] tracking-[-1.73px] leading-[50px] mb-6">
+                  Client Reviews
+                </h3>
+                <p className="[font-family:'Inter',Helvetica] text-[#091329]/70 text-[16px] leading-[24px] max-w-lg mx-auto">
+                  Hear from clients who have transformed their personal brands and achieved measurable results.
+                </p>
+              </motion.div>
+
+              {/* Featured Testimonial */}
+              <motion.div 
+                className="bg-white rounded-2xl p-12 mb-16 relative shadow-lg shadow-gray-200/50 border border-gray-200"
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.3 }}
+                transition={{ duration: 0.6, ease: "easeOut" }}
+              >
+                <div className="flex items-start justify-between">
+                  <div className="w-2/3 pr-8">
+                    <p className="[font-family:'Inter',Helvetica] text-[#091329] text-[22px] leading-[30px] font-medium mb-4 text-left">
+                      "Izzy is the absolute best in the business for Personal Branding! She helped me create a compelling personal brand that truly represents who I am and what I stand for. Her strategic approach and attention to detail are unmatched. I've seen incredible results in my business since working with her."
                     </p>
-                    <p className="[font-family:'Inter',Helvetica] font-normal text-[#122345] text-lg tracking-[-0.22px] leading-[27px] mb-2">
-                      Dan Corkill
-                    </p>
-                    <p className="[font-family:'Inter',Helvetica] font-normal text-[#091329cc] text-[15px] tracking-[-0.22px] leading-5">
-                      CEO at Follow Up Boss
+                    <div className="text-left">
+                      <h4 className="[font-family:'Montserrat',Helvetica] font-bold text-[#091329] text-[24px] mb-0.5">
+                        Jem Stein
+                      </h4>
+                      <p className="[font-family:'Inter',Helvetica] text-[#091329]/60 text-[16px]">
+                        Purpose-led Founder
                     </p>
                   </div>
-                  <div className="hidden md:flex w-1/2 items-center justify-center">
-                    <img
-                      className="w-[300px] h-[260px]"
-                      alt="Testimonial"
-                      src="/container.svg"
+                    </div>
+                  <div className="w-1/3 flex justify-center items-center">
+                    <img 
+                      src="/Jem Stein.jpeg" 
+                      alt="Jem Stein" 
+                      className="w-40 h-40 rounded-[0.84rem] object-cover border-2 border-[#e44782] shadow-lg"
                     />
                   </div>
                 </div>
-              </CardContent>
-            </Card>
+              </motion.div>
 
-            {/* Testimonial Cards */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
-              {testimonials.map((testimonial, index) => (
-                <Card
-                  key={index}
-                  className="bg-white shadow-[0px_0px_0px_1px_#12234513,0px_1px_6.3px_-1px_#1223451a] rounded-[20px] overflow-hidden"
+              {/* Three Smaller Testimonials */}
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                
+                {/* Review 1 - Sally Douglas */}
+                <motion.div 
+                  className="bg-white rounded-2xl p-8 shadow-lg shadow-gray-200/50 border border-gray-200"
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, amount: 0.3 }}
+                  transition={{ duration: 0.5, ease: "easeOut", delay: 0.1 }}
                 >
-                  <CardContent className="p-8">
-                    <div className="flex items-center gap-4 mb-8">
-                      <div className="w-[52px] h-[52px] rounded-xl overflow-hidden">
-                        <div className="w-full h-full bg-[url(${testimonial.image})] bg-cover bg-[50%_50%]" />
-                      </div>
+                  <div className="flex items-center mb-6">
+                    <img 
+                      src="/Sally Douglas.jpeg" 
+                      alt="Sally Douglas" 
+                      className="w-12 h-12 rounded-[0.84rem] object-cover mr-4 flex-shrink-0 border-2 border-[#e44782]"
+                    />
                       <div>
-                        <p className="[font-family:'Inter',Helvetica] font-normal text-[#122345] text-lg tracking-[-0.22px] leading-[27px]">
-                          {testimonial.name}
-                        </p>
-                        <p className="[font-family:'Inter',Helvetica] font-normal text-[#091329cc] text-[15px] tracking-[-0.22px] leading-5">
-                          {testimonial.role}
+                      <h4 className="[font-family:'Montserrat',Helvetica] font-bold text-[#091329] text-[18px] mb-0">
+                        Sally Douglas
+                      </h4>
+                      <p className="[font-family:'Inter',Helvetica] text-[#091329]/60 text-[14px]">
+                        Author & Speaker
                         </p>
                       </div>
                     </div>
-                    <p className="[font-family:'Inter',Helvetica] font-normal text-[#122345] text-lg tracking-[-0.22px] leading-[27px] mb-8">
-                      {testimonial.text}
-                    </p>
-                    <img
-                      className="w-full h-7"
-                      alt="Rating"
-                      src="/container-3.svg"
+                  <p className="[font-family:'Inter',Helvetica] text-[#091329]/80 text-[15px] leading-[22px] mb-6">
+                    "Izzy made me feel confident and clear on what I need to do. Her passion and enthusiasm is infectious. I've become a lot more effective and efficient at LinkedIn thanks to her help. She truly understands how to build authentic personal brands that connect with your audience."
+                  </p>
+                  <div className="flex text-[#e44782]">
+                    <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                      <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                    </svg>
+                    <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                      <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                    </svg>
+                    <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                      <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                    </svg>
+                    <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                      <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                    </svg>
+                    <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                      <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                    </svg>
+                  </div>
+                </motion.div>
+
+                                {/* Review 2 - Emma Abbasi */}
+                <div className="bg-white rounded-2xl p-8 shadow-lg shadow-gray-200/50 border border-gray-200">
+                  <div className="flex items-center mb-6">
+                    <img 
+                      src="/Emma Abbasi.jpeg" 
+                      alt="Emma Abbasi" 
+                      className="w-12 h-12 rounded-[0.84rem] object-cover mr-4 flex-shrink-0 border-2 border-[#e44782]"
                     />
-                  </CardContent>
-                </Card>
-              ))}
+                    <div>
+                      <h4 className="[font-family:'Montserrat',Helvetica] font-bold text-[#091329] text-[18px] mb-0">
+                        Emma Abbasi
+                      </h4>
+                      <p className="[font-family:'Inter',Helvetica] text-[#091329]/60 text-[14px]">
+                        Femtech Founder
+                      </p>
+            </div>
+          </div>
+                  <p className="[font-family:'Inter',Helvetica] text-[#091329]/80 text-[15px] leading-[22px] mb-6">
+                    "Izzy provided guidance in LinkedIn content strategy for community-driven content and lead generation. Her strategic approach helped me build meaningful connections and grow my femtech platform. She's incredibly knowledgeable about building authentic personal brands."
+                  </p>
+                  <div className="flex text-[#e44782]">
+                    <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                      <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                    </svg>
+                    <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                      <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                    </svg>
+                    <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                      <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                    </svg>
+                    <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                      <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                    </svg>
+                    <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                      <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                    </svg>
+          </div>
+        </div>
+
+                                {/* Review 3 - Emily Hughes */}
+                <div className="bg-white rounded-2xl p-8 shadow-lg shadow-gray-200/50 border border-gray-200">
+                  <div className="flex items-center mb-6">
+                    <img 
+                      src="/Emily Hughes.jpeg" 
+                      alt="Emily Hughes" 
+                      className="w-12 h-12 rounded-[0.84rem] object-cover mr-4 flex-shrink-0 border-2 border-[#e44782]"
+                    />
+                    <div>
+                      <h4 className="[font-family:'Montserrat',Helvetica] font-bold text-[#091329] text-[18px] mb-0">
+                        Emily Hughes
+                      </h4>
+                      <p className="[font-family:'Inter',Helvetica] text-[#091329]/60 text-[14px]">
+                        Wellness Founder
+              </p>
+            </div>
+                  </div>
+                  <p className="[font-family:'Inter',Helvetica] text-[#091329]/80 text-[15px] leading-[22px] mb-6">
+                    "Izzy is the absolute best in the business for Personal Branding! Her passion and enthusiasm is infectious. She helped me create a compelling personal brand that truly represents who I am and what I stand for. Her strategic approach and attention to detail are unmatched."
+                  </p>
+                  <div className="flex text-[#e44782]">
+                    <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                      <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                    </svg>
+                    <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                      <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                    </svg>
+                    <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                      <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                    </svg>
+                    <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                      <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                    </svg>
+                    <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                      <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                    </svg>
+            </div>
+          </div>
+
+
+
+        </div>
+
             </div>
           </div>
         </div>
 
-        {/* FAQ Section */}
-        <div className="w-full max-w-[1512px] mx-auto py-16">
-          <div className="flex flex-wrap">
-            <div className="w-full md:w-1/3 mb-12 md:mb-0">
-              <h2 className="[font-family:'Montserrat',Helvetica] font-normal text-black text-[50px] text-center md:text-left tracking-[-4.32px] leading-[108px] mb-8">
-                FAQs
-              </h2>
-              <p className="[font-family:'Inter',Helvetica] font-normal text-black text-[15.9px] tracking-[0] leading-[25.2px] mb-8">
-                Got questions? We have answers! Feel free to
-                <br />
-                chat with our team at any moment for inquiries
-                <br />
-                related to Tedy in your business. You can also
-                <br />
-                consult our updated FAQ to find answers to
-                <br />
-                the most common questions.
-              </p>
-              <Button className="custom-pink-button h-[54px] rounded-[1920px] transition-all duration-200">
-                <span className="[font-family:'Inter',Helvetica] font-medium text-white text-[14.2px] tracking-[0] leading-[15.8px]">
-                  Get in touch
-                </span>
-              </Button>
-            </div>
-            <div className="w-full md:w-2/3">
-              <Accordion type="single" collapsible className="w-full">
-                {faqItems.map((item, index) => (
-                  <AccordionItem key={index} value={`item-${index}`}>
-                    <AccordionTrigger className="[font-family:'Inter',Helvetica] font-medium text-black text-xl tracking-[0] leading-[31.5px] py-4">
-                      {item.question}
-                    </AccordionTrigger>
-                    <AccordionContent>
-                      <p className="[font-family:'Inter',Helvetica] font-normal text-black text-base tracking-[0] leading-[25.2px] py-4">
-                        Answer content goes here.
-                      </p>
-                    </AccordionContent>
-                  </AccordionItem>
-                ))}
-              </Accordion>
-            </div>
-          </div>
-        </div>
+
       </div>
     </div>
   );
