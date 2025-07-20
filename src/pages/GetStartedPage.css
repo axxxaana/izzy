@@ -90,7 +90,7 @@
 
 /* Loading state for Calendly */
 .calendly-inline-widget {
-  min-height: 700px;
+  min-height: 500px;
 }
 
 /* Ensure proper spacing on mobile */
