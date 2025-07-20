@@ -167,6 +167,7 @@
   letter-spacing: 0;
   white-space: nowrap;
   overflow: hidden;
+  text-decoration: none;
 }
 
 .get-started-btn:hover {

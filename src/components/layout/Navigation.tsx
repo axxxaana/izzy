@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './Navigation.css';
 
 interface NavigationProps {
@@ -18,13 +19,13 @@ export const Navigation: React.FC<NavigationProps> = ({ className = '' }) => {
         
         {/* Logo */}
         <div className="logo-container">
-          <a href="/" className="logo-link">
+          <Link to="/" className="logo-link">
             <img
               className="logo-image"
               alt="Logo"
               src="/copy-of-bolt-logo-1.png"
             />
-          </a>
+          </Link>
 
           {/* Navigation Items */}
           <div className="nav-items">
@@ -41,9 +42,9 @@ export const Navigation: React.FC<NavigationProps> = ({ className = '' }) => {
         </div>
 
         {/* Get Started Button */}
-        <button className="get-started-btn">
+        <Link to="/get-started" className="get-started-btn">
           Get Started
-        </button>
+        </Link>
       </div>
     </nav>
   );
