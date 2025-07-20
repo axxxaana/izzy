@@ -86,7 +86,7 @@ export const GetStartedPage: React.FC = () => {
           
           {/* Right Content Section - Calendly Widget */}
           <div className="flex justify-center lg:justify-start">
-            <div className="bg-white border border-gray-200 rounded-2xl shadow-lg p-12 w-full calendly-container">
+            <div className="bg-white border border-gray-200 rounded-2xl shadow-lg px-12 pt-12 w-full calendly-container">
               <div 
                 className="calendly-inline-widget" 
                 data-url="https://calendly.com/wildmountainimmigration/15min-call?hide_event_type_details=1&hide_gdpr_banner=1&primary_color=e44782" 
