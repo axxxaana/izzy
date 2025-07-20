@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import './Navigation.css';
 
 interface NavigationProps {
@@ -7,8 +7,10 @@ interface NavigationProps {
 }
 
 export const Navigation: React.FC<NavigationProps> = ({ className = '' }) => {
+  const location = useLocation();
+  
   const navItems = [
-    { label: "About", href: "#about" },
+    { label: "About", href: "/about" },
     { label: "Services", href: "#services" },
     { label: "Portfolio", href: "#portfolio" },
   ];
@@ -30,21 +32,21 @@ export const Navigation: React.FC<NavigationProps> = ({ className = '' }) => {
           {/* Navigation Items */}
           <div className="nav-items">
             {navItems.map((item, index) => (
-              <a 
+              <Link 
                 key={index}
-                href={item.href}
-                className="nav-item"
+                to={item.href}
+                className={`nav-item ${location.pathname === item.href ? 'active' : ''}`}
               >
                 {item.label}
-              </a>
+              </Link>
             ))}
           </div>
         </div>
 
         {/* Get Started Button */}
-        <Link to="/get-started" className="get-started-btn">
+        <button className="get-started-btn">
           Get Started
-        </Link>
+        </button>
       </div>
     </nav>
   );

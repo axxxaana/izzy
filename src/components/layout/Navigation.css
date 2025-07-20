@@ -140,6 +140,11 @@
   color: #e44782;
 }
 
+.nav-item.active {
+  color: #e44782;
+  font-weight: 600;
+}
+
 @media (min-width: 1024px) {
   .nav-item {
     font-size: 1rem;
@@ -167,7 +172,6 @@
   letter-spacing: 0;
   white-space: nowrap;
   overflow: hidden;
-  text-decoration: none;
 }
 
 .get-started-btn:hover {

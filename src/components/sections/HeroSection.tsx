@@ -14,8 +14,8 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
 }) => {
   return (
     <div className={`w-full relative mb-0 ${className}`}>
-      <div className="w-full h-[500px] sm:h-[600px] md:h-[650px] lg:h-[600px] xl:h-[650px] relative p-3 sm:p-4 lg:p-[15px]">
-        <div className="relative w-full h-[470px] sm:h-[570px] md:h-[620px] lg:h-[570px] xl:h-[620px] mx-auto rounded-[15px] sm:rounded-[18px] lg:rounded-[22.5px] overflow-hidden">
+      <div className="w-full h-[600px] sm:h-[700px] md:h-[750px] lg:h-[700px] xl:h-[750px] relative p-3 sm:p-4 lg:p-[15px]">
+        <div className="relative w-full h-[570px] sm:h-[670px] md:h-[720px] lg:h-[670px] xl:h-[720px] mx-auto rounded-[15px] sm:rounded-[18px] lg:rounded-[22.5px] overflow-hidden">
           <div className="relative h-full">
             <div className="absolute w-full h-full top-0 left-0">
               <div className="relative h-full">

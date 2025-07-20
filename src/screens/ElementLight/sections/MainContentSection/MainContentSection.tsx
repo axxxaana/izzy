@@ -13,6 +13,8 @@ import { Separator } from "../../../../components/ui/separator";
 import { useScrollAnimation } from "../../../../hooks/useScrollAnimation";
 import { BrandSection } from "../../../../components/sections/BrandSection";
 import SpotlightCard from "../../../../components/SpotlightCard";
+import { TrustedByBanner } from "../../../../components/TrustedByBanner";
+import { Header } from "../../../../components/layout/Header";
 
 export const MainContentSection = (): JSX.Element => {
   // Rotating words for the h1
@@ -166,13 +168,14 @@ export const MainContentSection = (): JSX.Element => {
     <div className="flex flex-col items-center w-full relative">
       {/* Hero Section */}
       <div className="w-full relative mb-0">
-        <div className="w-full h-[500px] sm:h-[600px] md:h-[650px] lg:h-[600px] xl:h-[650px] relative p-3 sm:p-4 lg:p-[15px]">
-          <div className="relative w-full h-[470px] sm:h-[570px] md:h-[620px] lg:h-[570px] xl:h-[620px] mx-auto rounded-[15px] sm:rounded-[18px] lg:rounded-[22.5px] overflow-hidden">
+        <div className="w-full h-[700px] sm:h-[800px] md:h-[850px] lg:h-[800px] xl:h-[850px] relative p-3 sm:p-4 lg:p-[15px]">
+          <div className="relative w-full h-[670px] sm:h-[770px] md:h-[820px] lg:h-[770px] xl:h-[820px] mx-auto rounded-[15px] sm:rounded-[18px] lg:rounded-[22.5px] overflow-hidden">
             <div className="relative h-full">
               <div className="absolute w-full h-full top-0 left-0">
                 <div className="relative h-full">
                   <div className="absolute w-full h-full top-0 left-0 bg-white opacity-10 rounded-[15px] sm:rounded-[18px] lg:rounded-[22.5px]" />
-                                    <div className="absolute w-full h-full top-0 left-0 [background:url('/Izzy-Prior-Homepage-Heder.png')_50%_40%_/_cover] rounded-[15px] sm:rounded-[18px] lg:rounded-[22.5px]">
+                  <div className="absolute w-full h-full top-0 left-0 [background:url('/Izzy-Prior-Homepage-Heder.png')_50%_40%_/_cover] rounded-[15px] sm:rounded-[18px] lg:rounded-[22.5px]">
+                    <Header />
                   </div>
                 </div>
               </div>
@@ -206,69 +209,7 @@ export const MainContentSection = (): JSX.Element => {
         </div>
 
         {/* Trusted By Section */}
-        <div className="w-full h-[120px] mt-6 mx-auto flex items-center relative overflow-hidden bg-white">
-          {/* Trusted by text - fixed on left */}
-          <div className="absolute left-8 z-30 bg-white">
-            <h2 className="[font-family:'Montserrat',Helvetica] font-medium text-black text-[28px] tracking-[0] leading-[32px] whitespace-nowrap">
-              Trusted by
-            </h2>
-          </div>
-
-          {/* Scrolling logos container */}
-          <div className="absolute left-0 top-1/2 transform -translate-y-1/2 w-full">
-            <div className="flex items-center animate-scroll">
-              {/* Multiple sets of logos for seamless loop */}
-              <div className="flex items-center space-x-12 ml-96">
-                <div className="text-gray-400 text-2xl font-medium whitespace-nowrap">Coutu</div>
-                <div className="text-gray-400 text-xl font-medium whitespace-nowrap">Harnois</div>
-                <div className="text-gray-400 text-2xl font-bold whitespace-nowrap">EROS</div>
-                <div className="text-gray-400 text-xl font-medium whitespace-nowrap">DIALEKTA</div>
-                <div className="text-gray-400 text-xl font-medium whitespace-nowrap">ABG</div>
-                <div className="text-gray-400 text-xl font-medium whitespace-nowrap">thirdbridge</div>
-                <div className="text-gray-400 text-xl font-medium whitespace-nowrap">CAMELLIA</div>
-              </div>
-              
-              {/* Second set */}
-              <div className="flex items-center space-x-12 ml-12">
-                <div className="text-gray-400 text-2xl font-medium whitespace-nowrap">Coutu</div>
-                <div className="text-gray-400 text-xl font-medium whitespace-nowrap">Harnois</div>
-                <div className="text-gray-400 text-2xl font-bold whitespace-nowrap">EROS</div>
-                <div className="text-gray-400 text-xl font-medium whitespace-nowrap">DIALEKTA</div>
-                <div className="text-gray-400 text-xl font-medium whitespace-nowrap">ABG</div>
-                <div className="text-gray-400 text-xl font-medium whitespace-nowrap">thirdbridge</div>
-                <div className="text-gray-400 text-xl font-medium whitespace-nowrap">CAMELLIA</div>
-              </div>
-              
-              {/* Third set */}
-              <div className="flex items-center space-x-12 ml-12">
-                <div className="text-gray-400 text-2xl font-medium whitespace-nowrap">Coutu</div>
-                <div className="text-gray-400 text-xl font-medium whitespace-nowrap">Harnois</div>
-                <div className="text-gray-400 text-2xl font-bold whitespace-nowrap">EROS</div>
-                <div className="text-gray-400 text-xl font-medium whitespace-nowrap">DIALEKTA</div>
-                <div className="text-gray-400 text-xl font-medium whitespace-nowrap">ABG</div>
-                <div className="text-gray-400 text-xl font-medium whitespace-nowrap">thirdbridge</div>
-                <div className="text-gray-400 text-xl font-medium whitespace-nowrap">CAMELLIA</div>
-              </div>
-              
-              {/* Fourth set */}
-              <div className="flex items-center space-x-12 ml-12">
-                <div className="text-gray-400 text-2xl font-medium whitespace-nowrap">Coutu</div>
-                <div className="text-gray-400 text-xl font-medium whitespace-nowrap">Harnois</div>
-                <div className="text-gray-400 text-2xl font-bold whitespace-nowrap">EROS</div>
-                <div className="text-gray-400 text-xl font-medium whitespace-nowrap">DIALEKTA</div>
-                <div className="text-gray-400 text-xl font-medium whitespace-nowrap">ABG</div>
-                <div className="text-gray-400 text-xl font-medium whitespace-nowrap">thirdbridge</div>
-                <div className="text-gray-400 text-xl font-medium whitespace-nowrap">CAMELLIA</div>
-              </div>
-            </div>
-          </div>
-
-          {/* Fade gradient overlay - fades logos before "Trusted by" */}
-          <div className="absolute left-0 top-0 w-96 h-full bg-gradient-to-r from-white via-white to-transparent z-20 pointer-events-none"></div>
-          
-          {/* Right side fade gradient - fades logos as they enter from right */}
-          <div className="absolute right-0 top-0 w-96 h-full bg-gradient-to-l from-white to-transparent z-20 pointer-events-none"></div>
-        </div>
+        <TrustedByBanner />
 
         {/* I'm Izzy Section */}
         <div 
@@ -678,7 +619,7 @@ export const MainContentSection = (): JSX.Element => {
                       <img
                           className="w-full rounded-lg"
                         alt="Discover process"
-                          src="/discover box.png"
+                          src="/discover.png"
                       />
                     </div>
                   </div>
@@ -695,9 +636,9 @@ export const MainContentSection = (): JSX.Element => {
                   <div className="px-8 pt-0 pb-2">
                     <div className="relative mb-2 mt-8">
                       <img
-                        className="w-[50%] mx-auto rounded-lg"
+                        className="w-full rounded-lg"
                         alt="File format previews"
-                        src="/define image.png"
+                        src="/define.png"
                       />
                     </div>
                     <h3 className="[font-family:'Montserrat',Helvetica] font-semibold text-[#091329] text-[40px] tracking-[-0.26px] leading-[46px] mb-4">
@@ -729,9 +670,9 @@ export const MainContentSection = (): JSX.Element => {
                     </p>
                     <div className="relative pl-4">
                       <img
-                        className="w-[50%] mx-auto rounded-lg"
+                        className="w-full rounded-lg"
                         alt="Version history tracking"
-                        src="/deliver-image.png"
+                        src="/deliver.png"
                       />
                   </div>
                 </div>
