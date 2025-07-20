@@ -41,7 +41,7 @@ export const GetStartedPage: React.FC = () => {
                 className={`${TYPOGRAPHY.headings.h1.classes} text-gray-900 mb-6`}
                 style={{ fontSize: '64px', lineHeight: '1.1' }}
               >
-                Let's talk.
+                Let's Chat.
               </h1>
             </div>
             
@@ -51,47 +51,36 @@ export const GetStartedPage: React.FC = () => {
                 className={`${TYPOGRAPHY.body.large.classes} text-gray-600 leading-relaxed`}
                 style={{ fontSize: '20px' }}
               >
-                Izzy Prior Brand Marketing is the easiest way to transform your brand with 
-                <span className="text-pink-600 font-semibold"> NO-FLUFF</span> branding that just works.
+                I'm Izzy—fractional CMO and brand strategist for femtech, healthtech & social-impact founders. I help you strip back bloated messaging, sharpen your story and build a brand that truly moves people.
               </p>
             </div>
             
             {/* Benefits Section */}
             <div>
               <h3 className="text-xl font-semibold text-gray-900 mb-4">
-                Talk to our team today to:
+                Talk to me today to:
               </h3>
               <ul className="space-y-3">
                 <li className="flex items-start">
                   <div className="w-2 h-2 bg-pink-500 rounded-full mt-2 mr-3 flex-shrink-0"></div>
-                  <span className="text-gray-700">Understand how our branding approach fits your business needs</span>
+                  <span className="text-gray-700">Audit your brand—map competitors, review every touchpoint and spot hidden story gaps.</span>
                 </li>
                 <li className="flex items-start">
                   <div className="w-2 h-2 bg-pink-500 rounded-full mt-2 mr-3 flex-shrink-0"></div>
-                  <span className="text-gray-700">Discover our capabilities and get answers to your questions</span>
+                  <span className="text-gray-700">Clarify your core message and visual identity so you stand out with confidence.</span>
                 </li>
                 <li className="flex items-start">
                   <div className="w-2 h-2 bg-pink-500 rounded-full mt-2 mr-3 flex-shrink-0"></div>
-                  <span className="text-gray-700">Get a customized quote for your branding project</span>
+                  <span className="text-gray-700">Plan a no-fluff strategy that turns your audience into loyal customers.</span>
                 </li>
               </ul>
             </div>
             
             {/* Trusted By Section */}
             <div>
-              <h3 className="text-lg font-semibold text-gray-900 mb-4">
-                Trusted by:
-              </h3>
-              <div className="grid grid-cols-3 gap-6">
-                {BRAND_LOGOS.slice(0, 6).map((logo, index) => (
-                  <div 
-                    key={index} 
-                    className="text-gray-400 text-lg font-medium hover:text-gray-600 transition-colors duration-300 logo-item"
-                  >
-                    {logo}
-                  </div>
-                ))}
-              </div>
+              <p className="text-gray-600 font-medium">
+                Trusted by purpose-led startups and industry changemakers.
+              </p>
             </div>
           </div>
           
