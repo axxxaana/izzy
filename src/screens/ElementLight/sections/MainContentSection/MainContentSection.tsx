@@ -695,7 +695,7 @@ export const MainContentSection = (): JSX.Element => {
                   <div className="px-8 pt-0 pb-2">
                     <div className="relative mb-2 mt-8">
                       <img
-                        className="w-[70%] mx-auto rounded-lg"
+                        className="w-[50%] mx-auto rounded-lg"
                         alt="File format previews"
                         src="/define image.png"
                       />
