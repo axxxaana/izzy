@@ -78,9 +78,26 @@ export const GetStartedPage: React.FC = () => {
             
             {/* Trusted By Section */}
             <div>
-              <p className="text-gray-600 font-medium">
+              <p className="text-gray-600 font-medium mb-4">
                 Trusted by purpose-led startups and social-impact innovators.
               </p>
+              <div className="grid grid-cols-3 gap-6">
+                <div className="text-gray-400 text-lg font-medium hover:text-gray-600 transition-colors duration-300 logo-item">
+                  Indeed
+                </div>
+                <div className="text-gray-400 text-lg font-medium hover:text-gray-600 transition-colors duration-300 logo-item">
+                  accuRx
+                </div>
+                <div className="text-gray-400 text-lg font-medium hover:text-gray-600 transition-colors duration-300 logo-item">
+                  Brella
+                </div>
+                <div className="text-gray-400 text-lg font-medium hover:text-gray-600 transition-colors duration-300 logo-item">
+                  VISMA
+                </div>
+                <div className="text-gray-400 text-lg font-medium hover:text-gray-600 transition-colors duration-300 logo-item">
+                  showbie
+                </div>
+              </div>
             </div>
           </div>
           
