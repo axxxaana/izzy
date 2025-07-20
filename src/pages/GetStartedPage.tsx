@@ -51,7 +51,8 @@ export const GetStartedPage: React.FC = () => {
                 className={`${TYPOGRAPHY.body.large.classes} text-gray-600 leading-relaxed`}
                 style={{ fontSize: '20px' }}
               >
-                I'm Izzy—fractional CMO and brand strategist for femtech, healthtech & social-impact founders. I help you strip back bloated messaging, sharpen your story and build a brand that truly moves people.
+                Izzy Prior Brand Marketing is the easiest way to transform your brand with 
+                <span className="text-pink-600 font-semibold"> NO-FLUFF</span> branding that just works.
               </p>
             </div>
             
