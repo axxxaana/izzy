@@ -697,7 +697,7 @@ export const MainContentSection = (): JSX.Element => {
                       <img
                         className="w-full rounded-lg"
                         alt="File format previews"
-                        src="/define.png"
+                        src="/define image.png"
                       />
                     </div>
                     <h3 className="[font-family:'Montserrat',Helvetica] font-semibold text-[#091329] text-[40px] tracking-[-0.26px] leading-[46px] mb-4">
