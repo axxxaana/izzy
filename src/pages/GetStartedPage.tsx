@@ -104,14 +104,14 @@ export const GetStartedPage: React.FC = () => {
               </div>
               <div 
                 className="calendly-inline-widget" 
-                data-url="https://calendly.com/wildmountainimmigration/15min-call?primary_color=e44782" 
+                data-url="https://calendly.com/wildmountainimmigration/15min-call?hide_event_type_details=1&hide_gdpr_banner=1&primary_color=e44782" 
                 style={{ minWidth: '320px', height: '700px' }}
               ></div>
               
               {/* Fallback Link */}
               <div className="mt-4 text-center">
                 <a 
-                  href="https://calendly.com/wildmountainimmigration/15min-call?primary_color=e44782" 
+                  href="https://calendly.com/wildmountainimmigration/15min-call?hide_event_type_details=1&hide_gdpr_banner=1&primary_color=e44782" 
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="text-sm text-pink-600 hover:text-pink-700 transition-colors duration-200 font-medium"
