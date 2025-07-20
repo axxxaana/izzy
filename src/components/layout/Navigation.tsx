@@ -44,9 +44,9 @@ export const Navigation: React.FC<NavigationProps> = ({ className = '' }) => {
         </div>
 
         {/* Get Started Button */}
-        <button className="get-started-btn">
+        <Link to="/get-started" className="get-started-btn">
           Get Started
-        </button>
+        </Link>
       </div>
     </nav>
   );
