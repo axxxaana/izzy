@@ -30,8 +30,8 @@ export const GetStartedPage: React.FC = () => {
       <Navigation />
       
       {/* Main Content - Full Height */}
-      <section className="w-full flex-1 flex items-center pt-20 pb-8 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+      <section className="w-full flex-1 flex items-start pt-20 pb-8 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-start pt-8">
           
           {/* Left Content Section */}
           <div className="space-y-8">
@@ -87,7 +87,7 @@ export const GetStartedPage: React.FC = () => {
           
           {/* Right Content Section - Calendly Widget */}
           <div className="flex justify-center lg:justify-start">
-            <div className="bg-white border border-gray-200 rounded-2xl shadow-lg p-8 w-full calendly-container">
+            <div className="bg-white border border-gray-200 rounded-2xl shadow-lg p-12 w-full calendly-container">
               <div 
                 className="calendly-inline-widget" 
                 data-url="https://calendly.com/wildmountainimmigration/15min-call?hide_event_type_details=1&hide_gdpr_banner=1&primary_color=e44782" 
