@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 
 import { Card } from "../../../../components/ui/card";
@@ -43,9 +44,8 @@ export const FooterSection = (): JSX.Element => {
               >
                 Ready to transform your brand and drive real growth? Let's create a strategy that captivates your audience and delivers measurable results.
               </motion.p>
-              <motion.a 
-                href="#"
-                className="inline-block bg-white text-[#e44782] border-2 border-[#e44782] rounded-[0.84rem] px-5 py-3 text-[20px] font-['Montserrat'] font-medium transition-all duration-300 ease-out shadow-[0_8px_25px_rgba(228,71,130,0.3)] hover:bg-[#e44782] hover:text-white hover:scale-105 cursor-pointer no-underline"
+              <motion.div 
+                className="inline-block"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, ease: "easeOut", delay: 0.8 }}
@@ -53,8 +53,13 @@ export const FooterSection = (): JSX.Element => {
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
-                Get Started
-              </motion.a>
+                <Link 
+                  to="/get-started"
+                  className="inline-block bg-white text-[#e44782] border-2 border-[#e44782] rounded-[0.84rem] px-5 py-3 text-[20px] font-['Montserrat'] font-medium transition-all duration-300 ease-out shadow-[0_8px_25px_rgba(228,71,130,0.3)] hover:bg-[#e44782] hover:text-white hover:scale-105 cursor-pointer no-underline"
+                >
+                  Get Started
+                </Link>
+              </motion.div>
             </motion.div>
           </div>
         </div>

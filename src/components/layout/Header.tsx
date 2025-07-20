@@ -53,9 +53,9 @@ export const Header: React.FC<HeaderProps> = ({ className = '' }) => {
         </div>
 
         {/* Get Started Button */}
-        <button className="get-started-btn">
+        <Link to="/get-started" className="get-started-btn">
           Get Started
-        </button>
+        </Link>
       </div>
     </div>
   );

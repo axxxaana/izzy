@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import {
   Accordion,
@@ -196,12 +197,12 @@ export const MainContentSection = (): JSX.Element => {
                   <p className="[font-family:'Inter',Helvetica] font-normal text-white text-[18px] text-left tracking-[0] leading-[28px] max-w-[600px] opacity-95 mb-6 text-shadow-subtle animate-fade-in-up-delayed">
                     Brand systems that captivate your audience, amplify your core message, and deliver measurable growth across every touchpoint.
                   </p>
-                  <a 
-                    href="#"
+                  <Link 
+                    to="/get-started"
                     className="hero-button animate-fade-in-up-button inline-block bg-white text-[#e44782] border-2 border-[#e44782] rounded-[0.84rem] px-5 py-3 text-[20px] font-['Montserrat'] font-medium transition-all duration-300 ease-out shadow-[0_8px_25px_rgba(228,71,130,0.3)] hover:bg-[#e44782] hover:text-white hover:scale-105 cursor-pointer no-underline"
                   >
                     Get Started
-                  </a>
+                  </Link>
                 </div>
               </div>
             </div>
