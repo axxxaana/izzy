@@ -731,7 +731,7 @@ export const MainContentSection = (): JSX.Element => {
                       <img
                         className="w-full rounded-lg"
                         alt="Version history tracking"
-                        src="/deliver.png"
+                        src="/deliver-image.png"
                       />
                   </div>
                 </div>
