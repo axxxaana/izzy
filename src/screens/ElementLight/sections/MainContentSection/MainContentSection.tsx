@@ -678,7 +678,7 @@ export const MainContentSection = (): JSX.Element => {
                       <img
                           className="w-full rounded-lg"
                         alt="Discover process"
-                          src="/discover-image.png"
+                          src="/discover box.png"
                       />
                     </div>
                   </div>
