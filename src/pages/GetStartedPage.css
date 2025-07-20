@@ -5,12 +5,6 @@
   border: 1px solid rgba(228, 71, 130, 0.1);
 }
 
-.calendly-container:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-  border-color: rgba(228, 71, 130, 0.2);
-}
-
 /* Logo item styling */
 .logo-item {
   transition: all 0.3s ease;
@@ -90,7 +84,7 @@
 
 /* Loading state for Calendly */
 .calendly-inline-widget {
-  min-height: 500px;
+  min-height: 550px;
 }
 
 /* Ensure proper spacing on mobile */

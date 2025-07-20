@@ -182,7 +182,7 @@ export const MainContentSection = (): JSX.Element => {
               </div>
 
               {/* Hero Content - Text Only */}
-              <div className="absolute max-w-[800px] top-[145px] sm:top-[145px] md:top-[185px] lg:top-[145px] xl:top-[185px] left-[25%] sm:left-[25%] md:left-[25%] lg:left-[20%] xl:left-[10.5%] 2xl:left-[16%] px-4">
+              <div className="absolute max-w-[800px] top-[225px] sm:top-[225px] md:top-[265px] lg:top-[225px] xl:top-[265px] left-[25%] sm:left-[25%] md:left-[25%] lg:left-[20%] xl:left-[10.5%] 2xl:left-[16%] px-4">
                 <div className="w-full">
                   <h1 className="[font-family:'Montserrat',Helvetica] font-semibold text-white text-[75px] text-left tracking-[-1.2px] leading-[1.1] mb-2 text-shadow-medium animate-fade-in-up">
                     High-Impact{" "}
@@ -266,7 +266,7 @@ export const MainContentSection = (): JSX.Element => {
               <img
                 className="w-full h-full"
                 alt="Founder brand strategy"
-                src="/izzy-prior-strategy.png"
+                src="/Founder personal brand strategy image.png"
               />
               </motion.div>
 
@@ -539,7 +539,7 @@ export const MainContentSection = (): JSX.Element => {
               <img
                 className="w-full h-full"
                 alt="Fractional marketing"
-                src="/Izzy-Marketing.png"
+                src="/Fractional marketing & brand direction image.png"
               />
             </motion.div>
           </motion.div>
@@ -603,7 +603,7 @@ export const MainContentSection = (): JSX.Element => {
               <CardContent className="p-0">
                 <div className="flex flex-wrap">
                     <div className="w-full md:w-1/2 p-8 flex items-center">
-                      <div>
+                      <div className="px-4">
                         <h3 className="[font-family:'Montserrat',Helvetica] font-semibold text-[#091329] text-[40px] tracking-[-0.26px] leading-[46.1px] mb-6">
                       Discover
                     </h3>
@@ -618,9 +618,9 @@ export const MainContentSection = (): JSX.Element => {
                     <div className="w-full md:w-1/2 px-6 pt-6 pb-0">
                     <div className="relative">
                       <img
-                          className="w-full rounded-lg"
+                          className="w-[85%] rounded-lg mx-auto animate-float-sync"
                         alt="Discover process"
-                          src="/discover.png"
+                          src="/discover box.png"
                       />
                     </div>
                   </div>
@@ -634,12 +634,12 @@ export const MainContentSection = (): JSX.Element => {
             {/* Define Step */}
               <Card className="w-full md:w-[calc(40%-12px)] shadow-[0px_4.8px_4.8px_-6px_#130c3e40,0px_0px_0px_1.2px_#130c3e1c,0px_2.4px_9.6px_-1.2px_#130c3e0a] bg-[linear-gradient(180deg,rgba(228,71,130,0.2)_0%,rgba(228,71,130,0.1)_50%,rgba(228,71,130,0)_100%)] rounded-3xl overflow-hidden">
               <CardContent className="p-0">
-                  <div className="px-8 pt-0 pb-2">
+                  <div className="px-12 pt-0 pb-12">
                     <div className="relative mb-2 mt-8">
                       <img
-                        className="w-full rounded-lg"
+                        className="w-[50%] rounded-lg mx-auto"
                         alt="File format previews"
-                        src="/define.png"
+                        src="/define image.png"
                       />
                     </div>
                     <h3 className="[font-family:'Montserrat',Helvetica] font-semibold text-[#091329] text-[40px] tracking-[-0.26px] leading-[46px] mb-4">
@@ -659,7 +659,14 @@ export const MainContentSection = (): JSX.Element => {
             {/* Deliver Step */}
               <Card className="w-full md:w-[calc(40%-12px)] shadow-[0px_4.8px_4.8px_-6px_#130c3e40,0px_0px_0px_1.2px_#130c3e1c,0px_2.4px_9.6px_-1.2px_#130c3e0a] bg-[linear-gradient(180deg,rgba(228,71,130,0.2)_0%,rgba(228,71,130,0.1)_50%,rgba(228,71,130,0)_100%)] rounded-3xl overflow-hidden">
               <CardContent className="p-0">
-                  <div className="pl-8 pr-0 pt-8 pb-2">
+                  <div className="px-12 pt-8 pb-12">
+                    <div className="relative pl-4 mb-6">
+                      <img
+                        className="w-[40%] rounded-lg mx-auto"
+                        alt="Version history tracking"
+                        src="/deliver-image.png"
+                      />
+                    </div>
                     <h3 className="[font-family:'Montserrat',Helvetica] font-semibold text-[#091329] text-[40px] tracking-[-0.26px] leading-[46px] mb-4">
                       Deliver
                     </h3>
@@ -669,13 +676,6 @@ export const MainContentSection = (): JSX.Element => {
                       real time and fine-tune tactics so your brand keeps
                       cutting through the fluff.
                     </p>
-                    <div className="relative pl-4">
-                      <img
-                        className="w-full rounded-lg"
-                        alt="Version history tracking"
-                        src="/deliver.png"
-                      />
-                  </div>
                 </div>
               </CardContent>
             </Card>

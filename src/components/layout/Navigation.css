@@ -104,7 +104,7 @@
 .nav-items {
   display: none;
   align-items: center;
-  gap: 1rem;
+  gap: 1.5rem;
   margin-left: 1.5rem;
 }
 
@@ -116,7 +116,7 @@
 
 @media (min-width: 1024px) {
   .nav-items {
-    gap: 1.5rem;
+    gap: 2.5rem;
     margin-left: 2rem;
   }
 }
@@ -131,7 +131,7 @@
   color: #797979;
   font-family: 'Montserrat', Helvetica, sans-serif;
   font-weight: 500;
-  font-size: 0.875rem;
+  font-size: 16px;
   line-height: 1.25rem;
   white-space: nowrap;
 }
@@ -143,12 +143,6 @@
 .nav-item.active {
   color: #e44782;
   font-weight: 600;
-}
-
-@media (min-width: 1024px) {
-  .nav-item {
-    font-size: 1rem;
-  }
 }
 
 .get-started-btn {

@@ -1,0 +1,67 @@
+.cursor-trail-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 9999;
+  overflow: hidden;
+}
+
+.cursor-particle {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  pointer-events: none;
+  transition: all 0.1s ease-out;
+  box-shadow: 0 0 6px rgba(228, 71, 130, 0.4);
+  backdrop-filter: blur(1px);
+}
+
+/* Variants for different particle effects */
+.cursor-particle:nth-child(even) {
+  width: 6px;
+  height: 6px;
+  box-shadow: 0 0 4px rgba(228, 71, 130, 0.3);
+}
+
+.cursor-particle:nth-child(3n) {
+  width: 10px;
+  height: 10px;
+  box-shadow: 0 0 8px rgba(228, 71, 130, 0.5);
+}
+
+/* Performance optimizations */
+.cursor-particle {
+  will-change: transform, opacity;
+  contain: layout style paint;
+}
+
+/* Subtle glow effect for particles */
+@keyframes particle-glow {
+  0%, 100% {
+    box-shadow: 0 0 6px rgba(228, 71, 130, 0.4);
+  }
+  50% {
+    box-shadow: 0 0 12px rgba(228, 71, 130, 0.6);
+  }
+}
+
+/* Remove constant animation for better performance - particles have natural movement */
+.cursor-particle {
+  /* animation: particle-glow 2s ease-in-out infinite; */
+}
+
+/* Reduce motion for accessibility */
+@media (prefers-reduced-motion: reduce) {
+  .cursor-particle {
+    animation: none;
+    transition: none;
+  }
+  
+  .cursor-trail-container {
+    display: none;
+  }
+} 

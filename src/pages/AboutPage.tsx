@@ -8,6 +8,7 @@ import { IzzyProcessAccordion } from '../components/sections/IzzyProcessAccordio
 import { FounderQuoteSection } from '../components/sections/FounderQuoteSection';
 import { MyValuesAnimated } from '../components/sections/MyValuesAnimated';
 import { FooterSection } from '../screens/ElementLight/sections/FooterSection';
+import { CursorTrail } from '../components/CursorTrail';
 
 export const AboutPage: React.FC = () => {
   return (
@@ -15,6 +16,8 @@ export const AboutPage: React.FC = () => {
       title="About Izzy Prior" 
       description="Learn about Izzy Prior, a fractional CMO and brand strategist helping femtech, healthtech and social-impact founders create bold, heart-felt brands."
     >
+      {/* Cursor Trail Effect */}
+      <CursorTrail />
       <div className="flex flex-col items-start w-full bg-white">
         {/* Hero Section with Header */}
         <AboutHeroSection />

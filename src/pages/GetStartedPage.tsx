@@ -4,6 +4,7 @@ import { Navigation } from '../components/layout';
 import { SimpleFooter } from '../components/SimpleFooter';
 import { TYPOGRAPHY, COLORS, BORDER_RADIUS, SHADOWS } from '../constants/design-system';
 import { BRAND_LOGOS } from '../constants/navigation';
+import { CursorTrail } from '../components/CursorTrail';
 import './GetStartedPage.css';
 
 export const GetStartedPage: React.FC = () => {
@@ -28,6 +29,8 @@ export const GetStartedPage: React.FC = () => {
 
   return (
     <div className="flex flex-col items-start w-full min-h-screen" style={{ backgroundColor: 'rgba(228, 71, 130, 0.1)' }}>
+      {/* Cursor Trail Effect */}
+      <CursorTrail />
       {/* Navigation */}
       <Navigation />
       

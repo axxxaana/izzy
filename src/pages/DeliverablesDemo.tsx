@@ -1,6 +1,7 @@
 import React from 'react';
 import { Layout } from '../components/layout/Layout';
 import { DeliverablesSection } from '../components/sections/DeliverablesSection';
+import { CursorTrail } from '../components/CursorTrail';
 
 export const DeliverablesDemo: React.FC = () => {
   return (
@@ -8,6 +9,8 @@ export const DeliverablesDemo: React.FC = () => {
       title="Deliverables Demo"
       description="Demo of the Deliverables Section Component"
     >
+      {/* Cursor Trail Effect */}
+      <CursorTrail />
       <div className="min-h-screen bg-gray-50 flex items-center justify-center p-8">
         <div className="space-y-8">
           <div className="text-center">
