@@ -1,5 +1,7 @@
 import React, { useEffect } from 'react';
+import { motion } from 'framer-motion';
 import { Navigation } from '../components/layout';
+import { SimpleFooter } from '../components/SimpleFooter';
 import { TYPOGRAPHY, COLORS, BORDER_RADIUS, SHADOWS } from '../constants/design-system';
 import { BRAND_LOGOS } from '../constants/navigation';
 import './GetStartedPage.css';
@@ -25,61 +27,111 @@ export const GetStartedPage: React.FC = () => {
   }, []);
 
   return (
-    <div className="flex flex-col items-start w-full bg-gray-50 min-h-screen">
+    <div className="flex flex-col items-start w-full min-h-screen" style={{ backgroundColor: 'rgba(228, 71, 130, 0.1)' }}>
       {/* Navigation */}
       <Navigation />
       
       {/* Main Content - Full Height */}
-      <section className="w-full flex-1 flex items-start pt-32 pb-8 px-4 sm:px-6 lg:px-8">
+      <section className="w-full flex-1 flex items-start pt-44 pb-8 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-start pt-12">
           
           {/* Left Content Section */}
-          <div className="space-y-8">
+          <motion.div 
+            className="space-y-4 max-w-lg"
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+          >
             {/* Main Headline */}
-            <div>
+            <motion.div
+              initial={{ opacity: 0, y: 40 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
+            >
               <h1 
-                className={`${TYPOGRAPHY.headings.h1.classes} text-gray-900 mb-6`}
-                style={{ fontSize: '64px', lineHeight: '1.1' }}
+                className="text-gray-900 mb-6 font-semibold"
+                style={{ fontSize: '70px', lineHeight: '1.1', fontFamily: 'Montserrat, Helvetica' }}
               >
                 Let's talk.
               </h1>
-            </div>
+            </motion.div>
             
             {/* Service Description */}
-            <div>
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, ease: "easeOut", delay: 0.4 }}
+            >
               <p 
                 className={`${TYPOGRAPHY.body.large.classes} text-gray-600 leading-relaxed`}
                 style={{ fontSize: '20px' }}
               >
                 Ready to cut through complexity and build a brand that truly moves people?
               </p>
-            </div>
+            </motion.div>
             
             {/* Benefits Section */}
-            <div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-4">
-                Talk to me today to:
-              </h3>
-              <ul className="space-y-3">
-                <li className="flex items-start">
-                  <div className="w-2 h-2 bg-pink-500 rounded-full mt-2 mr-3 flex-shrink-0"></div>
-                  <span className="text-gray-700">Audit your brand—map competitors, analyze every touchpoint and uncover hidden story gaps</span>
-                </li>
-                <li className="flex items-start">
-                  <div className="w-2 h-2 bg-pink-500 rounded-full mt-2 mr-3 flex-shrink-0"></div>
-                  <span className="text-gray-700">Sharpen your messaging and visual identity for clarity and impact</span>
-                </li>
-                <li className="flex items-start">
-                  <div className="w-2 h-2 bg-pink-500 rounded-full mt-2 mr-3 flex-shrink-0"></div>
-                  <span className="text-gray-700">Design a data-driven strategy that drives real growth</span>
-                </li>
-              </ul>
+            <div className="pt-4 pb-6">
+              <div className="space-y-6">
+                <div className="flex items-start">
+                  <div className="flex flex-col items-center mr-8 flex-shrink-0">
+                    <div className="w-12 h-12 bg-pink-100 rounded-xl flex items-center justify-center">
+                      <svg className="w-5 h-5 text-pink-500" fill="currentColor" viewBox="0 0 20 20">
+                        <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                      </svg>
+                    </div>
+                  </div>
+                  <div className="flex-1 max-w-none">
+                    <p className="text-gray-700 text-base leading-relaxed max-w-4xl">
+                      Articulate your unique story, why, values and vision, so every message feels authentic and memorable.
+                    </p>
+                  </div>
+                </div>
+                
+                <div className="flex justify-center">
+                  <div className="w-full h-px bg-gray-200"></div>
+                </div>
+                
+                <div className="flex items-start">
+                  <div className="flex flex-col items-center mr-8 flex-shrink-0">
+                    <div className="w-12 h-12 bg-pink-100 rounded-xl flex items-center justify-center">
+                      <svg className="w-5 h-5 text-pink-500" fill="currentColor" viewBox="0 0 20 20">
+                        <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                      </svg>
+                    </div>
+                  </div>
+                  <div className="flex-1 max-w-none">
+                    <p className="text-gray-700 text-base leading-relaxed max-w-4xl">
+                      Publish high-impact articles, LinkedIn posts and bylines without daily grind, making you the go-to expert.
+                    </p>
+                  </div>
+                </div>
+                
+                <div className="flex justify-center">
+                  <div className="w-full h-px bg-gray-200"></div>
+                </div>
+                
+                <div className="flex items-start">
+                  <div className="flex flex-col items-center mr-8 flex-shrink-0">
+                    <div className="w-12 h-12 bg-pink-100 rounded-xl flex items-center justify-center">
+                      <svg className="w-5 h-5 text-pink-500" fill="currentColor" viewBox="0 0 20 20">
+                        <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                      </svg>
+                    </div>
+                  </div>
+                  <div className="flex-1 max-w-none">
+                    <p className="text-gray-700 text-base leading-relaxed max-w-4xl">
+                      Pinpoint channels and cadence to amplify your voice, build trust and drive growth.
+                    </p>
+                  </div>
+                </div>
+              </div>
             </div>
             
             {/* Trusted By Section */}
-            <div>
+            <div className="pb-16">
               <p className="text-gray-600 font-medium mb-4">
-                Trusted by purpose-led startups and social-impact innovators.
+                trusted by
               </p>
               <div className="grid grid-cols-3 gap-6">
                 <div className="text-gray-400 text-lg font-medium hover:text-gray-600 transition-colors duration-300 logo-item">
@@ -99,22 +151,28 @@ export const GetStartedPage: React.FC = () => {
                 </div>
               </div>
             </div>
-          </div>
+          </motion.div>
           
           {/* Right Content Section - Calendly Widget */}
-          <div className="flex justify-center lg:justify-start">
+          <motion.div 
+            className="flex justify-center lg:justify-start"
+            initial={{ opacity: 0, y: 40 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, ease: "easeOut", delay: 0.6 }}
+          >
             <div className="bg-white border border-gray-200 rounded-2xl shadow-lg px-12 pt-12 w-full calendly-container">
               <div 
                 className="calendly-inline-widget" 
                 data-url="https://calendly.com/wildmountainimmigration/15min-call?hide_event_type_details=1&hide_gdpr_banner=1&primary_color=e44782" 
-                style={{ minWidth: '320px', height: '500px' }}
+                style={{ minWidth: '320px', height: '550px' }}
               ></div>
-              
-
             </div>
-          </div>
+          </motion.div>
         </div>
       </section>
+      
+      {/* Footer */}
+      <SimpleFooter />
     </div>
   );
 }; 
