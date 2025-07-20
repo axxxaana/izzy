@@ -729,7 +729,7 @@ export const MainContentSection = (): JSX.Element => {
                     </p>
                     <div className="relative pl-4">
                       <img
-                        className="w-full rounded-lg"
+                        className="w-[60%] mx-auto rounded-lg"
                         alt="Version history tracking"
                         src="/deliver-image.png"
                       />
