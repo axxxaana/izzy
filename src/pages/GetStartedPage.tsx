@@ -41,7 +41,7 @@ export const GetStartedPage: React.FC = () => {
                 className={`${TYPOGRAPHY.headings.h1.classes} text-gray-900 mb-6`}
                 style={{ fontSize: '64px', lineHeight: '1.1' }}
               >
-                Let's Chat.
+                Let's talk.
               </h1>
             </div>
             
@@ -51,8 +51,7 @@ export const GetStartedPage: React.FC = () => {
                 className={`${TYPOGRAPHY.body.large.classes} text-gray-600 leading-relaxed`}
                 style={{ fontSize: '20px' }}
               >
-                Izzy Prior Brand Marketing is the easiest way to transform your brand with 
-                <span className="text-pink-600 font-semibold"> NO-FLUFF</span> branding that just works.
+                Ready to cut through complexity and build a brand that truly moves people?
               </p>
             </div>
             
@@ -64,15 +63,15 @@ export const GetStartedPage: React.FC = () => {
               <ul className="space-y-3">
                 <li className="flex items-start">
                   <div className="w-2 h-2 bg-pink-500 rounded-full mt-2 mr-3 flex-shrink-0"></div>
-                  <span className="text-gray-700">Audit your brand—map competitors, review every touchpoint and spot hidden story gaps.</span>
+                  <span className="text-gray-700">Audit your brand—map competitors, analyze every touchpoint and uncover hidden story gaps</span>
                 </li>
                 <li className="flex items-start">
                   <div className="w-2 h-2 bg-pink-500 rounded-full mt-2 mr-3 flex-shrink-0"></div>
-                  <span className="text-gray-700">Clarify your core message and visual identity so you stand out with confidence.</span>
+                  <span className="text-gray-700">Sharpen your messaging and visual identity for clarity and impact</span>
                 </li>
                 <li className="flex items-start">
                   <div className="w-2 h-2 bg-pink-500 rounded-full mt-2 mr-3 flex-shrink-0"></div>
-                  <span className="text-gray-700">Plan a no-fluff strategy that turns your audience into loyal customers.</span>
+                  <span className="text-gray-700">Design a data-driven strategy that drives real growth</span>
                 </li>
               </ul>
             </div>
@@ -80,7 +79,7 @@ export const GetStartedPage: React.FC = () => {
             {/* Trusted By Section */}
             <div>
               <p className="text-gray-600 font-medium">
-                Trusted by purpose-led startups and industry changemakers.
+                Trusted by purpose-led startups and social-impact innovators.
               </p>
             </div>
           </div>
@@ -94,17 +93,7 @@ export const GetStartedPage: React.FC = () => {
                 style={{ minWidth: '320px', height: '700px' }}
               ></div>
               
-              {/* Fallback Link */}
-              <div className="mt-4 text-center">
-                <a 
-                  href="https://calendly.com/wildmountainimmigration/15min-call?hide_event_type_details=1&hide_gdpr_banner=1&primary_color=e44782" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="text-sm text-pink-600 hover:text-pink-700 transition-colors duration-200 font-medium"
-                >
-                  Can't see the calendar? Click here
-                </a>
-              </div>
+
             </div>
           </div>
         </div>
