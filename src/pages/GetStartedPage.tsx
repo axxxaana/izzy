@@ -30,8 +30,8 @@ export const GetStartedPage: React.FC = () => {
       <Navigation />
       
       {/* Main Content - Full Height */}
-      <section className="w-full flex-1 flex items-start pt-20 pb-8 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-start pt-8">
+      <section className="w-full flex-1 flex items-start pt-32 pb-8 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-start pt-12">
           
           {/* Left Content Section */}
           <div className="space-y-8">
