@@ -96,8 +96,8 @@ export const GetStartedPage: React.FC = () => {
           </div>
           
           {/* Right Content Section - Calendly Widget */}
-          <div className="flex justify-center lg:justify-end">
-            <div className="bg-white border border-gray-200 rounded-2xl shadow-lg p-8 w-full max-w-md calendly-container">
+          <div className="flex justify-center lg:justify-start">
+            <div className="bg-white border border-gray-200 rounded-2xl shadow-lg p-8 w-full calendly-container">
               <div className="mb-6">
                 <h3 className="text-xl font-semibold text-gray-900 mb-2">Schedule Your Free Consultation</h3>
                 <p className="text-gray-600 text-sm">15-minute call to discuss your branding needs</p>
@@ -105,7 +105,7 @@ export const GetStartedPage: React.FC = () => {
               <div 
                 className="calendly-inline-widget" 
                 data-url="https://calendly.com/wildmountainimmigration/15min-call?primary_color=e44782" 
-                style={{ minWidth: '320px', height: '600px' }}
+                style={{ minWidth: '320px', height: '700px' }}
               ></div>
               
               {/* Fallback Link */}
