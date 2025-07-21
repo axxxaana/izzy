@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { ServicesDropdown } from './ServicesDropdown';
 import './Navigation.css';
@@ -10,6 +10,7 @@ interface NavigationProps {
 export const Navigation: React.FC<NavigationProps> = ({ className = '' }) => {
   const location = useLocation();
   const [isServicesOpen, setIsServicesOpen] = useState(false);
+  const closeTimeoutRef = useRef<NodeJS.Timeout | null>(null);
   
   const navItems = [
     { label: "About", href: "/about" },
@@ -23,11 +24,34 @@ export const Navigation: React.FC<NavigationProps> = ({ className = '' }) => {
   };
 
   const handleServicesMouseEnter = () => {
+    // Clear any pending close timeout
+    if (closeTimeoutRef.current) {
+      clearTimeout(closeTimeoutRef.current);
+      closeTimeoutRef.current = null;
+    }
     setIsServicesOpen(true);
   };
 
   const handleServicesMouseLeave = () => {
-    setIsServicesOpen(false);
+    // Add a small delay before closing to make it more user-friendly
+    closeTimeoutRef.current = setTimeout(() => {
+      setIsServicesOpen(false);
+    }, 200);
+  };
+
+  const handleDropdownMouseEnter = () => {
+    // Clear any pending close timeout when hovering over dropdown
+    if (closeTimeoutRef.current) {
+      clearTimeout(closeTimeoutRef.current);
+      closeTimeoutRef.current = null;
+    }
+  };
+
+  const handleDropdownMouseLeave = () => {
+    // Add a small delay before closing
+    closeTimeoutRef.current = setTimeout(() => {
+      setIsServicesOpen(false);
+    }, 150);
   };
 
   return (

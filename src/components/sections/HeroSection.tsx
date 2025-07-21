@@ -1,5 +1,5 @@
 import React from 'react';
-import { Header } from '../layout/Header';
+import { Navigation } from '../layout/Navigation';
 
 interface HeroSectionProps {
   title: string;
@@ -26,7 +26,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
                     background: `url('${backgroundImage}') 50% 40% / cover`
                   }}
                 >
-                  <Header />
+                  <Navigation />
                 </div>
               </div>
             </div>

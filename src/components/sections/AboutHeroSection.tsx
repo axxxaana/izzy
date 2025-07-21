@@ -1,5 +1,4 @@
 import React from 'react';
-import { Navigation } from '../layout/Navigation';
 
 export const AboutHeroSection: React.FC = () => {
   return (
@@ -11,7 +10,6 @@ export const AboutHeroSection: React.FC = () => {
               <div className="relative h-full">
                 <div className="absolute w-full h-full top-0 left-0 bg-white opacity-10 rounded-[15px] sm:rounded-[18px] lg:rounded-[22.5px]" />
                 <div className="absolute w-full h-full top-0 left-0 [background:url('/about-izzy-hero.png')_50%_40%_/_cover] rounded-[15px] sm:rounded-[18px] lg:rounded-[22.5px]">
-                  <Navigation />
                 </div>
               </div>
             </div>
