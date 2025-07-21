@@ -172,3 +172,7 @@ body {
 img[src*="dear-bump-gray.png"] {
   filter: brightness(0.6) grayscale(1) !important;
 }
+
+img[src*="nexu-logo-grey.png"] {
+  margin-left: 30px;
+}
