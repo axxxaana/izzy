@@ -7,6 +7,12 @@ export const IMAGES = {
     qwantel: '/qwantel.png',
     dave: '/dave.png',
   },
+  // Client logos
+  clientLogos: {
+    dearBump: '/dear bump gray.png',
+    nexu: '/nexu logo grey.png',
+    parentPromise: '/parent promise grey.png',
+  },
 } as const;
 
 // Icon mappings for better organization

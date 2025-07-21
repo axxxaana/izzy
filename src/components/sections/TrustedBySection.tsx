@@ -1,5 +1,5 @@
 import React from 'react';
-import { BRAND_LOGOS } from '../../constants/navigation';
+import { TRUSTED_BY_LOGOS } from '../../constants/trustedBy';
 
 interface TrustedBySectionProps {
   className?: string;
@@ -20,27 +20,39 @@ export const TrustedBySection: React.FC<TrustedBySectionProps> = ({ className = 
         <div className="flex items-center animate-scroll">
           {/* Multiple sets of logos for seamless loop */}
           <div className="flex items-center space-x-12 ml-96">
-            {BRAND_LOGOS.map((logo, index) => (
-              <div key={`set1-${index}`} className="text-gray-400 text-xl font-medium whitespace-nowrap">
-                {logo}
+            {TRUSTED_BY_LOGOS.map((logo, index) => (
+              <div key={`set1-${index}`} className="flex items-center">
+                <img 
+                  src={logo.image!} 
+                  alt={logo.name}
+                  className="h-20 w-auto object-contain filter grayscale hover:grayscale-0 transition-all duration-300"
+                />
               </div>
             ))}
           </div>
           
           {/* Second set */}
           <div className="flex items-center space-x-12 ml-12">
-            {BRAND_LOGOS.map((logo, index) => (
-              <div key={`set2-${index}`} className="text-gray-400 text-xl font-medium whitespace-nowrap">
-                {logo}
+            {TRUSTED_BY_LOGOS.map((logo, index) => (
+              <div key={`set2-${index}`} className="flex items-center">
+                <img 
+                  src={logo.image!} 
+                  alt={logo.name}
+                  className="h-20 w-auto object-contain filter grayscale hover:grayscale-0 transition-all duration-300"
+                />
               </div>
             ))}
           </div>
           
           {/* Third set */}
           <div className="flex items-center space-x-12 ml-12">
-            {BRAND_LOGOS.map((logo, index) => (
-              <div key={`set3-${index}`} className="text-gray-400 text-xl font-medium whitespace-nowrap">
-                {logo}
+            {TRUSTED_BY_LOGOS.map((logo, index) => (
+              <div key={`set3-${index}`} className="flex items-center">
+                <img 
+                  src={logo.image!} 
+                  alt={logo.name}
+                  className="h-20 w-auto object-contain filter grayscale hover:grayscale-0 transition-all duration-300"
+                />
               </div>
             ))}
           </div>

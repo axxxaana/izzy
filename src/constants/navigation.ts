@@ -11,11 +11,12 @@ export const NAV_ITEMS: NavItem[] = [
 ];
 
 export const BRAND_LOGOS = [
-  'Coutu',
-  'Harnois',
-  'EROS',
-  'DIALEKTA',
-  'ABG',
-  'thirdbridge',
-  'CAMELLIA',
+  'Dear Bump',
+  'Nexu', 
+  'Parent Promise',
+  'GoFounder',
+  'Dream Factory',
+  'Make Us Care',
+  'Ninjas in Pyjamas',
+  'Unlock Your Block',
 ];
