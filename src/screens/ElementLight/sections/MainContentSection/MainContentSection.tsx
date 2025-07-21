@@ -15,7 +15,7 @@ import { useScrollAnimation } from "../../../../hooks/useScrollAnimation";
 import { BrandSection } from "../../../../components/sections/BrandSection";
 import SpotlightCard from "../../../../components/SpotlightCard";
 import { TrustedByBanner } from "../../../../components/TrustedByBanner";
-import { Header } from "../../../../components/layout/Header";
+import { Navigation } from "../../../../components/layout/Navigation";
 
 export const MainContentSection = (): JSX.Element => {
   // Rotating words for the h1
@@ -176,7 +176,7 @@ export const MainContentSection = (): JSX.Element => {
                 <div className="relative h-full">
                   <div className="absolute w-full h-full top-0 left-0 bg-white opacity-10 rounded-[15px] sm:rounded-[18px] lg:rounded-[22.5px]" />
                   <div className="absolute w-full h-full top-0 left-0 [background:url('/Izzy-Prior-Homepage-Heder.png')_50%_40%_/_cover] rounded-[15px] sm:rounded-[18px] lg:rounded-[22.5px]">
-                    <Header />
+                    <Navigation />
                   </div>
                 </div>
               </div>

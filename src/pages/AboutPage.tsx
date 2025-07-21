@@ -1,6 +1,6 @@
 import React from 'react';
 import { Layout } from '../components/layout/Layout';
-import { Header } from '../components/layout';
+import { Navigation } from '../components/layout';
 import { AboutHeroSection } from '../components/sections/AboutHeroSection';
 import { AboutStorySection } from '../components/sections/AboutStorySection';
 import { AboutExperienceSection } from '../components/sections/AboutExperienceSection';
@@ -18,8 +18,10 @@ export const AboutPage: React.FC = () => {
     >
       {/* Cursor Trail Effect */}
       <CursorTrail />
+      {/* Navigation */}
+      <Navigation />
       <div className="flex flex-col items-start w-full bg-white">
-        {/* Hero Section with Header */}
+        {/* Hero Section */}
         <AboutHeroSection />
         
         {/* Story Section */}

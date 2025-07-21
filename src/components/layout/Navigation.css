@@ -145,6 +145,35 @@
   font-weight: 600;
 }
 
+.nav-item-dropdown {
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  position: relative;
+}
+
+.nav-item-dropdown:hover {
+  color: #e44782;
+}
+
+.dropdown-arrow {
+  font-size: 0.75rem;
+  transition: transform 0.2s ease;
+  margin-left: 0.25rem;
+}
+
+.nav-item-dropdown:hover .dropdown-arrow {
+  transform: rotate(180deg);
+}
+
+.nav-item-dropdown-container {
+  position: relative;
+  display: inline-block;
+}
+
 .get-started-btn {
   width: 8rem;
   height: 2.5rem;
