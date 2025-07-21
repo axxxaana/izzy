@@ -168,3 +168,7 @@ body {
 .rotate-y-180 {
   transform: rotateY(180deg);
 }
+
+img[src*="dear-bump-gray.png"] {
+  filter: brightness(0.6) grayscale(1) !important;
+}
