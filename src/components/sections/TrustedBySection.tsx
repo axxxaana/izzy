@@ -19,16 +19,29 @@ export const TrustedBySection: React.FC<TrustedBySectionProps> = ({ className = 
       <div className="absolute left-0 top-1/2 transform -translate-y-1/2 w-full">
         <div className="flex items-center animate-scroll">
           {/* Multiple sets of logos for seamless loop */}
-          <div className="flex items-center space-x-12 ml-96">
-            {TRUSTED_BY_LOGOS.map((logo, index) => (
-              <div key={`set1-${index}`} className="flex items-center">
-                <img 
-                  src={logo.image!} 
-                  alt={logo.name}
-                  className="h-20 w-auto object-contain filter grayscale hover:grayscale-0 transition-all duration-300"
-                />
-              </div>
-            ))}
+          <div className="flex items-center ml-24">
+            {TRUSTED_BY_LOGOS.map((logo, index) => {
+              let marginStyle = {};
+              if (logo.name === 'Nexu') marginStyle = { marginLeft: 10, marginRight: 18 };
+              else if (logo.name === 'DF') marginStyle = { marginLeft: 18, marginRight: 18 };
+              else if (logo.name === 'GoFounder') marginStyle = { marginLeft: 18, marginRight: 18 };
+              else if (logo.name === 'Make Us Care') marginStyle = { marginLeft: 18, marginRight: 18 };
+              else if (logo.name === 'Ninjas in Pyjamas') marginStyle = { marginLeft: 18, marginRight: 18 };
+              else if (logo.name === 'Dear Bump') marginStyle = { marginLeft: 18, marginRight: 18 };
+              return (
+                <div
+                  key={`set1-${index}`}
+                  className="flex items-center"
+                  style={marginStyle}
+                >
+                  <img 
+                    src={logo.image!} 
+                    alt={logo.name}
+                    className={`w-auto object-contain filter grayscale hover:grayscale-0 transition-all duration-300${logo.name === 'Ninjas in Pyjamas' ? ' h-24' : ' h-20'}`}
+                  />
+                </div>
+              );
+            })}
           </div>
           
           {/* Second set */}

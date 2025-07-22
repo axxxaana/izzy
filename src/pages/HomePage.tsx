@@ -10,7 +10,7 @@ export const HomePage: React.FC = () => {
     window.scrollTo(0, 0);
   }, []);
   return (
-    <div className="flex flex-col items-start w-full bg-white">
+    <div className="flex flex-col items-start w-full bg-white" style={{ minHeight: 'auto', height: 'auto', flexWrap: 'nowrap' }}>
       {/* Cursor Trail Effect */}
       <CursorTrail />
       {/* Navigation */}

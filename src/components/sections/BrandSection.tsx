@@ -5,13 +5,13 @@ export const BrandSection: React.FC = () => {
 
   // Animation configuration for perfect fanned-out arc layout
   const cardData = [
-    { src: '/image-8.png', zIndex: 94 }, // Far left
-    { src: '/image-7.png', zIndex: 95 },
-    { src: '/image-6.png', zIndex: 96 },
-    { src: '/image-1.png', zIndex: 100 }, // Center (highest z-index)
-    { src: '/image-3.png', zIndex: 96 },
-    { src: '/image-4.png', zIndex: 95 },
-    { src: '/image-5.png', zIndex: 94 }, // Far right
+    { src: '/Eddie-Whittingham.jpeg', zIndex: 94 }, // Far left
+    { src: '/Emma.jpeg', zIndex: 95 },
+    { src: '/Nick.jpeg', zIndex: 96 },
+    { src: '/Sally.jpeg', zIndex: 100 }, // Center (highest z-index)
+    { src: '/Jem.jpeg', zIndex: 96 },
+    { src: '/Emily.jpeg', zIndex: 95 },
+    { src: '/Ben.jpg', zIndex: 94 }, // Far right
   ];
 
   const getCardTransform = (index: number) => {
@@ -125,30 +125,32 @@ export const BrandSection: React.FC = () => {
         </div>
 
         {/* 2. 💬 Capsule Tagline */}
-        <motion.div 
-          className="flex justify-center w-full"
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.3 }}
-          transition={{ duration: 0.6, ease: "easeOut" }}
-        >
-          <h2 className="[font-family:'Montserrat',Helvetica] font-semibold text-black text-[40px] text-center bg-gradient-to-r from-gray-900 to-gray-700 bg-clip-text text-transparent">
-            Strategy. Voice. Visibility.
-          </h2>
-        </motion.div>
+        <div className="mt-2.5">
+          <motion.div 
+            className="flex justify-center w-full"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ duration: 0.6, ease: "easeOut" }}
+          >
+            <h2 className="[font-family:'Montserrat',Helvetica] font-semibold text-black text-[40px] text-center bg-gradient-to-r from-gray-900 to-gray-700 bg-clip-text text-transparent mb-0">
+              Trusted by the best
+            </h2>
+          </motion.div>
 
-        {/* 3. 📝 Main Headline */}
-        <motion.div 
-          className="w-full flex justify-center"
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.3 }}
-          transition={{ duration: 0.6, ease: "easeOut", delay: 0.2 }}
-        >
-          <p className="text-lg leading-[1.7] text-gray-700 text-center max-w-xl">
-            End-to-end brand and marketing solutions, refining your core message, building scalable content systems, and executing data-driven campaigns that drive real growth.
-          </p>
-        </motion.div>
+          {/* 3. 📝 Main Headline */}
+          <motion.div 
+            className="w-full flex justify-center"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ duration: 0.6, ease: "easeOut", delay: 0.2 }}
+          >
+            <p className="text-lg leading-[1.3] text-gray-700 text-center max-w-md mt-0 mb-0">
+              Trusted by founders, startups, and brands who demand real results and lasting impact.
+            </p>
+          </motion.div>
+        </div>
 
         {/* 4. 🚀 Get Started Button */}
         <motion.div 

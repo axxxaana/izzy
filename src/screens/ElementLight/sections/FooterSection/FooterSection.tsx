@@ -10,7 +10,7 @@ export const FooterSection = (): JSX.Element => {
     <>
       {/* Main Footer with Background Image */}
       <motion.footer 
-        className="w-full bg-[url(/footer%20izzy.png)] bg-cover bg-center bg-no-repeat rounded-[25px] pt-[50px] pb-48 p-3 sm:p-4 lg:p-[15px]"
+        className="w-full bg-[url(/izzy%20footer1.png)] bg-cover bg-center bg-no-repeat rounded-[25px] pt-[50px] pb-48 p-3 sm:p-4 lg:p-[15px]"
         initial={{ opacity: 0, y: 60 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, ease: "easeOut" }}
@@ -148,6 +148,7 @@ export const FooterSection = (): JSX.Element => {
 
             {/* Navigation Links */}
             <motion.div
+              className="ml-8"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, ease: "easeOut", delay: 0.2 }}

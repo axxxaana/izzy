@@ -146,36 +146,61 @@ export const MainContentSection = (): JSX.Element => {
   // Testimonials data
   const testimonials = [
     {
-      name: "Blake Beus",
-      role: "App Security at JPMorgan Chase",
-      text: "I can't believe that I used to run my business without Jumpshare. My clients are VERY impressed that I can quickly take videos, GIFs, and screenshots showing them what we need to do or give them feedback on project requirements.",
-      image: "/blake.png",
+      name: 'Emily Hughes',
+      role: 'Wellness Founder',
+      text: "Izzy is the absolute best in the business for Personal Branding! Her passion and enthusiasm is infectious. She helped me create a compelling personal brand that truly represents who I am and what I stand for. Her strategic approach and attention to detail are unmatched.",
+      image: '/Emily Hughes.jpeg',
     },
     {
-      name: "Qwantel Latay",
-      role: "Online Business Manager",
-      text: 'Jumpshare is one of those "where have you been my whole life" tools. They combined tools that I\'d been using all into one cohesive little network when sharing files. Such a genius product, and I hope they stay around forever!',
-      image: "/qwantel.png",
+      name: 'Sally Douglas',
+      role: 'Author & Speaker',
+      text: "Izzy made me feel confident and clear on what I need to do. Her passion and enthusiasm is infectious. I've become a lot more effective and efficient at LinkedIn thanks to her help. She truly understands how to build authentic personal brands that connect with your audience.",
+      image: '/Sally Douglas.jpeg',
     },
     {
-      name: "Dave Baxter",
-      role: "Estate Agent at DBRealty",
-      text: "Jumpshare saves me a ton of time and allows me to work on my schedule. Customers love getting detailed screencasts from me with a call-to-action link for appointments. It's a beautiful workflow. You cannot afford to NOT use Jumpshare.",
-      image: "/dave.png",
+      name: 'Jem Stein',
+      role: 'Purpose-led Founder',
+      text: "Izzy is the absolute best in the business for Personal Branding! She helped me create a compelling personal brand that truly represents who I am and what I stand for. Her strategic approach and attention to detail are unmatched. I've seen incredible results in my business since working with her.",
+      image: '/Jem Stein.jpeg',
+    },
+    {
+      name: 'Emma Abbasi',
+      role: 'Femtech Founder',
+      text: "Izzy provided guidance in LinkedIn content strategy for community-driven content and lead generation. Her strategic approach helped me build meaningful connections and grow my femtech platform. She's incredibly knowledgeable about building authentic personal brands.",
+      image: '/Emma Abbasi.jpeg',
     },
   ];
+
+  // Inside MainContentSection component, add state and handler:
+  const [activeTestimonialIdx, setActiveTestimonialIdx] = useState(0);
+  const [fade, setFade] = useState(false);
+  const handleTestimonialClick = (idx: number) => {
+    if (idx === activeTestimonialIdx) return;
+    setFade(true);
+    setTimeout(() => {
+      setActiveTestimonialIdx(idx);
+      setFade(false);
+    }, 250);
+  };
 
   return (
     <div className="flex flex-col items-center w-full relative">
       {/* Hero Section */}
       <div className="w-full relative mb-0">
-        <div className="w-full h-[700px] sm:h-[800px] md:h-[850px] lg:h-[800px] xl:h-[850px] relative p-3 sm:p-4 lg:p-[15px]">
-          <div className="relative w-full h-[670px] sm:h-[770px] md:h-[820px] lg:h-[770px] xl:h-[820px] mx-auto rounded-[15px] sm:rounded-[18px] lg:rounded-[22.5px] overflow-hidden">
+        <div className="w-full h-[700px] relative p-3 sm:p-4 lg:p-[15px]">
+          <div className="relative w-full h-[670px] mx-auto rounded-[15px] sm:rounded-[18px] lg:rounded-[22.5px] overflow-hidden">
             <div className="relative h-full">
               <div className="absolute w-full h-full top-0 left-0">
                 <div className="relative h-full">
                   <div className="absolute w-full h-full top-0 left-0 bg-white opacity-10 rounded-[15px] sm:rounded-[18px] lg:rounded-[22.5px]" />
-                  <div className="absolute w-full h-full top-0 left-0 [background:url('/Izzy-Prior-Homepage-Heder.png')_50%_40%_/_cover] rounded-[15px] sm:rounded-[18px] lg:rounded-[22.5px]">
+                  <div
+                    className="absolute w-full h-full top-0 left-0 rounded-[15px] sm:rounded-[18px] lg:rounded-[22.5px]"
+                    style={{
+                      backgroundImage: "url('/izzy 6.png')",
+                      backgroundPosition: "50% 40%",
+                      backgroundSize: "cover"
+                    }}
+                  >
                     <Navigation />
                   </div>
                 </div>
@@ -184,7 +209,7 @@ export const MainContentSection = (): JSX.Element => {
               {/* Hero Content - Text Only */}
               <div className="absolute max-w-[800px] top-[225px] sm:top-[225px] md:top-[265px] lg:top-[225px] xl:top-[265px] left-[25%] sm:left-[25%] md:left-[25%] lg:left-[20%] xl:left-[10.5%] 2xl:left-[16%] px-4">
                 <div className="w-full">
-                  <h1 className="[font-family:'Montserrat',Helvetica] font-semibold text-white text-[75px] text-left tracking-[-1.2px] leading-[1.1] mb-2 text-shadow-medium animate-fade-in-up">
+                  {/* <h1 className="[font-family:'Montserrat',Helvetica] font-semibold text-black text-[75px] text-left tracking-[-1.2px] leading-[1.1] mb-2 text-shadow-medium animate-fade-in-up">
                     High-Impact{" "}
                     <span 
                       className={`inline-block min-w-[500px] relative overflow-hidden transition-all duration-600 ease-[cubic-bezier(0.4,0,0.2,1)] ${
@@ -193,16 +218,16 @@ export const MainContentSection = (): JSX.Element => {
                     >
                       {rotatingWords[currentWordIndex]}
                     </span>
-                  </h1>
-                  <p className="[font-family:'Inter',Helvetica] font-normal text-white text-[18px] text-left tracking-[0] leading-[28px] max-w-[600px] opacity-95 mb-6 text-shadow-subtle animate-fade-in-up-delayed">
+                  </h1> */}
+                  {/* <p className="[font-family:'Inter',Helvetica] font-normal text-black text-[18px] text-left tracking-[0] leading-[28px] max-w-[600px] opacity-95 mb-6 text-shadow-subtle animate-fade-in-up-delayed">
                     Brand systems that captivate your audience, amplify your core message, and deliver measurable growth across every touchpoint.
-                  </p>
-                  <Link 
+                  </p> */}
+                  {/* <Link 
                     to="/get-started"
                     className="hero-button animate-fade-in-up-button inline-block bg-white text-[#e44782] border-2 border-[#e44782] rounded-[0.84rem] px-5 py-3 text-[20px] font-['Montserrat'] font-medium transition-all duration-300 ease-out shadow-[0_8px_25px_rgba(228,71,130,0.3)] hover:bg-[#e44782] hover:text-white hover:scale-105 cursor-pointer no-underline"
                   >
                     Get Started
-                  </Link>
+                  </Link> */}
                 </div>
               </div>
             </div>
@@ -708,7 +733,7 @@ export const MainContentSection = (): JSX.Element => {
                       <div 
                         className="[font-family:'Montserrat',Helvetica] font-black text-[100px] tracking-[-4px] leading-[110px]"
                         style={{
-                          backgroundImage: "url('/izzy scroll 3.jpg')",
+                          backgroundImage: "url('/cut the fluff background.jpg')",
                           backgroundSize: "cover",
                           backgroundPosition: "center",
                           WebkitBackgroundClip: "text",
@@ -966,207 +991,60 @@ export const MainContentSection = (): JSX.Element => {
         </motion.div>
 
         {/* Reviews/Testimonials Section */}
-        <div className="w-full mt-2">
-          <div className="w-full bg-gradient-to-br from-gray-50 to-white rounded-[67.5px_67.5px_0px_0px] py-20 pb-[200px]">
-            <div className="w-full max-w-[1200px] mx-auto px-8">
-              
-                            {/* Reviews Heading */}
-              <motion.div 
-                className="text-center mb-20"
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, amount: 0.3 }}
-                transition={{ duration: 0.5, ease: "easeOut" }}
-              >
-                <h3 className="[font-family:'Montserrat',Helvetica] font-semibold text-[#091329] text-[40px] tracking-[-1.73px] leading-[50px] mb-6">
-                  Client Reviews
-                </h3>
-                <p className="[font-family:'Inter',Helvetica] text-[#091329]/70 text-[16px] leading-[24px] max-w-lg mx-auto">
-                  Hear from clients who have transformed their personal brands and achieved measurable results.
+        <section className="w-full flex flex-col items-center justify-center pt-10 pb-44 bg-white" style={{ background: '#fff', width: '100%' }}>
+          <h2 className="text-4xl md:text-5xl font-extrabold text-center mb-12 tracking-tight" style={{ fontFamily: 'Montserrat, Helvetica', color: '#091329' }}>
+            What My Clients Say
+          </h2>
+          <div className="w-full max-w-2xl mx-auto flex flex-col items-center">
+            <div
+              key={activeTestimonialIdx}
+              className={`transition-opacity duration-500 ease-in-out ${fade ? 'opacity-0' : 'opacity-100'} w-full`}
+            >
+              {['Jem Stein', 'Emma Abbasi'].includes(testimonials[activeTestimonialIdx].name) ? (
+                <p className="w-full text-xl md:text-2xl text-center text-[#091329] font-normal italic mb-8 leading-relaxed" style={{ fontFamily: 'Inter, Helvetica', lineHeight: '1.5', maxWidth: '44rem' }}>
+                  "{testimonials[activeTestimonialIdx].text}"
                 </p>
-              </motion.div>
-
-              {/* Featured Testimonial */}
-              <motion.div 
-                className="bg-white rounded-2xl p-12 mb-16 relative shadow-lg shadow-gray-200/50 border border-gray-200"
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, amount: 0.3 }}
-                transition={{ duration: 0.6, ease: "easeOut" }}
-              >
-                <div className="flex items-start justify-between">
-                  <div className="w-2/3 pr-8">
-                    <p className="[font-family:'Inter',Helvetica] text-[#091329] text-[22px] leading-[30px] font-medium mb-4 text-left">
-                      "Izzy is the absolute best in the business for Personal Branding! She helped me create a compelling personal brand that truly represents who I am and what I stand for. Her strategic approach and attention to detail are unmatched. I've seen incredible results in my business since working with her."
-                    </p>
-                    <div className="text-left">
-                      <h4 className="[font-family:'Montserrat',Helvetica] font-bold text-[#091329] text-[24px] mb-0.5">
-                        Jem Stein
-                      </h4>
-                      <p className="[font-family:'Inter',Helvetica] text-[#091329]/60 text-[16px]">
-                        Purpose-led Founder
-                    </p>
-                  </div>
-                    </div>
-                  <div className="w-1/3 flex justify-center items-center">
-                    <img 
-                      src="/Jem Stein.jpeg" 
-                      alt="Jem Stein" 
-                      className="w-40 h-40 rounded-[0.84rem] object-cover border-2 border-[#e44782] shadow-lg"
-                    />
-                  </div>
-                </div>
-              </motion.div>
-
-              {/* Three Smaller Testimonials */}
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                
-                {/* Review 1 - Sally Douglas */}
-                <motion.div 
-                  className="bg-white rounded-2xl p-8 shadow-lg shadow-gray-200/50 border border-gray-200"
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true, amount: 0.3 }}
-                  transition={{ duration: 0.5, ease: "easeOut", delay: 0.1 }}
+              ) : (
+                <p className="w-full text-xl md:text-2xl text-center text-[#091329] font-normal italic mb-8 leading-relaxed" style={{ fontFamily: 'Inter, Helvetica', lineHeight: '1.5' }}>
+                  "{testimonials[activeTestimonialIdx].text}"
+                </p>
+              )}
+              <div className="flex flex-col items-center">
+                <span className="font-bold text-lg md:text-xl text-[#091329]" style={{ fontFamily: 'Montserrat, Helvetica' }}>
+                  {testimonials[activeTestimonialIdx].name}
+                </span>
+                <span className="text-sm md:text-base text-[#091329]/50 mt-1" style={{ fontFamily: 'Inter, Helvetica' }}>
+                  {testimonials[activeTestimonialIdx].role}
+                </span>
+              </div>
+            </div>
+            {/* Profile Image Carousel */}
+            <div className="flex items-center justify-center gap-4 mt-12 flex-wrap">
+              {testimonials.map((t, idx) => (
+                <button
+                  key={t.name}
+                  onClick={() => handleTestimonialClick(idx)}
+                  className="focus:outline-none bg-transparent p-0 m-0"
+                  aria-label={`Show testimonial from ${t.name}`}
+                  style={{ background: 'transparent' }}
                 >
-                  <div className="flex items-center mb-6">
-                    <img 
-                      src="/Sally Douglas.jpeg" 
-                      alt="Sally Douglas" 
-                      className="w-12 h-12 rounded-[0.84rem] object-cover mr-4 flex-shrink-0 border-2 border-[#e44782]"
+                  <div
+                    className={`w-16 h-16 md:w-20 md:h-20 rounded-[0.84rem] border border-gray-200 transition-all duration-200 overflow-hidden flex items-center justify-center p-0 m-0
+                      ${idx === activeTestimonialIdx ? 'opacity-100 scale-105' : 'opacity-60 hover:opacity-90'} hover:scale-105 hover:brightness-110`}
+                    style={{ boxSizing: 'border-box', borderWidth: '1.5px' }}
+                  >
+                    <img
+                      src={t.image}
+                      alt={t.name}
+                      className="w-full h-full object-cover rounded-[0.84rem] border-none p-0 m-0"
+                      style={{ display: 'block' }}
                     />
-                      <div>
-                      <h4 className="[font-family:'Montserrat',Helvetica] font-bold text-[#091329] text-[18px] mb-0">
-                        Sally Douglas
-                      </h4>
-                      <p className="[font-family:'Inter',Helvetica] text-[#091329]/60 text-[14px]">
-                        Author & Speaker
-                        </p>
-                      </div>
-                    </div>
-                  <p className="[font-family:'Inter',Helvetica] text-[#091329]/80 text-[15px] leading-[22px] mb-6">
-                    "Izzy made me feel confident and clear on what I need to do. Her passion and enthusiasm is infectious. I've become a lot more effective and efficient at LinkedIn thanks to her help. She truly understands how to build authentic personal brands that connect with your audience."
-                  </p>
-                  <div className="flex text-[#e44782]">
-                    <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-                      <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                    </svg>
-                    <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-                      <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                    </svg>
-                    <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-                      <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                    </svg>
-                    <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-                      <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                    </svg>
-                    <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-                      <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                    </svg>
                   </div>
-                </motion.div>
-
-                                {/* Review 2 - Emma Abbasi */}
-                <motion.div 
-                  className="bg-white rounded-2xl p-8 shadow-lg shadow-gray-200/50 border border-gray-200"
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true, amount: 0.3 }}
-                  transition={{ duration: 0.5, ease: "easeOut", delay: 0.2 }}
-                >
-                  <div className="flex items-center mb-6">
-                    <img 
-                      src="/Emma Abbasi.jpeg" 
-                      alt="Emma Abbasi" 
-                      className="w-12 h-12 rounded-[0.84rem] object-cover mr-4 flex-shrink-0 border-2 border-[#e44782]"
-                    />
-                    <div>
-                      <h4 className="[font-family:'Montserrat',Helvetica] font-bold text-[#091329] text-[18px] mb-0">
-                        Emma Abbasi
-                      </h4>
-                      <p className="[font-family:'Inter',Helvetica] text-[#091329]/60 text-[14px]">
-                        Femtech Founder
-                      </p>
+                </button>
+              ))}
             </div>
           </div>
-                  <p className="[font-family:'Inter',Helvetica] text-[#091329]/80 text-[15px] leading-[22px] mb-6">
-                    "Izzy provided guidance in LinkedIn content strategy for community-driven content and lead generation. Her strategic approach helped me build meaningful connections and grow my femtech platform. She's incredibly knowledgeable about building authentic personal brands."
-                  </p>
-                  <div className="flex text-[#e44782]">
-                    <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-                      <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                    </svg>
-                    <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-                      <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                    </svg>
-                    <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-                      <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                    </svg>
-                    <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-                      <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                    </svg>
-                    <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-                      <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                    </svg>
-                    <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-                      <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                    </svg>
-          </div>
-        </motion.div>
-
-                                {/* Review 3 - Emily Hughes */}
-                <motion.div 
-                  className="bg-white rounded-2xl p-8 shadow-lg shadow-gray-200/50 border border-gray-200"
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true, amount: 0.3 }}
-                  transition={{ duration: 0.5, ease: "easeOut", delay: 0.3 }}
-                >
-                  <div className="flex items-center mb-6">
-                    <img 
-                      src="/Emily Hughes.jpeg" 
-                      alt="Emily Hughes" 
-                      className="w-12 h-12 rounded-[0.84rem] object-cover mr-4 flex-shrink-0 border-2 border-[#e44782]"
-                    />
-                    <div>
-                      <h4 className="[font-family:'Montserrat',Helvetica] font-bold text-[#091329] text-[18px] mb-0">
-                        Emily Hughes
-                      </h4>
-                      <p className="[font-family:'Inter',Helvetica] text-[#091329]/60 text-[14px]">
-                        Wellness Founder
-              </p>
-            </div>
-                  </div>
-                  <p className="[font-family:'Inter',Helvetica] text-[#091329]/80 text-[15px] leading-[22px] mb-6">
-                    "Izzy is the absolute best in the business for Personal Branding! Her passion and enthusiasm is infectious. She helped me create a compelling personal brand that truly represents who I am and what I stand for. Her strategic approach and attention to detail are unmatched."
-                  </p>
-                  <div className="flex text-[#e44782]">
-                    <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-                      <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                    </svg>
-                    <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-                      <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                    </svg>
-                    <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-                      <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                    </svg>
-                    <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-                      <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                    </svg>
-                    <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-                      <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                    </svg>
-                    </div>
-          </motion.div>
-
-
-
-        </div>
-
-            </div>
-          </div>
-        </div>
-
+        </section>
 
       </div>
     </div>
