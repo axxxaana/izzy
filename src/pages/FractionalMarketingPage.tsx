@@ -5,12 +5,13 @@ import { FooterSection } from '../screens/ElementLight/sections/FooterSection';
 import { TrustedByBanner } from '../components/TrustedByBanner';
 import { IdealClientSection, TestimonialsSection } from '../components/sections';
 import { HowItWorksSection } from '../components/sections/HowItWorksSection';
+import { PortfolioSection } from '../components/sections/PortfolioSection';
 
 const ROTATING_WORDS = [
-  'Unforgettable',
-  'Respected',
-  'Trusted',
-  'Relatable',
+  'Grow',
+  'Convert',
+  'Scale',
+  'Lead',
 ];
 
 export const FractionalMarketingPage: React.FC = () => {
@@ -18,7 +19,6 @@ export const FractionalMarketingPage: React.FC = () => {
   const [fade, setFade] = useState(false);
 
   useEffect(() => {
-    window.scrollTo(0, 0);
     const interval = setInterval(() => {
       setFade(true);
       setTimeout(() => {
@@ -66,17 +66,17 @@ export const FractionalMarketingPage: React.FC = () => {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: 0.4 }}
                 >
-                  FOUNDERS
+                  STARTUPS
                 </motion.span>
                 
                 <motion.h1 
-                  className="max-w-4xl mx-auto text-[40px] md:text-[64px] font-extrabold text-center mb-4 leading-[1.1]" 
+                  className="max-w-6xl mx-auto text-[40px] md:text-[64px] font-extrabold text-center mb-4 leading-[1.1]" 
                   style={{ color: '#0f0f10', fontFamily: 'Montserrat, Helvetica', letterSpacing: '-2px' }}
                   initial={{ opacity: 0, y: 40 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.8, delay: 0.6 }}
                 >
-                  Build a Personal Brand That Makes You{' '}
+                  Strategic Brand Direction That Helps Your Startup{' '}
                   <AnimatePresence mode="wait">
                     <motion.span
                       key={currentWordIndex}
@@ -99,7 +99,7 @@ export const FractionalMarketingPage: React.FC = () => {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.8, delay: 0.8 }}
                 >
-                  Shape your story, sharpen your message, and grow your reputation, all without posting every day. This is brand strategy for founders who want to lead with purpose, not noise.
+                  I help early-stage startups turn brand chaos into clarity, with messaging that lands, content that converts, and strategy that scales.
                 </motion.p>
                 
                 <motion.button 
@@ -158,7 +158,7 @@ export const FractionalMarketingPage: React.FC = () => {
           transition={{ duration: 0.6, delay: 0.4 }}
           viewport={{ once: true }}
         >
-          No fluff. Just a clear, proven system to turn your story into a magnetic personal brand — without burning out or posting every day.
+          A lean, proven framework to align your brand and marketing — so your business grows with clarity, not chaos.
         </motion.p>
       </motion.div>
       
@@ -171,9 +171,84 @@ export const FractionalMarketingPage: React.FC = () => {
       >
         <HowItWorksSection />
       </motion.div>
-      
+
+      {/* Portfolio Section - now above FAQ */}
+      <PortfolioSection />
+
+      {/* FAQ Section */}
+      <section className="w-full max-w-4xl mx-auto flex flex-col items-center py-20 px-4 pb-32">
+        <h2 className="text-4xl md:text-5xl font-extrabold text-center mb-8" style={{ color: '#0f0f10', fontFamily: 'Montserrat, Helvetica' }}>
+          Frequently Asked Questions
+        </h2>
+        <FAQSection />
+      </section>
+
       {/* FooterSection (homepage version) */}
       <FooterSection />
     </div>
   );
 }; 
+
+// FAQSection component and faqs moved from HowItWorksSection
+const faqs = [
+  {
+    q: "How is this different from hiring a full-time CMO?",
+    a: "This gives you senior-level marketing and brand leadership — without the overhead. You get clarity, strategy, and execution guidance tailored to your business stage, minus the cost and commitment of an in-house team."
+  },
+  {
+    q: "What exactly do you do as a fractional marketing partner?",
+    a: "We bring structure to the chaos. That means setting your marketing priorities, aligning messaging with growth goals, building campaigns that convert, and directing your team (or freelancers) so execution actually happens — without you managing every task."
+  },
+  {
+    q: "Is this a done-for-you service?",
+    a: "This is done-with-you at a strategic level, and done-for-you when it comes to brand positioning, marketing direction, and systems. Execution support is tailored — we either guide your team or bring in trusted partners where needed."
+  },
+  {
+    q: "I don’t have a marketing team — can this still work?",
+    a: "Absolutely. Whether you’re solo, working with freelancers, or starting to build a team, we plug into your existing setup and help you scale smart. No team? We’ll build the systems so you can grow into one."
+  },
+  {
+    q: "Will I need to be involved every day?",
+    a: "Not even close. We design systems so marketing runs without you in the weeds. You stay in the driver's seat of vision — while we handle direction, decision-making, and frameworks your team can run with."
+  },
+  {
+    q: "How long until I see traction?",
+    a: "Most clients feel clarity and momentum within the first few weeks. Long-term results build over 6–12 weeks as strategy turns into systems, and systems turn into scalable marketing."
+  }
+];
+
+function FAQSection() {
+  const [openIdx, setOpenIdx] = React.useState(0);
+  return (
+    <div className="w-full flex flex-col gap-4">
+      {faqs.map((faq, i) => {
+        const open = openIdx === i;
+        return (
+          <div
+            key={i}
+            className={`transition-all duration-400 border border-[#ececec] shadow-sm ${open ? 'bg-[rgba(228,71,130,0.08)] rounded-2xl' : 'bg-white'} px-8 py-6 group hover:shadow-md`}
+            style={{}}
+          >
+            <button
+              className="flex items-center w-full text-left focus:outline-none"
+              onClick={() => setOpenIdx(open ? -1 : i)}
+              aria-expanded={open}
+              style={{ fontWeight: 700, color: '#0f0f10', fontSize: '1.15rem' }}
+            >
+              <span className="inline-block mr-6 text-3xl font-black select-none" style={{ width: '2rem', display: 'inline-block', color: '#e44782' }}>{open ? '−' : '+'}</span>
+              <span className="flex-1">
+                {faq.q}
+              </span>
+            </button>
+            <div
+              className={`overflow-hidden transition-all duration-400 ${open ? 'max-h-40 mt-4 opacity-100 scale-100' : 'max-h-0 opacity-0 scale-95'}`}
+              style={{ fontSize: '1.08rem', color: '#222', fontWeight: 400, lineHeight: 1.7, transitionProperty: 'max-height, opacity, transform', paddingTop: open ? 8 : 0 }}
+            >
+              {open && <div>{faq.a}</div>}
+            </div>
+          </div>
+        );
+      })}
+    </div>
+  );
+} 

@@ -11,7 +11,7 @@ const features = [
       </span>
     ),
     title: "Purpose-Driven",
-    desc: "You want more than leads — you want a brand that stands for something. We help shape messaging around a mission that matters."
+    desc: "You want your brand to stand for something deeper than just revenue — a message, a mission, a movement."
   },
   {
     icon: (
@@ -23,7 +23,7 @@ const features = [
       </span>
     ),
     title: "Ambitious",
-    desc: "You’re scaling. Fast. And you need strategy that keeps up — making your brand as effective as your product."
+    desc: "You’re ready to grow your influence, own your narrative, and be recognized as the go-to in your space."
   },
   {
     icon: (
@@ -37,16 +37,16 @@ const features = [
       </span>
     ),
     title: "Time-Smart",
-    desc: "You don’t need more complexity. You need lean execution that respects your time — no fluff, no wasted cycles."
+    desc: "You want a strategy that works with your schedule — not one that drains your energy or demands daily posting."
   }
 ];
 
-export const IdealClientSection: React.FC = () => {
+export const IdealClientSectionFounder: React.FC = () => {
   return (
     <section className="w-full max-w-6xl mx-auto py-16 px-6 flex flex-col items-center mb-16">
-      <h2 className="text-4xl md:text-5xl font-extrabold text-center mb-2" style={{ color: '#0f0f10', fontFamily: 'Montserrat, Helvetica' }}>Made for Startups Like Yours</h2>
+      <h2 className="text-4xl md:text-5xl font-extrabold text-center mb-2" style={{ color: '#0f0f10', fontFamily: 'Montserrat, Helvetica' }}>Made for Founders Like You</h2>
       <p className="text-lg text-center mb-10 max-w-2xl opacity-80" style={{ fontFamily: 'Inter, Helvetica' }}>
-        If you want your brand to drive growth, without burning out or blending in,  you’re in the right place.
+        If this sounds like you, you’re in the right place.
       </p>
       <div className="flex flex-col md:flex-row gap-10 w-full justify-center items-stretch">
         {features.map((f, i) => (

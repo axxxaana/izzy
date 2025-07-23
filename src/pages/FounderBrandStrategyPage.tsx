@@ -3,8 +3,9 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Navigation } from '../components/layout';
 import { FooterSection } from '../screens/ElementLight/sections/FooterSection';
 import { TrustedByBanner } from '../components/TrustedByBanner';
-import { IdealClientSection, TestimonialsSection } from '../components/sections';
-import { HowItWorksSection } from '../components/sections/HowItWorksSection';
+import { IdealClientSectionFounder } from '../components/sections/IdealClientSectionFounder';
+import { TestimonialsSection } from '../components/sections';
+import { HowItWorksSectionFounder } from '../components/sections/HowItWorksSectionFounder';
 
 const ROTATING_WORDS = [
   'Unforgettable',
@@ -18,7 +19,6 @@ export const FounderBrandStrategyPage: React.FC = () => {
   const [fade, setFade] = useState(false);
 
   useEffect(() => {
-    window.scrollTo(0, 0);
     const interval = setInterval(() => {
       setFade(true);
       setTimeout(() => {
@@ -129,7 +129,7 @@ export const FounderBrandStrategyPage: React.FC = () => {
         transition={{ duration: 0.8, delay: 0.2 }}
         viewport={{ once: true, margin: "-100px" }}
       >
-        <IdealClientSection />
+        <IdealClientSectionFounder />
       </motion.div>
       
       {/* How It Works Section Heading with enhanced styling */}
@@ -169,7 +169,7 @@ export const FounderBrandStrategyPage: React.FC = () => {
         transition={{ duration: 0.8, delay: 0.2 }}
         viewport={{ once: true, margin: "-100px" }}
       >
-        <HowItWorksSection />
+        <HowItWorksSectionFounder />
       </motion.div>
       
       {/* FooterSection (homepage version) */}

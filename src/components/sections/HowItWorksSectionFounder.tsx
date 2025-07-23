@@ -5,72 +5,72 @@ import { TestimonialsSection } from './TestimonialsSection';
 const stages = [
   {
     tag: "Strategy",
-    heading: "Define the Vision",
+    heading: "Clarify Your Brand",
     subtext:
-      "Forget throwing spaghetti at the wall. We begin by aligning your brand and business direction — so every move you make builds momentum, not confusion.",
+      "No fluff. Just a clear, proven system to turn your story into a magnetic personal brand — without burning out or posting every day.",
     accordion: [
       {
-        title: "Align the Brand and the Business",
+        title: "Own Your Narrative",
         content:
-          "No more disjointed messaging. We connect your business goals to a clear brand strategy — so everything from your positioning to your offer actually makes sense.",
+          "Stop blending in. We'll help you shape a story that stands out and actually reflects who you are as a founder.",
       },
       {
-        title: "Clarify Your Edge",
+        title: "Dial In Your Positioning",
         content:
-          "What makes you different? We’ll help you articulate the unique advantage that sets your business apart — and build your narrative around it.",
+          "Get crystal clear on what you stand for — and who you stand out to — so people get it instantly.",
       },
       {
-        title: "Simplify the Strategy",
+        title: "Build a Strategic Foundation",
         content:
-          "Strategy shouldn’t be overwhelming. We cut through the noise and focus on what actually moves the needle — then map a clear path forward.",
+          "We'll align your vision, voice, and values so your brand feels authentic and built to last.",
       },
     ],
     visual: <img src="/define image.png" alt="Define Image" className="w-full h-full object-contain rounded-[40px]" />,
   },
   {
     tag: "Voice",
-    heading: "Shape the Message",
+    heading: "Create Amazing Content",
     subtext:
-      "Messaging is more than words. It’s how your business is understood, remembered, and trusted. We help you say what matters — in a way that actually converts.",
+      "Your story deserves better than a tired content calendar. Let's turn strategy into scroll-stopping content that builds trust — without chasing the algorithm gods.",
     accordion: [
       {
-        title: "Craft Core Messaging",
+        title: "Say What Matters",
         content:
-          "We distill your ideas into clear, compelling messages — so your website, pitch, and content all speak the same language (and it sounds like you).",
+          "We distill your ideas into meaningful content that reflects your voice and vision. No more generic thought-leadership. Just messages that move.",
       },
       {
-        title: "Stand Out Without Screaming",
+        title: "Content Without Burnout",
         content:
-          "No need for gimmicks. We help you define a voice that’s bold, honest, and unmistakably yours — without shouting into the void.",
+          "You don't need to post every day. We design a rhythm and system that fits your life — and still builds momentum. Strategic, high-impact content > chasing virality.",
       },
       {
-        title: "Make It Convert",
+        title: "Make It Memorable",
         content:
-          "From clarity to calls-to-action, we shape your messaging to guide real business decisions — not just likes and comments.",
+          "From bold hooks to compelling frameworks, we help you shape content that cuts through the scroll. Because trust starts with attention.",
       },
     ],
     visual: <img src="/deliver-image.png" alt="Deliver Image" className="w-full h-full object-contain rounded-[40px]" />,
   },
   {
     tag: "Visibility",
-    heading: "Build Strategic Visibility",
+    heading: "Grow With Intention",
     subtext:
-      "You don’t need to be everywhere. Just in the right places — consistently. We help you show up with a smart, streamlined marketing engine that actually moves the needle.",
+      "You don't need to be everywhere. Just in the right places, consistently. We help you scale your presence with clarity, not chaos.",
     accordion: [
       {
         title: "Choose the Right Channels",
         content:
-          "We identify where your audience actually pays attention — and create a presence strategy that’s lean, intentional, and sustainable.",
+          "We'll identify where your audience actually listens — and double down on what works. No more spreading yourself thin.",
       },
       {
-        title: "Design a Scalable System",
+        title: "Build in Public (Your Way)",
         content:
-          "We’ll build repeatable workflows so your visibility compounds — without demanding more time than you can give.",
+          "Whether it's LinkedIn, longform, or podcasts, we craft a strategy around your energy and goals. Visibility should feel aligned — not forced.",
       },
       {
-        title: "Stay Visible (Without Losing Focus)",
+        title: "Systems That Scale With You",
         content:
-          "You stay in your zone of genius. We’ll keep your brand top of mind with a system that works even when you’re off building the business.",
+          "From idea capture to publishing, we'll design a repeatable workflow to keep momentum going. So you show up — even on your busiest weeks.",
       },
     ],
     visual: <img src="/Chat bubble and texting on smartphone.png" alt="Chat bubble and texting on smartphone" className="w-full h-full object-contain rounded-[40px]" />,
@@ -86,7 +86,7 @@ const PlusMinusIcon = ({ open }: { open: boolean }) => (
   </span>
 );
 
-export const HowItWorksSection: React.FC = () => {
+export const HowItWorksSectionFounder: React.FC = () => {
   // Ensure first row of each accordion is open by default
   const [openIndexes, setOpenIndexes] = React.useState([0, 0, 0]);
 
@@ -95,6 +95,7 @@ export const HowItWorksSection: React.FC = () => {
       <section className="w-full max-w-6xl mx-auto py-24 px-4 flex flex-col gap-24 relative">
         {/* Stages */}
         {stages.map((stage, idx) => {
+          // Fade + subtle upward motion for all sections
           const contentInitial = { y: 30, opacity: 0 };
           const imageInitial = { y: 30, opacity: 0 };
           const contentOrder = idx % 2 === 0 ? 'order-2' : '';
@@ -171,11 +172,72 @@ export const HowItWorksSection: React.FC = () => {
       {/* Testimonials Section */}
       <TestimonialsSection />
       {/* FAQ Section */}
-      {/* FAQSection component and faqs moved to page file for export */}
+      <section className="w-full max-w-4xl mx-auto flex flex-col items-center py-20 px-4 pb-32">
+        <h2 className="text-4xl md:text-5xl font-extrabold text-center mb-8" style={{ color: '#0f0f10', fontFamily: 'Montserrat, Helvetica' }}>
+          Frequently Asked Questions
+        </h2>
+        <FAQSection />
+      </section>
     </>
   );
 };
 
-// FAQSection component and faqs moved to page file for export
+// FAQSection component
+const faqs = [
+  {
+    q: "How is this different from other personal brand services?",
+    a: "This is a founder-first, strategy-led process. No fluff, no generic playbooks. Everything is tailored to your story, your goals, and your schedule."
+  },
+  {
+    q: "Do I need to post every day?",
+    a: "No! The system is designed to help you say more with less, so you can build authority and momentum without burning out."
+  },
+  {
+    q: "What if I don’t know my story yet?",
+    a: "That’s exactly what we’ll uncover together. The first stage is all about clarifying your narrative and positioning."
+  },
+  {
+    q: "How long does the process take?",
+    a: "Most founders see clarity and results in 4–8 weeks, depending on your goals and pace."
+  },
+  {
+    q: "Is this just for LinkedIn?",
+    a: "Nope! The strategy works across platforms—wherever your audience is."
+  }
+];
 
- 
+function FAQSection() {
+  const [openIdx, setOpenIdx] = React.useState(0);
+  return (
+    <div className="w-full flex flex-col gap-4">
+      {faqs.map((faq, i) => {
+        const open = openIdx === i;
+        return (
+          <div
+            key={i}
+            className={`transition-all duration-400 border border-[#ececec] shadow-sm ${open ? 'bg-[rgba(228,71,130,0.08)] rounded-2xl' : 'bg-white'} px-8 py-6 group hover:shadow-md`}
+            style={{}}
+          >
+            <button
+              className="flex items-center w-full text-left focus:outline-none"
+              onClick={() => setOpenIdx(open ? -1 : i)}
+              aria-expanded={open}
+              style={{ fontWeight: 700, color: '#0f0f10', fontSize: '1.15rem' }}
+            >
+              <PlusMinusIcon open={open} />
+              <span className="flex-1">
+                {faq.q}
+              </span>
+            </button>
+            <div
+              className={`overflow-hidden transition-all duration-400 ${open ? 'max-h-40 mt-4 opacity-100 scale-100' : 'max-h-0 opacity-0 scale-95'}`}
+              style={{ fontSize: '1.08rem', color: '#222', fontWeight: 400, lineHeight: 1.7, transitionProperty: 'max-height, opacity, transform', paddingTop: open ? 8 : 0 }}
+            >
+              {open && <div>{faq.a}</div>}
+            </div>
+          </div>
+        );
+      })}
+    </div>
+  );
+} 

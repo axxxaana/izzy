@@ -7,12 +7,14 @@ import { GetStartedPage } from "./pages/GetStartedPage";
 import { FounderBrandStrategyPage } from "./pages/FounderBrandStrategyPage";
 import { FractionalMarketingPage } from "./pages/FractionalMarketingPage";
 import { ErrorBoundary } from "./components/ErrorBoundary";
+import ScrollToTop from "./components/layout/ScrollToTop";
 import "./styles/index.css";
 
 createRoot(document.getElementById("app") as HTMLElement).render(
   <StrictMode>
     <ErrorBoundary>
       <Router>
+        <ScrollToTop />
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/about" element={<AboutPage />} />

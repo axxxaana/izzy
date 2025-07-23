@@ -3,8 +3,8 @@ import { motion, AnimatePresence } from 'framer-motion';
 import SpotlightCard from '../SpotlightCard';
 import { Badge } from '../ui/badge';
 
-export const CaseStudiesSection: React.FC = () => {
-  const [activeCategory, setActiveCategory] = useState("FemTech");
+export const PortfolioSection: React.FC = () => {
+  const [activeCategory, setActiveCategory] = useState('FemTech');
 
   const handleCategoryChange = (category: string) => {
     setActiveCategory(category);
@@ -12,22 +12,21 @@ export const CaseStudiesSection: React.FC = () => {
 
   return (
     <motion.div 
-      className="w-full mt-32"
+      className="w-full mt-6"
       initial={{ opacity: 0, y: 30 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, amount: 0.3 }}
-      transition={{ duration: 0.6, ease: "easeOut" }}
+      transition={{ duration: 0.6, ease: 'easeOut' }}
     >
       <div className="w-full bg-white rounded-[67.5px_67.5px_0px_0px] py-16">
         <div className="w-full max-w-[1200px] mx-auto">
-          
-          {/* Case Studies Heading */}
+          {/* Portfolio Heading */}
           <motion.div 
             className="text-center mb-12"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.3 }}
-            transition={{ duration: 0.6, ease: "easeOut" }}
+            transition={{ duration: 0.6, ease: 'easeOut' }}
           >
             <h3 className="[font-family:'Montserrat',Helvetica] font-semibold text-[#091329] text-[40px] tracking-[-1.73px] leading-[50px] mb-6">
               Portfolio
@@ -36,14 +35,13 @@ export const CaseStudiesSection: React.FC = () => {
               Explore my work across different industries and services. Each project showcases strategic thinking, creative execution, and measurable results.
             </p>
           </motion.div>
-            
           {/* Category Tabs */}
           <motion.div 
             className="flex justify-center mb-6"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.3 }}
-            transition={{ duration: 0.6, ease: "easeOut", delay: 0.2 }}
+            transition={{ duration: 0.6, ease: 'easeOut', delay: 0.2 }}
           >
             <div className="flex bg-white/80 backdrop-blur-sm border border-gray-200/50 rounded-3xl p-1.5 gap-1 shadow-lg">
               {['FemTech', 'Community'].map((category) => (
@@ -61,7 +59,6 @@ export const CaseStudiesSection: React.FC = () => {
               ))}
             </div>
           </motion.div>
-
           {/* FemTech Category */}
           <AnimatePresence mode="wait">
             {activeCategory === 'FemTech' && (
@@ -106,7 +103,6 @@ export const CaseStudiesSection: React.FC = () => {
                       </div>
                     </div>
                   </SpotlightCard>
-
                   {/* Parent Promise */}
                   <SpotlightCard className="h-[500px] cursor-pointer" spotlightColor="rgba(228, 71, 130, 0.2)">
                     <div className="h-full flex flex-col">
@@ -139,7 +135,6 @@ export const CaseStudiesSection: React.FC = () => {
                       </div>
                     </div>
                   </SpotlightCard>
-
                   {/* Dear Bump */}
                   <SpotlightCard className="h-[500px] cursor-pointer" spotlightColor="rgba(228, 71, 130, 0.2)">
                     <div className="h-full flex flex-col">
@@ -175,7 +170,6 @@ export const CaseStudiesSection: React.FC = () => {
                 </div>
               </motion.div>
             )}
-
             {/* Community Category */}
             {activeCategory === 'Community' && (
               <motion.div
@@ -219,7 +213,6 @@ export const CaseStudiesSection: React.FC = () => {
                       </div>
                     </div>
                   </SpotlightCard>
-
                   {/* Wellnergy */}
                   <SpotlightCard className="h-[500px] cursor-pointer" spotlightColor="rgba(228, 71, 130, 0.2)">
                     <div className="h-full flex flex-col">
@@ -252,7 +245,6 @@ export const CaseStudiesSection: React.FC = () => {
                       </div>
                     </div>
                   </SpotlightCard>
-
                   {/* Enara */}
                   <SpotlightCard className="h-[500px] cursor-pointer" spotlightColor="rgba(228, 71, 130, 0.2)">
                     <div className="h-full flex flex-col">

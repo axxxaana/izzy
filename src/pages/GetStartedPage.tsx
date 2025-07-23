@@ -8,11 +8,6 @@ import { CursorTrail } from '../components/CursorTrail';
 import './GetStartedPage.css';
 
 export const GetStartedPage: React.FC = () => {
-  // Scroll to top when component mounts
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
-
   // Load Calendly script
   useEffect(() => {
     const script = document.createElement('script');
