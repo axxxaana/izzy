@@ -6,6 +6,7 @@ import { TrustedByBanner } from '../components/TrustedByBanner';
 import { IdealClientSection, TestimonialsSection } from '../components/sections';
 import { HowItWorksSection } from '../components/sections/HowItWorksSection';
 import { PortfolioSection } from '../components/sections/PortfolioSection';
+import { CursorTrail } from '../components/CursorTrail';
 
 const ROTATING_WORDS = [
   'Grow',
@@ -30,7 +31,9 @@ export const FractionalMarketingPage: React.FC = () => {
   }, []);
 
   return (
-    <div className="flex flex-col items-center w-full bg-white" style={{ minHeight: 'auto', height: 'auto', flexWrap: 'nowrap' }}>
+    <>
+      <CursorTrail />
+      <div className="flex flex-col items-center w-full bg-white" style={{ minHeight: 'auto', height: 'auto', flexWrap: 'nowrap' }}>
       {/* Hero Section (with enhanced animations) */}
       <div className="w-full relative mb-0">
         <div className="w-full h-[700px] relative p-3 sm:p-4 lg:p-[15px] pt-24">
@@ -111,7 +114,7 @@ export const FractionalMarketingPage: React.FC = () => {
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.98 }}
                 >
-                  Get Started
+                  Book a Call
                 </motion.button>
               </div>
             </div>
@@ -186,6 +189,7 @@ export const FractionalMarketingPage: React.FC = () => {
       {/* FooterSection (homepage version) */}
       <FooterSection />
     </div>
+    </>
   );
 }; 
 

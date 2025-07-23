@@ -12,13 +12,14 @@ import { Badge } from "../../../../components/ui/badge";
 import { Card, CardContent } from "../../../../components/ui/card";
 import { Separator } from "../../../../components/ui/separator";
 import { useScrollAnimation } from "../../../../hooks/useScrollAnimation";
-import { BrandSection } from "../../../../components/sections/BrandSection";
+import { ImageArchSection } from "../../../../components/sections/BrandSection";
 import { BrandingSystemVisual } from "../../../../components/sections/BrandingSystemVisual";
 import SpotlightCard from "../../../../components/SpotlightCard";
 import { TrustedByBanner } from "../../../../components/TrustedByBanner";
 import { Navigation } from "../../../../components/layout/Navigation";
 import { TestimonialsSection } from "../../../../components/sections/TestimonialsSection";
 import { PortfolioSection } from '../../../../components/sections/PortfolioSection';
+import TrueFocus from '../../../../components/ui/TrueFocus';
 
 export const MainContentSection = (): JSX.Element => {
   // Rotating words for the h1
@@ -173,29 +174,7 @@ export const MainContentSection = (): JSX.Element => {
                 </div>
 
                 {/* Hero Content - Text Only */}
-                <div className="absolute max-w-[800px] top-[225px] sm:top-[225px] md:top-[265px] lg:top-[225px] xl:top-[265px] left-[25%] sm:left-[25%] md:left-[25%] lg:left-[20%] xl:left-[10.5%] 2xl:left-[16%] px-4">
-                  <div className="w-full">
-                    {/* <h1 className="[font-family:'Montserrat',Helvetica] font-semibold text-black text-[75px] text-left tracking-[-1.2px] leading-[1.1] mb-2 text-shadow-medium animate-fade-in-up">
-                      High-Impact{" "}
-                      <span 
-                        className={`inline-block min-w-[500px] relative overflow-hidden transition-all duration-600 ease-[cubic-bezier(0.4,0,0.2,1)] ${
-                          isTransitioning ? 'opacity-0 transform translate-y-2' : 'opacity-100 transform translate-y-0'
-                        }`}
-                      >
-                        {rotatingWords[currentWordIndex]}
-                      </span>
-                    </h1> */}
-                    {/* <p className="[font-family:'Inter',Helvetica] font-normal text-black text-[18px] text-left tracking-[0] leading-[28px] max-w-[600px] opacity-95 mb-6 text-shadow-subtle animate-fade-in-up-delayed">
-                      Brand systems that captivate your audience, amplify your core message, and deliver measurable growth across every touchpoint.
-                    </p> */}
-                    {/* <Link 
-                      to="/get-started"
-                      className="hero-button animate-fade-in-up-button inline-block bg-white text-[#e44782] border-2 border-[#e44782] rounded-[0.84rem] px-5 py-3 text-[20px] font-['Montserrat'] font-medium transition-all duration-300 ease-out shadow-[0_8px_25px_rgba(228,71,130,0.3)] hover:bg-[#e44782] hover:text-white hover:scale-105 cursor-pointer no-underline"
-                    >
-                      Get Started
-                    </Link> */}
-                  </div>
-                </div>
+                {/* Removed 'Let's get started' headline, subheadline, and button as requested */}
               </div>
             </div>
           </div>
@@ -213,6 +192,7 @@ export const MainContentSection = (): JSX.Element => {
                 ? 'opacity-100 translate-y-0 scale-100 blur-0' 
                 : 'opacity-0 translate-y-12 scale-95 blur-sm'
             }`}
+            style={{ marginTop: '50px', paddingBottom: '150px' }}
           >
             {/* Content */}
             <div className={`flex flex-col items-center transition-all duration-1000 ease-out ${
@@ -222,26 +202,41 @@ export const MainContentSection = (): JSX.Element => {
                 isAnimating ? 'animate-text-reveal' : 'opacity-0 translate-y-8 blur-sm'
               }`}>
                 I help femtech, healthtech and social-impact founders strip back bloated
-                messaging and create bold, <span className="px-3 py-1 rounded-lg relative bg-gradient-to-r from-[#e447824d] to-[#e4478203]">heart-felt brands</span>{" "}that move people.
+                messaging and create bold, <span className="px-3 py-1 rounded-lg relative bg-gradient-to-r from-[#e447824d] to-[#e4478203]">heart-felt brands</span>{" "}
+                that move people.
               </h2>
-              
               <div className="flex justify-center mt-4">
                 <button className="relative bg-[#e44782] text-white font-['Montserrat'] font-semibold text-[16px] px-5 py-3 rounded-[0.84rem] border-2 border-[#e44782] overflow-hidden group hover:bg-white hover:text-[#e44782] transition-all duration-300 ease-out">
                   About Izzy
                 </button>
               </div>
-
             </div>
           </div>
-
-          {/* Brand Section */}
-          <div className="w-full mt-16">
-            <BrandSection />
-          </div>
+          {/* Strategy Voice Visibility Section */}
+          <section className="w-full flex flex-col items-center justify-center" style={{ marginTop: '150px', padding: '80px 0 170px 0' }}>
+            <TrueFocus 
+              sentence="Strategy Voice Visibility"
+              manualMode={false}
+              blurAmount={5}
+              borderColor="#e44782"
+              animationDuration={2}
+              pauseBetweenAnimations={1}
+              fontFamily="'Montserrat', Helvetica, Arial, sans-serif"
+              fontSize="4.5rem"
+            />
+            <p className="max-w-3xl text-center text-[#0f0f10] mt-10" style={{ fontFamily: "'Inter', Helvetica, Arial, sans-serif", fontSize: '18px' }}>
+              Your business doesn’t need more noise. It needs clarity that converts. I help you shape a narrative people trust, build marketing that actually moves, and show up where it matters, with a strategy designed to scale what you do best.
+            </p>
+            <div className="flex justify-center mt-8">
+              <button className="relative bg-[#e44782] text-white font-['Montserrat'] font-semibold text-[16px] px-5 py-3 rounded-[0.84rem] border-2 border-[#e44782] overflow-hidden group hover:bg-white hover:text-[#e44782] transition-all duration-300 ease-out">
+                Book a Call
+              </button>
+            </div>
+          </section>
 
           {/* Branding System Visual */}
           <div className="w-full">
-            <BrandingSystemVisual />
+            {/* <BrandingSystemVisual /> Removed as requested */}
           </div>
 
           {/* Services Section */}
@@ -543,6 +538,11 @@ export const MainContentSection = (): JSX.Element => {
           </motion.div>
         </div>
 
+        {/* Image Arch Section */}
+        <div className="w-full mt-16">
+          <ImageArchSection />
+        </div>
+
         {/* Cut Through The Fluff - Pictures in Letters */}
         <div className="w-full bg-gradient-to-r from-[#e447821a] via-white to-[#e447821a] rounded-[50px] py-20 mt-16 overflow-hidden relative">
           {/* Subtle background gradient */}
@@ -581,6 +581,9 @@ export const MainContentSection = (): JSX.Element => {
 
         {/* Portfolio Section */}
         <PortfolioSection />
+
+        {/* Testimonials Section (Reviews) */}
+        <TestimonialsSection />
 
       </div>
     </div>

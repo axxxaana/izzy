@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 
-export const BrandSection: React.FC = () => {
+export const ImageArchSection: React.FC = () => {
 
   // Animation configuration for perfect fanned-out arc layout
   const cardData = [
@@ -36,7 +36,7 @@ export const BrandSection: React.FC = () => {
   };
 
   return (
-    <section className="w-full py-32 px-4 flex flex-col items-center justify-center">
+    <section className="w-full py-32 px-4 flex flex-col items-center justify-center" id="image-arch-section">
       <div className="w-full text-center space-y-6 p-8">
         {/* 1. 🖼️ Stacked Images at Top */}
         <div className="flex justify-center">
@@ -161,7 +161,7 @@ export const BrandSection: React.FC = () => {
           transition={{ duration: 0.6, ease: "easeOut", delay: 0.4 }}
         >
           <button className="relative bg-[#e44782] text-white font-['Montserrat'] font-semibold text-[16px] px-5 py-3 rounded-[0.84rem] border-2 border-[#e44782] overflow-hidden group hover:bg-white hover:text-[#e44782] transition-all duration-300 ease-out">
-            Get Started
+            Book a Call
           </button>
         </motion.div>
 

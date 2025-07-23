@@ -251,7 +251,7 @@ export const PortfolioSection: React.FC = () => {
                       {/* Image */}
                       <div className="w-full h-96 mb-4 rounded-lg overflow-hidden">
                         <img 
-                          src="/enara cover.jpg" 
+                          src="/Enara cover.jpg" 
                           alt="Enara Cover" 
                           className="w-full h-full object-cover"
                         />

@@ -14,8 +14,8 @@ export const Navigation: React.FC<NavigationProps> = ({ className = '' }) => {
   
   const navItems = [
     { label: "About", href: "/about" },
-    { label: "Services", href: "#services", hasDropdown: true },
-    { label: "Portfolio", href: "#portfolio" },
+    { label: "Services", href: "/services", hasDropdown: true },
+    { label: "Portfolio", href: "/portfolio" },
   ];
 
   const handleServicesClick = (e: React.MouseEvent) => {
@@ -104,7 +104,7 @@ export const Navigation: React.FC<NavigationProps> = ({ className = '' }) => {
 
         {/* Get Started Button */}
         <Link to="/get-started" className="get-started-btn">
-          Get Started
+          Book a Call
         </Link>
       </div>
     </nav>

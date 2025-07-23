@@ -30,7 +30,7 @@ export const GetStartedPage: React.FC = () => {
       <Navigation />
       
       {/* Main Content - Full Height */}
-      <section className="w-full flex-1 flex items-start pt-44 pb-8 px-4 sm:px-6 lg:px-8">
+      <section className="w-full flex-1 flex items-start pt-[136px] pb-8 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-start pt-12">
           
           {/* Right Content Section - Calendly Widget (now first for left side) */}
@@ -144,24 +144,27 @@ export const GetStartedPage: React.FC = () => {
             
             {/* Trusted By Section */}
             <div className="pb-16">
-              <p className="text-gray-600 font-medium mb-4">
-                trusted by
+              <p className="text-black font-medium mb-4">
+                Trusted By
               </p>
-              <div className="grid grid-cols-3 gap-6">
-                <div className="text-gray-400 text-lg font-medium hover:text-gray-600 transition-colors duration-300 logo-item">
-                  Indeed
+              <div className="grid grid-cols-3 gap-x-12 gap-y-8 items-center justify-items-center">
+                <div className="flex justify-center items-center logo-item">
+                  <img src="/parent-promise-grey.png" alt="Parent Promise" className="h-auto w-auto object-contain" style={{maxHeight: '50px', maxWidth: '110px'}} />
                 </div>
-                <div className="text-gray-400 text-lg font-medium hover:text-gray-600 transition-colors duration-300 logo-item">
-                  accuRx
+                <div className="flex justify-center items-center logo-item">
+                  <img src="/Ninjas-in-pyjamas.png" alt="Ninjas in Pyjamas" className="h-auto w-auto object-contain" style={{maxHeight: '50px', maxWidth: '110px', marginLeft: '-10px'}} />
                 </div>
-                <div className="text-gray-400 text-lg font-medium hover:text-gray-600 transition-colors duration-300 logo-item">
-                  Brella
+                <div className="flex justify-center items-center logo-item">
+                  <img src="/dear-bump-logo-gray.png" alt="Dear Bump" className="h-auto w-auto object-contain" style={{maxHeight: '50px', maxWidth: '90px', marginLeft: '-24px'}} />
                 </div>
-                <div className="text-gray-400 text-lg font-medium hover:text-gray-600 transition-colors duration-300 logo-item">
-                  VISMA
+                <div className="flex justify-center items-center logo-item">
+                  <img src="/make-us-care.png" alt="Make Us Care" className="h-auto w-auto object-contain" style={{maxHeight: '50px', maxWidth: '100px'}} />
                 </div>
-                <div className="text-gray-400 text-lg font-medium hover:text-gray-600 transition-colors duration-300 logo-item">
-                  showbie
+                <div className="flex justify-center items-center logo-item">
+                  <img src="/gofounder-logo.png" alt="GoFounder" className="h-auto w-auto object-contain" style={{maxHeight: '50px', maxWidth: '100px', marginLeft: '-10px'}} />
+                </div>
+                <div className="flex justify-center items-center logo-item">
+                  <img src="/nexu-logo-grey.png" alt="Nexu" className="h-auto w-auto object-contain" style={{maxHeight: '50px', maxWidth: '100px', marginLeft: '-24px'}} />
                 </div>
               </div>
             </div>

@@ -19,7 +19,7 @@ export const AboutSection: React.FC = () => {
             About Izzy
           </button>
           <button className="bg-[#e44782] text-white font-montserrat text-base px-5 py-3 rounded-[0.84rem] hover:bg-white hover:text-[#e44782] hover:border-2 hover:border-[#e44782] transition-all duration-200">
-            Get Started
+            Book a Call
           </button>
         </div>
       </div>

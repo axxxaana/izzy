@@ -59,7 +59,7 @@ export const FooterSection = (): JSX.Element => {
                   to="/get-started"
                   className="inline-block bg-white text-[#e44782] border-2 border-[#e44782] rounded-[0.84rem] px-5 py-3 text-[20px] font-['Montserrat'] font-medium transition-all duration-300 ease-out shadow-[0_8px_25px_rgba(228,71,130,0.3)] hover:bg-[#e44782] hover:text-white hover:border-white hover:scale-105 cursor-pointer no-underline box-border"
                 >
-                  Get Started
+                  Book a Call
                 </Link>
               </motion.div>
             </motion.div>
@@ -173,13 +173,13 @@ export const FooterSection = (): JSX.Element => {
                 viewport={{ once: true, margin: "-100px" }}
               >
                 <motion.li whileHover={{ x: 5 }} transition={{ duration: 0.2 }}>
-                  <a href="#" className="[font-family:'Inter',Helvetica] text-gray-600 hover:text-[#e44782] transition-colors duration-200 text-sm">About</a>
+                  <a href="/about" className="[font-family:'Inter',Helvetica] text-gray-600 hover:text-[#e44782] transition-colors duration-200 text-sm">About</a>
                 </motion.li>
                 <motion.li whileHover={{ x: 5 }} transition={{ duration: 0.2 }}>
-                  <a href="#" className="[font-family:'Inter',Helvetica] text-gray-600 hover:text-[#e44782] transition-colors duration-200 text-sm">Portfolio</a>
+                  <a href="/portfolio" className="[font-family:'Inter',Helvetica] text-gray-600 hover:text-[#e44782] transition-colors duration-200 text-sm">Portfolio</a>
                 </motion.li>
                 <motion.li whileHover={{ x: 5 }} transition={{ duration: 0.2 }}>
-                  <a href="#" className="[font-family:'Inter',Helvetica] text-gray-600 hover:text-[#e44782] transition-colors duration-200 text-sm">Contact</a>
+                  <a href="/get-started" className="[font-family:'Inter',Helvetica] text-gray-600 hover:text-[#e44782] transition-colors duration-200 text-sm">Book a Call</a>
                 </motion.li>
               </motion.ul>
             </motion.div>
@@ -208,10 +208,10 @@ export const FooterSection = (): JSX.Element => {
                 viewport={{ once: true, margin: "-100px" }}
               >
                 <motion.li whileHover={{ x: 5 }} transition={{ duration: 0.2 }}>
-                  <a href="#" className="[font-family:'Inter',Helvetica] text-gray-600 hover:text-[#e44782] transition-colors duration-200 text-sm">Founder Brand Strategy</a>
+                  <a href="/services/founder-brand-strategy" className="[font-family:'Inter',Helvetica] text-gray-600 hover:text-[#e44782] transition-colors duration-200 text-sm">Founder Brand Strategy</a>
                 </motion.li>
                 <motion.li whileHover={{ x: 5 }} transition={{ duration: 0.2 }}>
-                  <a href="#" className="[font-family:'Inter',Helvetica] text-gray-600 hover:text-[#e44782] transition-colors duration-200 text-sm">Fractional Marketing</a>
+                  <a href="/services/fractional-marketing" className="[font-family:'Inter',Helvetica] text-gray-600 hover:text-[#e44782] transition-colors duration-200 text-sm">Fractional Marketing</a>
                 </motion.li>
               </motion.ul>
             </motion.div>
