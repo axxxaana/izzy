@@ -11,9 +11,11 @@ export interface BaseComponentProps {
 }
 
 // Layout component props
-export interface LayoutProps extends BaseComponentProps {
+export interface LayoutProps {
+  children: React.ReactNode;
   title?: string;
   description?: string;
+  className?: string;
 }
 
 // Section component props
