@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Navigation } from '../components/layout/Navigation';
 import { PortfolioSection } from '../components/sections/PortfolioSection';
 import ScrollStack, { ScrollStackItem } from '../components/ScrollStack';
+import { CursorTrail } from '../components/CursorTrail';
 
 // Editable hero content
 const HERO_TAG = 'PORTFOLIO';
@@ -52,6 +53,8 @@ export const PortfolioPage: React.FC = () => {
 
   return (
     <div className="flex flex-col items-center w-full bg-white" style={{ minHeight: 'auto', height: 'auto', flexWrap: 'nowrap' }}>
+      {/* Cursor Trail Effect */}
+      <CursorTrail />
       {/* Hero Section */}
       <div className="w-full relative mb-0">
         <div className="w-full h-[700px] relative p-3 sm:p-4 lg:p-[15px] pt-24">
