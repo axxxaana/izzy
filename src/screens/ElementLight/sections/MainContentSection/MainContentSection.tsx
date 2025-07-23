@@ -17,6 +17,7 @@ import { BrandingSystemVisual } from "../../../../components/sections/BrandingSy
 import SpotlightCard from "../../../../components/SpotlightCard";
 import { TrustedByBanner } from "../../../../components/TrustedByBanner";
 import { Navigation } from "../../../../components/layout/Navigation";
+import { TestimonialsSection } from "../../../../components/sections/TestimonialsSection";
 
 export const MainContentSection = (): JSX.Element => {
   // Rotating words for the h1
@@ -144,45 +145,7 @@ export const MainContentSection = (): JSX.Element => {
     { question: "When do I have to pay the amount allocated to my employees?" },
   ];
 
-  // Testimonials data
-  const testimonials = [
-    {
-      name: 'Emily Hughes',
-      role: 'Wellness Founder',
-      text: "Izzy is the absolute best in the business for Personal Branding! Her passion and enthusiasm is infectious. She helped me create a compelling personal brand that truly represents who I am and what I stand for. Her strategic approach and attention to detail are unmatched.",
-      image: '/Emily Hughes.jpeg',
-    },
-    {
-      name: 'Sally Douglas',
-      role: 'Author & Speaker',
-      text: "Izzy made me feel confident and clear on what I need to do. Her passion and enthusiasm is infectious. I've become a lot more effective and efficient at LinkedIn thanks to her help. She truly understands how to build authentic personal brands that connect with your audience.",
-      image: '/Sally Douglas.jpeg',
-    },
-    {
-      name: 'Jem Stein',
-      role: 'Purpose-led Founder',
-      text: "Izzy is the absolute best in the business for Personal Branding! She helped me create a compelling personal brand that truly represents who I am and what I stand for. Her strategic approach and attention to detail are unmatched. I've seen incredible results in my business since working with her.",
-      image: '/Jem Stein.jpeg',
-    },
-    {
-      name: 'Emma Abbasi',
-      role: 'Femtech Founder',
-      text: "Izzy provided guidance in LinkedIn content strategy for community-driven content and lead generation. Her strategic approach helped me build meaningful connections and grow my femtech platform. She's incredibly knowledgeable about building authentic personal brands.",
-      image: '/Emma Abbasi.jpeg',
-    },
-  ];
 
-  // Inside MainContentSection component, add state and handler:
-  const [activeTestimonialIdx, setActiveTestimonialIdx] = useState(0);
-  const [fade, setFade] = useState(false);
-  const handleTestimonialClick = (idx: number) => {
-    if (idx === activeTestimonialIdx) return;
-    setFade(true);
-    setTimeout(() => {
-      setActiveTestimonialIdx(idx);
-      setFade(false);
-    }, 250);
-  };
 
   return (
     <>
@@ -628,14 +591,14 @@ export const MainContentSection = (): JSX.Element => {
             
             {/* Portfolio Heading */}
             <motion.div 
-              className="text-center mb-16"
+              className="text-center mb-12"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.3 }}
               transition={{ duration: 0.6, ease: "easeOut" }}
             >
               <h3 className="[font-family:'Montserrat',Helvetica] font-semibold text-[#091329] text-[40px] tracking-[-1.73px] leading-[50px] mb-6">
-                Portfolio
+                Case Studies
               </h3>
               <p className="[font-family:'Inter',Helvetica] text-[#091329]/70 text-[16px] leading-[24px] max-w-2xl mx-auto">
                 Explore my work across different industries and services. Each project showcases strategic thinking, creative execution, and measurable results.
@@ -644,7 +607,7 @@ export const MainContentSection = (): JSX.Element => {
               
               {/* Category Tabs */}
               <motion.div 
-                className="flex justify-center mb-8"
+                className="flex justify-center mb-6"
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.3 }}
@@ -680,71 +643,101 @@ export const MainContentSection = (): JSX.Element => {
                   >
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-8 p-8 bg-gradient-to-br from-gray-50/50 to-white/30 rounded-3xl backdrop-blur-sm border border-gray-100/50 shadow-xl shadow-gray-200/20">
                       {/* Nexus Connected */}
-                      <SpotlightCard className="h-[320px] cursor-pointer" spotlightColor="rgba(228, 71, 130, 0.2)">
-                        <div className="h-full flex flex-col justify-center">
-                          <div className="mb-4">
-                            <Badge className="bg-white border border-[#e44782] text-[#e44782] text-xs px-3 py-1.5 rounded-[0.84rem] font-medium shadow-sm mb-3 hover:bg-[#e44782] hover:text-white transition-colors duration-300">
-                              Marketing
-                            </Badge>
-                            <h4 className="[font-family:'Montserrat',Helvetica] font-bold text-[#091329] text-[26px] tracking-tight">
-                              Nexus Connected
-                            </h4>
+                      <SpotlightCard className="h-[500px] cursor-pointer" spotlightColor="rgba(228, 71, 130, 0.2)">
+                        <div className="h-full flex flex-col">
+                          {/* Image */}
+                          <div className="w-full h-96 mb-4 rounded-lg overflow-hidden">
+                            <img 
+                              src="/nexus connected team.jpg" 
+                              alt="Nexus Connected Team" 
+                              className="w-full h-full object-cover"
+                            />
                           </div>
-                          <p className="[font-family:'Inter',Helvetica] text-[#091329]/70 text-[15px] leading-[20px] mb-8 font-medium">
-                            Strategic marketing leadership and brand development for innovative femtech platform.
-                          </p>
-                          <div className="flex items-center text-[#e44782] text-sm font-semibold hover:text-[#e44782]/80 transition-colors duration-300">
-                            <span>Read More</span>
-                            <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                            </svg>
-                  </div>
-                </div>
+                          <div className="flex-1 flex flex-col justify-center">
+                            <div className="mb-4">
+                              <Badge className="bg-white border border-[#e44782] text-[#e44782] text-xs px-3 py-1.5 rounded-[0.84rem] font-medium shadow-sm mb-3 hover:bg-[#e44782] hover:text-white transition-colors duration-300">
+                                Marketing
+                              </Badge>
+                              <h4 className="[font-family:'Montserrat',Helvetica] font-bold text-[#091329] text-[26px] tracking-tight">
+                                Nexus Connected
+                              </h4>
+                            </div>
+                            <p className="[font-family:'Inter',Helvetica] text-[#091329]/70 text-[15px] leading-[20px] mb-8 font-medium">
+                              Strategic marketing leadership and brand development for innovative femtech platform.
+                            </p>
+                            <div className="flex items-center text-[#e44782] text-sm font-semibold hover:text-[#e44782]/80 transition-colors duration-300">
+                              <span>Read More</span>
+                              <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                              </svg>
+                            </div>
+                          </div>
+                        </div>
                       </SpotlightCard>
 
                       {/* Parent Promise */}
-                      <SpotlightCard className="h-[320px] cursor-pointer" spotlightColor="rgba(228, 71, 130, 0.2)">
-                        <div className="h-full flex flex-col justify-center">
-                          <div className="mb-4">
-                            <Badge className="bg-white border border-[#e44782] text-[#e44782] text-xs px-3 py-1.5 rounded-[0.84rem] font-medium shadow-sm mb-3 hover:bg-[#e44782] hover:text-white transition-colors duration-300">
-                              Ghostwriting
-                            </Badge>
-                            <h4 className="[font-family:'Montserrat',Helvetica] font-bold text-[#091329] text-[26px] tracking-tight">
-                              Parent Promise
-                            </h4>
-                </div>
-                          <p className="[font-family:'Inter',Helvetica] text-[#091329]/70 text-[15px] leading-[20px] mb-8 font-medium">
-                            Content creation and ghostwriting for Dear Bump, connecting parents through authentic storytelling.
-                          </p>
-                          <div className="flex items-center text-[#e44782] text-sm font-semibold hover:text-[#e44782]/80 transition-colors duration-300">
-                            <span>Read More</span>
-                            <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                            </svg>
-          </div>
+                      <SpotlightCard className="h-[500px] cursor-pointer" spotlightColor="rgba(228, 71, 130, 0.2)">
+                        <div className="h-full flex flex-col">
+                          {/* Image */}
+                          <div className="w-full h-96 mb-4 rounded-lg overflow-hidden">
+                            <img 
+                              src="/parent promise cover.jpg" 
+                              alt="Parent Promise Cover" 
+                              className="w-full h-full object-cover"
+                            />
+                          </div>
+                          <div className="flex-1 flex flex-col justify-center">
+                            <div className="mb-4">
+                              <Badge className="bg-white border border-[#e44782] text-[#e44782] text-xs px-3 py-1.5 rounded-[0.84rem] font-medium shadow-sm mb-3 hover:bg-[#e44782] hover:text-white transition-colors duration-300">
+                                Ghostwriting
+                              </Badge>
+                              <h4 className="[font-family:'Montserrat',Helvetica] font-bold text-[#091329] text-[26px] tracking-tight">
+                                Parent Promise
+                              </h4>
+                            </div>
+                            <p className="[font-family:'Inter',Helvetica] text-[#091329]/70 text-[15px] leading-[20px] mb-8 font-medium">
+                              Content creation and ghostwriting for Dear Bump, connecting parents through authentic storytelling.
+                            </p>
+                            <div className="flex items-center text-[#e44782] text-sm font-semibold hover:text-[#e44782]/80 transition-colors duration-300">
+                              <span>Read More</span>
+                              <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                              </svg>
+                            </div>
+                          </div>
                         </div>
                       </SpotlightCard>
 
                       {/* Dear Bump */}
-                      <SpotlightCard className="h-[320px] cursor-pointer" spotlightColor="rgba(228, 71, 130, 0.2)">
-                        <div className="h-full flex flex-col justify-center">
-                          <div className="mb-4">
-                            <Badge className="bg-white border border-[#e44782] text-[#e44782] text-xs px-3 py-1.5 rounded-[0.84rem] font-medium shadow-sm mb-3 hover:bg-[#e44782] hover:text-white transition-colors duration-300">
-                              Ghostwriting
-                            </Badge>
-                            <h4 className="[font-family:'Montserrat',Helvetica] font-bold text-[#091329] text-[26px] tracking-tight">
-                              Dear Bump
-                            </h4>
-          </div>
-                          <p className="[font-family:'Inter',Helvetica] text-[#091329]/70 text-[15px] leading-[20px] mb-8 font-medium">
-                            Ghostwriting and content creation for pregnancy and parenting community platform.
-                          </p>
-                          <div className="flex items-center text-[#e44782] text-sm font-semibold hover:text-[#e44782]/80 transition-colors duration-300">
-                            <span>Read More</span>
-                            <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                            </svg>
-        </div>
+                      <SpotlightCard className="h-[500px] cursor-pointer" spotlightColor="rgba(228, 71, 130, 0.2)">
+                        <div className="h-full flex flex-col">
+                          {/* Image */}
+                          <div className="w-full h-96 mb-4 rounded-lg overflow-hidden">
+                            <img 
+                              src="/dear bump cover.webp" 
+                              alt="Dear Bump Cover" 
+                              className="w-full h-full object-cover"
+                            />
+                          </div>
+                          <div className="flex-1 flex flex-col justify-center">
+                            <div className="mb-4">
+                              <Badge className="bg-white border border-[#e44782] text-[#e44782] text-xs px-3 py-1.5 rounded-[0.84rem] font-medium shadow-sm mb-3 hover:bg-[#e44782] hover:text-white transition-colors duration-300">
+                                Ghostwriting
+                              </Badge>
+                              <h4 className="[font-family:'Montserrat',Helvetica] font-bold text-[#091329] text-[26px] tracking-tight">
+                                Dear Bump
+                              </h4>
+                            </div>
+                            <p className="[font-family:'Inter',Helvetica] text-[#091329]/70 text-[15px] leading-[20px] mb-8 font-medium">
+                              Ghostwriting and content creation for pregnancy and parenting community platform.
+                            </p>
+                            <div className="flex items-center text-[#e44782] text-sm font-semibold hover:text-[#e44782]/80 transition-colors duration-300">
+                              <span>Read More</span>
+                              <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                              </svg>
+                            </div>
+                          </div>
                         </div>
                       </SpotlightCard>
                     </div>
@@ -763,70 +756,100 @@ export const MainContentSection = (): JSX.Element => {
                   >
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-8 p-8 bg-gradient-to-br from-gray-50/50 to-white/30 rounded-3xl backdrop-blur-sm border border-gray-100/50 shadow-xl shadow-gray-200/20">
                       {/* GoFounder */}
-                      <SpotlightCard className="h-[320px] cursor-pointer" spotlightColor="rgba(228, 71, 130, 0.2)">
-                        <div className="h-full flex flex-col justify-center">
-                          <div className="mb-4">
-                            <Badge className="bg-white border border-[#e44782] text-[#e44782] text-xs px-3 py-1.5 rounded-[0.84rem] font-medium shadow-sm mb-3 hover:bg-[#e44782] hover:text-white transition-colors duration-300">
-                              Multi-Service
-                            </Badge>
-                            <h4 className="[font-family:'Montserrat',Helvetica] font-bold text-[#091329] text-[26px] tracking-tight">
-                              GoFounder
-                            </h4>
-        </div>
-                          <p className="[font-family:'Inter',Helvetica] text-[#091329]/70 text-[15px] leading-[20px] mb-8 font-medium">
-                            Marketing, content creation, ghostwriting, and founder onboarding for startup community platform.
-                          </p>
-                          <div className="flex items-center text-[#e44782] text-sm font-semibold hover:text-[#e44782]/80 transition-colors duration-300">
-                            <span>Read More</span>
-                            <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                            </svg>
+                      <SpotlightCard className="h-[500px] cursor-pointer" spotlightColor="rgba(228, 71, 130, 0.2)">
+                        <div className="h-full flex flex-col">
+                          {/* Image */}
+                          <div className="w-full h-96 mb-4 rounded-lg overflow-hidden">
+                            <img 
+                              src="/GoFounder Cover.png" 
+                              alt="GoFounder Cover" 
+                              className="w-full h-full object-cover"
+                            />
+                          </div>
+                          <div className="flex-1 flex flex-col justify-center">
+                            <div className="mb-4">
+                              <Badge className="bg-white border border-[#e44782] text-[#e44782] text-xs px-3 py-1.5 rounded-[0.84rem] font-medium shadow-sm mb-3 hover:bg-[#e44782] hover:text-white transition-colors duration-300">
+                                Multi-Service
+                              </Badge>
+                              <h4 className="[font-family:'Montserrat',Helvetica] font-bold text-[#091329] text-[26px] tracking-tight">
+                                GoFounder
+                              </h4>
+                            </div>
+                            <p className="[font-family:'Inter',Helvetica] text-[#091329]/70 text-[15px] leading-[20px] mb-8 font-medium">
+                              Marketing, content creation, ghostwriting, and founder onboarding for startup community platform.
+                            </p>
+                            <div className="flex items-center text-[#e44782] text-sm font-semibold hover:text-[#e44782]/80 transition-colors duration-300">
+                              <span>Read More</span>
+                              <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                              </svg>
+                            </div>
                           </div>
                         </div>
                       </SpotlightCard>
 
                       {/* Wellnergy */}
-                      <SpotlightCard className="h-[320px] cursor-pointer" spotlightColor="rgba(228, 71, 130, 0.2)">
-                        <div className="h-full flex flex-col justify-center">
-                          <div className="mb-4">
-                            <Badge className="bg-white border border-[#e44782] text-[#e44782] text-xs px-3 py-1.5 rounded-[0.84rem] font-medium shadow-sm mb-3 hover:bg-[#e44782] hover:text-white transition-colors duration-300">
-                              Multi-Service
-                            </Badge>
-                            <h4 className="[font-family:'Montserrat',Helvetica] font-bold text-[#091329] text-[26px] tracking-tight">
-                              Wellnergy
-                            </h4>
+                      <SpotlightCard className="h-[500px] cursor-pointer" spotlightColor="rgba(228, 71, 130, 0.2)">
+                        <div className="h-full flex flex-col">
+                          {/* Image */}
+                          <div className="w-full h-96 mb-4 rounded-lg overflow-hidden">
+                            <img 
+                              src="/wellnergy cover.png" 
+                              alt="Wellnergy Cover" 
+                              className="w-full h-full object-cover"
+                            />
                           </div>
-                          <p className="[font-family:'Inter',Helvetica] text-[#091329]/70 text-[15px] leading-[20px] mb-8 font-medium">
-                            Ghostwriting, branding, and influencer partnership outreach for wellness community.
-                          </p>
-                          <div className="flex items-center text-[#e44782] text-sm font-semibold hover:text-[#e44782]/80 transition-colors duration-300">
-                            <span>Read More</span>
-                            <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                            </svg>
-              </div>
-            </div>
+                          <div className="flex-1 flex flex-col justify-center">
+                            <div className="mb-4">
+                              <Badge className="bg-white border border-[#e44782] text-[#e44782] text-xs px-3 py-1.5 rounded-[0.84rem] font-medium shadow-sm mb-3 hover:bg-[#e44782] hover:text-white transition-colors duration-300">
+                                Multi-Service
+                              </Badge>
+                              <h4 className="[font-family:'Montserrat',Helvetica] font-bold text-[#091329] text-[26px] tracking-tight">
+                                Wellnergy
+                              </h4>
+                            </div>
+                            <p className="[font-family:'Inter',Helvetica] text-[#091329]/70 text-[15px] leading-[20px] mb-8 font-medium">
+                              Ghostwriting, branding, and influencer partnership outreach for wellness community.
+                            </p>
+                            <div className="flex items-center text-[#e44782] text-sm font-semibold hover:text-[#e44782]/80 transition-colors duration-300">
+                              <span>Read More</span>
+                              <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                              </svg>
+                            </div>
+                          </div>
+                        </div>
                       </SpotlightCard>
 
                       {/* Enara */}
-                      <SpotlightCard className="h-[320px] cursor-pointer" spotlightColor="rgba(228, 71, 130, 0.2)">
-                        <div className="h-full flex flex-col justify-center">
-                          <div className="mb-4">
-                            <Badge className="bg-white border border-[#e44782] text-[#e44782] text-xs px-3 py-1.5 rounded-[0.84rem] font-medium shadow-sm mb-3 hover:bg-[#e44782] hover:text-white transition-colors duration-300">
-                              Creator Commerce
-                            </Badge>
-                            <h4 className="[font-family:'Montserrat',Helvetica] font-bold text-[#091329] text-[26px] tracking-tight">
-                              Enara
-                            </h4>
+                      <SpotlightCard className="h-[500px] cursor-pointer" spotlightColor="rgba(228, 71, 130, 0.2)">
+                        <div className="h-full flex flex-col">
+                          {/* Image */}
+                          <div className="w-full h-96 mb-4 rounded-lg overflow-hidden">
+                            <img 
+                              src="/enara cover.jpg" 
+                              alt="Enara Cover" 
+                              className="w-full h-full object-cover"
+                            />
                           </div>
-                          <p className="[font-family:'Inter',Helvetica] text-[#091329]/70 text-[15px] leading-[20px] mb-8 font-medium">
-                            Brand creation, visual identity, social strategy, lead magnets, founder ghostwriting, and creator acquisition.
-                          </p>
-                          <div className="flex items-center text-[#e44782] text-sm font-semibold hover:text-[#e44782]/80 transition-colors duration-300">
-                            <span>Read More</span>
-                            <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                            </svg>
+                          <div className="flex-1 flex flex-col justify-center">
+                            <div className="mb-4">
+                              <Badge className="bg-white border border-[#e44782] text-[#e44782] text-xs px-3 py-1.5 rounded-[0.84rem] font-medium shadow-sm mb-3 hover:bg-[#e44782] hover:text-white transition-colors duration-300">
+                                Creator Commerce
+                              </Badge>
+                              <h4 className="[font-family:'Montserrat',Helvetica] font-bold text-[#091329] text-[26px] tracking-tight">
+                                Enara
+                              </h4>
+                            </div>
+                            <p className="[font-family:'Inter',Helvetica] text-[#091329]/70 text-[15px] leading-[20px] mb-8 font-medium">
+                              Brand creation, visual identity, social strategy, lead magnets, founder ghostwriting, and creator acquisition.
+                            </p>
+                            <div className="flex items-center text-[#e44782] text-sm font-semibold hover:text-[#e44782]/80 transition-colors duration-300">
+                              <span>Read More</span>
+                              <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                              </svg>
+                            </div>
                           </div>
                         </div>
                       </SpotlightCard>
@@ -839,61 +862,8 @@ export const MainContentSection = (): JSX.Element => {
           </div>
         </motion.div>
 
-        {/* Reviews/Testimonials Section */}
-        <section className="w-full flex flex-col items-center justify-center pt-10 pb-44 bg-white" style={{ background: '#fff', width: '100%' }}>
-          <h2 className="text-4xl md:text-5xl font-extrabold text-center mb-12 tracking-tight" style={{ fontFamily: 'Montserrat, Helvetica', color: '#091329' }}>
-            What My Clients Say
-          </h2>
-          <div className="w-full max-w-2xl mx-auto flex flex-col items-center">
-            <div
-              key={activeTestimonialIdx}
-              className={`transition-opacity duration-500 ease-in-out ${fade ? 'opacity-0' : 'opacity-100'} w-full`}
-            >
-              {['Jem Stein', 'Emma Abbasi'].includes(testimonials[activeTestimonialIdx].name) ? (
-                <p className="w-full text-xl md:text-2xl text-center text-[#091329] font-normal italic mb-8 leading-relaxed" style={{ fontFamily: 'Inter, Helvetica', lineHeight: '1.5', maxWidth: '44rem' }}>
-                  "{testimonials[activeTestimonialIdx].text}"
-                </p>
-              ) : (
-                <p className="w-full text-xl md:text-2xl text-center text-[#091329] font-normal italic mb-8 leading-relaxed" style={{ fontFamily: 'Inter, Helvetica', lineHeight: '1.5' }}>
-                  "{testimonials[activeTestimonialIdx].text}"
-                </p>
-              )}
-              <div className="flex flex-col items-center">
-                <span className="font-bold text-lg md:text-xl text-[#091329]" style={{ fontFamily: 'Montserrat, Helvetica' }}>
-                  {testimonials[activeTestimonialIdx].name}
-                </span>
-                <span className="text-sm md:text-base text-[#091329]/50 mt-1" style={{ fontFamily: 'Inter, Helvetica' }}>
-                  {testimonials[activeTestimonialIdx].role}
-                </span>
-              </div>
-            </div>
-            {/* Profile Image Carousel */}
-            <div className="flex items-center justify-center gap-4 mt-12 flex-wrap">
-              {testimonials.map((t, idx) => (
-                <button
-                  key={t.name}
-                  onClick={() => handleTestimonialClick(idx)}
-                  className="focus:outline-none bg-transparent p-0 m-0"
-                  aria-label={`Show testimonial from ${t.name}`}
-                  style={{ background: 'transparent' }}
-                >
-                  <div
-                    className={`w-16 h-16 md:w-20 md:h-20 rounded-[0.84rem] border border-gray-200 transition-all duration-200 overflow-hidden flex items-center justify-center p-0 m-0
-                      ${idx === activeTestimonialIdx ? 'opacity-100 scale-105' : 'opacity-60 hover:opacity-90'} hover:scale-105 hover:brightness-110`}
-                    style={{ boxSizing: 'border-box', borderWidth: '1.5px' }}
-                  >
-                    <img
-                      src={t.image}
-                      alt={t.name}
-                      className="w-full h-full object-cover rounded-[0.84rem] border-none p-0 m-0"
-                      style={{ display: 'block' }}
-                    />
-                  </div>
-                </button>
-              ))}
-            </div>
-          </div>
-        </section>
+        {/* Testimonials Section */}
+        <TestimonialsSection />
 
       </div>
     </div>

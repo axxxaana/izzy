@@ -1,4 +1,6 @@
 import React from "react";
+import { motion } from "framer-motion";
+import { TestimonialsSection } from './TestimonialsSection';
 
 const stages = [
   {
@@ -10,7 +12,7 @@ const stages = [
       {
         title: "Own Your Narrative",
         content:
-          "Stop blending in. We’ll help you shape a story that stands out and actually reflects who you are as a founder.",
+          "Stop blending in. We'll help you shape a story that stands out and actually reflects who you are as a founder.",
       },
       {
         title: "Dial In Your Positioning",
@@ -20,58 +22,58 @@ const stages = [
       {
         title: "Build a Strategic Foundation",
         content:
-          "We’ll align your vision, voice, and values so your brand feels authentic and built to last.",
+          "We'll align your vision, voice, and values so your brand feels authentic and built to last.",
       },
     ],
-    visual: <span className="text-[#e44782] text-2xl font-bold opacity-60">[Stage Visual]</span>,
+    visual: <img src="/define image.png" alt="Define Image" className="w-full h-full object-contain rounded-[40px]" />,
   },
   {
     tag: "Stage Two",
     heading: "Create Amazing Content",
     subtext:
-      "Turn your strategy into scroll-stopping ideas and purposeful content that actually moves your audience.",
+      "Your story deserves better than a tired content calendar. Let's turn strategy into scroll-stopping content that builds trust — without chasing the algorithm gods.",
     accordion: [
       {
-        title: "Turn Strategy into Story",
+        title: "Say What Matters",
         content:
-          "Together, we’ll translate your strategy into scroll-stopping ideas that reflect your core message.",
+          "We distill your ideas into meaningful content that reflects your voice and vision. No more generic thought-leadership. Just messages that move.",
       },
       {
-        title: "Post Less, Say More",
+        title: "Content Without Burnout",
         content:
-          "You don’t need to post every day — just powerfully. We’ll help you say more in fewer, better pieces of content.",
+          "You don't need to post every day. We design a rhythm and system that fits your life — and still builds momentum. Strategic, high-impact content > chasing virality.",
       },
       {
-        title: "Show Up with Purpose",
+        title: "Make It Memorable",
         content:
-          "Everything we make ties back to your goals. No filler content. No generic posts.",
+          "From bold hooks to compelling frameworks, we help you shape content that cuts through the scroll. Because trust starts with attention.",
       },
     ],
-    visual: <span className="text-[#e44782] text-2xl font-bold opacity-60">[Stage Visual]</span>,
+    visual: <img src="/deliver-image.png" alt="Deliver Image" className="w-full h-full object-contain rounded-[40px]" />,
   },
   {
     tag: "Stage Three",
-    heading: "Amplify with Systems",
+    heading: "Grow With Intention",
     subtext:
-      "Get lightweight systems to stay consistent, build momentum, and actually grow — without chaos.",
+      "You don't need to be everywhere. Just in the right places, consistently. We help you scale your presence with clarity, not chaos.",
     accordion: [
       {
         title: "Choose the Right Channels",
         content:
-          "We’ll help you focus on the right platforms for your audience and business — not what’s trending.",
+          "We'll identify where your audience actually listens — and double down on what works. No more spreading yourself thin.",
       },
       {
-        title: "Find Your Cadence",
+        title: "Build in Public (Your Way)",
         content:
-          "Set a pace that’s sustainable, not soul-sucking. We’ll create a plan that fits your life.",
+          "Whether it's LinkedIn, longform, or podcasts, we craft a strategy around your energy and goals. Visibility should feel aligned — not forced.",
       },
       {
-        title: "Scale Without Chaos",
+        title: "Systems That Scale With You",
         content:
-          "You’ll get lightweight systems to stay consistent, build momentum, and actually grow.",
+          "From idea capture to publishing, we'll design a repeatable workflow to keep momentum going. So you show up — even on your busiest weeks.",
       },
     ],
-    visual: <span className="text-[#e44782] text-2xl font-bold opacity-60">[Stage Visual]</span>,
+    visual: <img src="/Chat bubble and texting on smartphone.png" alt="Chat bubble and texting on smartphone" className="w-full h-full object-contain rounded-[40px]" />,
   },
 ];
 
@@ -92,14 +94,31 @@ export const HowItWorksSection: React.FC = () => {
     <>
       <section className="w-full max-w-6xl mx-auto py-24 px-4 flex flex-col gap-24">
         {stages.map((stage, idx) => {
-          const isImageLeft = idx % 2 === 1;
+          // Animation directions
+          let imageInitial, contentInitial;
+          if (idx === 0) { // Stage 1
+            imageInitial = { opacity: 0, x: -80 };
+            contentInitial = { opacity: 0, x: 80 };
+          } else if (idx === 1) { // Stage 2
+            imageInitial = { opacity: 0, x: 80 };
+            contentInitial = { opacity: 0, x: -80 };
+          } else { // Stage 3
+            imageInitial = { opacity: 0, x: -80 };
+            contentInitial = { opacity: 0, x: 80 };
+          }
           return (
             <React.Fragment key={stage.tag}>
               <div
-                className={`grid grid-cols-1 md:grid-cols-2 gap-12 items-center ${isImageLeft ? 'md:flex-row-reverse' : ''}`}
+                className={`grid grid-cols-1 md:grid-cols-2 gap-12 items-center`}
               >
                 {/* Content Side */}
-                <div className={isImageLeft ? 'order-2' : ''}>
+                <motion.div
+                  initial={contentInitial}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.8, ease: 'easeOut' }}
+                  viewport={{ once: true, amount: 0.4 }}
+                  className={idx % 2 === 0 ? 'order-2' : ''}
+                >
                   <span className="inline-block mb-4 px-6 py-2 text-[#e44782] text-base font-semibold shadow-sm bg-white uppercase tracking-wide border" style={{ fontFamily: 'Inter, Helvetica', borderRadius: '0.84rem', letterSpacing: '0.04em', borderColor: '#e44782', fontWeight: 600 }}>
                     {stage.tag}
                   </span>
@@ -107,7 +126,7 @@ export const HowItWorksSection: React.FC = () => {
                     {stage.heading}
                   </h3>
                   <p className="text-lg mb-6 max-w-xl opacity-80" style={{ fontFamily: 'Inter, Helvetica' }}>{stage.subtext}</p>
-                  <div className="flex flex-col gap-1 w-full">
+                  <div className="flex flex-col gap-1 w-full h-[400px]">
                     {stage.accordion.map((row, i) => {
                       const isOpen = openIndexes[idx] === i;
                       return (
@@ -137,13 +156,19 @@ export const HowItWorksSection: React.FC = () => {
                       );
                     })}
                   </div>
-                </div>
+                </motion.div>
                 {/* Visual Side */}
-                <div className={`flex justify-center items-center ${isImageLeft ? 'order-1' : ''}`}>
-                  <div className="w-full max-w-md h-[340px] rounded-[40px] bg-[#f8f7f4] flex items-center justify-center overflow-hidden">
+                <motion.div
+                  initial={imageInitial}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.8, ease: 'easeOut' }}
+                  viewport={{ once: true, amount: 0.4 }}
+                  className={`flex justify-center items-center ${idx % 2 === 0 ? 'order-1' : ''}`}
+                >
+                  <div className="w-full max-w-md h-[520px] rounded-[40px] flex items-center justify-center overflow-hidden">
                     {stage.visual}
                   </div>
-                </div>
+                </motion.div>
               </div>
               {/* Remove the arrow between stages */}
               {/* (No arrow rendered here) */}
@@ -151,10 +176,10 @@ export const HowItWorksSection: React.FC = () => {
           );
         })}
       </section>
-      {/* Review Section */}
-      <ReviewSection />
+      {/* Testimonials Section */}
+      <TestimonialsSection />
       {/* FAQ Section */}
-      <section className="w-full max-w-4xl mx-auto flex flex-col items-center py-20 px-4">
+      <section className="w-full max-w-4xl mx-auto flex flex-col items-center py-20 px-4 pb-32">
         <h2 className="text-4xl md:text-5xl font-extrabold text-center mb-8" style={{ color: '#0f0f10', fontFamily: 'Montserrat, Helvetica' }}>
           Frequently Asked Questions
         </h2>
@@ -201,21 +226,13 @@ function FAQSection() {
             style={{}}
           >
             <button
-              className="flex items-center w-full text-left focus:outline-none text-lg font-bold gap-4"
-              style={{ color: '#e44782', fontFamily: 'Montserrat, Helvetica' }}
+              className="flex items-center w-full text-left focus:outline-none"
               onClick={() => setOpenIdx(open ? -1 : i)}
               aria-expanded={open}
+              style={{ fontWeight: 700, color: '#0f0f10', fontSize: '1.15rem' }}
             >
-              <span
-                className={`inline-block select-none transition-transform duration-300 ${open ? 'rotate-90' : 'rotate-0'}`}
-                style={{ color: '#e44782', minWidth: 36, display: 'flex', alignItems: 'center', justifyContent: 'center' }}
-              >
-                {/* Chevron SVG icon */}
-                <svg width="28" height="28" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M7 5l6 5-6 5" stroke="#e44782" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
-                </svg>
-              </span>
-              <span className="flex-1 text-[#0f0f10] text-xl font-semibold group-hover:underline transition-all duration-200">
+              <PlusMinusIcon open={open} />
+              <span className="flex-1">
                 {faq.q}
               </span>
             </button>
@@ -232,63 +249,4 @@ function FAQSection() {
   );
 }
 
-// ReviewSection component
-const testimonials = [
-  {
-    quote: "Izzy is the absolute best in the business for Personal Branding! Her passion and enthusiasm is infectious. She helped me create a compelling personal brand that truly represents who I am and what I stand for. Her strategic approach and attention to detail are unmatched.",
-    name: "Emily Hughes",
-    title: "Wellness Founder",
-    image: "/Emily.jpeg"
-  },
-  {
-    quote: "Izzy made me feel confident and clear on what I need to do. Her passion and enthusiasm is infectious. I've become a lot more effective and efficient at LinkedIn thanks to her help. She truly understands how to build authentic personal brands that connect with your audience.",
-    name: "Emma Abbasi",
-    title: "Femtech Founder",
-    image: "/Emma.jpeg"
-  },
-  {
-    quote: "Izzy is the absolute best in the business for Personal Branding! She helped me create a compelling personal brand that truly represents who I am and what I stand for. Her strategic approach and attention to detail are unmatched. I've seen incredible results in my business since working with her.",
-    name: "Jem Stein",
-    title: "Purpose-led Founder",
-    image: "/Jem.jpeg"
-  },
-  {
-    quote: "Izzy provided guidance in LinkedIn content strategy for community-driven content and lead generation. Her strategic approach helped me build meaningful connections and grow my femtech platform. She's incredibly knowledgeable about building authentic personal brands.",
-    name: "Ben Hughes",
-    title: "GoFounder CEO",
-    image: "/Ben.jpg"
-  }
-];
-
-function ReviewSection() {
-  const [activeIdx, setActiveIdx] = React.useState(0);
-  const t = testimonials[activeIdx];
-  return (
-    <section className="w-full max-w-4xl mx-auto flex flex-col items-center py-24 px-4">
-      <h2 className="text-5xl font-extrabold text-center mb-10" style={{ color: '#19213a', fontFamily: 'Montserrat, Helvetica' }}>
-        What My Clients Say
-      </h2>
-      <blockquote className="italic text-2xl md:text-3xl text-center mb-8 max-w-3xl mx-auto" style={{ color: '#19213a', fontFamily: 'Inter, Helvetica', fontWeight: 400 }}>
-        {`"${t.quote}"`}
-      </blockquote>
-      <div className="text-xl font-extrabold text-center mb-1" style={{ color: '#19213a', fontFamily: 'Montserrat, Helvetica' }}>
-        {t.name}
-      </div>
-      <div className="text-base text-center mb-8 opacity-60" style={{ color: '#19213a', fontFamily: 'Inter, Helvetica' }}>
-        {t.title}
-      </div>
-      <div className="flex gap-6 justify-center items-center">
-        {testimonials.map((review, i) => (
-          <button
-            key={i}
-            onClick={() => setActiveIdx(i)}
-            className={`focus:outline-none transition-all duration-200 ${activeIdx === i ? 'scale-105' : 'opacity-70 hover:opacity-100'}`}
-            aria-label={`Show testimonial from ${review.name}`}
-          >
-            <img src={review.image} alt={review.name} className="w-20 h-20 rounded-2xl object-cover" />
-          </button>
-        ))}
-      </div>
-    </section>
-  );
-} 
+ 

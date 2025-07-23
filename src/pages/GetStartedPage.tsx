@@ -38,9 +38,25 @@ export const GetStartedPage: React.FC = () => {
       <section className="w-full flex-1 flex items-start pt-44 pb-8 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-start pt-12">
           
-          {/* Left Content Section */}
+          {/* Right Content Section - Calendly Widget (now first for left side) */}
           <motion.div 
-            className="space-y-4 max-w-lg"
+            className="flex justify-center lg:justify-start"
+            initial={{ opacity: 0, y: 40 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, ease: "easeOut", delay: 0.6 }}
+          >
+            <div className="bg-white border border-gray-200 rounded-2xl shadow-lg px-12 pt-12 w-full calendly-container">
+              <div 
+                className="calendly-inline-widget" 
+                data-url="https://calendly.com/wildmountainimmigration/15min-call?hide_event_type_details=1&hide_gdpr_banner=1&primary_color=e44782" 
+                style={{ minWidth: '320px', height: '550px' }}
+              ></div>
+            </div>
+          </motion.div>
+
+          {/* Left Content Section (now second for right side) */}
+          <motion.div 
+            className="space-y-4 max-w-lg lg:ml-auto"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
@@ -153,22 +169,6 @@ export const GetStartedPage: React.FC = () => {
                   showbie
                 </div>
               </div>
-            </div>
-          </motion.div>
-          
-          {/* Right Content Section - Calendly Widget */}
-          <motion.div 
-            className="flex justify-center lg:justify-start"
-            initial={{ opacity: 0, y: 40 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, ease: "easeOut", delay: 0.6 }}
-          >
-            <div className="bg-white border border-gray-200 rounded-2xl shadow-lg px-12 pt-12 w-full calendly-container">
-              <div 
-                className="calendly-inline-widget" 
-                data-url="https://calendly.com/wildmountainimmigration/15min-call?hide_event_type_details=1&hide_gdpr_banner=1&primary_color=e44782" 
-                style={{ minWidth: '320px', height: '550px' }}
-              ></div>
             </div>
           </motion.div>
         </div>

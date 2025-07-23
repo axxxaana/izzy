@@ -13,7 +13,7 @@ const ROTATING_WORDS = [
   'Relatable',
 ];
 
-export const FounderBrandStrategyPage: React.FC = () => {
+export const FractionalMarketingPage: React.FC = () => {
   const [currentWordIndex, setCurrentWordIndex] = useState(0);
   const [fade, setFade] = useState(false);
 

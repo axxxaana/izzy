@@ -16,10 +16,12 @@ export const FooterSection = (): JSX.Element => {
         transition={{ duration: 0.8, ease: "easeOut" }}
         viewport={{ once: true, margin: "-100px" }}
       >
-        <div className="max-w-[1200px] mx-auto px-3 sm:px-4 lg:px-[15px]">
-          <div className="flex flex-col items-end justify-center py-16">
+        <div className="w-full flex flex-col md:flex-row-reverse items-center justify-between gap-8 px-8">
+          {/* Left: Image (if any) */}
+          {/* Right: Text and Button */}
+          <div className="flex-1 flex flex-col items-center md:items-end justify-center py-16">
             <motion.div 
-              className="max-w-[915px] text-left"
+              className="max-w-[915px] text-left md:mr-[350px]"
               initial={{ opacity: 0, x: 30 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
@@ -55,7 +57,7 @@ export const FooterSection = (): JSX.Element => {
               >
                 <Link 
                   to="/get-started"
-                  className="inline-block bg-white text-[#e44782] border-2 border-[#e44782] rounded-[0.84rem] px-5 py-3 text-[20px] font-['Montserrat'] font-medium transition-all duration-300 ease-out shadow-[0_8px_25px_rgba(228,71,130,0.3)] hover:bg-[#e44782] hover:text-white hover:scale-105 cursor-pointer no-underline"
+                  className="inline-block bg-white text-[#e44782] border-2 border-[#e44782] rounded-[0.84rem] px-5 py-3 text-[20px] font-['Montserrat'] font-medium transition-all duration-300 ease-out shadow-[0_8px_25px_rgba(228,71,130,0.3)] hover:bg-[#e44782] hover:text-white hover:border-white hover:scale-105 cursor-pointer no-underline box-border"
                 >
                   Get Started
                 </Link>
