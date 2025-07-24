@@ -4,7 +4,7 @@ import { Navigation } from '../components/layout/Navigation';
 import { FooterSection } from '../screens/ElementLight/sections/FooterSection';
 import { CursorTrail } from '../components/CursorTrail';
 import { Accordion, AccordionItem, AccordionTrigger, AccordionContent } from '../components/ui/accordion';
-import { portfolioItems, PortfolioCard } from './PortfolioPage';
+import { portfolioItems, PortfolioCard } from './portfolioData';
 
 const HERO_IMAGE = '/nexus connected team.jpg';
 const HERO_HEADING = 'Nexus Connected';

@@ -4,6 +4,7 @@ import { Navigation } from '../components/layout/Navigation';
 import { FooterSection } from '../screens/ElementLight/sections/FooterSection';
 import { CursorTrail } from '../components/CursorTrail';
 import { Accordion, AccordionItem, AccordionTrigger, AccordionContent } from '../components/ui/accordion';
+import { portfolioItems, PortfolioCard, getPortfolioLink } from './portfolioData';
 
 const HERO_IMAGE = '/wellnergy cover.png';
 const HERO_HEADING = 'Wellnergy';
@@ -15,7 +16,7 @@ const saasAccordionContent = "px-6 pb-6 pt-2 text-gray-700 text-base";
 const whatIDidAccordionItem = "rounded-xl mb-2 transition-all duration-300 overflow-hidden bg-transparent data-[state=open]:bg-[rgba(228,71,130,0.2)] data-[state=open]:border-l-4 data-[state=open]:border-pink-500 data-[state=open]:shadow";
 
 // Local portfolio items for dynamic case studies (excluding Wellnergy)
-const portfolioItems = [
+const localPortfolioItems = [
   {
     id: 1,
     title: 'Nexus Connected',
@@ -36,13 +37,13 @@ const portfolioItems = [
   },
 ];
 
-const getPortfolioLink = (title: string) => {
+const localGetPortfolioLink = (title: string) => {
   if (title === 'Nexus Connected') return '/portfolio/nexus-connected';
   if (title === 'GoFounder') return '/portfolio/gofounder';
   return '#';
 };
 
-const PortfolioCard: React.FC<{ item: typeof portfolioItems[0]; index: number }> = ({ item, index }) => {
+const LocalPortfolioCard: React.FC<{ item: typeof localPortfolioItems[0]; index: number }> = ({ item, index }) => {
   return (
     <div className="block group mt-8 cursor-pointer">
       <motion.div
@@ -71,7 +72,7 @@ const PortfolioCard: React.FC<{ item: typeof portfolioItems[0]; index: number }>
             <p className="text-lg text-gray-700 leading-relaxed mb-6 font-['Inter']">
               {item.description}
             </p>
-            <a href={getPortfolioLink(item.title)} className="inline-flex items-center px-0 py-4 rounded-[12px] bg-transparent text-[#e44782] text-2xl font-bold transition-transform duration-200 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-pink-200">
+            <a href={localGetPortfolioLink(item.title)} className="inline-flex items-center px-0 py-4 rounded-[12px] bg-transparent text-[#e44782] text-2xl font-bold transition-transform duration-200 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-pink-200">
               <span style={{ color: '#e44782' }}>Read More</span>
               <span className="ml-4 text-3xl font-bold" style={{ color: '#e44782' }}>&gt;</span>
             </a>
@@ -303,8 +304,8 @@ const PortfolioWellnergyPage: React.FC = () => {
             </p>
           </motion.div>
           <div className="grid grid-cols-1 gap-8 md:gap-12">
-            {portfolioItems.map((item, index) => (
-              <PortfolioCard key={item.id} item={item} index={index} />
+                          {localPortfolioItems.map((item, index) => (
+                <LocalPortfolioCard key={item.id} item={item} index={index} />
             ))}
           </div>
           <div style={{ height: '100px' }}></div>
