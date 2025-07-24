@@ -3,7 +3,6 @@ import { Layout } from '../components/layout/Layout';
 import { Navigation } from '../components/layout';
 import { AboutHeroSection } from '../components/sections/AboutHeroSection';
 import { AboutStorySection } from '../components/sections/AboutStorySection';
-import { AboutExperienceSection } from '../components/sections/AboutExperienceSection';
 import { IzzyProcessAccordion } from '../components/sections/IzzyProcessAccordion';
 import { FounderQuoteSection } from '../components/sections/FounderQuoteSection';
 import { MyValuesAnimated } from '../components/sections/MyValuesAnimated';
@@ -35,9 +34,6 @@ export const AboutPage: React.FC = () => {
         
         {/* Process Accordion Section */}
         <IzzyProcessAccordion />
-        
-        {/* Experience Section */}
-        <AboutExperienceSection />
         
         {/* Footer */}
         <FooterSection />

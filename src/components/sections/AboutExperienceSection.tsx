@@ -99,21 +99,6 @@ export const AboutExperienceSection: React.FC = () => {
             </div>
           </div>
         </div>
-        
-        {/* Bottom CTA */}
-        <div className="text-center mt-16 pt-8 border-t border-gray-200">
-          <p className={`${TYPOGRAPHY.body.large.classes} mb-6`}>
-            Want to learn more about how I can help your brand?
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button className="bg-[#e44782] text-white font-montserrat text-base px-6 py-3 rounded-[0.84rem] hover:bg-white hover:text-[#e44782] hover:border-2 hover:border-[#e44782] transition-all duration-200">
-              Schedule a Call
-            </button>
-            <button className="bg-transparent text-[#e44782] font-montserrat text-base px-6 py-3 rounded-[0.84rem] border-2 border-[#e44782] hover:bg-[#e44782] hover:text-white transition-all duration-200">
-              View Case Studies
-            </button>
-          </div>
-        </div>
       </div>
     </section>
   );
