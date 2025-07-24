@@ -1,64 +1,37 @@
 import React, { useLayoutEffect, useRef, useCallback, ReactNode } from "react";
-// @ts-ignore
 import Lenis from "lenis";
-
-// Inject styles (move to CSS file in production)
-if (typeof window !== 'undefined' && !document.getElementById('scroll-stack-css')) {
-  const style = document.createElement('style');
-  style.id = 'scroll-stack-css';
-  style.innerHTML = `
-.scroll-stack-scroller {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  overflow-y: auto;
-  overflow-x: visible;
-  overscroll-behavior: contain;
-  -webkit-overflow-scrolling: touch;
-  scroll-behavior: smooth;
-  -webkit-transform: translateZ(0);
-  transform: translateZ(0);
-  will-change: scroll-position;
-}
-.scroll-stack-inner {
-  padding: 20vh 5rem 50rem;
-  min-height: 100vh;
-}
-.scroll-stack-card-wrapper {
-  position: relative;
-}
-.scroll-stack-card {
-  transform-origin: top center;
-  will-change: transform, filter;
-  backface-visibility: hidden;
-  transform-style: preserve-3d;
-  box-shadow: 0 0 30px rgba(0, 0, 0, 0.1);
-  height: 20rem;
-  width: 100%;
-  margin: 30px 0;
-  padding: 3rem;
-  border-radius: 40px;
-  box-sizing: border-box;
-  -webkit-transform: translateZ(0);
-  transform: translateZ(0);
-  position: relative;
-  background: #fff;
-}
-.scroll-stack-end {
-  width: 100%;
-  height: 1px;
-}
-`;
-  document.head.appendChild(style);
-}
+import './ScrollStack.css';
 
 interface ScrollStackItemProps {
   children: ReactNode;
   itemClassName?: string;
+  onClick?: () => void;
+  onKeyDown?: (event: React.KeyboardEvent) => void;
+  role?: string;
+  tabIndex?: number;
 }
 
-export const ScrollStackItem: React.FC<ScrollStackItemProps> = ({ children, itemClassName = "" }) => (
-  <div className={`scroll-stack-card ${itemClassName}`.trim()}>{children}</div>
+export const ScrollStackItem: React.FC<ScrollStackItemProps> = ({ 
+  children, 
+  itemClassName = "",
+  onClick,
+  onKeyDown,
+  role = "button",
+  tabIndex = 0
+}) => (
+  <div
+    className={`scroll-stack-card relative w-full h-80 my-8 p-12 rounded-[40px] shadow-[0_0_30px_rgba(0,0,0,0.1)] box-border origin-top will-change-transform ${itemClassName}`.trim()}
+    style={{
+      backfaceVisibility: 'hidden',
+      transformStyle: 'preserve-3d',
+    }}
+    onClick={onClick}
+    onKeyDown={onKeyDown}
+    role={role}
+    tabIndex={tabIndex}
+  >
+    {children}
+  </div>
 );
 
 interface ScrollStackProps {
@@ -74,6 +47,10 @@ interface ScrollStackProps {
   rotationAmount?: number;
   blurAmount?: number;
   onStackComplete?: () => void;
+  onCardClick?: (index: number) => void;
+  loading?: boolean;
+  error?: string | null;
+  'aria-label'?: string;
 }
 
 const ScrollStack: React.FC<ScrollStackProps> = ({
@@ -89,22 +66,31 @@ const ScrollStack: React.FC<ScrollStackProps> = ({
   rotationAmount = 0,
   blurAmount = 0,
   onStackComplete,
+  onCardClick,
+  loading = false,
+  error = null,
+  'aria-label': ariaLabel = "Scrollable card stack",
 }) => {
   const scrollerRef = useRef<HTMLDivElement | null>(null);
   const stackCompletedRef = useRef(false);
   const animationFrameRef = useRef<number | null>(null);
-  const lenisRef = useRef<any>(null);
+  const lenisRef = useRef<Lenis | null>(null);
   const cardsRef = useRef<HTMLDivElement[]>([]);
-  const lastTransformsRef = useRef<Map<number, any>>(new Map());
+  const lastTransformsRef = useRef(new Map<number, {
+    translateY: number;
+    scale: number;
+    rotation: number;
+    blur: number;
+  }>());
   const isUpdatingRef = useRef(false);
 
-  const calculateProgress = useCallback((scrollTop: number, start: number, end: number) => {
+  const calculateProgress = useCallback((scrollTop: number, start: number, end: number): number => {
     if (scrollTop < start) return 0;
     if (scrollTop > end) return 1;
     return (scrollTop - start) / (end - start);
   }, []);
 
-  const parsePercentage = useCallback((value: string | number, containerHeight: number) => {
+  const parsePercentage = useCallback((value: string | number, containerHeight: number): number => {
     if (typeof value === 'string' && value.includes('%')) {
       return (parseFloat(value) / 100) * containerHeight;
     }
@@ -121,7 +107,7 @@ const ScrollStack: React.FC<ScrollStackProps> = ({
     const containerHeight = scroller.clientHeight;
     const stackPositionPx = parsePercentage(stackPosition, containerHeight);
     const scaleEndPositionPx = parsePercentage(scaleEndPosition, containerHeight);
-    const endElement = scroller.querySelector('.scroll-stack-end') as HTMLElement | null;
+    const endElement = scroller.querySelector('.scroll-stack-end') as HTMLElement;
     const endElementTop = endElement ? endElement.offsetTop : 0;
 
     cardsRef.current.forEach((card, i) => {
@@ -142,12 +128,15 @@ const ScrollStack: React.FC<ScrollStackProps> = ({
       if (blurAmount) {
         let topCardIndex = 0;
         for (let j = 0; j < cardsRef.current.length; j++) {
-          const jCardTop = cardsRef.current[j]?.offsetTop ?? 0;
+          const jCard = cardsRef.current[j];
+          if (!jCard) continue;
+          const jCardTop = jCard.offsetTop;
           const jTriggerStart = jCardTop - stackPositionPx - (itemStackDistance * j);
           if (scrollTop >= jTriggerStart) {
             topCardIndex = j;
           }
         }
+        
         if (i < topCardIndex) {
           const depthInStack = topCardIndex - i;
           blur = Math.max(0, depthInStack * blurAmount);
@@ -156,6 +145,7 @@ const ScrollStack: React.FC<ScrollStackProps> = ({
 
       let translateY = 0;
       const isPinned = scrollTop >= pinStart && scrollTop <= pinEnd;
+      
       if (isPinned) {
         translateY = scrollTop - cardTop + stackPositionPx + (itemStackDistance * i);
       } else if (scrollTop > pinEnd) {
@@ -179,8 +169,10 @@ const ScrollStack: React.FC<ScrollStackProps> = ({
       if (hasChanged) {
         const transform = `translate3d(0, ${newTransform.translateY}px, 0) scale(${newTransform.scale}) rotate(${newTransform.rotation}deg)`;
         const filter = newTransform.blur > 0 ? `blur(${newTransform.blur}px)` : '';
+
         card.style.transform = transform;
         card.style.filter = filter;
+        
         lastTransformsRef.current.set(i, newTransform);
       }
 
@@ -213,26 +205,33 @@ const ScrollStack: React.FC<ScrollStackProps> = ({
     updateCardTransforms();
   }, [updateCardTransforms]);
 
+  const handleCardClick = useCallback((index: number) => {
+    onCardClick?.(index);
+  }, [onCardClick]);
+
+  const handleKeyDown = useCallback((event: React.KeyboardEvent, index: number) => {
+    if (event.key === 'Enter' || event.key === ' ') {
+      event.preventDefault();
+      handleCardClick(index);
+    }
+  }, [handleCardClick]);
+
   const setupLenis = useCallback(() => {
     const scroller = scrollerRef.current;
     if (!scroller) return;
 
     const lenis = new Lenis({
       wrapper: scroller,
-      content: scroller.querySelector('.scroll-stack-inner'),
+      content: scroller.querySelector('.scroll-stack-inner') as HTMLElement,
       duration: 1.2,
       easing: (t: number) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
       smoothWheel: true,
       touchMultiplier: 2,
       infinite: false,
-      gestureOrientationHandler: true,
-      normalizeWheel: true,
       wheelMultiplier: 1,
-      touchInertiaMultiplier: 35,
       lerp: 0.1,
       syncTouch: true,
       syncTouchLerp: 0.075,
-      touchInertia: 0.6,
     });
 
     lenis.on('scroll', handleScroll);
@@ -298,15 +297,55 @@ const ScrollStack: React.FC<ScrollStackProps> = ({
     updateCardTransforms,
   ]);
 
+  if (loading) {
+    return (
+      <div className="scroll-stack-loading">
+        <span>Loading portfolio...</span>
+      </div>
+    );
+  }
+
+  if (error) {
+    return (
+      <div className="scroll-stack-error">
+        <span>Failed to load portfolio</span>
+        <p>{error}</p>
+      </div>
+    );
+  }
+
   return (
     <div
-      className={`scroll-stack-scroller ${className}`.trim()}
+      className={`relative w-full h-full overflow-y-auto overflow-x-visible ${className}`.trim()}
       ref={scrollerRef}
+      role="region"
+      aria-label={ariaLabel}
+      style={{ 
+        overscrollBehavior: 'contain',
+        WebkitOverflowScrolling: 'touch',
+        scrollBehavior: 'smooth',
+        WebkitTransform: 'translateZ(0)',
+        transform: 'translateZ(0)',
+        willChange: 'scroll-position',
+        // Hide scrollbars completely
+        scrollbarWidth: 'none',
+        msOverflowStyle: 'none',
+      }}
     >
-      <div className="scroll-stack-inner">
-        {children}
+      <div className="scroll-stack-inner pt-[20vh] px-20 pb-[50rem] min-h-screen">
+        {React.Children.map(children, (child, index) => {
+          if (React.isValidElement(child)) {
+            return React.cloneElement(child, {
+              onClick: () => handleCardClick(index),
+              onKeyDown: (event: React.KeyboardEvent) => handleKeyDown(event, index),
+              tabIndex: 0,
+              'data-index': index,
+            } as any);
+          }
+          return child;
+        })}
         {/* Spacer so the last pin can release cleanly */}
-        <div className="scroll-stack-end" />
+        <div className="scroll-stack-end w-full h-px" />
       </div>
     </div>
   );

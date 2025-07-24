@@ -8,6 +8,9 @@ import { FounderBrandStrategyPage } from "./pages/FounderBrandStrategyPage";
 import { FractionalMarketingPage } from "./pages/FractionalMarketingPage";
 import { PortfolioPage } from "./pages/PortfolioPage";
 import { PortfolioCaseStudiesPage } from "./pages/PortfolioCaseStudiesPage";
+import PortfolioNexusConnectedPage from "./pages/PortfolioNexusConnectedPage";
+import PortfolioWellnergyPage from "./pages/PortfolioWellnergyPage";
+import PortfolioGoFounderPage from "./pages/PortfolioGoFounderPage";
 import { ErrorBoundary } from "./components/ErrorBoundary";
 import ScrollToTop from "./components/layout/ScrollToTop";
 import "./styles/index.css";
@@ -25,6 +28,9 @@ createRoot(document.getElementById("app") as HTMLElement).render(
           <Route path="/services/fractional-marketing" element={<FractionalMarketingPage />} />
           <Route path="/portfolio" element={<PortfolioPage />} />
           <Route path="/portfolio/case-studies" element={<PortfolioCaseStudiesPage />} />
+          <Route path="/portfolio/nexus-connected" element={<PortfolioNexusConnectedPage />} />
+          <Route path="/portfolio/wellnergy" element={<PortfolioWellnergyPage />} />
+          <Route path="/portfolio/gofounder" element={<PortfolioGoFounderPage />} />
         </Routes>
       </Router>
     </ErrorBoundary>

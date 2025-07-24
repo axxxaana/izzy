@@ -206,9 +206,9 @@ export const MainContentSection = (): JSX.Element => {
                 that move people.
               </h2>
               <div className="flex justify-center mt-4">
-                <button className="relative bg-[#e44782] text-white font-['Montserrat'] font-semibold text-[16px] px-5 py-3 rounded-[0.84rem] border-2 border-[#e44782] overflow-hidden group hover:bg-white hover:text-[#e44782] transition-all duration-300 ease-out">
+                <Link to="/about" className="relative bg-[#e44782] text-white font-['Montserrat'] font-semibold text-[16px] px-5 py-3 rounded-[0.84rem] border-2 border-[#e44782] overflow-hidden group hover:bg-white hover:text-[#e44782] transition-all duration-300 ease-out">
                   About Izzy
-                </button>
+                </Link>
               </div>
             </div>
           </div>
@@ -228,9 +228,9 @@ export const MainContentSection = (): JSX.Element => {
               Your business doesn’t need more noise. It needs clarity that converts. I help you shape a narrative people trust, build marketing that actually moves, and show up where it matters, with a strategy designed to scale what you do best.
             </p>
             <div className="flex justify-center mt-8">
-              <button className="relative bg-[#e44782] text-white font-['Montserrat'] font-semibold text-[16px] px-5 py-3 rounded-[0.84rem] border-2 border-[#e44782] overflow-hidden group hover:bg-white hover:text-[#e44782] transition-all duration-300 ease-out">
+              <Link to="/get-started" className="relative bg-[#e44782] text-white font-['Montserrat'] font-semibold text-[16px] px-5 py-3 rounded-[0.84rem] border-2 border-[#e44782] overflow-hidden group hover:bg-white hover:text-[#e44782] transition-all duration-300 ease-out">
                 Book a Call
-              </button>
+              </Link>
             </div>
           </section>
 
@@ -374,17 +374,10 @@ export const MainContentSection = (): JSX.Element => {
                   viewport={{ once: true, margin: "-100px" }}
                 >
                   <div className="flex justify-start">
-                    <motion.button 
-                      className="relative bg-[#e44782] text-white font-['Montserrat'] font-semibold text-[16px] px-5 py-3 rounded-[0.84rem] border-2 border-[#e44782] overflow-hidden group hover:bg-white hover:text-[#e44782] transition-all duration-300 ease-out"
-                      initial={{ opacity: 0, scale: 0.9 }}
-                      whileInView={{ opacity: 1, scale: 1 }}
-                      transition={{ duration: 0.5, ease: "easeOut", delay: 1.6 }}
-                      viewport={{ once: true, margin: "-100px" }}
-                      whileHover={{ scale: 1.05 }}
-                    >
+                    <Link to="/services/founder-brand-strategy" className="relative bg-[#e44782] text-white font-['Montserrat'] font-semibold text-[16px] px-5 py-3 rounded-[0.84rem] border-2 border-[#e44782] overflow-hidden group hover:bg-white hover:text-[#e44782] transition-all duration-300 ease-out">
                       Learn More
-                    </motion.button>
-              </div>
+                    </Link>
+                  </div>
                 </motion.div>
             </div>
             </motion.div>
@@ -507,17 +500,10 @@ export const MainContentSection = (): JSX.Element => {
                   viewport={{ once: true, margin: "-100px" }}
                 >
                   <div className="flex justify-start">
-                    <motion.button 
-                      className="relative bg-[#e44782] text-white font-['Montserrat'] font-semibold text-[16px] px-5 py-3 rounded-[0.84rem] border-2 border-[#e44782] overflow-hidden group hover:bg-white hover:text-[#e44782] transition-all duration-300 ease-out"
-                      initial={{ opacity: 0, scale: 0.9 }}
-                      whileInView={{ opacity: 1, scale: 1 }}
-                      transition={{ duration: 0.5, ease: "easeOut", delay: 2.0 }}
-                      viewport={{ once: true, margin: "-100px" }}
-                      whileHover={{ scale: 1.05 }}
-                    >
+                    <Link to="/services/fractional-marketing" className="relative bg-[#e44782] text-white font-['Montserrat'] font-semibold text-[16px] px-5 py-3 rounded-[0.84rem] border-2 border-[#e44782] overflow-hidden group hover:bg-white hover:text-[#e44782] transition-all duration-300 ease-out">
                       Learn More
-                    </motion.button>
-              </div>
+                    </Link>
+                  </div>
                 </motion.div>
             </div>
             </motion.div>

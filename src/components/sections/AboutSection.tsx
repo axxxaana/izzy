@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 export const AboutSection: React.FC = () => {
   return (
@@ -15,12 +16,12 @@ export const AboutSection: React.FC = () => {
         </h2>
         
         <div className="flex flex-col sm:flex-row gap-4 justify-center mt-8">
-          <button className="bg-[#e44782] text-white font-montserrat text-base px-5 py-3 rounded-[0.84rem] hover:bg-white hover:text-[#e44782] hover:border-2 hover:border-[#e44782] transition-all duration-200">
+          <Link to="/about" className="bg-[#e44782] text-white font-montserrat text-base px-5 py-3 rounded-[0.84rem] hover:bg-white hover:text-[#e44782] hover:border-2 hover:border-[#e44782] transition-all duration-200">
             About Izzy
-          </button>
-          <button className="bg-[#e44782] text-white font-montserrat text-base px-5 py-3 rounded-[0.84rem] hover:bg-white hover:text-[#e44782] hover:border-2 hover:border-[#e44782] transition-all duration-200">
+          </Link>
+          <Link to="/get-started" className="bg-[#e44782] text-white font-montserrat text-base px-5 py-3 rounded-[0.84rem] hover:bg-white hover:text-[#e44782] hover:border-2 hover:border-[#e44782] transition-all duration-200">
             Book a Call
-          </button>
+          </Link>
         </div>
       </div>
     </section>
