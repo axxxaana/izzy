@@ -5,7 +5,7 @@ import { Navigation } from '../components/layout/Navigation';
 const caseStudies = [
   {
     title: 'Nexus Connected',
-    description: 'Strategic marketing leadership and brand development for an innovative femtech platform.',
+    description: 'Nexus is a femtech startup creating an AI-driven health coach for women. I led a full brand repositioning, building the strategy, voice, and campaigns across digital and in-person channels. The result: a unified brand, stronger founder visibility, and a clear path to growth and investment.',
     image: '/nexus connected team.jpg',
   },
   {

@@ -172,15 +172,15 @@ export const FooterSection = (): JSX.Element => {
                 transition={{ duration: 0.6, ease: "easeOut", delay: 0.4 }}
                 viewport={{ once: true, margin: "-100px" }}
               >
-                <motion.li whileHover={{ x: 5 }} transition={{ duration: 0.2 }}>
-                  <a href="/about" className="[font-family:'Inter',Helvetica] text-gray-600 hover:text-[#e44782] transition-colors duration-200 text-sm">About</a>
-                </motion.li>
-                <motion.li whileHover={{ x: 5 }} transition={{ duration: 0.2 }}>
-                  <a href="/portfolio" className="[font-family:'Inter',Helvetica] text-gray-600 hover:text-[#e44782] transition-colors duration-200 text-sm">Portfolio</a>
-                </motion.li>
-                <motion.li whileHover={{ x: 5 }} transition={{ duration: 0.2 }}>
-                  <a href="/get-started" className="[font-family:'Inter',Helvetica] text-gray-600 hover:text-[#e44782] transition-colors duration-200 text-sm">Book a Call</a>
-                </motion.li>
+                              <motion.li whileHover={{ x: 5 }} transition={{ duration: 0.2 }}>
+                <Link to="/about" className="[font-family:'Inter',Helvetica] text-gray-600 hover:text-[#e44782] transition-colors duration-200 text-sm">About</Link>
+              </motion.li>
+              <motion.li whileHover={{ x: 5 }} transition={{ duration: 0.2 }}>
+                <Link to="/portfolio" className="[font-family:'Inter',Helvetica] text-gray-600 hover:text-[#e44782] transition-colors duration-200 text-sm">Portfolio</Link>
+              </motion.li>
+              <motion.li whileHover={{ x: 5 }} transition={{ duration: 0.2 }}>
+                <Link to="/get-started" className="[font-family:'Inter',Helvetica] text-gray-600 hover:text-[#e44782] transition-colors duration-200 text-sm">Book a Call</Link>
+              </motion.li>
               </motion.ul>
             </motion.div>
 
@@ -207,12 +207,12 @@ export const FooterSection = (): JSX.Element => {
                 transition={{ duration: 0.6, ease: "easeOut", delay: 0.5 }}
                 viewport={{ once: true, margin: "-100px" }}
               >
-                <motion.li whileHover={{ x: 5 }} transition={{ duration: 0.2 }}>
-                  <a href="/services/founder-brand-strategy" className="[font-family:'Inter',Helvetica] text-gray-600 hover:text-[#e44782] transition-colors duration-200 text-sm">Founder Brand Strategy</a>
-                </motion.li>
-                <motion.li whileHover={{ x: 5 }} transition={{ duration: 0.2 }}>
-                  <a href="/services/fractional-marketing" className="[font-family:'Inter',Helvetica] text-gray-600 hover:text-[#e44782] transition-colors duration-200 text-sm">Fractional Marketing</a>
-                </motion.li>
+                              <motion.li whileHover={{ x: 5 }} transition={{ duration: 0.2 }}>
+                <Link to="/services/founder-brand-strategy" className="[font-family:'Inter',Helvetica] text-gray-600 hover:text-[#e44782] transition-colors duration-200 text-sm">Founder Brand Strategy</Link>
+              </motion.li>
+              <motion.li whileHover={{ x: 5 }} transition={{ duration: 0.2 }}>
+                <Link to="/services/fractional-marketing" className="[font-family:'Inter',Helvetica] text-gray-600 hover:text-[#e44782] transition-colors duration-200 text-sm">Fractional Marketing</Link>
+              </motion.li>
               </motion.ul>
             </motion.div>
 

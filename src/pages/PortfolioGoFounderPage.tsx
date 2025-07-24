@@ -1,14 +1,14 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { Navigation } from '../components/layout/Navigation';
 import { FooterSection } from '../screens/ElementLight/sections/FooterSection';
 import { CursorTrail } from '../components/CursorTrail';
 import { Accordion, AccordionItem, AccordionTrigger, AccordionContent } from '../components/ui/accordion';
-import { portfolioItems, PortfolioCard, getPortfolioLink } from './portfolioData';
 
 const HERO_IMAGE = '/GoFounder Cover.png';
 const HERO_HEADING = 'GoFounder';
-const HERO_DESCRIPTION = 'Marketing, content creation, ghostwriting, and founder onboarding for a startup community platform. Developed and executed multi-channel marketing strategies, produced engaging content, and supported founders through tailored onboarding experiences to foster a thriving entrepreneurial network.';
+const HERO_DESCRIPTION = 'GoFounder is a B2B coaching service helping startup founders stay accountable, focused, and consistently performing at a high level. Despite a powerful value proposition and strong client retention, their brand didn\'t reflect the quality of their offer. I stepped in to help unify their messaging, build a scalable content engine, and elevate the founders\' visibility to drive long-term authority and growth.';
 
 const saasAccordionItem = "rounded-xl mb-2 transition-all duration-300 overflow-hidden bg-transparent data-[state=open]:bg-white data-[state=open]:shadow data-[state=open]:border-l-4 data-[state=open]:border-pink-500";
 const saasAccordionTrigger = "flex items-center justify-between w-full px-6 py-5 text-lg font-semibold text-gray-900 cursor-pointer focus:outline-none transition-all duration-300";
@@ -16,12 +16,12 @@ const saasAccordionContent = "px-6 pb-6 pt-2 text-gray-700 text-base";
 const whatIDidAccordionItem = "rounded-xl mb-2 transition-all duration-300 overflow-hidden bg-transparent data-[state=open]:bg-[rgba(228,71,130,0.2)] data-[state=open]:border-l-4 data-[state=open]:border-pink-500 data-[state=open]:shadow";
 
 // Local portfolio items for dynamic case studies (excluding GoFounder)
-const localPortfolioItems = [
+const portfolioItems = [
   {
     id: 1,
     title: 'Nexus Connected',
     subtitle: 'Team Collaboration Platform',
-    description: 'Strategic marketing leadership and comprehensive brand development for an innovative femtech platform. Led the creation of a unified brand voice, executed multi-channel campaigns, and drove engagement across digital and community channels to accelerate growth and industry impact.',
+    description: 'Nexus is a femtech startup creating an AI-driven health coach for women. I led a full brand repositioning, building the strategy, voice, and campaigns across digital and in-person channels. The result: a unified brand, stronger founder visibility, and a clear path to growth and investment.',
     tags: ['Brand Overhaul', 'Product Positioning', 'UX Strategy'],
     image: '/nexus connected team.jpg',
     color: '',
@@ -30,22 +30,22 @@ const localPortfolioItems = [
     id: 2,
     title: 'Wellnergy',
     subtitle: 'Health & Wellness Platform',
-    description: 'Ghostwriting, branding, and influencer partnership outreach for a wellness community. Developed compelling brand messaging, crafted engaging content, and built strategic relationships with key influencers to amplify the platform’s reach and foster a vibrant, health-focused community.',
+    description: 'Wellnergy is a fast-growing wellness event celebrating holistic health. I led brand messaging, ghostwrote founder content, and built influencer partnerships — turning a grassroots festival into a credible, high-visibility brand with strategic alliances and strong digital traction.',
     tags: ['Health Tech', 'Holistic Design', 'Wellness Strategy'],
     image: '/wellnergy cover.png',
     color: '',
   },
 ];
 
-const localGetPortfolioLink = (title: string) => {
+const getPortfolioLink = (title: string) => {
   if (title === 'Nexus Connected') return '/portfolio/nexus-connected';
   if (title === 'Wellnergy') return '/portfolio/wellnergy';
   return '#';
 };
 
-const LocalPortfolioCard: React.FC<{ item: typeof localPortfolioItems[0]; index: number }> = ({ item, index }) => {
+const PortfolioCard: React.FC<{ item: typeof portfolioItems[0]; index: number }> = ({ item, index }) => {
   return (
-    <div className="block group mt-8 cursor-pointer">
+    <Link to={getPortfolioLink(item.title)} className="block group mt-8 cursor-pointer">
       <motion.div
         initial={{ opacity: 0, y: 80, scale: 0.92, rotate: -6, filter: 'blur(8px)' }}
         whileInView={{ opacity: 1, y: 0, scale: 1, rotate: 0, filter: 'blur(0px)' }}
@@ -72,10 +72,10 @@ const LocalPortfolioCard: React.FC<{ item: typeof localPortfolioItems[0]; index:
             <p className="text-lg text-gray-700 leading-relaxed mb-6 font-['Inter']">
               {item.description}
             </p>
-            <a href={localGetPortfolioLink(item.title)} className="inline-flex items-center px-0 py-4 rounded-[12px] bg-transparent text-[#e44782] text-2xl font-bold transition-transform duration-200 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-pink-200">
+            <div className="inline-flex items-center px-0 py-4 rounded-[12px] bg-transparent text-[#e44782] text-2xl font-bold transition-transform duration-200 group-hover:scale-105">
               <span style={{ color: '#e44782' }}>Read More</span>
               <span className="ml-4 text-3xl font-bold" style={{ color: '#e44782' }}>&gt;</span>
-            </a>
+            </div>
           </div>
         </div>
         {/* Image - Right Side */}
@@ -90,7 +90,7 @@ const LocalPortfolioCard: React.FC<{ item: typeof localPortfolioItems[0]; index:
           </div>
         </div>
       </motion.div>
-    </div>
+    </Link>
   );
 };
 
@@ -99,62 +99,94 @@ const PortfolioGoFounderPage: React.FC = () => {
     <div className="w-full bg-white min-h-screen">
       <CursorTrail />
       <Navigation />
-      <motion.section
-        initial={{ opacity: 0, y: 40 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8, ease: 'easeOut' }}
-        className="w-full flex flex-col md:flex-row items-center justify-center pt-24 pb-12 px-4 md:px-12 max-w-7xl mx-auto gap-12 mt-[150px]"
-      >
-        {/* Image Left */}
-        <motion.div
-          className="flex-1 w-full max-w-xl rounded-2xl overflow-hidden shadow-lg relative"
-          initial={{ opacity: 0, x: -40 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.8, ease: 'easeOut' }}
+      
+      {/* Enhanced Hero Section */}
+      <div className="relative w-full overflow-hidden bg-white">
+        
+        <motion.section
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 1, ease: 'easeOut' }}
+          className="relative w-full flex flex-col lg:flex-row items-center justify-center pt-[180px] pb-20 px-4 md:px-8 lg:px-12 max-w-7xl mx-auto gap-16 min-h-screen"
         >
-          {/* Industry badge absolutely positioned over image */}
-          <span
-            className="px-6 py-2"
-            style={{
-              borderRadius: '0.84rem',
-              background: '#fff4fa',
-              color: '#e44782',
-              fontSize: '1rem',
-              fontWeight: 500,
-              padding: '0.5rem 1.5rem',
-              border: '1px solid #fbcfe8',
-              fontFamily: 'Inter, Helvetica',
-              position: 'absolute',
-              top: '24px',
-              right: '24px',
-              zIndex: 10,
-              boxShadow: '0 2px 12px 0 rgba(228,71,130,0.08)'
-            }}
+          {/* Image Left */}
+          <motion.div
+            className="flex-1 w-full max-w-2xl order-1 lg:order-1"
+            initial={{ opacity: 0, x: -60, scale: 0.9 }}
+            animate={{ opacity: 1, x: 0, scale: 1 }}
+            transition={{ duration: 0.8, ease: 'easeOut', delay: 0.2 }}
           >
-            Industry: Startup Accelerator
-          </span>
-          <img
-            src={HERO_IMAGE}
-            alt={HERO_HEADING}
-            className="w-full h-[420px] object-cover object-center rounded-2xl"
-            loading="eager"
-          />
-        </motion.div>
-        {/* Text Right */}
-        <motion.div
-          className="flex-1 w-full max-w-2xl flex flex-col items-start"
-          initial={{ opacity: 0, x: 40 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.8, ease: 'easeOut', delay: 0.2 }}
-        >
-          <h1 className="text-[40px] md:text-[56px] font-extrabold mb-6 leading-[1.1] font-['Montserrat'] text-gray-900">
-            {HERO_HEADING}
-          </h1>
-          <p className="text-lg md:text-xl text-gray-700 mb-6 font-['Inter']">
-            {HERO_DESCRIPTION}
-          </p>
-        </motion.div>
-      </motion.section>
+            <div className="relative group">
+              {/* Main Image Container */}
+              <div className="relative rounded-3xl overflow-hidden shadow-2xl p-3" style={{ backgroundColor: 'rgba(228, 71, 130, 0.2)' }}>
+                {/* Main Image */}
+                <img
+                  src={HERO_IMAGE}
+                  alt={HERO_HEADING}
+                  className="w-full h-[500px] md:h-[600px] object-cover object-center rounded-2xl"
+                  loading="eager"
+                />
+              </div>
+            </div>
+          </motion.div>
+
+          {/* Content Right */}
+          <motion.div
+            className="flex-1 w-full max-w-2xl flex flex-col items-start order-2 lg:order-2"
+            initial={{ opacity: 0, x: 60 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8, ease: 'easeOut', delay: 0.3 }}
+          >
+            {/* Industry Badge */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.5 }}
+              className="mb-8"
+            >
+              <span className="inline-flex items-center px-6 py-3 rounded-full bg-white border border-pink-200 shadow-lg backdrop-blur-sm">
+                <span className="text-pink-700 font-medium text-sm tracking-wide">
+                  B2B Coaching
+                </span>
+              </span>
+            </motion.div>
+
+            {/* Main Heading */}
+            <motion.h1
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, ease: 'easeOut', delay: 0.4 }}
+              className="text-5xl md:text-6xl lg:text-7xl font-black mb-6 leading-[0.9] font-['Montserrat'] text-gray-900 tracking-tight"
+            >
+              <span className="bg-gradient-to-r from-gray-900 via-pink-800 to-pink-600 bg-clip-text text-transparent">
+                {HERO_HEADING}
+              </span>
+            </motion.h1>
+
+            {/* Subheading */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.6 }}
+              className="mb-8"
+            >
+              <span className="text-2xl md:text-3xl font-bold text-pink-500 tracking-wide">
+                Case Study
+              </span>
+            </motion.div>
+
+            {/* Description */}
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, ease: 'easeOut', delay: 0.7 }}
+              className="text-lg md:text-xl text-gray-700 leading-relaxed font-['Inter'] max-w-xl"
+            >
+              {HERO_DESCRIPTION}
+            </motion.p>
+          </motion.div>
+        </motion.section>
+      </div>
       {/* Case Study Section - Example content, update as needed for GoFounder */}
       <motion.section
         initial={{ opacity: 0, y: 40 }}
@@ -181,18 +213,41 @@ const PortfolioGoFounderPage: React.FC = () => {
               >
                 <h2 className="text-[40px] font-bold text-black mb-4">The Challenge</h2>
                 <p className="text-lg text-gray-700 mb-4">
-                  [Replace with GoFounder challenge intro and accordion content]
+                  GoFounder had a compelling product, but its brand wasn't telling the story. The digital presence lacked polish and consistency, making it difficult to leverage success stories, build trust at scale, or position the business for growth. Brand channels were fragmented, and founder-led content wasn't being used to its full advantage.
                 </p>
                 <Accordion type="single" collapsible className="w-full bg-transparent mt-[10px]" defaultValue="challenge1">
                   <AccordionItem value="challenge1" className={saasAccordionItem + " data-[state=open]:border-l-4 data-[state=open]:border-pink-500"}>
                     <AccordionTrigger className={saasAccordionTrigger}>
-                      [Challenge 1 Title]
+                      Disconnected Brand Touchpoints
                     </AccordionTrigger>
                     <AccordionContent className={saasAccordionContent}>
-                      [Challenge 1 content]
+                      Onboarding, social channels, and internal communications all felt misaligned — diluting the customer experience and making it harder to communicate value clearly.
                     </AccordionContent>
                   </AccordionItem>
-                  {/* Add more AccordionItems for GoFounder as needed */}
+                  <AccordionItem value="challenge2" className={saasAccordionItem + " data-[state=open]:border-l-4 data-[state=open]:border-pink-500"}>
+                    <AccordionTrigger className={saasAccordionTrigger}>
+                      Low Founder Visibility
+                    </AccordionTrigger>
+                    <AccordionContent className={saasAccordionContent}>
+                      The founder and head coach had a strong message, but weren't showing up consistently. This made it harder to build authority or turn audience into clients.
+                    </AccordionContent>
+                  </AccordionItem>
+                  <AccordionItem value="challenge3" className={saasAccordionItem + " data-[state=open]:border-l-4 data-[state=open]:border-pink-500"}>
+                    <AccordionTrigger className={saasAccordionTrigger}>
+                      Unleveraged Market Positioning
+                    </AccordionTrigger>
+                    <AccordionContent className={saasAccordionContent}>
+                      There was a gap between the results they were getting for clients and how they showed up publicly. That disconnect limited awareness and slowed inbound growth.
+                    </AccordionContent>
+                  </AccordionItem>
+                  <AccordionItem value="challenge4" className={saasAccordionItem + " data-[state=open]:border-l-4 data-[state=open]:border-pink-500"}>
+                    <AccordionTrigger className={saasAccordionTrigger}>
+                      Missing Content Strategy
+                    </AccordionTrigger>
+                    <AccordionContent className={saasAccordionContent}>
+                      Without a clear content engine, marketing efforts were reactive. Nothing was compounding — and founder efforts didn't translate to business results.
+                    </AccordionContent>
+                  </AccordionItem>
                 </Accordion>
               </motion.div>
               <motion.div
@@ -202,7 +257,7 @@ const PortfolioGoFounderPage: React.FC = () => {
                 transition={{ duration: 0.8, delay: 0.2 }}
                 viewport={{ once: true }}
               >
-                <img src={HERO_IMAGE} alt="GoFounder Challenge" className="rounded-2xl w-full max-w-md object-cover" />
+                <img src="/gofounder-1.png" alt="GoFounder Challenge" className="rounded-2xl w-full max-w-2xl object-cover" />
               </motion.div>
             </div>
           </div>
@@ -217,18 +272,41 @@ const PortfolioGoFounderPage: React.FC = () => {
         >
           <div className="flex-1">
             <h2 className="text-[40px] font-bold text-black mb-4">What I Did</h2>
-            <p className="text-lg text-gray-700 mb-4">[Replace with GoFounder what I did intro]</p>
+            <p className="text-lg text-gray-700 mb-4">My focus was to unify GoFounder's message, streamline content across platforms, and help the founder show up as a trusted voice in the coaching space. From brand assets to thought leadership to community design, everything was aligned around clarity and consistency.</p>
             <div style={{ marginTop: '40px' }}>
               <Accordion type="single" collapsible className="w-full bg-transparent mt-0" defaultValue="step1">
                 <AccordionItem value="step1" className={whatIDidAccordionItem}>
                   <AccordionTrigger className={saasAccordionTrigger}>
-                    [Step 1 Title]
+                    Social Strategy & Execution
                   </AccordionTrigger>
                   <AccordionContent className={saasAccordionContent}>
-                    [Step 1 content]
+                    Built and led a full-scale content strategy across founder and brand channels — turning fragmented posts into a repeatable, scalable system.
                   </AccordionContent>
                 </AccordionItem>
-                {/* Add more AccordionItems for GoFounder as needed */}
+                <AccordionItem value="step2" className={whatIDidAccordionItem}>
+                  <AccordionTrigger className={saasAccordionTrigger}>
+                    Branded Visual Assets
+                  </AccordionTrigger>
+                  <AccordionContent className={saasAccordionContent}>
+                    Designed clean, aligned materials for onboarding flows, live events, and podcast visuals to reinforce consistency across touchpoints.
+                  </AccordionContent>
+                </AccordionItem>
+                <AccordionItem value="step3" className={whatIDidAccordionItem}>
+                  <AccordionTrigger className={saasAccordionTrigger}>
+                    Community & Thought Leadership
+                  </AccordionTrigger>
+                  <AccordionContent className={saasAccordionContent}>
+                    Managed an engaged founder community on Heartbeat and ghostwrote content to amplify the founder's voice across LinkedIn and email.
+                  </AccordionContent>
+                </AccordionItem>
+                <AccordionItem value="step4" className={whatIDidAccordionItem}>
+                  <AccordionTrigger className={saasAccordionTrigger}>
+                    Content Engine Build-Out
+                  </AccordionTrigger>
+                  <AccordionContent className={saasAccordionContent}>
+                    Created a long-term strategy for authority building and lead gen — including templates, systems, and planning tools to keep momentum high.
+                  </AccordionContent>
+                </AccordionItem>
               </Accordion>
             </div>
           </div>
@@ -239,7 +317,7 @@ const PortfolioGoFounderPage: React.FC = () => {
             transition={{ duration: 0.8, delay: 0.2 }}
             viewport={{ once: true }}
           >
-            <img src={HERO_IMAGE} alt="GoFounder What I Did" className="rounded-2xl w-full max-w-md object-cover" />
+            <img src="/gofounder-2.png" alt="GoFounder What I Did" className="rounded-2xl w-full max-w-2xl object-cover" />
           </motion.div>
         </motion.div>
         {/* Results & Impact Section - Example content, update as needed for GoFounder */}
@@ -260,17 +338,40 @@ const PortfolioGoFounderPage: React.FC = () => {
                 viewport={{ once: true }}
               >
                 <h2 className="text-[40px] font-bold text-black mb-4">Results & Impact</h2>
-                <p className="text-lg text-gray-700 mb-4">[Replace with GoFounder results intro]</p>
+                <p className="text-lg text-gray-700 mb-4">The results weren't just visual — they were tangible. From thousands of new followers to consistent inbound leads and strong client retention, every system we built helped the brand grow louder, sharper, and more scalable.</p>
                 <Accordion type="single" collapsible className="w-full bg-transparent mt-[10px]" defaultValue="result1">
                   <AccordionItem value="result1" className={saasAccordionItem + " data-[state=open]:border-l-4 data-[state=open]:border-pink-500"}>
                     <AccordionTrigger className={saasAccordionTrigger}>
-                      [Result 1 Title]
+                      Stronger Brand Identity
                     </AccordionTrigger>
                     <AccordionContent className={saasAccordionContent}>
-                      [Result 1 content]
+                      Aligned visuals and voice across every channel — making GoFounder instantly recognizable to its target market.
                     </AccordionContent>
                   </AccordionItem>
-                  {/* Add more AccordionItems for GoFounder as needed */}
+                  <AccordionItem value="result2" className={saasAccordionItem + " data-[state=open]:border-l-4 data-[state=open]:border-pink-500"}>
+                    <AccordionTrigger className={saasAccordionTrigger}>
+                      Expanded Audience Reach
+                    </AccordionTrigger>
+                    <AccordionContent className={saasAccordionContent}>
+                      Grew combined founder audience to 30,000+ LinkedIn followers and significantly improved content visibility and performance.
+                    </AccordionContent>
+                  </AccordionItem>
+                  <AccordionItem value="result3" className={saasAccordionItem + " data-[state=open]:border-l-4 data-[state=open]:border-pink-500"}>
+                    <AccordionTrigger className={saasAccordionTrigger}>
+                      Scalable Content Ops
+                    </AccordionTrigger>
+                    <AccordionContent className={saasAccordionContent}>
+                      Created backend systems that removed friction, saved time, and kept messaging consistent — even during growth sprints.
+                    </AccordionContent>
+                  </AccordionItem>
+                  <AccordionItem value="result4" className={saasAccordionItem + " data-[state=open]:border-l-4 data-[state=open]:border-pink-500"}>
+                    <AccordionTrigger className={saasAccordionTrigger}>
+                      Client Impact at Scale
+                    </AccordionTrigger>
+                    <AccordionContent className={saasAccordionContent}>
+                      Supported over 100 startup founders with a 6-month average retention — solidifying GoFounder's positioning as a go-to in B2B coaching.
+                    </AccordionContent>
+                  </AccordionItem>
                 </Accordion>
               </motion.div>
               <motion.div
@@ -280,7 +381,7 @@ const PortfolioGoFounderPage: React.FC = () => {
                 transition={{ duration: 0.8, delay: 0.2 }}
                 viewport={{ once: true }}
               >
-                <img src={HERO_IMAGE} alt="GoFounder Results" className="rounded-2xl w-full max-w-md object-cover" />
+                <img src="/gofounder-3.png" alt="GoFounder Results" className="rounded-2xl w-full max-w-2xl object-cover" />
               </motion.div>
             </div>
           </div>
@@ -304,8 +405,8 @@ const PortfolioGoFounderPage: React.FC = () => {
             </p>
           </motion.div>
           <div className="grid grid-cols-1 gap-8 md:gap-12">
-                          {localPortfolioItems.map((item, index) => (
-                <LocalPortfolioCard key={item.id} item={item} index={index} />
+            {portfolioItems.map((item, index) => (
+              <PortfolioCard key={item.id} item={item} index={index} />
             ))}
           </div>
           <div style={{ height: '100px' }}></div>
