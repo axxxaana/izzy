@@ -1,10 +1,10 @@
-import React, { useState, useCallback } from 'react';
+import React from 'react';
+import { motion } from 'framer-motion';
 
 interface ProcessStep {
   title: string;
   bgColor: string;
   textColor: string;
-  toggleIconColor: string;
   contentText: string;
   tags: string[];
 }
@@ -14,7 +14,6 @@ const processSteps: ProcessStep[] = [
     title: "Strategy",
     bgColor: "#e44782",
     textColor: "#ffffff",
-    toggleIconColor: "#ffffff",
     contentText: "Before any brand shows up boldly, it needs to get clear. I dive deep into your goals, audience, and positioning to build a strategy that actually sticks.",
     tags: ["Discovery call", "Brand clarity audit", "Competitive positioning", "Messaging hierarchy"]
   },
@@ -22,7 +21,6 @@ const processSteps: ProcessStep[] = [
     title: "Messaging",
     bgColor: "#f473ae",
     textColor: "#ffffff",
-    toggleIconColor: "#ffffff",
     contentText: "This is where we cut through the fluff. We untangle bloated decks and buried founder stories into sharp, clear, human messaging.",
     tags: ["Brand story", "Tone of voice", "Website & sales copy", "Elevator pitch"]
   },
@@ -30,90 +28,126 @@ const processSteps: ProcessStep[] = [
     title: "Activation",
     bgColor: "#ffe4ed",
     textColor: "#1e1e1e",
-    toggleIconColor: "#1e1e1e",
     contentText: "Now we bring it to life. From content systems to design direction, I help you show up in a way that feels aligned and converts.",
     tags: ["Content plan", "Design briefs", "Ghostwriting", "Go-to-market support"]
   }
 ];
 
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.2,
+      delayChildren: 0.1
+    }
+  }
+};
+
+const itemVariants = {
+  hidden: { 
+    opacity: 0, 
+    y: 40,
+    scale: 0.95
+  },
+  visible: { 
+    opacity: 1, 
+    y: 0,
+    scale: 1,
+    transition: {
+      duration: 0.8,
+      ease: [0.25, 0.46, 0.45, 0.94]
+    }
+  }
+};
+
 export const IzzyProcessAccordion: React.FC = () => {
-  const [openStep, setOpenStep] = useState<number | null>(null);
-  const [hoveredStep, setHoveredStep] = useState<number | null>(null);
-
-  const toggleStep = useCallback((index: number) => {
-    setOpenStep(prev => prev === index ? null : index);
-  }, []);
-
-  const handleMouseEnter = useCallback((index: number) => {
-    setHoveredStep(index);
-  }, []);
-
-  const handleMouseLeave = useCallback(() => {
-    setHoveredStep(null);
-  }, []);
-
   return (
     <section className="w-full bg-[#fff4f7] py-32 md:py-40">
-      <div className="max-w-[1120px] mx-auto px-6">
-        {/* Section Header */}
-        <div className="text-center mb-20">
-          <h2 className="text-[36px] font-bold text-gray-900 mb-4 font-['Montserrat'] tracking-tight leading-tight">
-            My Signature Process
-          </h2>
-          <p className="text-lg text-gray-600 max-w-[720px] mx-auto">
-            A clear, human, and commercially-minded journey to brand clarity
-          </p>
-        </div>
-
-        {/* Accordion Steps */}
-        <div className="space-y-5">
-          {processSteps.map((step, index) => (
-            <div
-              key={index}
-              className={`transform transition-all duration-300 ease-out will-change-transform ${
-                hoveredStep === index ? 'scale-[1.01]' : 'scale-100'
-              }`}
-              style={{ backgroundColor: step.bgColor }}
-              onMouseEnter={() => handleMouseEnter(index)}
-              onMouseLeave={handleMouseLeave}
+      <div className="max-w-[1200px] mx-auto px-6">
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20">
+          
+          {/* Left Side - Sticky Title */}
+          <div className="lg:sticky lg:top-48 lg:h-fit order-2 lg:order-1">
+            <motion.div 
+              className="text-center lg:text-left mb-12 lg:mb-0"
+              initial={{ opacity: 0, x: -40 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8, ease: [0.25, 0.46, 0.45, 0.94] }}
+              viewport={{ once: true, amount: 0.3 }}
             >
-              <div
-                className={`rounded-[20px] px-8 py-6 cursor-pointer transition-all duration-300 ease-out shadow-md hover:shadow-lg ${
-                  openStep === index ? 'shadow-xl' : ''
-                }`}
-                onClick={() => toggleStep(index)}
-              >
-                {/* Step Header */}
-                <div className="flex items-center justify-between">
-                  <div>
-                    <span className="text-sm font-medium opacity-80" style={{ color: step.textColor }}>
-                      Step {index + 1}
-                    </span>
-                    <h3 
-                      className="text-[20px] font-semibold font-['Montserrat'] leading-tight"
-                      style={{ color: step.textColor }}
-                    >
-                      {step.title}
-                    </h3>
-                  </div>
-                  <div 
-                    className={`text-[28px] transition-all duration-300 ease-out ${
-                      openStep === index ? 'rotate-45' : 'rotate-0'
-                    }`}
-                    style={{ color: step.toggleIconColor }}
-                  >
-                    {openStep === index ? '✖️' : '➕'}
-                  </div>
+              {/* Badge */}
+              <div className="inline-flex items-center px-4 py-2 bg-white/80 backdrop-blur-sm rounded-full border border-[#e44782]/20 mb-6">
+                <span className="text-[#e44782] text-sm font-semibold">Process</span>
+              </div>
+              
+              {/* Main Title */}
+              <h2 className="text-[36px] md:text-[48px] lg:text-[56px] font-bold text-gray-900 mb-6 font-['Montserrat'] tracking-tight leading-[1.1]">
+                My Signature Process
+              </h2>
+              
+              {/* Subtitle */}
+              <p className="text-[16px] md:text-[18px] lg:text-[20px] text-gray-600 leading-relaxed mb-8 max-w-[480px] mx-auto lg:mx-0">
+                A clear, human, and commercially-minded journey to brand clarity that cuts through complexity and delivers results.
+              </p>
+              
+              {/* Key Benefits */}
+              <div className="space-y-4 max-w-[480px] mx-auto lg:mx-0">
+                <div className="flex items-start space-x-3">
+                  <div className="w-2 h-2 bg-[#e44782] rounded-full mt-2 flex-shrink-0"></div>
+                  <p className="text-gray-700 font-medium">Strategic foundation that actually sticks</p>
                 </div>
+                <div className="flex items-start space-x-3">
+                  <div className="w-2 h-2 bg-[#e44782] rounded-full mt-2 flex-shrink-0"></div>
+                  <p className="text-gray-700 font-medium">Clear messaging that converts</p>
+                </div>
+                <div className="flex items-start space-x-3">
+                  <div className="w-2 h-2 bg-[#e44782] rounded-full mt-2 flex-shrink-0"></div>
+                  <p className="text-gray-700 font-medium">Execution that drives real results</p>
+                </div>
+              </div>
+            </motion.div>
+          </div>
 
-                {/* Step Content */}
+          {/* Right Side - Process Steps */}
+          <motion.div 
+            className="space-y-6 lg:space-y-8 order-1 lg:order-2"
+            variants={containerVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.1 }}
+          >
+            {processSteps.map((step, index) => (
+              <motion.div
+                key={index}
+                className="group relative"
+                variants={itemVariants}
+                custom={index}
+              >
+                {/* Step Card */}
                 <div 
-                  className={`overflow-hidden transition-all duration-300 ease-out ${
-                    openStep === index ? 'max-h-96 opacity-100 mt-6' : 'max-h-0 opacity-0'
-                  }`}
+                  className="relative rounded-[20px] lg:rounded-[24px] p-8 lg:p-12 shadow-lg hover:shadow-xl transform transition-all duration-500 ease-out group-hover:scale-[1.02] group-hover:-translate-y-2 overflow-hidden"
+                  style={{ backgroundColor: step.bgColor }}
                 >
+                  {/* Large Background Number */}
+                  <div 
+                    className="absolute top-3 right-3 lg:top-4 lg:right-4 text-[80px] lg:text-[120px] font-black opacity-10 leading-none pointer-events-none"
+                    style={{ color: step.textColor }}
+                  >
+                    {index + 1}
+                  </div>
+                  
+                  {/* Title */}
+                  <h3 
+                    className="text-[28px] lg:text-[40px] font-bold font-['Montserrat'] leading-tight mb-16 lg:mb-24 relative z-10"
+                    style={{ color: step.textColor }}
+                  >
+                    {step.title}
+                  </h3>
+                  
+                  {/* Description */}
                   <p 
-                    className="text-[16px] leading-relaxed mb-6 max-w-[720px]"
+                    className="text-[15px] lg:text-[16px] leading-relaxed mb-6 lg:mb-8 opacity-90"
                     style={{ color: step.textColor }}
                   >
                     {step.contentText}
@@ -124,21 +158,24 @@ export const IzzyProcessAccordion: React.FC = () => {
                     {step.tags.map((tag, tagIndex) => (
                       <span
                         key={tagIndex}
-                        className="text-[14px] font-medium px-[14px] py-[6px] rounded-full border capitalize transition-all duration-200 hover:scale-105 hover:shadow-sm"
+                        className="text-[13px] font-medium px-3 py-1.5 rounded-full border transition-all duration-200 hover:scale-105 hover:shadow-sm"
                         style={{
                           color: step.textColor,
                           borderColor: step.textColor,
-                          backgroundColor: 'transparent'
+                          backgroundColor: 'rgba(255, 255, 255, 0.1)'
                         }}
                       >
                         {tag}
                       </span>
                     ))}
                   </div>
+                  
+                  {/* Subtle glow effect */}
+                  <div className="absolute inset-0 rounded-[24px] bg-gradient-to-br from-white/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                 </div>
-              </div>
-            </div>
-          ))}
+              </motion.div>
+            ))}
+          </motion.div>
         </div>
       </div>
     </section>
