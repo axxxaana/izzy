@@ -19,7 +19,7 @@ export const FooterSection = (): JSX.Element => {
         <div className="w-full flex flex-col md:flex-row-reverse items-center justify-between gap-8 px-8">
           {/* Left: Image (if any) */}
           {/* Right: Text and Button */}
-          <div className="flex-1 flex flex-col items-center md:items-end justify-center py-16">
+          <div className="flex-1 flex flex-col items-center md:items-end justify-center py-16 pl-[50px]">
             <motion.div 
               className="max-w-[915px] text-left md:mr-[350px]"
               initial={{ opacity: 0, x: 30 }}
@@ -34,17 +34,17 @@ export const FooterSection = (): JSX.Element => {
                 transition={{ duration: 0.6, ease: "easeOut", delay: 0.4 }}
                 viewport={{ once: true, margin: "-100px" }}
               >
-                Let&apos;s get started
+                Clarity Starts Here
               </motion.h2>
 
               <motion.p 
-                className="[font-family:'Inter',Helvetica] font-normal text-white text-[18px] text-left tracking-[0] leading-[28px] mt-8 max-w-[500px] mb-8"
+                className="[font-family:'Inter',Helvetica] font-normal text-white text-[18px] text-left tracking-[0] leading-[28px] mt-8 max-w-[580px] mb-8"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, ease: "easeOut", delay: 0.6 }}
                 viewport={{ once: true, margin: "-100px" }}
               >
-                Ready to transform your brand and drive real growth? Let's create a strategy that captivates your audience and delivers measurable results.
+                I help you cut through the noise, sharpen your message, and show up where it counts, with a brand that actually fits.
               </motion.p>
               <motion.div 
                 className="inline-block"

@@ -54,15 +54,15 @@ export const MainContentSection = (): JSX.Element => {
 
   // Service features data
   const founderBrandFeatures = [
-    "Articulate your unique story, why, values and vision, so every message feels authentic and memorable.",
-    "Publish high-impact articles, LinkedIn posts and bylines without daily grind, making you the go-to expert.",
-    "Pinpoint channels and cadence to amplify your voice, build trust and drive growth.",
+    "Craft a brand foundation that actually fits your story, your values, your positioning, so everything you say is rooted, intentional, and clear.",
+    "Find the words that sound like you. Then say them well. From LinkedIn posts to longform thought pieces, we'll shape content that builds trust and cuts through.",
+    "Show up where it matters. We'll map the right channels and rhythm to amplify your voice, attract the right people, and drive real growth.",
   ];
 
   const fractionalMarketingFeatures = [
-    "Refine your core messaging pillars to resonate and convert ideal audiences.",
-    "Develop repeatable content calendars, workflows and templates for seamless execution.",
-    "Launch and optimize multi-channel campaigns that drive measurable growth and momentum.",
+    "Build a brand backbone that can scale with clear pillars, smart positioning, and a plan that's actually built for your business.",
+    "Shape content that sounds like you, not a content bot with thought leadership, social, emails, and more, all grounded in your voice.",
+    "Show up where it counts. We'll map the channels and cadence to grow trust, build demand, and move the needle.",
   ];
 
   // Industry categories data
@@ -198,12 +198,11 @@ export const MainContentSection = (): JSX.Element => {
             <div className={`flex flex-col items-center transition-all duration-1000 ease-out ${
               isAnimating ? 'animate-fade-in-up' : ''
             }`}>
-              <h2 className={`max-w-[800px] [font-family:'Montserrat',Helvetica] font-semibold text-[#0f0f10] text-[50px] text-center tracking-[-0.51px] leading-[61.4px] mb-8 transition-all duration-1000 ease-out ${
+              <h2 className={`max-w-[800px] [font-family:'Montserrat',Helvetica] font-semibold text-[#0f0f10] text-[45px] text-center tracking-[-0.51px] leading-[56px] mb-8 transition-all duration-1000 ease-out ${
                 isAnimating ? 'animate-text-reveal' : 'opacity-0 translate-y-8 blur-sm'
               }`}>
-                I help femtech, healthtech and social-impact founders strip back bloated
-                messaging and create bold, <span className="px-3 py-1 rounded-lg relative bg-gradient-to-r from-[#e447824d] to-[#e4478203]">heart-felt brands</span>{" "}
-                that move people.
+                I help femtech, healthtech, and mission-driven founders cut through bloated
+                messaging and build bold, heart-led brands that <span className="px-3 pt-0 pb-1 rounded-lg relative bg-gradient-to-r from-[#e447824d] to-[#e4478203]">actually move people.</span>
               </h2>
               <div className="flex justify-center mt-4">
                 <Link to="/about" className="relative bg-[#e44782] text-white font-['Montserrat'] font-semibold text-[16px] px-5 py-3 rounded-[0.84rem] border-2 border-[#e44782] overflow-hidden group hover:bg-white hover:text-[#e44782] transition-all duration-300 ease-out">
@@ -225,7 +224,7 @@ export const MainContentSection = (): JSX.Element => {
               fontSize="4.5rem"
             />
             <p className="max-w-3xl text-center text-[#0f0f10] mt-10" style={{ fontFamily: "'Inter', Helvetica, Arial, sans-serif", fontSize: '18px' }}>
-              Your business doesn’t need more noise. It needs clarity that converts. I help you shape a narrative people trust, build marketing that actually moves, and show up where it matters, with a strategy designed to scale what you do best.
+              You don't need more noise. You need strategy that actually fits, a voice that actually sounds like you, and visibility that doesn't feel like screaming into the void. I help you shape all three, so your brand moves with meaning, not just motion.
             </p>
             <div className="flex justify-center mt-8">
               <Link to="/get-started" className="relative bg-[#e44782] text-white font-['Montserrat'] font-semibold text-[16px] px-5 py-3 rounded-[0.84rem] border-2 border-[#e44782] overflow-hidden group hover:bg-white hover:text-[#e44782] transition-all duration-300 ease-out">
@@ -278,8 +277,8 @@ export const MainContentSection = (): JSX.Element => {
                     transition={{ duration: 0.6, ease: "easeOut", delay: 0.2 }}
                     viewport={{ once: true, margin: "-100px" }}
                   >
-                  Founder personal <br />
-                  brand strategy
+                  Founder Personal <br />
+                  Brand Strategy
                   </motion.h3>
                   <motion.p 
                     className="[font-family:'Inter',Helvetica] font-normal text-gray-700 text-[15.9px] tracking-[0] leading-[25.2px] pb-6"
@@ -288,9 +287,7 @@ export const MainContentSection = (): JSX.Element => {
                     transition={{ duration: 0.6, ease: "easeOut", delay: 0.4 }}
                     viewport={{ once: true, margin: "-100px" }}
                   >
-                  For founders who want to build authority, trust and momentum{" "}
-                  <br />
-                  without posting daily just for the algorithm gods.
+                  For founders who want to build authority, trust, and momentum, without dancing for the algorithm gods.
                   </motion.p>
               </div>
 
@@ -406,8 +403,7 @@ export const MainContentSection = (): JSX.Element => {
                   transition={{ duration: 0.6, ease: "easeOut", delay: 0.4 }}
                   viewport={{ once: true, margin: "-100px" }}
                 >
-                  Fractional marketing <br />
-                  &amp; brand direction
+                  Fractional marketing &amp; brand direction
                 </motion.h3>
                 <motion.p 
                   className="[font-family:'Inter',Helvetica] font-normal text-gray-700 text-[15.9px] tracking-[0] leading-[25.2px] pb-6"
@@ -416,7 +412,7 @@ export const MainContentSection = (): JSX.Element => {
                   transition={{ duration: 0.6, ease: "easeOut", delay: 0.6 }}
                   viewport={{ once: true, margin: "-100px" }}
                 >
-                  For startups ready to grow with clarity. I help you refine your messaging, build a content system that performs, and turn brand thinking into strategic execution.
+                  For startups ready to grow with clarity. I help you build a content system that performs, refine the messaging behind it, and turn brand thinking into execution that scales.
                 </motion.p>
               </div>
 

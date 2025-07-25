@@ -24,10 +24,10 @@ export const PortfolioSection: React.FC = () => {
             transition={{ duration: 0.6, ease: 'easeOut' }}
           >
             <h3 className="[font-family:'Montserrat',Helvetica] font-semibold text-[#091329] text-[40px] tracking-[-1.73px] leading-[50px] mb-6">
-              Portfolio
+              Client Results
             </h3>
-            <p className="[font-family:'Inter',Helvetica] text-[#091329]/70 text-[16px] leading-[24px] max-w-2xl mx-auto">
-              Explore my work across different industries and services. Each project showcases strategic thinking, creative execution, and measurable results.
+            <p className="[font-family:'Inter',Helvetica] text-[#091329]/70 text-[16px] leading-[24px] max-w-lg mx-auto">
+              Real work with real outcomes. Strategy, voice, and visibility in action, built to perform, not just impress.
             </p>
           </motion.div>
           {/* Portfolio Cards - Only Nexus, Wellnergy, GoFounder */}
