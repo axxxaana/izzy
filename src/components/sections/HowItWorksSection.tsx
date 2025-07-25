@@ -7,22 +7,22 @@ const stages = [
     tag: "Strategy",
     heading: "Define the Vision",
     subtext:
-      "Forget throwing spaghetti at the wall. We begin by aligning your brand and business direction — so every move you make builds momentum, not confusion.",
+      "No more throwing spaghetti at the wall. We start by getting clear on where you're going, so every brand move builds momentum, not confusion.",
     accordion: [
       {
-        title: "Align the Brand and the Business",
+        title: "Align Brand with Business",
         content:
-          "No more disjointed messaging. We connect your business goals to a clear brand strategy — so everything from your positioning to your offer actually makes sense.",
+          "Disjointed messaging? Gone. We tie your business goals to a clear brand strategy so your positioning, offers, and content actually work together.",
       },
       {
         title: "Clarify Your Edge",
         content:
-          "What makes you different? We’ll help you articulate the unique advantage that sets your business apart — and build your narrative around it.",
+          "You don't need to be louder, just clearer. We'll uncover what makes you different and build a story people actually care about.",
       },
       {
         title: "Simplify the Strategy",
         content:
-          "Strategy shouldn’t be overwhelming. We cut through the noise and focus on what actually moves the needle — then map a clear path forward.",
+          "Strategy isn't meant to overwhelm. We focus on what matters, cut what doesn't, and give you a roadmap that's clear and actionable.",
       },
     ],
     visual: <img src="/define image.png" alt="Define Image" className="w-full h-full object-contain rounded-[40px]" />,
@@ -31,22 +31,22 @@ const stages = [
     tag: "Voice",
     heading: "Shape the Message",
     subtext:
-      "Messaging is more than words. It’s how your business is understood, remembered, and trusted. We help you say what matters — in a way that actually converts.",
+      "Messaging isn't just words. It's how people get what you do, why it matters, and why they should care. We help you say it with clarity and make it count.",
     accordion: [
       {
         title: "Craft Core Messaging",
         content:
-          "We distill your ideas into clear, compelling messages — so your website, pitch, and content all speak the same language (and it sounds like you).",
+          "We distill your thinking into language that sticks. Website, pitch, deck, content all saying the same thing, and sounding like you.",
       },
       {
         title: "Stand Out Without Screaming",
         content:
-          "No need for gimmicks. We help you define a voice that’s bold, honest, and unmistakably yours — without shouting into the void.",
+          "You don't need to shout. You need a voice that's bold, clear, and unmistakably yours, one people trust when they hear it.",
       },
       {
         title: "Make It Convert",
         content:
-          "From clarity to calls-to-action, we shape your messaging to guide real business decisions — not just likes and comments.",
+          "Clarity builds credibility. We shape messaging that moves your audience to act, not just nod and scroll.",
       },
     ],
     visual: <img src="/deliver-image.png" alt="Deliver Image" className="w-full h-full object-contain rounded-[40px]" />,
@@ -55,22 +55,22 @@ const stages = [
     tag: "Visibility",
     heading: "Build Strategic Visibility",
     subtext:
-      "You don’t need to be everywhere. Just in the right places — consistently. We help you show up with a smart, streamlined marketing engine that actually moves the needle.",
+      "You don't need to be everywhere. Just in the right places, with the right message. We help you show up in ways that grow your brand without draining your energy.",
     accordion: [
       {
         title: "Choose the Right Channels",
         content:
-          "We identify where your audience actually pays attention — and create a presence strategy that’s lean, intentional, and sustainable.",
+          "We cut the noise and double down on what works. Where your audience listens, where you shine, and where momentum builds.",
       },
       {
-        title: "Design a Scalable System",
+        title: "Stay Visible Without Losing Focus",
         content:
-          "We’ll build repeatable workflows so your visibility compounds — without demanding more time than you can give.",
+          "You stay in your zone of genius. We keep your brand front-of-mind with a system that works even when you're heads-down building.",
       },
       {
-        title: "Stay Visible (Without Losing Focus)",
+        title: "Create a System That Scales",
         content:
-          "You stay in your zone of genius. We’ll keep your brand top of mind with a system that works even when you’re off building the business.",
+          "From idea to execution, we design a repeatable workflow so showing up isn't a scramble it's a signal. Clear, consistent, and built to last.",
       },
     ],
     visual: <img src="/Chat bubble and texting on smartphone.png" alt="Chat bubble and texting on smartphone" className="w-full h-full object-contain rounded-[40px]" />,
@@ -111,7 +111,7 @@ export const HowItWorksSection: React.FC = () => {
                   initial={contentInitial}
                   whileInView={{ y: 0, opacity: 1 }}
                   transition={{ duration: 0.8, ease: 'easeOut' }}
-                  viewport={{ once: true, amount: 0.5 }}
+                  viewport={{ once: true, amount: 0.2 }}
                 >
                   <span className="inline-block mb-4 px-6 py-2 text-[#e44782] text-base font-semibold shadow-sm bg-white uppercase tracking-wide border" style={{ fontFamily: 'Inter, Helvetica', borderRadius: '0.84rem', letterSpacing: '0.04em', borderColor: '#e44782', fontWeight: 600 }}>
                     {stage.tag}
@@ -144,7 +144,21 @@ export const HowItWorksSection: React.FC = () => {
                             className={`overflow-hidden transition-all duration-500 ease-[cubic-bezier(0.4,0,0.2,1)] ${isOpen ? 'max-h-40 opacity-100 scale-100' : 'max-h-0 opacity-0 scale-95'}`}
                             style={{ fontSize: '1rem', color: '#222', fontWeight: 400, lineHeight: 1.7, transitionProperty: 'max-height, opacity, transform', paddingTop: isOpen ? 16 : 0 }}
                           >
-                            {isOpen && <div>{row.content}</div>}
+                            {isOpen && (
+                              <div>
+                                <div>{row.content}</div>
+                                <a 
+                                  href="/get-started"
+                                  className="text-[#e44782] font-semibold text-base hover:opacity-80 transition-all duration-200 mt-3 flex items-center gap-2"
+                                  style={{ fontFamily: 'Inter, Helvetica' }}
+                                >
+                                  Book a Call
+                                  <svg width="16" height="16" fill="none" viewBox="0 0 16 16">
+                                    <path d="M6 12l4-4-4-4" stroke="#e44782" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                                  </svg>
+                                </a>
+                              </div>
+                            )}
                           </div>
                         </div>
                       );
@@ -157,7 +171,7 @@ export const HowItWorksSection: React.FC = () => {
                   initial={imageInitial}
                   whileInView={{ y: 0, opacity: 1 }}
                   transition={{ duration: 0.8, ease: 'easeOut', delay: 0.1 }}
-                  viewport={{ once: true, amount: 0.5 }}
+                  viewport={{ once: true, amount: 0.2 }}
                 >
                   <div className="w-full max-w-md h-[520px] rounded-[40px] flex items-center justify-center overflow-hidden">
                     {stage.visual}

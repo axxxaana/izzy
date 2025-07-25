@@ -11,7 +11,7 @@ const features = [
       </span>
     ),
     title: "Purpose-Driven",
-    desc: "You want more than leads — you want a brand that stands for something. We help shape messaging around a mission that matters."
+    desc: "You're not just chasing leads. You want a brand that stands for something with a message that's clear and meaningful."
   },
   {
     icon: (
@@ -23,7 +23,7 @@ const features = [
       </span>
     ),
     title: "Ambitious",
-    desc: "You’re scaling. Fast. And you need strategy that keeps up — making your brand as effective as your product."
+    desc: "You're growing fast and need a brand that keeps up and one that reflects your momentum and where you're headed."
   },
   {
     icon: (
@@ -37,16 +37,16 @@ const features = [
       </span>
     ),
     title: "Time-Smart",
-    desc: "You don’t need more complexity. You need lean execution that respects your time — no fluff, no wasted cycles."
+    desc: "You want strategy that's focused and efficient with no fluff, no chaos, just what moves your business forward."
   }
 ];
 
 export const IdealClientSection: React.FC = () => {
   return (
-    <section className="w-full max-w-6xl mx-auto py-16 px-6 flex flex-col items-center mb-16">
-      <h2 className="text-4xl md:text-5xl font-extrabold text-center mb-2" style={{ color: '#0f0f10', fontFamily: 'Montserrat, Helvetica' }}>Made for Startups Like Yours</h2>
-      <p className="text-lg text-center mb-10 max-w-2xl opacity-80" style={{ fontFamily: 'Inter, Helvetica' }}>
-        If you want your brand to drive growth, without burning out or blending in,  you’re in the right place.
+    <section className="w-full max-w-6xl mx-auto pt-[94px] pb-16 px-6 flex flex-col items-center mb-16">
+      <h2 className="text-4xl md:text-5xl font-extrabold text-center mb-6" style={{ color: '#0f0f10', fontFamily: 'Montserrat, Helvetica' }}>Made for Startups Like Yours</h2>
+      <p className="text-lg text-center mb-14 max-w-lg opacity-80" style={{ fontFamily: 'Inter, Helvetica' }}>
+        If you're here to grow with clarity, not burn out or blend in, you're in the right place.
       </p>
       <div className="flex flex-col md:flex-row gap-10 w-full justify-center items-stretch">
         {features.map((f, i) => (

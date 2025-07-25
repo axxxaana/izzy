@@ -9,7 +9,7 @@ import { Accordion, AccordionItem, AccordionTrigger, AccordionContent } from '..
 const HERO_IMAGE = '/nexus connected team.jpg';
 const HERO_HEADING = 'Nexus Connected';
 const HERO_SUBHEADING = 'Marketing';
-const HERO_DESCRIPTION = 'Nexus Connected is an AI-powered women\'s health app that helps users take control of their wellbeing. When I stepped in, the brand lacked clarity, consistency, and digital presence. Their community thrived offline but didn\'t translate online. I led a strategic repositioning to unify their brand and prepare them for scalable growth.';
+const HERO_DESCRIPTION = 'Nexus Connected is an AI-powered women\'s health app built to help users take charge of their wellbeing. When I stepped in, the brand was scattered with no voice, no strategy, no presence online. The community was thriving in real life but missing momentum where it mattered. I rebuilt the brand from the inside out and set them up for scale.';
 
 // Accordion SaaS style utility
 const saasAccordionItem = "rounded-xl mb-2 transition-all duration-300 overflow-hidden bg-transparent data-[state=open]:bg-white data-[state=open]:shadow data-[state=open]:border-l-4 data-[state=open]:border-pink-500";
@@ -24,8 +24,8 @@ const portfolioItems = [
   {
     id: 2,
     title: 'Wellnergy',
-    subtitle: 'Health & Wellness Platform',
-    description: 'Wellnergy is a fast-growing wellness event celebrating holistic health. I led brand messaging, ghostwrote founder content, and built influencer partnerships — turning a grassroots festival into a credible, high-visibility brand with strategic alliances and strong digital traction.',
+    subtitle: 'HEALTH & WELLNESS Platform',
+    description: 'Wellnergy is a wellness event turned high-visibility brand. I led messaging, ghostwrote founder content, and built influencer partnerships to drive traction and boost brand credibility.',
     tags: ['Health Tech', 'Holistic Design', 'Wellness Strategy'],
     image: '/wellnergy cover.png',
     color: '',
@@ -34,7 +34,7 @@ const portfolioItems = [
     id: 3,
     title: 'GoFounder',
     subtitle: 'Startup Accelerator Platform',
-    description: 'GoFounder is a coaching platform for startup founders focused on accountability and performance. I built the brand presence from the ground up — leading social strategy, ghostwriting thought leadership, and designing onboarding experiences that elevated visibility and drove community growth.',
+    description: 'GoFounder is a coaching platform for startup founders. I built the brand from the ground up with social strategy, thought leadership, and onboarding experiences that boosted visibility and community growth.',
     tags: ['Brand Strategy', 'Marketing Framework', 'Platform Design'],
     image: '/GoFounder Cover.png',
     color: '',
@@ -68,7 +68,7 @@ const PortfolioCard: React.FC<{ item: typeof portfolioItems[0]; index: number }>
         style={{ background: 'rgba(228, 71, 130, 0.2)' }}
       >
         {/* Content - Left Side */}
-        <div className="relative z-10 flex-1 flex flex-col justify-between pt-20 px-8 pb-8 max-w-xl">
+        <div className="relative z-10 flex-1 flex flex-col justify-center py-8 px-8 max-w-xl">
           <div>
             <h2 className="text-3xl md:text-4xl font-bold text-[#e44782] mb-4 group-hover:text-pink-600 transition-colors duration-300 font-['Montserrat']">
               {item.title}
@@ -129,7 +129,7 @@ const PortfolioNexusConnectedPage: React.FC = () => {
              >
                <span className="inline-flex items-center px-6 py-3 rounded-full bg-white border border-pink-200 shadow-lg backdrop-blur-sm">
                  <span className="text-pink-700 font-medium text-sm tracking-wide">
-                   Femtech
+                   FEMTECH
                  </span>
                </span>
              </motion.div>
@@ -219,39 +219,39 @@ const PortfolioNexusConnectedPage: React.FC = () => {
               >
                 <h2 className="text-[40px] font-bold text-black mb-4">The Challenge</h2>
                 <p className="text-lg text-gray-700 mb-4">
-                  When Nexus—a revolutionary AI-driven women’s health platform—approached me, they had a powerful product but a fragmented brand story. Despite having real traction offline, their digital presence was underdeveloped and disconnected. Some of the challenges they were having were:
+                  When Nexus came to me, they had a game-changing product: an AI-powered women's health platform. But their brand wasn't pulling its weight. They had real traction offline. Online, they were nearly invisible. Here's what wasn't working:
                 </p>
                 <Accordion type="single" collapsible className="w-full bg-transparent mt-[10px]" defaultValue="challenge1">
                   <AccordionItem value="challenge1" className={saasAccordionItem + " data-[state=open]:border-l-4 data-[state=open]:border-pink-500"}>
                     <AccordionTrigger className={saasAccordionTrigger}>
-                      Brand Identity Fragmentation
+                      Fragmented Identity
                     </AccordionTrigger>
                     <AccordionContent className={saasAccordionContent}>
-                      Brand identity lacked cohesion across core assets (pitch deck, social media, and product UI). It felt like three different companies telling three different stories.
+                      The pitch deck, social channels, and product UI were all telling different stories. It felt like three separate brands competing for attention.
                     </AccordionContent>
                   </AccordionItem>
                   <AccordionItem value="challenge2" className={saasAccordionItem + " data-[state=open]:border-l-4 data-[state=open]:border-pink-500"}>
                     <AccordionTrigger className={saasAccordionTrigger}>
-                      Weak LinkedIn Presence
+                      No LinkedIn Strategy
                     </AccordionTrigger>
                     <AccordionContent className={saasAccordionContent}>
-                      LinkedIn presence was almost nonexistent—missing a key opportunity to establish thought leadership in a competitive space.
+                      Their LinkedIn presence was nearly non-existent. No founder voice. No thought leadership. No trust.
                     </AccordionContent>
                   </AccordionItem>
                   <AccordionItem value="challenge3" className={saasAccordionItem + " data-[state=open]:border-l-4 data-[state=open]:border-pink-500"}>
                     <AccordionTrigger className={saasAccordionTrigger}>
-                      Offline Community Not Leveraged Online
+                      Untapped Community Power
                     </AccordionTrigger>
                     <AccordionContent className={saasAccordionContent}>
-                      Thriving in-person community wasn’t being leveraged for growth or advocacy online.
+                      Their in-person community was thriving, but that momentum wasn't being translated into digital growth.
                     </AccordionContent>
                   </AccordionItem>
                   <AccordionItem value="challenge4" className={saasAccordionItem + " data-[state=open]:border-l-4 data-[state=open]:border-pink-500"}>
                     <AccordionTrigger className={saasAccordionTrigger}>
-                      No Content Strategy or Brand Voice
+                      Lack of Strategy and Positioning
                     </AccordionTrigger>
                     <AccordionContent className={saasAccordionContent}>
-                      No defined content strategy, brand voice, or positioning—making it hard to attract funding, partners, or press.
+                      No content plan. No clear voice. No strong positioning. Which meant they struggled to attract funding, partners, and press.
                     </AccordionContent>
                   </AccordionItem>
                 </Accordion>
@@ -278,55 +278,39 @@ const PortfolioNexusConnectedPage: React.FC = () => {
         >
           <div className="flex-1">
             <h2 className="text-[40px] font-bold text-black mb-4">What I Did</h2>
-            <p className="text-lg text-gray-700 mb-4">I stepped in as a fractional CMO and brand strategist to bring clarity, consistency, and visibility to the Nexus brand. My approach combined foundational strategy with execution across key channels.</p>
+            <p className="text-lg text-gray-700 mb-4">I stepped in as a fractional CMO and brand strategist to bring clarity, consistency, and visibility to the Nexus brand. My focus was on building the foundation while driving execution across the channels that mattered most.</p>
             <div style={{ marginTop: '40px' }}>
               <Accordion type="single" collapsible className="w-full bg-transparent mt-0" defaultValue="step1">
                 <AccordionItem value="step1" className={whatIDidAccordionItem}>
                   <AccordionTrigger className={saasAccordionTrigger}>
-                    Brand Audit & Strategic Repositioning
+                    Brand Audit and Repositioning
                   </AccordionTrigger>
                   <AccordionContent className={saasAccordionContent}>
-                    <ul className="list-disc pl-6 text-gray-700 space-y-1">
-                      <li>Conducted a deep brand audit across all touchpoints to identify inconsistencies and missed opportunities</li>
-                      <li>Created a new positioning framework that captured Nexus’s unique value in the femtech landscape</li>
-                      <li>Aligned the brand’s visuals, messaging, and voice across digital and physical touchpoints</li>
-                    </ul>
+                    I started with a full audit of every brand touchpoint. From pitch decks to social posts to the product UI, I mapped what was working and what wasn't. From there, I built a new positioning framework that clarified Nexus's place in the femtech space and unified the brand across platforms. This meant aligning visuals, messaging, and tone so that every touchpoint told the same story.
                   </AccordionContent>
                 </AccordionItem>
                 <AccordionItem value="step2" className={whatIDidAccordionItem}>
                   <AccordionTrigger className={saasAccordionTrigger}>
-                    Core Messaging & Narrative Development
+                    Messaging and Narrative
                   </AccordionTrigger>
                   <AccordionContent className={saasAccordionContent}>
-                    <ul className="list-disc pl-6 text-gray-700 space-y-1">
-                      <li>Developed crisp value propositions tailored to each audience: investors, end users, and collaborators</li>
-                      <li>Defined a distinct tone of voice that balanced scientific credibility with emotional resonance</li>
-                      <li>Refined the brand narrative for use in pitch materials, public speaking, and investor comms</li>
-                    </ul>
+                    Once the strategy was locked, I crafted value props for each core audience with investors, users, and collaborators and defined a tone that was equal parts credible and human. The narrative got sharper and more compelling, showing up in decks, emails, speaking notes, and partner conversations.
                   </AccordionContent>
                 </AccordionItem>
                 <AccordionItem value="step3" className={whatIDidAccordionItem}>
                   <AccordionTrigger className={saasAccordionTrigger}>
-                    Social Media Strategy & Thought Leadership
+                    Social and Founder Visibility
                   </AccordionTrigger>
                   <AccordionContent className={saasAccordionContent}>
-                    <ul className="list-disc pl-6 text-gray-700 space-y-1">
-                      <li>Built a targeted social media strategy (primarily LinkedIn) focused on awareness, credibility, and engagement</li>
-                      <li>Ghostwrote high-performing LinkedIn posts for the founders—positioning them as emerging voices in femtech and AI</li>
-                      <li>Created a content calendar to maintain consistency across platforms</li>
-                    </ul>
+                    To build momentum, I developed a LinkedIn-led strategy that focused on thought leadership and brand trust. I ghostwrote posts for the founders that began to land with real engagement, helping position them as rising voices in femtech. A content calendar kept things consistent and intentional.
                   </AccordionContent>
                 </AccordionItem>
                 <AccordionItem value="step4" className={whatIDidAccordionItem}>
                   <AccordionTrigger className={saasAccordionTrigger}>
-                    Go-to-Market Strategy & Investor Readiness
+                    Investor Readiness and GTM
                   </AccordionTrigger>
                   <AccordionContent className={saasAccordionContent}>
-                    <ul className="list-disc pl-6 text-gray-700 space-y-1">
-                      <li>Designed a compelling pre-seed pitch deck and supported messaging during investor meetings</li>
-                      <li>Developed a go-to-market roadmap to guide the next 12 months of growth and community activation</li>
-                      <li>Supported a £300k fundraising strategy through refined messaging and storytelling</li>
-                    </ul>
+                    Behind the scenes, I built a fundraising narrative and pre-seed pitch deck that helped bring in £300k. I also laid out a go-to-market roadmap for the next 12 months giving the team a clear path to activate their community, build product traction, and grow with focus.
                   </AccordionContent>
                 </AccordionItem>
               </Accordion>
@@ -361,39 +345,39 @@ const PortfolioNexusConnectedPage: React.FC = () => {
               >
                 <h2 className="text-[40px] font-bold text-black mb-4">Results & Impact</h2>
                 <p className="text-lg text-gray-700 mb-4">
-                  This wasn’t just a rebrand — it was a strategic transformation. From messaging to momentum, we helped the brand cut through noise, connect with users, and accelerate growth.
+                  This wasn't just a rebrand. It was a reset. One that gave the team language they could own, clarity they could scale with, and visibility that moved the needle across community, capital, and credibility.
                 </p>
                 <Accordion type="single" collapsible className="w-full bg-transparent mt-[10px]" defaultValue="result1">
                   <AccordionItem value="result1" className={saasAccordionItem + " data-[state=open]:border-l-4 data-[state=open]:border-pink-500"}>
                     <AccordionTrigger className={saasAccordionTrigger}>
-                      Brand & Messaging Clarity
+                      Brand and Messaging Clarity
                     </AccordionTrigger>
                     <AccordionContent className={saasAccordionContent}>
-                      We built a cohesive brand that aligned with both the product’s current value and its future vision. The messaging was sharpened across all touchpoints — from pitch decks to product UX — giving the team confidence and consistency as they scaled.
+                      We built a brand that finally reflected the product's depth and ambition. From pitch decks to product UX, everything told the same story. That consistency became a foundation for growth and made every conversation from users to investors, clearer and stronger.
                     </AccordionContent>
                   </AccordionItem>
                   <AccordionItem value="result2" className={saasAccordionItem + " data-[state=open]:border-l-4 data-[state=open]:border-pink-500"}>
                     <AccordionTrigger className={saasAccordionTrigger}>
-                      Audience Engagement & Community Growth
+                      Audience Engagement and Community Growth
                     </AccordionTrigger>
                     <AccordionContent className={saasAccordionContent}>
-                      Through strategic content and events, we sparked real engagement. Community events in London sold out, drawing a network of over 400 users. At the same time, the content system kept the waitlist active and the audience growing.
+                      We didn't just grow the audience, we activated it. Events in London sold out. A thriving offline community became a powerful online one. The content system created momentum that didn't rely on chasing algorithms it fed real interest and trust.
                     </AccordionContent>
                   </AccordionItem>
                   <AccordionItem value="result3" className={saasAccordionItem + " data-[state=open]:border-l-4 data-[state=open]:border-pink-500"}>
                     <AccordionTrigger className={saasAccordionTrigger}>
-                      Funding & Investor Confidence
+                      Funding and Investor Confidence
                     </AccordionTrigger>
                     <AccordionContent className={saasAccordionContent}>
-                      The new brand narrative laid the groundwork for a successful crowdfunding campaign and helped position the team for pre-seed investment. Clear messaging and a refined strategy gave investors a reason to believe — and back — the vision.
+                      Messaging shifted investor conversations from confused to convinced. The new brand story set the stage for a successful crowdfunding campaign and pre-seed traction. With clearer materials and a stronger narrative, the team had what they needed to raise.
                     </AccordionContent>
                   </AccordionItem>
                   <AccordionItem value="result4" className={saasAccordionItem + " data-[state=open]:border-l-4 data-[state=open]:border-pink-500"}>
                     <AccordionTrigger className={saasAccordionTrigger}>
-                      Visibility & Strategic Partnerships
+                      Visibility and Strategic Partnerships
                     </AccordionTrigger>
                     <AccordionContent className={saasAccordionContent}>
-                      We helped the founders step confidently into the spotlight. Visibility grew across digital channels, public panels, and industry conversations. Strategic partnerships with other femtech brands and academic institutions followed, further anchoring the brand’s authority.
+                      The brand finally showed up like it meant it. Founders gained visibility on panels and in digital spaces. That visibility unlocked partnerships with other femtech brands and institutions putting Nexus in rooms that move the category forward.
                     </AccordionContent>
                   </AccordionItem>
                 </Accordion>

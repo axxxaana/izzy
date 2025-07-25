@@ -11,7 +11,7 @@ const features = [
       </span>
     ),
     title: "Purpose-Driven",
-    desc: "You want your brand to stand for something deeper than just revenue — a message, a mission, a movement."
+    desc: "You're building something bigger than revenue. A brand that means something and moves people."
   },
   {
     icon: (
@@ -23,7 +23,7 @@ const features = [
       </span>
     ),
     title: "Ambitious",
-    desc: "You’re ready to grow your influence, own your narrative, and be recognized as the go-to in your space."
+    desc: "You're ready to lead. You want to grow your influence, shape your narrative, and own your space with confidence."
   },
   {
     icon: (
@@ -37,13 +37,13 @@ const features = [
       </span>
     ),
     title: "Time-Smart",
-    desc: "You want a strategy that works with your schedule — not one that drains your energy or demands daily posting."
+    desc: "You want a brand that fits your life, one that builds momentum without demanding content every waking hour."
   }
 ];
 
 export const IdealClientSectionFounder: React.FC = () => {
   return (
-    <section className="w-full max-w-6xl mx-auto py-16 px-6 flex flex-col items-center mb-16">
+    <section className="w-full max-w-6xl mx-auto py-16 pt-[calc(4rem+50px)] px-6 flex flex-col items-center mb-16">
       <h2 className="text-4xl md:text-5xl font-extrabold text-center mb-2" style={{ color: '#0f0f10', fontFamily: 'Montserrat, Helvetica' }}>Made for Founders Like You</h2>
       <p className="text-lg text-center mb-10 max-w-2xl opacity-80" style={{ fontFamily: 'Inter, Helvetica' }}>
         If this sounds like you, you’re in the right place.

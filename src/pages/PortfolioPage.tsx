@@ -15,7 +15,7 @@ const PORTFOLIO_HERO_ROTATING_WORDS = [
   'Messaging',
 ];
 const PORTFOLIO_HERO_SUBHEADLINE =
-  'From femtech to creator-led communities — here’s what happens when strategy meets storytelling.';
+  'From femtech to founder brands. This is what happens when strategy turns into results.';
 
 const PortfolioHero: React.FC = () => {
   const [currentWordIndex, setCurrentWordIndex] = React.useState(0);
@@ -86,7 +86,7 @@ const PortfolioHero: React.FC = () => {
               </motion.h1>
 
               <motion.p
-                className="max-w-2xl text-center text-[20px] text-[#0f0f10] opacity-80"
+                className="max-w-xl text-center text-[20px] text-[#0f0f10] opacity-80"
                 style={{ fontFamily: 'Inter, Helvetica' }}
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -108,7 +108,7 @@ const portfolioItems = [
     id: 2,
     title: 'Nexus Connected',
     subtitle: 'Team Collaboration Platform',
-    description: 'Nexus is a femtech startup creating an AI-driven health coach for women. I led a full brand repositioning, building the strategy, voice, and campaigns across digital and in-person channels. The result: a unified brand, stronger founder visibility, and a clear path to growth and investment.',
+    description: 'Nexus is a femtech startup building an AI health coach for women. I led the full reposition, strategy, voice, and campaigns. The result: a clear brand, visible founder, and traction with investors.',
     tags: ['Brand Overhaul', 'Product Positioning', 'UX Strategy'],
     image: '/nexus connected team.jpg',
     color: '',
@@ -117,7 +117,7 @@ const portfolioItems = [
     id: 3,
     title: 'Wellnergy',
     subtitle: 'Health & Wellness Platform',
-    description: 'Wellnergy is a fast-growing wellness event celebrating holistic health. I led brand messaging, ghostwrote founder content, and built influencer partnerships — turning a grassroots festival into a credible, high-visibility brand with strategic alliances and strong digital traction.',
+    description: 'Wellnergy is a wellness event turned high-visibility brand. I led messaging, ghostwrote founder content, and built influencer partnerships to drive traction and boost brand credibility.',
     tags: ['Health Tech', 'Holistic Design', 'Wellness Strategy'],
     image: '/wellnergy cover.png',
     color: '',
@@ -126,7 +126,7 @@ const portfolioItems = [
     id: 1,
     title: 'GoFounder',
     subtitle: 'Startup Accelerator Platform',
-    description: 'GoFounder is a coaching platform for startup founders focused on accountability and performance. I built the brand presence from the ground up — leading social strategy, ghostwriting thought leadership, and designing onboarding experiences that elevated visibility and drove community growth.',
+    description: 'GoFounder is a coaching platform for startup founders. I built the brand from the ground up with social strategy, thought leadership, and onboarding experiences that boosted visibility and community growth.',
     tags: ['Brand Strategy', 'Marketing Framework', 'Platform Design'],
     image: '/GoFounder Cover.png',
     color: '',
@@ -279,7 +279,7 @@ export const PortfolioPage: React.FC = () => {
               Featured Projects
             </h2>
             <p className="text-xl text-gray-600 max-w-2xl mx-auto font-['Inter']">
-              Each project tells a unique story of transformation and growth
+              Each project tells a unique story of transformation and growth.
             </p>
           </motion.div>
 

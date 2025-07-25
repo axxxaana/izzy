@@ -8,7 +8,7 @@ import { Accordion, AccordionItem, AccordionTrigger, AccordionContent } from '..
 
 const HERO_IMAGE = '/wellnergy cover.png';
 const HERO_HEADING = 'Wellnergy';
-const HERO_DESCRIPTION = 'Wellnergy is more than a wellness festival — it\'s a movement. But while the in-person experience was thriving, the brand\'s digital presence was falling short. I partnered with the founder to close that gap. Together, we built a clear brand voice, activated strategic partnerships, and amplified the founder\'s presence to turn Wellnergy into a year-round platform — not just a one-weekend event.';
+const HERO_DESCRIPTION = 'Wellnergy is more than a wellness festival, it\'s a movement. But the brand wasn\'t showing up that way online. The in-person energy was real, but the digital presence didn\'t match. I partnered with the founder to close that gap, sharpening the brand voice, forging high-impact partnerships, and building the founder\'s visibility. Together, we turned a weekend event into a platform with year-round presence and pull.';
 
 const saasAccordionItem = "rounded-xl mb-2 transition-all duration-300 overflow-hidden bg-transparent data-[state=open]:bg-white data-[state=open]:shadow data-[state=open]:border-l-4 data-[state=open]:border-pink-500";
 const saasAccordionTrigger = "flex items-center justify-between w-full px-6 py-5 text-lg font-semibold text-gray-900 cursor-pointer focus:outline-none transition-all duration-300";
@@ -21,7 +21,7 @@ const portfolioItems = [
     id: 1,
     title: 'Nexus Connected',
     subtitle: 'Team Collaboration Platform',
-    description: 'Nexus is a femtech startup creating an AI-driven health coach for women. I led a full brand repositioning, building the strategy, voice, and campaigns across digital and in-person channels. The result: a unified brand, stronger founder visibility, and a clear path to growth and investment.',
+    description: 'Nexus is a femtech startup building an AI health coach for women. I led the full reposition, strategy, voice, and campaigns. The result: a clear brand, visible founder, and traction with investors.',
     tags: ['Brand Overhaul', 'Product Positioning', 'UX Strategy'],
     image: '/nexus connected team.jpg',
     color: '',
@@ -30,7 +30,7 @@ const portfolioItems = [
     id: 2,
     title: 'GoFounder',
     subtitle: 'Startup Accelerator Platform',
-    description: 'GoFounder is a coaching platform for startup founders focused on accountability and performance. I built the brand presence from the ground up — leading social strategy, ghostwriting thought leadership, and designing onboarding experiences that elevated visibility and drove community growth.',
+    description: 'GoFounder is a coaching platform for startup founders. I built the brand from the ground up with social strategy, thought leadership, and onboarding experiences that boosted visibility and community growth.',
     tags: ['Brand Strategy', 'Marketing Framework', 'Platform Design'],
     image: '/GoFounder Cover.png',
     color: '',
@@ -64,7 +64,7 @@ const PortfolioCard: React.FC<{ item: typeof portfolioItems[0]; index: number }>
         style={{ background: 'rgba(228, 71, 130, 0.2)' }}
       >
         {/* Content - Left Side */}
-        <div className="relative z-10 flex-1 flex flex-col justify-between pt-20 px-8 pb-8 max-w-xl">
+        <div className="relative z-10 flex-1 flex flex-col justify-center py-8 px-8 max-w-xl">
           <div>
             <h2 className="text-3xl md:text-4xl font-bold text-[#e44782] mb-4 group-hover:text-pink-600 transition-colors duration-300 font-['Montserrat']">
               {item.title}
@@ -213,39 +213,39 @@ const PortfolioWellnergyPage: React.FC = () => {
               >
                 <h2 className="text-[40px] font-bold text-black mb-4">The Challenge</h2>
                 <p className="text-lg text-gray-700 mb-4">
-                  Wellnergy was gaining real-world traction, but its digital presence didn't reflect that momentum. The brand lacked structure, strategy, and founder visibility — and was leaving key growth opportunities on the table.
+                  Wellnergy had momentum, but not alignment. The energy was real on the ground, but the digital brand was scattered. They were missing structure, strategy, and visibility where it mattered most.
                 </p>
                 <Accordion type="single" collapsible className="w-full bg-transparent mt-[10px]" defaultValue="challenge1">
                   <AccordionItem value="challenge1" className={saasAccordionItem + " data-[state=open]:border-l-4 data-[state=open]:border-pink-500"}>
                     <AccordionTrigger className={saasAccordionTrigger}>
-                      Weak Digital Footprint
+                      Weak digital presence
                     </AccordionTrigger>
                     <AccordionContent className={saasAccordionContent}>
-                      Despite its success as a live wellness event, Wellnergy had minimal digital presence. There was no clear brand narrative online, and the founder's voice wasn't leveraged as a growth engine.
+                      Despite selling out its wellness festival, Wellnergy had little to no online presence. The story wasn't landing, the narrative wasn't clear, and the brand wasn't showing up where it needed to.
                     </AccordionContent>
                   </AccordionItem>
                   <AccordionItem value="challenge2" className={saasAccordionItem + " data-[state=open]:border-l-4 data-[state=open]:border-pink-500"}>
                     <AccordionTrigger className={saasAccordionTrigger}>
-                      Missing Content Strategy
+                      No content strategy to drive engagement
                     </AccordionTrigger>
                     <AccordionContent className={saasAccordionContent}>
-                      Without a dedicated content lead or plan, the brand was reactive rather than intentional. Messaging was scattered, and no system existed to keep audiences engaged before or after the event.
+                      There was no system. Messaging was inconsistent, content was reactive, and nothing connected the dots between events, audiences, or brand goals.
                     </AccordionContent>
                   </AccordionItem>
                   <AccordionItem value="challenge3" className={saasAccordionItem + " data-[state=open]:border-l-4 data-[state=open]:border-pink-500"}>
                     <AccordionTrigger className={saasAccordionTrigger}>
-                      Untapped Founder Visibility
+                      The founder's voice was underutilized
                     </AccordionTrigger>
                     <AccordionContent className={saasAccordionContent}>
-                      The founder had insight and credibility but wasn't positioned as a leader in the space. This limited opportunities to build trust, drive engagement, or attract meaningful partnerships.
+                      The founder had credibility, but wasn't positioned as a trusted voice in wellness. That meant missed chances for thought leadership, engagement, and long-term brand equity.
                     </AccordionContent>
                   </AccordionItem>
                   <AccordionItem value="challenge4" className={saasAccordionItem + " data-[state=open]:border-l-4 data-[state=open]:border-pink-500"}>
                     <AccordionTrigger className={saasAccordionTrigger}>
-                      Underleveraged Partnerships
+                      Partnership potential left untapped
                     </AccordionTrigger>
                     <AccordionContent className={saasAccordionContent}>
-                      With interest from major wellness brands and influencers, Wellnergy had a clear opportunity to scale — but lacked the structure and outreach to activate those relationships.
+                      Big wellness brands and influencers were interested but there was no structure to activate those relationships. What could have driven year-round growth was sitting idle.
                     </AccordionContent>
                   </AccordionItem>
                 </Accordion>
@@ -272,39 +272,39 @@ const PortfolioWellnergyPage: React.FC = () => {
         >
           <div className="flex-1">
             <h2 className="text-[40px] font-bold text-black mb-4">What I Did</h2>
-            <p className="text-lg text-gray-700 mb-4">I stepped in as a strategic partner to build brand authority, sharpen positioning, and elevate visibility — all while designing a foundation the team could grow from.</p>
+            <p className="text-lg text-gray-700 mb-4">I stepped in as a strategic partner to build brand authority, sharpen positioning, and elevate visibility while laying down the foundation for sustainable growth.</p>
             <div style={{ marginTop: '40px' }}>
               <Accordion type="single" collapsible className="w-full bg-transparent mt-0" defaultValue="step1">
                 <AccordionItem value="step1" className={whatIDidAccordionItem}>
                   <AccordionTrigger className={saasAccordionTrigger}>
-                    Ghostwriting & Authority Building
+                    Turned founder insights into thought leadership
                   </AccordionTrigger>
                   <AccordionContent className={saasAccordionContent}>
-                    I ghostwrote LinkedIn content for the founder that helped establish authority, open industry conversations, and connect with aligned partners, speakers, and sponsors.
+                    I ghostwrote LinkedIn content that helped the founder show up with clarity and credibility. The result? More eyes, more invites, and more alignment with sponsors and speakers.
                   </AccordionContent>
                 </AccordionItem>
                 <AccordionItem value="step2" className={whatIDidAccordionItem}>
                   <AccordionTrigger className={saasAccordionTrigger}>
-                    Brand Innovation & Messaging
+                    Built a digital brand that matched the live energy
                   </AccordionTrigger>
                   <AccordionContent className={saasAccordionContent}>
-                    We refined the brand's voice and positioning across every touchpoint — ensuring that the digital experience reflected the energy and clarity of the live event.
+                    We reworked the brand's voice, message, and presence online and off. The story finally felt as strong on screen as it did on stage.
                   </AccordionContent>
                 </AccordionItem>
                 <AccordionItem value="step3" className={whatIDidAccordionItem}>
                   <AccordionTrigger className={saasAccordionTrigger}>
-                    Founder-Led Growth Strategy
+                    Made the founder the front door to the brand
                   </AccordionTrigger>
                   <AccordionContent className={saasAccordionContent}>
-                    I worked closely with the founder to position him as a leading voice in the space. His presence began driving momentum, partnerships, and brand trust from the top down.
+                    Instead of hiding behind a logo, we put the founder at the centre of the strategy. His voice became the magnet, driving trust, reach, and relationship-building.
                   </AccordionContent>
                 </AccordionItem>
                 <AccordionItem value="step4" className={whatIDidAccordionItem}>
                   <AccordionTrigger className={saasAccordionTrigger}>
-                    Partnership Activation
+                    Activated high-value partnerships
                   </AccordionTrigger>
                   <AccordionContent className={saasAccordionContent}>
-                    I brokered warm intros and guided conversations with potential partners, sponsors, and investors — turning casual interest into real opportunities for collaboration and growth.
+                    I helped guide outreach, pitch strategy, and warm intros turning passive interest from brands and influencers into real conversations, collabs, and long-term value.
                   </AccordionContent>
                 </AccordionItem>
               </Accordion>
@@ -338,38 +338,38 @@ const PortfolioWellnergyPage: React.FC = () => {
                 viewport={{ once: true }}
               >
                 <h2 className="text-[40px] font-bold text-black mb-4">Results & Impact</h2>
-                <p className="text-lg text-gray-700 mb-4">What started as a festival became a brand with presence, partnerships, and momentum. We didn't just amplify visibility — we laid the groundwork for long-term scale.</p>
+                <p className="text-lg text-gray-700 mb-4">What started as a one-off event became a movement with momentum. We didn't just boost visibility, we built a brand that lasts beyond the festival.</p>
                 <Accordion type="single" collapsible className="w-full bg-transparent mt-[10px]" defaultValue="result1">
                   <AccordionItem value="result1" className={saasAccordionItem + " data-[state=open]:border-l-4 data-[state=open]:border-pink-500"}>
                     <AccordionTrigger className={saasAccordionTrigger}>
-                      6x Audience Growth
+                      Turned 1k into 6.6k
                     </AccordionTrigger>
                     <AccordionContent className={saasAccordionContent}>
-                      The founder's LinkedIn audience grew from 1,000 to over 6,600 followers — creating a strong community that extended Wellnergy's reach year-round.
+                      The founder's LinkedIn following jumped from 1,000 to over 6,600, not just numbers, but a real community that extended Wellnergy's reach between events.
                     </AccordionContent>
                   </AccordionItem>
                   <AccordionItem value="result2" className={saasAccordionItem + " data-[state=open]:border-l-4 data-[state=open]:border-pink-500"}>
                     <AccordionTrigger className={saasAccordionTrigger}>
-                      Content with Reach & Resonance
+                      Created content people actually cared about
                     </AccordionTrigger>
                     <AccordionContent className={saasAccordionContent}>
-                      Campaign content earned tens of thousands of views, expanding visibility and sparking engagement across the wellness ecosystem.
+                      Our campaigns hit tens of thousands of views, not through clickbait, but clarity. The content didn't just land, it resonated across the wellness space.
                     </AccordionContent>
                   </AccordionItem>
                   <AccordionItem value="result3" className={saasAccordionItem + " data-[state=open]:border-l-4 data-[state=open]:border-pink-500"}>
                     <AccordionTrigger className={saasAccordionTrigger}>
-                      High-Profile Brand Collaborations
+                      Brought in brand names that mattered
                     </AccordionTrigger>
                     <AccordionContent className={saasAccordionContent}>
-                      Strategic partnerships were secured with names like Nike, Fabletics, Huel, and Third Space — validating the brand and opening new channels for growth.
+                      Partnerships with Nike, Fabletics, Huel, and Third Space weren't just flashy, they showed that Wellnergy had grown from grassroots to a brand the big players wanted in on.
                     </AccordionContent>
                   </AccordionItem>
                   <AccordionItem value="result4" className={saasAccordionItem + " data-[state=open]:border-l-4 data-[state=open]:border-pink-500"}>
                     <AccordionTrigger className={saasAccordionTrigger}>
-                      Long-Term Brand Equity
+                      Built a brand that outlives the weekend
                     </AccordionTrigger>
                     <AccordionContent className={saasAccordionContent}>
-                      Founder visibility and brand consistency laid the foundation for ongoing engagement, stronger event turnout, and future investor conversations.
+                      The visibility we created didn't fade when the event ended. It laid the foundation for year-round growth, stronger launches, and deeper conversations with future investors.
                     </AccordionContent>
                   </AccordionItem>
                 </Accordion>

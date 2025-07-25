@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { motion } from 'framer-motion';
 
 export const TestimonialsSection: React.FC = () => {
   // Testimonials data
@@ -42,14 +43,37 @@ export const TestimonialsSection: React.FC = () => {
   };
 
   return (
-    <section className="w-full flex flex-col items-center justify-center pt-10 pb-44 bg-white" style={{ background: '#fff', width: '100%' }}>
-      <h2 className="text-4xl md:text-5xl font-extrabold text-center mb-12 tracking-tight" style={{ fontFamily: 'Montserrat, Helvetica', color: '#091329' }}>
+    <motion.section 
+      className="w-full flex flex-col items-center justify-center pt-10 pb-44 bg-white" 
+      style={{ background: '#fff', width: '100%', paddingTop: 'calc(2.5rem + 20px)' }}
+      initial={{ opacity: 0, y: 60 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.8, ease: "easeOut" }}
+      viewport={{ once: true, margin: "-100px" }}
+    >
+      <motion.h2 
+        className="text-4xl md:text-5xl font-extrabold text-center mb-12 tracking-tight" 
+        style={{ fontFamily: 'Montserrat, Helvetica', color: '#091329' }}
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6, ease: "easeOut", delay: 0.2 }}
+        viewport={{ once: true, margin: "-100px" }}
+      >
         What My Clients Say
-      </h2>
-      <div className="w-full max-w-2xl mx-auto flex flex-col items-center">
-        <div
+      </motion.h2>
+      <motion.div 
+        className="w-full max-w-2xl mx-auto flex flex-col items-center"
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.7, ease: "easeOut", delay: 0.4 }}
+        viewport={{ once: true, margin: "-100px" }}
+      >
+        <motion.div
           key={activeTestimonialIdx}
           className={`transition-opacity duration-500 ease-in-out ${fade ? 'opacity-0' : 'opacity-100'} w-full`}
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: fade ? 0 : 1, y: 0 }}
+          transition={{ duration: 0.5, ease: "easeOut" }}
         >
           {['Jem Stein', 'Emma Abbasi'].includes(testimonials[activeTestimonialIdx].name) ? (
             <p className="w-full text-xl md:text-2xl text-center text-[#091329] font-normal italic mb-8 leading-relaxed" style={{ fontFamily: 'Inter, Helvetica', lineHeight: '1.5', maxWidth: '44rem' }}>
@@ -68,16 +92,32 @@ export const TestimonialsSection: React.FC = () => {
               {testimonials[activeTestimonialIdx].role}
             </span>
           </div>
-        </div>
+        </motion.div>
         {/* Profile Image Carousel */}
-        <div className="flex items-center justify-center gap-4 mt-12 flex-wrap">
+        <motion.div 
+          className="flex items-center justify-center gap-4 mt-12 flex-wrap"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, ease: "easeOut", delay: 0.6 }}
+          viewport={{ once: true, margin: "-100px" }}
+        >
           {testimonials.map((t, idx) => (
-            <button
+            <motion.button
               key={t.name}
               onClick={() => handleTestimonialClick(idx)}
               className="focus:outline-none bg-transparent p-0 m-0"
               aria-label={`Show testimonial from ${t.name}`}
               style={{ background: 'transparent' }}
+              initial={{ opacity: 0, scale: 0.8 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              transition={{ 
+                duration: 0.5, 
+                ease: "backOut", 
+                delay: 0.8 + (idx * 0.1) 
+              }}
+              viewport={{ once: true, margin: "-100px" }}
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
             >
               <div
                 className={`w-16 h-16 md:w-20 md:h-20 rounded-[0.84rem] border border-gray-200 transition-all duration-200 overflow-hidden flex items-center justify-center p-0 m-0
@@ -90,11 +130,11 @@ export const TestimonialsSection: React.FC = () => {
                   className="w-full h-full object-cover rounded-[0.84rem] border-none p-0 m-0"
                   style={{ display: 'block' }}
                 />
-              </div>
-            </button>
-          ))}
-        </div>
-      </div>
-    </section>
+                              </div>
+              </motion.button>
+                      ))}
+        </motion.div>
+      </motion.div>
+    </motion.section>
   );
 }; 

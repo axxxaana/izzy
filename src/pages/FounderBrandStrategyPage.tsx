@@ -102,11 +102,12 @@ export const FounderBrandStrategyPage: React.FC = () => {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.8, delay: 0.8 }}
                 >
-                  Shape your story, sharpen your message, and grow your reputation, all without posting every day. This is brand strategy for founders who want to lead with purpose, not noise.
+                  Shape your story. Sharpen your message. Build a brand people trust, and remember. This is strategy for founders who want to lead with clarity, not perform for clicks.
                 </motion.p>
                 
-                <motion.button 
-                  className="mt-8 px-8 py-4 rounded-[0.84rem] bg-[#e44782] text-white text-xl font-semibold shadow-lg border-2 border-transparent hover:bg-white hover:text-[#e44782] hover:border-[#e44782] transition-all duration-200" 
+                <motion.a 
+                  href="/get-started"
+                  className="mt-8 px-8 py-4 rounded-[0.84rem] bg-[#e44782] text-white text-xl font-semibold shadow-lg border-2 border-transparent hover:bg-white hover:text-[#e44782] hover:border-[#e44782] transition-all duration-200 inline-block" 
                   style={{ fontFamily: 'Montserrat, Helvetica' }}
                   initial={{ opacity: 0, y: 30 }}
                   animate={{ opacity: 1, y: 0 }}
@@ -115,7 +116,7 @@ export const FounderBrandStrategyPage: React.FC = () => {
                   whileTap={{ scale: 0.98 }}
                 >
                   Book a Call
-                </motion.button>
+                </motion.a>
               </div>
             </div>
           </motion.div>
@@ -154,14 +155,14 @@ export const FounderBrandStrategyPage: React.FC = () => {
           How It Works
         </motion.h2>
         <motion.p 
-          className="text-lg text-center max-w-3xl opacity-80 px-4" 
+          className="text-lg text-center max-w-xl opacity-80 px-4" 
           style={{ fontFamily: 'Inter, Helvetica' }}
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.4 }}
           viewport={{ once: true }}
         >
-          No fluff. Just a clear, proven system to turn your story into a magnetic personal brand — without burning out or posting every day.
+          No fluff. Just a clear, proven system to turn your story into a magnetic personal brand without burning out.
         </motion.p>
       </motion.div>
       

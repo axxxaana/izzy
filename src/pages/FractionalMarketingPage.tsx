@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { Link } from 'react-router-dom';
 import { Navigation } from '../components/layout';
 import { FooterSection } from '../screens/ElementLight/sections/FooterSection';
 import { TrustedByBanner } from '../components/TrustedByBanner';
 import { IdealClientSection, TestimonialsSection } from '../components/sections';
 import { HowItWorksSection } from '../components/sections/HowItWorksSection';
-import { PortfolioSection } from '../components/sections/PortfolioSection';
+
 import { CursorTrail } from '../components/CursorTrail';
 
 const ROTATING_WORDS = [
@@ -96,26 +97,28 @@ export const FractionalMarketingPage: React.FC = () => {
                 </motion.h1>
                 
                 <motion.p 
-                  className="max-w-2xl text-center text-[20px] text-[#0f0f10] opacity-80" 
+                  className="max-w-3xl text-center text-[20px] text-[#0f0f10] opacity-80" 
                   style={{ fontFamily: 'Inter, Helvetica' }}
                   initial={{ opacity: 0, y: 30 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.8, delay: 0.8 }}
                 >
-                  I help early-stage startups turn brand chaos into clarity, with messaging that lands, content that converts, and strategy that scales.
+                  I help early-stage startups turn brand chaos into clarity, with messaging that lands, content that converts, and strategy built to scale.
                 </motion.p>
                 
-                <motion.button 
-                  className="mt-8 px-8 py-4 rounded-[0.84rem] bg-[#e44782] text-white text-xl font-semibold shadow-lg border-2 border-transparent hover:bg-white hover:text-[#e44782] hover:border-[#e44782] transition-all duration-200" 
-                  style={{ fontFamily: 'Montserrat, Helvetica' }}
-                  initial={{ opacity: 0, y: 30 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.8, delay: 0.8 }}
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.98 }}
-                >
-                  Book a Call
-                </motion.button>
+                <Link to="/get-started">
+                  <motion.button 
+                    className="mt-8 px-8 py-4 rounded-[0.84rem] bg-[#e44782] text-white text-xl font-semibold shadow-lg border-2 border-transparent hover:bg-white hover:text-[#e44782] hover:border-[#e44782] transition-all duration-200" 
+                    style={{ fontFamily: 'Montserrat, Helvetica' }}
+                    initial={{ opacity: 0, y: 30 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.8, delay: 0.8 }}
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.98 }}
+                  >
+                    Book a Call
+                  </motion.button>
+                </Link>
               </div>
             </div>
           </motion.div>
@@ -154,14 +157,14 @@ export const FractionalMarketingPage: React.FC = () => {
           How It Works
         </motion.h2>
         <motion.p 
-          className="text-lg text-center max-w-3xl opacity-80 px-4" 
+          className="text-lg text-center max-w-2xl opacity-80 px-4" 
           style={{ fontFamily: 'Inter, Helvetica' }}
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.4 }}
           viewport={{ once: true }}
         >
-          A lean, proven framework to align your brand and marketing — so your business grows with clarity, not chaos.
+          A clear, focused process to align your brand and marketing, so you can scale without the chaos or second-guessing.
         </motion.p>
       </motion.div>
       
@@ -175,14 +178,16 @@ export const FractionalMarketingPage: React.FC = () => {
         <HowItWorksSection />
       </motion.div>
 
-      {/* Portfolio Section - now above FAQ */}
-      <PortfolioSection />
+
 
       {/* FAQ Section */}
-      <section className="w-full max-w-4xl mx-auto flex flex-col items-center py-20 px-4 pb-32">
-        <h2 className="text-4xl md:text-5xl font-extrabold text-center mb-8" style={{ color: '#0f0f10', fontFamily: 'Montserrat, Helvetica' }}>
+      <section className="w-full max-w-4xl mx-auto flex flex-col items-center pt-[60px] pb-32 px-4">
+        <h2 className="text-4xl md:text-5xl font-extrabold text-center mb-4" style={{ color: '#0f0f10', fontFamily: 'Montserrat, Helvetica' }}>
           Frequently Asked Questions
         </h2>
+        <p className="text-lg text-center mb-8 opacity-80" style={{ fontFamily: 'Inter, Helvetica' }}>
+          Straight answers to what founders actually want to know.
+        </p>
         <FAQSection />
       </section>
 
@@ -196,28 +201,24 @@ export const FractionalMarketingPage: React.FC = () => {
 // FAQSection component and faqs moved from HowItWorksSection
 const faqs = [
   {
-    q: "How is this different from hiring a full-time CMO?",
-    a: "This gives you senior-level marketing and brand leadership — without the overhead. You get clarity, strategy, and execution guidance tailored to your business stage, minus the cost and commitment of an in-house team."
+    q: "What is fractional marketing, exactly?",
+    a: "It's like having a senior marketing lead in your corner without the overhead of a full-time hire. Strategy, content, and execution, tailored to your growth stage."
   },
   {
-    q: "What exactly do you do as a fractional marketing partner?",
-    a: "We bring structure to the chaos. That means setting your marketing priorities, aligning messaging with growth goals, building campaigns that convert, and directing your team (or freelancers) so execution actually happens — without you managing every task."
+    q: "How is this different from hiring a freelancer or agency?",
+    a: "This isn't about checking boxes or churning content. You get strategic direction, execution support, and brand alignment all from someone who actually thinks like a founder."
   },
   {
-    q: "Is this a done-for-you service?",
-    a: "This is done-with-you at a strategic level, and done-for-you when it comes to brand positioning, marketing direction, and systems. Execution support is tailored — we either guide your team or bring in trusted partners where needed."
+    q: "Do you work with in-house teams?",
+    a: "Yes. Whether you have a marketing hire or no one in place yet, we plug in where it makes sense and build systems your team can run with."
   },
   {
-    q: "I don’t have a marketing team — can this still work?",
-    a: "Absolutely. Whether you’re solo, working with freelancers, or starting to build a team, we plug into your existing setup and help you scale smart. No team? We’ll build the systems so you can grow into one."
+    q: "Will this help with both strategy and execution?",
+    a: "Yep. We don't just tell you what to do we help you do it. That means messaging, content systems, visibility planning, and everything in between."
   },
   {
-    q: "Will I need to be involved every day?",
-    a: "Not even close. We design systems so marketing runs without you in the weeds. You stay in the driver's seat of vision — while we handle direction, decision-making, and frameworks your team can run with."
-  },
-  {
-    q: "How long until I see traction?",
-    a: "Most clients feel clarity and momentum within the first few weeks. Long-term results build over 6–12 weeks as strategy turns into systems, and systems turn into scalable marketing."
+    q: "Is this just for early-stage startups?",
+    a: "Not at all. If you've hit product-market fit and want brand-market clarity, this work gives your marketing the traction it's been missing."
   }
 ];
 
@@ -230,7 +231,7 @@ function FAQSection() {
         return (
           <div
             key={i}
-            className={`transition-all duration-400 border border-[#ececec] shadow-sm ${open ? 'bg-[rgba(228,71,130,0.08)] rounded-2xl' : 'bg-white'} px-8 py-6 group hover:shadow-md`}
+            className={`transition-all duration-400 border border-[#ececec] shadow-sm ${open ? 'bg-[rgba(228,71,130,0.08)]' : 'bg-white'} rounded-[0.84rem] px-8 py-6 group hover:shadow-md`}
             style={{}}
           >
             <button
@@ -245,10 +246,12 @@ function FAQSection() {
               </span>
             </button>
             <div
-              className={`overflow-hidden transition-all duration-400 ${open ? 'max-h-40 mt-4 opacity-100 scale-100' : 'max-h-0 opacity-0 scale-95'}`}
-              style={{ fontSize: '1.08rem', color: '#222', fontWeight: 400, lineHeight: 1.7, transitionProperty: 'max-height, opacity, transform', paddingTop: open ? 8 : 0 }}
+              className={`overflow-hidden transition-all duration-500 ease-in-out ${open ? 'max-h-96 mt-4 opacity-100' : 'max-h-0 mt-0 opacity-0'}`}
+              style={{ fontSize: '1.08rem', color: '#222', fontWeight: 400, lineHeight: 1.7 }}
             >
-              {open && <div>{faq.a}</div>}
+              <div className={`transition-all duration-500 ease-in-out ${open ? 'py-2' : 'py-0'}`}>
+                {faq.a}
+              </div>
             </div>
           </div>
         );

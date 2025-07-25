@@ -12,6 +12,7 @@ interface TrueFocusProps {
   pauseBetweenAnimations?: number;
   fontFamily?: string;
   fontSize?: string | number;
+  currentIndex?: number;
 }
 
 const TrueFocus: React.FC<TrueFocusProps> = ({
@@ -24,10 +25,14 @@ const TrueFocus: React.FC<TrueFocusProps> = ({
   pauseBetweenAnimations = 1,
   fontFamily = "'Montserrat', Helvetica, Arial, sans-serif",
   fontSize = "4rem",
+  currentIndex: externalCurrentIndex,
 }) => {
   const words = sentence.split(" ");
-  const [currentIndex, setCurrentIndex] = useState<number>(0);
+  const [internalCurrentIndex, setInternalCurrentIndex] = useState<number>(0);
   const [lastActiveIndex, setLastActiveIndex] = useState<number | null>(null);
+  
+  // Use external currentIndex when in manual mode and provided, otherwise use internal state
+  const currentIndex = manualMode && externalCurrentIndex !== undefined ? externalCurrentIndex : internalCurrentIndex;
   const containerRef = useRef<HTMLDivElement | null>(null);
   const wordRefs = useRef<(HTMLSpanElement | null)[]>([]);
   const [focusRect, setFocusRect] = useState({ x: 0, y: 0, width: 0, height: 0 });
@@ -35,7 +40,7 @@ const TrueFocus: React.FC<TrueFocusProps> = ({
   useEffect(() => {
     if (!manualMode) {
       const interval = setInterval(() => {
-        setCurrentIndex((prev) => (prev + 1) % words.length);
+        setInternalCurrentIndex((prev: number) => (prev + 1) % words.length);
       }, (animationDuration + pauseBetweenAnimations) * 1000);
 
       return () => clearInterval(interval);
@@ -56,15 +61,15 @@ const TrueFocus: React.FC<TrueFocusProps> = ({
   }, [currentIndex, words.length]);
 
   const handleMouseEnter = (index: number) => {
-    if (manualMode) {
+    if (manualMode && externalCurrentIndex === undefined) {
       setLastActiveIndex(index);
-      setCurrentIndex(index);
+      setInternalCurrentIndex(index);
     }
   };
 
   const handleMouseLeave = () => {
-    if (manualMode) {
-      setCurrentIndex(lastActiveIndex !== null ? lastActiveIndex : 0);
+    if (manualMode && externalCurrentIndex === undefined) {
+      setInternalCurrentIndex(lastActiveIndex !== null ? lastActiveIndex : 0);
     }
   };
 

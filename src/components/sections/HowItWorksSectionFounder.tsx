@@ -7,22 +7,22 @@ const stages = [
     tag: "Strategy",
     heading: "Clarify Your Brand",
     subtext:
-      "No fluff. Just a clear, proven system to turn your story into a magnetic personal brand — without burning out or posting every day.",
+      "We'll cut the noise and get clear on what makes you different. This is the foundation built on your story, not someone else's playbook.",
     accordion: [
       {
         title: "Own Your Narrative",
         content:
-          "Stop blending in. We'll help you shape a story that stands out and actually reflects who you are as a founder.",
+          "No more blending in. We'll shape a story that actually sounds like you and lands with the people who matter.",
       },
       {
         title: "Dial In Your Positioning",
         content:
-          "Get crystal clear on what you stand for — and who you stand out to — so people get it instantly.",
+          "Get sharp on what you stand for and who it's for. So when you speak, the right people pay attention.",
       },
       {
         title: "Build a Strategic Foundation",
         content:
-          "We'll align your vision, voice, and values so your brand feels authentic and built to last.",
+          "We'll align your vision, voice, and values so your brand feels true, consistent, and impossible to ignore.",
       },
     ],
     visual: <img src="/define image.png" alt="Define Image" className="w-full h-full object-contain rounded-[40px]" />,
@@ -31,22 +31,22 @@ const stages = [
     tag: "Voice",
     heading: "Create Amazing Content",
     subtext:
-      "Your story deserves better than a tired content calendar. Let's turn strategy into scroll-stopping content that builds trust — without chasing the algorithm gods.",
+      "Your story deserves more than recycled tips and a bloated calendar. We turn strategy into content that connects without chasing trends or dancing for the algorithm.",
     accordion: [
       {
-        title: "Say What Matters",
+        title: "Say what actually matters",
         content:
-          "We distill your ideas into meaningful content that reflects your voice and vision. No more generic thought-leadership. Just messages that move.",
+          "We shape ideas that sound like you and stick. No filler. No forced thought-leadership. Just sharp, intentional content that moves the right people.",
       },
       {
-        title: "Content Without Burnout",
+        title: "Keep it sustainable",
         content:
-          "You don't need to post every day. We design a rhythm and system that fits your life — and still builds momentum. Strategic, high-impact content > chasing virality.",
+          "You don't need to show up daily to be seen. We build a content system that fits your life and builds trust on your terms.",
       },
       {
-        title: "Make It Memorable",
+        title: "Make it unforgettable",
         content:
-          "From bold hooks to compelling frameworks, we help you shape content that cuts through the scroll. Because trust starts with attention.",
+          "From scroll-stopping hooks to frameworks that teach and resonate, we help you create content people actually remember and come back for.",
       },
     ],
     visual: <img src="/deliver-image.png" alt="Deliver Image" className="w-full h-full object-contain rounded-[40px]" />,
@@ -55,22 +55,22 @@ const stages = [
     tag: "Visibility",
     heading: "Grow With Intention",
     subtext:
-      "You don't need to be everywhere. Just in the right places, consistently. We help you scale your presence with clarity, not chaos.",
+      "You don't need to be everywhere. You need to show up in the right places with the right message. We help you grow with clarity, not chaos.",
     accordion: [
       {
-        title: "Choose the Right Channels",
+        title: "Choose what actually works",
         content:
-          "We'll identify where your audience actually listens — and double down on what works. No more spreading yourself thin.",
+          "We find the channels your audience cares about and focus there. No more stretching yourself across platforms just to keep up.",
       },
       {
-        title: "Build in Public (Your Way)",
+        title: "Visibility that fits you",
         content:
-          "Whether it's LinkedIn, longform, or podcasts, we craft a strategy around your energy and goals. Visibility should feel aligned — not forced.",
+          "LinkedIn. Podcasts. Longform. We build a strategy around your strengths, not someone else's playbook. Show up in a way that feels like you.",
       },
       {
-        title: "Systems That Scale With You",
+        title: "Systems that keep you moving",
         content:
-          "From idea capture to publishing, we'll design a repeatable workflow to keep momentum going. So you show up — even on your busiest weeks.",
+          "From idea capture to publishing, we design a workflow that works even on your busiest days. Because consistency shouldn't depend on motivation.",
       },
     ],
     visual: <img src="/Chat bubble and texting on smartphone.png" alt="Chat bubble and texting on smartphone" className="w-full h-full object-contain rounded-[40px]" />,
@@ -120,7 +120,7 @@ export const HowItWorksSectionFounder: React.FC = () => {
                   <h3 className="text-[34px] font-extrabold mb-4" style={{ color: '#0f0f10', fontFamily: 'Montserrat, Helvetica' }}>
                     {stage.heading}
                   </h3>
-                  <p className="text-lg mb-6 max-w-xl opacity-80" style={{ fontFamily: 'Inter, Helvetica' }}>{stage.subtext}</p>
+                  <p className="text-lg mb-6 max-w-lg opacity-80" style={{ fontFamily: 'Inter, Helvetica' }}>{stage.subtext}</p>
                   <div className="flex flex-col gap-1 w-full h-[400px]">
                     {stage.accordion.map((row, i) => {
                       const isOpen = openIndexes[idx] === i;
@@ -145,7 +145,21 @@ export const HowItWorksSectionFounder: React.FC = () => {
                             className={`overflow-hidden transition-all duration-500 ease-[cubic-bezier(0.4,0,0.2,1)] ${isOpen ? 'max-h-40 opacity-100 scale-100' : 'max-h-0 opacity-0 scale-95'}`}
                             style={{ fontSize: '1rem', color: '#222', fontWeight: 400, lineHeight: 1.7, transitionProperty: 'max-height, opacity, transform', paddingTop: isOpen ? 16 : 0 }}
                           >
-                            {isOpen && <div>{row.content}</div>}
+                            {isOpen && (
+                              <div>
+                                <div>{row.content}</div>
+                                <a 
+                                  href="/get-started"
+                                  className="text-[#e44782] font-semibold text-base hover:opacity-80 transition-all duration-200 mt-3 flex items-center gap-2"
+                                  style={{ fontFamily: 'Inter, Helvetica' }}
+                                >
+                                  Book a Call
+                                  <svg width="16" height="16" fill="none" viewBox="0 0 16 16">
+                                    <path d="M6 12l4-4-4-4" stroke="#e44782" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                                  </svg>
+                                </a>
+                              </div>
+                            )}
                           </div>
                         </div>
                       );
@@ -172,12 +186,42 @@ export const HowItWorksSectionFounder: React.FC = () => {
       {/* Testimonials Section */}
       <TestimonialsSection />
       {/* FAQ Section */}
-      <section className="w-full max-w-4xl mx-auto flex flex-col items-center py-20 px-4 pb-32">
-        <h2 className="text-4xl md:text-5xl font-extrabold text-center mb-8" style={{ color: '#0f0f10', fontFamily: 'Montserrat, Helvetica' }}>
+      <motion.section 
+        className="w-full max-w-4xl mx-auto flex flex-col items-center pt-[calc(5rem-50px)] pb-32 px-4"
+        initial={{ opacity: 0, y: 60 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, ease: "easeOut" }}
+        viewport={{ once: true, margin: "-100px" }}
+      >
+        <motion.h2 
+          className="text-4xl md:text-5xl font-extrabold text-center mb-4" 
+          style={{ color: '#0f0f10', fontFamily: 'Montserrat, Helvetica' }}
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, ease: "easeOut", delay: 0.2 }}
+          viewport={{ once: true, margin: "-100px" }}
+        >
           Frequently Asked Questions
-        </h2>
-        <FAQSection />
-      </section>
+        </motion.h2>
+        <motion.p 
+          className="text-lg text-center mb-8 opacity-80" 
+          style={{ fontFamily: 'Inter, Helvetica' }}
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, ease: "easeOut", delay: 0.4 }}
+          viewport={{ once: true, margin: "-100px" }}
+        >
+          The need-to-knows, minus the fluff.
+        </motion.p>
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, ease: "easeOut", delay: 0.6 }}
+          viewport={{ once: true, margin: "-100px" }}
+        >
+          <FAQSection />
+        </motion.div>
+      </motion.section>
     </>
   );
 };
@@ -185,24 +229,24 @@ export const HowItWorksSectionFounder: React.FC = () => {
 // FAQSection component
 const faqs = [
   {
+    q: "What exactly is the founder brand strategy?",
+    a: "It's your message, your positioning, and your visibility, aligned. We get clear on what you stand for, how you say it, and where you show up so people trust you before they even hit your site."
+  },
+  {
     q: "How is this different from other personal brand services?",
-    a: "This is a founder-first, strategy-led process. No fluff, no generic playbooks. Everything is tailored to your story, your goals, and your schedule."
+    a: "Most services focus on surface-level visibility and more posts, more noise. This goes deeper. We build a strategic foundation so everything you say and share is rooted, intentional, and aligned with where you're headed."
   },
   {
-    q: "Do I need to post every day?",
-    a: "No! The system is designed to help you say more with less, so you can build authority and momentum without burning out."
+    q: "Is this just for early-stage founders?",
+    a: "Not at all. Whether you're just starting or scaling fast, having a clear, strategic brand helps you lead with confidence and attract the right people."
   },
   {
-    q: "What if I don’t know my story yet?",
-    a: "That’s exactly what we’ll uncover together. The first stage is all about clarifying your narrative and positioning."
-  },
-  {
-    q: "How long does the process take?",
-    a: "Most founders see clarity and results in 4–8 weeks, depending on your goals and pace."
+    q: "Do I need to be posting every day for this to work?",
+    a: "Nope. This is about consistency, not quantity. We'll build a content rhythm that fits your life and still gets results, no daily grind required."
   },
   {
     q: "Is this just for LinkedIn?",
-    a: "Nope! The strategy works across platforms—wherever your audience is."
+    a: "Nope. LinkedIn's great but this is about your whole ecosystem. Whether it's podcasts, longform, newsletters, or whatever channels make sense for you, we build a strategy that meets your goals, not just the algorithm."
   }
 ];
 
@@ -215,7 +259,7 @@ function FAQSection() {
         return (
           <div
             key={i}
-            className={`transition-all duration-400 border border-[#ececec] shadow-sm ${open ? 'bg-[rgba(228,71,130,0.08)] rounded-2xl' : 'bg-white'} px-8 py-6 group hover:shadow-md`}
+            className={`transition-all duration-400 border border-[#ececec] shadow-sm ${open ? 'bg-[rgba(228,71,130,0.08)]' : 'bg-white'} px-8 py-6 group hover:shadow-md rounded-[0.84rem]`}
             style={{}}
           >
             <button
@@ -230,8 +274,8 @@ function FAQSection() {
               </span>
             </button>
             <div
-              className={`overflow-hidden transition-all duration-400 ${open ? 'max-h-40 mt-4 opacity-100 scale-100' : 'max-h-0 opacity-0 scale-95'}`}
-              style={{ fontSize: '1.08rem', color: '#222', fontWeight: 400, lineHeight: 1.7, transitionProperty: 'max-height, opacity, transform', paddingTop: open ? 8 : 0 }}
+              className={`overflow-hidden transition-all duration-500 ease-in-out ${open ? 'max-h-96 mt-4 opacity-100' : 'max-h-0 opacity-0'}`}
+              style={{ fontSize: '1.08rem', color: '#222', fontWeight: 400, lineHeight: 1.7, transitionProperty: 'max-height, opacity, margin-top', paddingTop: open ? 8 : 0 }}
             >
               {open && <div>{faq.a}</div>}
             </div>

@@ -8,7 +8,7 @@ import { Accordion, AccordionItem, AccordionTrigger, AccordionContent } from '..
 
 const HERO_IMAGE = '/GoFounder Cover.png';
 const HERO_HEADING = 'GoFounder';
-const HERO_DESCRIPTION = 'GoFounder is a B2B coaching service helping startup founders stay accountable, focused, and consistently performing at a high level. Despite a powerful value proposition and strong client retention, their brand didn\'t reflect the quality of their offer. I stepped in to help unify their messaging, build a scalable content engine, and elevate the founders\' visibility to drive long-term authority and growth.';
+const HERO_DESCRIPTION = 'GoFounder is a B2B COACHING service helping startup founders stay accountable, focused, and consistently performing at a high level. Despite a powerful value proposition and strong client retention, their brand didn\'t reflect the quality of their offer. I stepped in to help unify their messaging, build a scalable content engine, and elevate the founders\' visibility to drive long-term authority and growth.';
 
 const saasAccordionItem = "rounded-xl mb-2 transition-all duration-300 overflow-hidden bg-transparent data-[state=open]:bg-white data-[state=open]:shadow data-[state=open]:border-l-4 data-[state=open]:border-pink-500";
 const saasAccordionTrigger = "flex items-center justify-between w-full px-6 py-5 text-lg font-semibold text-gray-900 cursor-pointer focus:outline-none transition-all duration-300";
@@ -21,7 +21,7 @@ const portfolioItems = [
     id: 1,
     title: 'Nexus Connected',
     subtitle: 'Team Collaboration Platform',
-    description: 'Nexus is a femtech startup creating an AI-driven health coach for women. I led a full brand repositioning, building the strategy, voice, and campaigns across digital and in-person channels. The result: a unified brand, stronger founder visibility, and a clear path to growth and investment.',
+    description: 'Nexus is a femtech startup building an AI health coach for women. I led the full reposition, strategy, voice, and campaigns. The result: a clear brand, visible founder, and traction with investors.',
     tags: ['Brand Overhaul', 'Product Positioning', 'UX Strategy'],
     image: '/nexus connected team.jpg',
     color: '',
@@ -30,7 +30,7 @@ const portfolioItems = [
     id: 2,
     title: 'Wellnergy',
     subtitle: 'Health & Wellness Platform',
-    description: 'Wellnergy is a fast-growing wellness event celebrating holistic health. I led brand messaging, ghostwrote founder content, and built influencer partnerships — turning a grassroots festival into a credible, high-visibility brand with strategic alliances and strong digital traction.',
+    description: 'Wellnergy is a wellness event turned high-visibility brand. I led messaging, ghostwrote founder content, and built influencer partnerships to drive traction and boost brand credibility.',
     tags: ['Health Tech', 'Holistic Design', 'Wellness Strategy'],
     image: '/wellnergy cover.png',
     color: '',
@@ -64,7 +64,7 @@ const PortfolioCard: React.FC<{ item: typeof portfolioItems[0]; index: number }>
         style={{ background: 'rgba(228, 71, 130, 0.2)' }}
       >
         {/* Content - Left Side */}
-        <div className="relative z-10 flex-1 flex flex-col justify-between pt-20 px-8 pb-8 max-w-xl">
+        <div className="relative z-10 flex-1 flex flex-col justify-center py-8 px-8 max-w-xl">
           <div>
             <h2 className="text-3xl md:text-4xl font-bold text-[#e44782] mb-4 group-hover:text-pink-600 transition-colors duration-300 font-['Montserrat']">
               {item.title}
@@ -146,7 +146,7 @@ const PortfolioGoFounderPage: React.FC = () => {
             >
               <span className="inline-flex items-center px-6 py-3 rounded-full bg-white border border-pink-200 shadow-lg backdrop-blur-sm">
                 <span className="text-pink-700 font-medium text-sm tracking-wide">
-                  B2B Coaching
+                  B2B COACHING
                 </span>
               </span>
             </motion.div>
@@ -369,7 +369,7 @@ const PortfolioGoFounderPage: React.FC = () => {
                       Client Impact at Scale
                     </AccordionTrigger>
                     <AccordionContent className={saasAccordionContent}>
-                      Supported over 100 startup founders with a 6-month average retention — solidifying GoFounder's positioning as a go-to in B2B coaching.
+                      Supported over 100 startup founders with a 6-month average retention — solidifying GoFounder's positioning as a go-to in B2B COACHING.
                     </AccordionContent>
                   </AccordionItem>
                 </Accordion>

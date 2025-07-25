@@ -19,9 +19,9 @@ export const FooterSection = (): JSX.Element => {
         <div className="w-full flex flex-col md:flex-row-reverse items-center justify-between gap-8 px-8">
           {/* Left: Image (if any) */}
           {/* Right: Text and Button */}
-          <div className="flex-1 flex flex-col items-center md:items-end justify-center py-16 pl-[50px]">
+          <div className="flex-1 flex flex-col items-center md:items-end justify-center py-16 pl-[100px]">
             <motion.div 
-              className="max-w-[915px] text-left md:mr-[350px]"
+              className="max-w-[915px] text-left md:mr-[250px] ml-[100px]"
               initial={{ opacity: 0, x: 30 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
