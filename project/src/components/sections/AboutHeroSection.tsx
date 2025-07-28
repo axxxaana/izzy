@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
+import ProfileCard from '../ProfileCard';
 
 export const AboutHeroSection: React.FC = () => {
   const [screenWidth, setScreenWidth] = useState(0);
@@ -19,19 +20,19 @@ export const AboutHeroSection: React.FC = () => {
 
   // Calculate margins based on screen width
   const getTextMargin = () => {
-    if (screenWidth >= 1920) return '280px';
-    if (screenWidth >= 1536) return '150px';
-    if (screenWidth >= 1280) return '125px';
-    if (screenWidth >= 1024) return '100px';
-    return '0px';
+    if (screenWidth >= 1920) return '350px';
+    if (screenWidth >= 1536) return '220px';
+    if (screenWidth >= 1280) return '195px';
+    if (screenWidth >= 1024) return '170px';
+    return '70px';
   };
 
   const getImageMargin = () => {
-    if (screenWidth >= 1920) return '-320px';
-    if (screenWidth >= 1536) return '-100px';
-    if (screenWidth >= 1280) return '-75px';
-    if (screenWidth >= 1024) return '-50px';
-    return '-50px';
+    if (screenWidth >= 1920) return '-470px';
+    if (screenWidth >= 1536) return '-250px';
+    if (screenWidth >= 1280) return '-225px';
+    if (screenWidth >= 1024) return '-200px';
+    return '-200px';
   };
 
   return (
@@ -96,7 +97,7 @@ export const AboutHeroSection: React.FC = () => {
               </motion.div>
             </div>
 
-            {/* Right Side - Image */}
+            {/* Right Side - ProfileCard */}
             <div 
               className="hidden lg:flex w-1/2 justify-center items-center mt-[70px]"
               style={{ 
@@ -110,10 +111,20 @@ export const AboutHeroSection: React.FC = () => {
                 transition={{ duration: 1.2, delay: 0.3, ease: "easeOut" }}
                 viewport={{ once: true, margin: "-50px" }}
               >
-                <img 
-                  src="/izzy-about-3.png" 
-                  alt="Izzy Prior" 
-                  className="w-auto h-auto max-w-full max-h-[400px] xl:max-h-[450px] 2xl:max-h-[500px] object-contain"
+                <ProfileCard
+                  name="Izzy Prior"
+                  title="Brand Strategist & Marketing Director"
+                  handle="izzyprior"
+                  status="Available"
+                  contactText="Book a Call"
+                  avatarUrl="/izzy-about-3.png"
+                  showUserInfo={true}
+                  enableTilt={true}
+                  enableMobileTilt={false}
+                  behindGradient={undefined}
+                  innerGradient={undefined}
+                  miniAvatarUrl={undefined}
+                  onContactClick={() => window.location.href = '/get-started'}
                 />
               </motion.div>
             </div>
