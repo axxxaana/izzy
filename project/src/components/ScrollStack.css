@@ -1,0 +1,157 @@
+/* High-Performance ScrollStack with Lenis - No Scroll Indicators */
+.scroll-stack-card {
+  background: white;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  font-family: 'Montserrat', Helvetica, sans-serif;
+  cursor: pointer;
+  transition: box-shadow 0.3s ease;
+  overflow: hidden;
+}
+
+.scroll-stack-card:hover {
+  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.15);
+}
+
+/* Hide all scrollbars for clean appearance */
+.portfolio-scroll-stack {
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* Internet Explorer 10+ */
+}
+
+.portfolio-scroll-stack::-webkit-scrollbar {
+  display: none; /* WebKit */
+  width: 0;
+  height: 0;
+  background: transparent;
+}
+
+.portfolio-scroll-stack::-webkit-scrollbar-track {
+  display: none;
+}
+
+.portfolio-scroll-stack::-webkit-scrollbar-thumb {
+  display: none;
+}
+
+/* Hero card specific styling */
+.hero-card {
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  cursor: default !important;
+  height: 100vh !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.hero-card:hover {
+  box-shadow: none !important;
+}
+
+/* Portfolio specific styling */
+.portfolio-card {
+  background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+  border: 1px solid rgba(228, 71, 130, 0.1);
+  height: 28rem !important;
+}
+
+.portfolio-card:hover {
+  box-shadow: 0 12px 50px rgba(228, 71, 130, 0.15);
+  border-color: rgba(228, 71, 130, 0.2);
+}
+
+/* Loading state */
+.scroll-stack-loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 300px;
+  color: #666;
+  font-family: 'Inter', Helvetica, sans-serif;
+}
+
+.scroll-stack-loading::after {
+  content: '';
+  width: 32px;
+  height: 32px;
+  border: 3px solid #e44782;
+  border-radius: 50%;
+  border-top-color: transparent;
+  animation: spin 1s linear infinite;
+  margin-top: 1rem;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* Error state */
+.scroll-stack-error {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 300px;
+  color: #dc2626;
+  text-align: center;
+  padding: 2rem;
+  font-family: 'Inter', Helvetica, sans-serif;
+}
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+  .scroll-stack-inner {
+    padding-left: 2rem !important;
+    padding-right: 2rem !important;
+  }
+  
+  .scroll-stack-card {
+    height: 24rem !important;
+    padding: 2rem !important;
+    margin-top: 1.5rem !important;
+    margin-bottom: 1.5rem !important;
+  }
+  
+  .hero-card {
+    height: 100vh !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+  
+  .portfolio-card {
+    height: 26rem !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .scroll-stack-inner {
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+    padding-bottom: 30rem !important;
+  }
+  
+  .scroll-stack-card {
+    height: 20rem !important;
+    padding: 1.5rem !important;
+    border-radius: 24px !important;
+  }
+  
+  .hero-card {
+    height: 100vh !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    border-radius: 0 !important;
+  }
+  
+  .portfolio-card {
+    height: 22rem !important;
+  }
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .scroll-stack-card {
+    transition: none;
+  }
+} 
