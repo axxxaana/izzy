@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
 
 export const FounderQuoteSection: React.FC = () => {
   return (
@@ -12,8 +13,25 @@ export const FounderQuoteSection: React.FC = () => {
           transition={{ duration: 0.8, ease: "easeOut" }}
           viewport={{ once: true, margin: "-100px" }}
         >
-          "I believe great brands don't just talk, they <span className="px-3 py-1 rounded-lg relative bg-gradient-to-r from-[#e447824d] to-[#e4478203]">connect</span>. My work is about helping founders get radically clear so they can grow with intention."
+          "I believe great brands don't just talk, <span className="px-3 py-1 rounded-lg relative bg-gradient-to-r from-[#e447824d] to-[#e4478203]">they connect</span>. My work is about helping founders get radically clear so they can grow with intention."
         </motion.h2>
+        
+        {/* Book a Call Button */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, ease: "easeOut", delay: 0.4 }}
+          viewport={{ once: true, margin: "-100px" }}
+        >
+          <Link to="/get-started">
+            <motion.button 
+              className="px-8 py-4 bg-[#e44782] text-white border-2 border-[#e44782] rounded-[0.84rem] font-semibold text-lg hover:bg-white hover:text-[#e44782] transition-all duration-300 shadow-lg"
+              whileTap={{ scale: 0.98 }}
+            >
+              Book a Call
+            </motion.button>
+          </Link>
+        </motion.div>
       </div>
     </section>
   );

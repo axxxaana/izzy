@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
 
 interface ProcessStep {
   title: string;
@@ -90,6 +91,23 @@ export const IzzyProcessAccordion: React.FC = () => {
               <p className="text-[16px] md:text-[18px] lg:text-[20px] text-gray-600 leading-relaxed mb-8 max-w-[480px] mx-auto lg:mx-0">
                 A clear, human, and commercially-minded journey to brand clarity built to cut through the noise, simplify decisions, and drive results that actually move the needle.
               </p>
+              
+              {/* Book a Call Button */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, ease: "easeOut", delay: 0.4 }}
+                viewport={{ once: true, margin: "-100px" }}
+              >
+                <Link to="/get-started">
+                  <motion.button 
+                    className="px-8 py-4 bg-[#e44782] text-white border-2 border-[#e44782] rounded-[0.84rem] font-semibold text-lg hover:bg-white hover:text-[#e44782] transition-all duration-300 shadow-lg"
+                    whileTap={{ scale: 0.98 }}
+                  >
+                    Book a Call
+                  </motion.button>
+                </Link>
+              </motion.div>
             </motion.div>
           </div>
 

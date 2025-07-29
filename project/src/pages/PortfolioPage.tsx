@@ -1,60 +1,141 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence, useInView } from 'framer-motion';
-import { Navigation } from '../components/layout/Navigation';
-import { CursorTrail } from '../components/CursorTrail';
+import { Layout } from '../components/layout/Layout';
 import { FooterSection } from '../screens/ElementLight/sections/FooterSection';
+import { TrustedByBanner } from '../components/TrustedByBanner';
 import { Link } from 'react-router-dom';
 
 // PortfolioPage-specific hero content
 const PORTFOLIO_HERO_TAG = 'PORTFOLIO';
-const PORTFOLIO_HERO_HEADLINE = 'Real strategy. Real';
-const PORTFOLIO_HERO_ROTATING_WORDS = [
-  'Results',
-  'Clarity',
-  'Growth',
-  'Messaging',
-];
+const PORTFOLIO_HERO_HEADLINE = 'Real Strategy. Real Results.';
+
 const PORTFOLIO_HERO_SUBHEADLINE =
   'From femtech to founder brands. This is what happens when strategy turns into results.';
 
+// Counter Blocks Component
+const CounterBlocks: React.FC = () => {
+  const [counts, setCounts] = useState({ years: 0, startups: 0, brands: 0 });
+  const [hasAnimated, setHasAnimated] = useState(false);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting && !hasAnimated) {
+          setHasAnimated(true);
+          animateCounters();
+        }
+      },
+      { threshold: 0.5 }
+    );
+
+    const element = document.getElementById('counter-blocks');
+    if (element) {
+      observer.observe(element);
+    }
+
+    return () => observer.disconnect();
+  }, [hasAnimated]);
+
+  const animateCounters = () => {
+    const targets = { years: 6, startups: 30, brands: 20 };
+    const duration = 2000;
+    const steps = 60;
+    const stepDuration = duration / steps;
+
+    let step = 0;
+    const timer = setInterval(() => {
+      step++;
+      const progress = step / steps;
+      const easeOut = 1 - Math.pow(1 - progress, 3);
+
+      setCounts({
+        years: Math.round(targets.years * easeOut),
+        startups: Math.round(targets.startups * easeOut),
+        brands: Math.round(targets.brands * easeOut)
+      });
+
+      if (step >= steps) {
+        clearInterval(timer);
+        setCounts(targets);
+      }
+    }, stepDuration);
+  };
+
+  return (
+    <div id="counter-blocks" className="flex flex-col sm:flex-row gap-6 mt-12 max-w-2xl mx-auto">
+      <motion.div
+        initial={{ opacity: 0, y: 30 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6, delay: 1.0 }}
+        className="flex-1 bg-white/5 backdrop-blur-sm rounded-xl p-5 text-center border border-white/10"
+      >
+        <div className="text-2xl md:text-3xl font-bold text-pink-600 mb-2 font-['Montserrat']">
+          {counts.years}+
+        </div>
+        <div className="text-sm md:text-base text-gray-700 font-medium font-['Inter']">
+          Years in Brand Strategy
+        </div>
+      </motion.div>
+
+      <motion.div
+        initial={{ opacity: 0, y: 30 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6, delay: 1.2 }}
+        className="flex-1 bg-white/5 backdrop-blur-sm rounded-xl p-5 text-center border border-white/10"
+      >
+        <div className="text-2xl md:text-3xl font-bold text-pink-600 mb-2 font-['Montserrat']">
+          {counts.startups}+
+        </div>
+        <div className="text-sm md:text-base text-gray-700 font-medium font-['Inter']">
+          Early-Stage<br />
+          Startups Scaled
+        </div>
+      </motion.div>
+
+      <motion.div
+        initial={{ opacity: 0, y: 30 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6, delay: 1.4 }}
+        className="flex-1 bg-white/5 backdrop-blur-sm rounded-xl p-5 text-center border border-white/10"
+      >
+        <div className="text-2xl md:text-3xl font-bold text-pink-600 mb-2 font-['Montserrat']">
+          {counts.brands}+
+        </div>
+        <div className="text-sm md:text-base text-gray-700 font-medium font-['Inter']">
+          Founder-Led<br />
+          Brands Built
+        </div>
+      </motion.div>
+    </div>
+  );
+};
+
 const PortfolioHero: React.FC = () => {
-  const [currentWordIndex, setCurrentWordIndex] = React.useState(0);
-  React.useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentWordIndex((prev) => (prev + 1) % PORTFOLIO_HERO_ROTATING_WORDS.length);
-    }, 2200);
-    return () => clearInterval(interval);
-  }, []);
 
   return (
     <div className="w-full relative mb-0">
       <div className="w-full p-3 sm:p-4 lg:p-[15px]" style={{ height: '700px', position: 'relative', overflow: 'hidden' }}>
         <motion.div 
           className="relative w-full h-[670px] mx-auto rounded-[15px] sm:rounded-[18px] lg:rounded-[22.5px] overflow-hidden"
-          initial={{ opacity: 0, scale: 0.95 }}
-          animate={{ opacity: 1, scale: 1 }}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
         >
           <div className="relative h-full">
-            <div className="absolute w-full h-full top-0 left-0">
-              <div className="relative h-full">
-                <div className="absolute w-full h-full top-0 left-0 bg-white opacity-10 rounded-[15px] sm:rounded-[18px] lg:rounded-[22.5px]" />
-                <motion.div
-                  className="absolute w-full h-full top-0 left-0 rounded-[15px] sm:rounded-[18px] lg:rounded-[22.5px]"
-                  style={{ background: 'rgba(228, 71, 130, 0.2)' }}
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  transition={{ duration: 1, delay: 0.3 }}
-                >
-                  <Navigation />
-                </motion.div>
-              </div>
-            </div>
+            {/* Simple Animated Background */}
+            <div 
+              className="absolute w-full h-full top-0 left-0 rounded-[15px] sm:rounded-[18px] lg:rounded-[22.5px] overflow-hidden"
+              style={{
+                background: 'linear-gradient(45deg, rgba(228, 71, 130, 0.8), rgba(228, 71, 130, 0.2), rgba(228, 71, 130, 0.8))',
+                backgroundSize: '300% 300%',
+                animation: 'gradient-shift 8s ease-in-out infinite',
+              }}
+            />
             {/* Hero Content */}
-            <div className="absolute w-full h-full flex flex-col items-center justify-center px-4 pt-32 pb-32">
+            <div className="absolute w-full h-full flex flex-col items-center justify-center px-4 pt-40 pb-32">
               <motion.span
-                className="inline-block mb-6 px-6 py-2 rounded-full bg-white text-lg font-semibold shadow-sm"
-                style={{ color: '#e44782', background: '#fff', fontFamily: 'Inter, Helvetica' }}
+                className="inline-block mb-8 px-6 py-3 rounded-lg bg-white/10 backdrop-blur-sm border border-pink-400/30 text-pink-600 text-base font-semibold uppercase tracking-wide"
+                style={{ fontFamily: 'Inter, Helvetica' }}
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.4 }}
@@ -63,30 +144,17 @@ const PortfolioHero: React.FC = () => {
               </motion.span>
 
               <motion.h1
-                className="max-w-xl mx-auto text-[40px] md:text-[64px] font-extrabold text-center mb-4 leading-[1.1]"
-                style={{ color: '#0f0f10', fontFamily: 'Montserrat, Helvetica', letterSpacing: '-2px' }}
+                className="max-w-4xl mx-auto text-[36px] md:text-[56px] lg:text-[64px] font-bold text-center mb-6 leading-[1.1]"
+                style={{ color: '#0f0f10', fontFamily: 'Montserrat, Helvetica', letterSpacing: '-1.5px' }}
                 initial={{ opacity: 0, y: 40 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.6 }}
               >
-                {PORTFOLIO_HERO_HEADLINE}{' '}
-                <AnimatePresence mode="wait">
-                  <motion.span
-                    key={currentWordIndex}
-                    className="inline-block"
-                    style={{ color: '#e44782', minWidth: 120 }}
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    exit={{ opacity: 0, y: -20 }}
-                    transition={{ duration: 0.3 }}
-                  >
-                    {PORTFOLIO_HERO_ROTATING_WORDS[currentWordIndex]}
-                  </motion.span>
-                </AnimatePresence>
+                {PORTFOLIO_HERO_HEADLINE}
               </motion.h1>
 
               <motion.p
-                className="max-w-xl text-center text-[20px] text-[#0f0f10] opacity-80"
+                className="max-w-lg text-center text-[18px] md:text-[20px] text-[#0f0f10] opacity-90 leading-relaxed"
                 style={{ fontFamily: 'Inter, Helvetica' }}
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -94,6 +162,9 @@ const PortfolioHero: React.FC = () => {
               >
                 {PORTFOLIO_HERO_SUBHEADLINE}
               </motion.p>
+
+              {/* Counter Blocks */}
+              <CounterBlocks />
             </div>
           </div>
         </motion.div>
@@ -182,12 +253,12 @@ const PortfolioCard: React.FC<{ item: typeof portfolioItems[0]; index: number }>
             <div>
               {/* Service badges for each card */}
               {(item.title === 'GoFounder' || item.title === 'Wellnergy') && (
-                <span className="inline-block mb-6 px-6 py-2 rounded-full border border-pink-500 text-pink-500 text-lg font-semibold shadow-sm" style={{ fontFamily: 'Inter, Helvetica' }}>
+                <span className="inline-block mb-6 px-6 py-2 rounded-md bg-transparent border border-pink-500 text-pink-600 text-lg font-bold shadow-sm uppercase" style={{ fontFamily: 'Inter, Helvetica' }}>
                   Multi-Service
                 </span>
               )}
               {item.title === 'Nexus Connected' && (
-                <span className="inline-block mb-6 px-6 py-2 rounded-full border border-pink-500 text-pink-500 text-lg font-semibold shadow-sm" style={{ fontFamily: 'Inter, Helvetica' }}>
+                <span className="inline-block mb-6 px-6 py-2 rounded-md bg-transparent border border-pink-500 text-pink-600 text-lg font-bold shadow-sm uppercase" style={{ fontFamily: 'Inter, Helvetica' }}>
                   Marketing
                 </span>
               )}
@@ -257,44 +328,46 @@ export { portfolioItems, PortfolioCard };
 
 export const PortfolioPage: React.FC = () => {
   return (
-    <div className="w-full bg-white">
-      {/* Cursor Trail Effect */}
-      <CursorTrail />
-      
-      {/* Hero Section */}
-      <PortfolioHero />
+    <Layout>
+      <div className="w-full bg-white">
+        {/* Hero Section */}
+        <PortfolioHero />
 
-      {/* Portfolio Section */}
-      <section className="w-full py-20 px-4 md:px-8 lg:px-12">
-        <div className="max-w-7xl mx-auto">
-          {/* Section Header */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: true }}
-            className="text-center mb-16"
-          >
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4 font-['Montserrat']">
-              Featured Projects
-            </h2>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto font-['Inter']">
-              Each project tells a unique story of transformation and growth.
-            </p>
-          </motion.div>
+        {/* Logo Scroller */}
+        <TrustedByBanner />
 
-          {/* Portfolio Grid */}
-          <div className="grid grid-cols-1 gap-8 md:gap-12">
-            {portfolioItems.map((item, index) => (
-              <PortfolioCard key={item.id} item={item} index={index} />
-            ))}
+        {/* Portfolio Section */}
+        <section className="w-full py-20 px-4 md:px-8 lg:px-12">
+          <div className="max-w-7xl mx-auto">
+            {/* Section Header */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+              viewport={{ once: true }}
+              className="text-center mb-16"
+            >
+              <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4 font-['Montserrat']">
+                Featured Projects
+              </h2>
+              <p className="text-xl text-gray-600 max-w-2xl mx-auto font-['Inter']">
+                Each project tells a unique story of transformation and growth.
+              </p>
+            </motion.div>
+
+            {/* Portfolio Grid */}
+            <div className="grid grid-cols-1 gap-8 md:gap-12">
+              {portfolioItems.map((item, index) => (
+                <PortfolioCard key={item.id} item={item} index={index} />
+              ))}
+            </div>
+            <div style={{ height: '100px' }}></div>
           </div>
-          <div style={{ height: '100px' }}></div>
-        </div>
-      </section>
+        </section>
 
-      {/* Footer */}
-      <FooterSection />
-    </div>
+        {/* Footer */}
+        <FooterSection />
+      </div>
+    </Layout>
   );
 }; 

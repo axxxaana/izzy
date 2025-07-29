@@ -70,6 +70,17 @@ const PortfolioCard: React.FC<{ item: typeof portfolioItems[0]; index: number }>
         {/* Content - Left Side */}
         <div className="relative z-10 flex-1 flex flex-col justify-center py-8 px-8 max-w-xl">
           <div>
+            {/* Service badges for each card */}
+            {item.title === 'Wellnergy' && (
+              <span className="inline-block mb-6 px-6 py-2 rounded-md bg-transparent border border-pink-500 text-pink-600 text-lg font-bold shadow-sm uppercase" style={{ fontFamily: 'Inter, Helvetica' }}>
+                Health & Wellness
+              </span>
+            )}
+            {item.title === 'GoFounder' && (
+              <span className="inline-block mb-6 px-6 py-2 rounded-md bg-transparent border border-pink-500 text-pink-600 text-lg font-bold shadow-sm uppercase" style={{ fontFamily: 'Inter, Helvetica' }}>
+                B2B COACHING
+              </span>
+            )}
             <h2 className="text-3xl md:text-4xl font-bold text-[#e44782] mb-4 group-hover:text-pink-600 transition-colors duration-300 font-['Montserrat']">
               {item.title}
             </h2>
@@ -121,18 +132,18 @@ const PortfolioNexusConnectedPage: React.FC = () => {
              transition={{ duration: 0.8, ease: 'easeOut', delay: 0.3 }}
            >
                          {/* Industry Badge */}
-             <motion.div
-               initial={{ opacity: 0, y: 20 }}
-               animate={{ opacity: 1, y: 0 }}
-               transition={{ duration: 0.6, delay: 0.5 }}
-               className="mb-8"
-             >
-               <span className="inline-flex items-center px-6 py-3 rounded-full bg-white border border-pink-200 shadow-lg backdrop-blur-sm">
-                 <span className="text-pink-700 font-medium text-sm tracking-wide">
-                   FEMTECH
-                 </span>
-               </span>
-             </motion.div>
+                         <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.5 }}
+              className="mb-8"
+            >
+              <span className="inline-flex items-center px-6 py-3 rounded-md bg-transparent border border-pink-500 shadow-lg">
+                <span className="text-pink-600 font-bold text-sm tracking-wide uppercase">
+                  FEMTECH
+                </span>
+              </span>
+            </motion.div>
 
             {/* Main Heading */}
             <motion.h1

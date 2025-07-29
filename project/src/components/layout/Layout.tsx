@@ -1,6 +1,8 @@
 import React from 'react';
 import { LayoutProps } from '../../types';
 import { APP_CONFIG } from '../../constants/config';
+import { Navigation } from './Navigation';
+import { CursorTrail } from '../CursorTrail';
 
 export const Layout: React.FC<LayoutProps> = ({ 
   children, 
@@ -28,6 +30,10 @@ export const Layout: React.FC<LayoutProps> = ({
 
   return (
     <div className={`min-h-screen bg-white ${className}`}>
+      {/* Cursor Trail Effect */}
+      <CursorTrail />
+      {/* Navigation - Consistent across all pages */}
+      <Navigation />
       {children}
     </div>
   );

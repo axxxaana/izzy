@@ -123,7 +123,7 @@ export const AboutHeroSection: React.FC = () => {
                   enableMobileTilt={false}
                   behindGradient={undefined}
                   innerGradient={undefined}
-                  miniAvatarUrl={undefined}
+                  miniAvatarUrl="/1686505438673.jpeg"
                   onContactClick={() => window.location.href = '/get-started'}
                 />
               </motion.div>

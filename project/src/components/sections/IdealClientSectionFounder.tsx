@@ -5,9 +5,7 @@ const features = [
     icon: (
       <span className="flex items-center justify-center w-20 h-20 rounded-full bg-gradient-to-br from-[#e44782]/30 to-[#e44782]/10 mb-7 shadow group-hover:scale-110 group-hover:shadow-lg transition-transform duration-200">
         {/* Heart icon for Purpose-Driven */}
-        <svg width="36" height="36" fill="none" viewBox="0 0 36 36">
-          <path d="M18 30s-9-6.6-9-12.6A5.4 5.4 0 0118 11.7a5.4 5.4 0 019 5.7C27 23.4 18 30 18 30z" fill="#e44782"/>
-        </svg>
+        <img src="/heart.svg" alt="Heart" width="42" height="42" />
       </span>
     ),
     title: "Purpose-Driven",
@@ -16,10 +14,8 @@ const features = [
   {
     icon: (
       <span className="flex items-center justify-center w-20 h-20 rounded-full bg-gradient-to-br from-[#e44782]/30 to-[#e44782]/10 mb-7 shadow group-hover:scale-110 group-hover:shadow-lg transition-transform duration-200">
-        {/* Upward arrow for Ambitious */}
-        <svg width="36" height="36" fill="none" viewBox="0 0 36 36">
-          <path d="M18 8v20M18 8l-8 8M18 8l8 8" stroke="#e44782" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"/>
-        </svg>
+        {/* Eye marketing icon for Ambitious */}
+        <img src="/eye-marketing.svg" alt="Eye Marketing" width="42" height="42" />
       </span>
     ),
     title: "Ambitious",
@@ -28,12 +24,8 @@ const features = [
   {
     icon: (
       <span className="flex items-center justify-center w-20 h-20 rounded-full bg-gradient-to-br from-[#e44782]/30 to-[#e44782]/10 mb-7 shadow group-hover:scale-110 group-hover:shadow-lg transition-transform duration-200">
-        {/* Modern clock for Time-Smart */}
-        <svg width="36" height="36" fill="none" viewBox="0 0 36 36">
-          <circle cx="18" cy="18" r="15" stroke="#e44782" strokeWidth="2.5" fill="#e44782" fillOpacity="0.12"/>
-          <circle cx="18" cy="18" r="2.5" fill="#e44782"/>
-          <path d="M18 12v6l4 2" stroke="#e44782" strokeWidth="2" strokeLinecap="round"/>
-        </svg>
+        {/* Time icon for Time-Smart */}
+        <img src="/time.svg" alt="Time" width="42" height="42" />
       </span>
     ),
     title: "Time-Smart",

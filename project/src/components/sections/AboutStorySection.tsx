@@ -99,25 +99,11 @@ export const AboutStorySection: React.FC = () => {
             viewport={{ once: true, margin: "-100px" }}
           >
             <div className="relative">
-              {/* Blob Shape Container */}
-              <div className="relative overflow-hidden">
-                                       <svg className="w-full h-[600px]" viewBox="0 0 200 200" preserveAspectRatio="none">
-                         <defs>
-                           <clipPath id="customBlob">
-                             <path d="M40.9,-69.9C53,-63.8,62.9,-52.9,70.9,-40.5C78.8,-28,84.7,-14,85.3,0.3C85.8,14.7,81,29.3,71.7,39.4C62.4,49.4,48.6,54.8,35.9,60.5C23.2,66.2,11.6,72.1,-1.1,74C-13.8,75.9,-27.5,73.7,-38.4,66.9C-49.2,60.2,-57.2,48.9,-65.9,37C-74.7,25.1,-84.1,12.6,-84.8,-0.4C-85.6,-13.4,-77.6,-26.8,-69.9,-40.5C-62.2,-54.1,-54.8,-68.1,-43.2,-74.5C-31.6,-80.9,-15.8,-79.8,-0.7,-78.5C14.4,-77.3,28.8,-76,40.9,-69.9Z" transform="translate(100 100)" />
-                           </clipPath>
-                         </defs>
-                         <image
-                           href="/izzy-about-hero.png"
-                           x="0"
-                           y="0"
-                           width="200"
-                           height="200"
-                           clipPath="url(#customBlob)"
-                           preserveAspectRatio="xMidYMid slice"
-                         />
-                       </svg>
-              </div>
+              <img
+                src="/izzy-about-hero.png"
+                alt="Izzy Prior - The Problem"
+                className="w-full h-[600px] object-cover rounded-lg"
+              />
             </div>
           </motion.div>
         </div>
@@ -137,25 +123,11 @@ export const AboutStorySection: React.FC = () => {
             viewport={{ once: true, margin: "-100px" }}
           >
             <div className="relative">
-              {/* Blob Shape Container */}
-              <div className="relative overflow-hidden">
-                                       <svg className="w-full h-[600px]" viewBox="0 0 200 200" preserveAspectRatio="none">
-                         <defs>
-                           <clipPath id="customBlob2">
-                             <path d="M40.9,-69.9C53,-63.8,62.9,-52.9,70.9,-40.5C78.8,-28,84.7,-14,85.3,0.3C85.8,14.7,81,29.3,71.7,39.4C62.4,49.4,48.6,54.8,35.9,60.5C23.2,66.2,11.6,72.1,-1.1,74C-13.8,75.9,-27.5,73.7,-38.4,66.9C-49.2,60.2,-57.2,48.9,-65.9,37C-74.7,25.1,-84.1,12.6,-84.8,-0.4C-85.6,-13.4,-77.6,-26.8,-69.9,-40.5C-62.2,-54.1,-54.8,-68.1,-43.2,-74.5C-31.6,-80.9,-15.8,-79.8,-0.7,-78.5C14.4,-77.3,28.8,-76,40.9,-69.9Z" transform="translate(100 100)" />
-                           </clipPath>
-                         </defs>
-                         <image
-                           href="/izzy-hero-2.jpg"
-                           x="0"
-                           y="0"
-                           width="200"
-                           height="200"
-                           clipPath="url(#customBlob2)"
-                           preserveAspectRatio="xMidYMid slice"
-                         />
-                       </svg>
-              </div>
+              <img
+                src="/izzy-hero-2.png"
+                alt="Izzy Prior - The Solution"
+                className="w-full h-[600px] object-cover rounded-lg"
+              />
             </div>
           </motion.div>
 

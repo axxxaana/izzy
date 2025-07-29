@@ -62,6 +62,11 @@
   display: flex;
   align-items: center;
 }
+@media (min-width: 1024px) {
+  .logo-container {
+    margin-left: -1rem;
+  }
+}
 
 .logo-link {
   display: flex;
@@ -70,34 +75,24 @@
   color: inherit;
 }
 
-
-
 .logo-image {
-  width: 1.25rem;
-  height: 1.5rem;
-  object-fit: cover;
+  width: 12rem;
+  height: 3rem;
+  object-fit: contain;
   margin-right: 0.5rem;
-}
-
-.logo-text {
-  font-family: 'Montserrat', Helvetica, sans-serif;
-  font-weight: 600;
-  font-size: 1rem;
-  color: #000;
-  white-space: nowrap;
 }
 
 @media (min-width: 640px) {
   .logo-image {
-    width: 1.5rem;
-    height: 2rem;
+    width: 14rem;
+    height: 3.5rem;
   }
 }
 
 @media (min-width: 1024px) {
   .logo-image {
-    width: 2.0625rem;
-    height: 2.6875rem;
+    width: 10rem;
+    height: 2.5rem;
   }
 }
 

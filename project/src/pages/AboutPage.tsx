@@ -1,6 +1,5 @@
 import React from 'react';
 import { Layout } from '../components/layout/Layout';
-import { Navigation } from '../components/layout';
 import { AboutHeroSection } from '../components/sections/AboutHeroSection';
 import { AboutStorySection } from '../components/sections/AboutStorySection';
 import { IzzyProcessAccordion } from '../components/sections/IzzyProcessAccordion';
@@ -9,7 +8,6 @@ import { MyValuesAnimated } from '../components/sections/MyValuesAnimated';
 import { TestimonialsSection } from '../components/sections/TestimonialsSection';
 import { TrustedByBanner } from '../components/TrustedByBanner';
 import { FooterSection } from '../screens/ElementLight/sections/FooterSection';
-import { CursorTrail } from '../components/CursorTrail';
 
 export const AboutPage: React.FC = () => {
   return (
@@ -17,10 +15,6 @@ export const AboutPage: React.FC = () => {
       title="About Izzy Prior" 
       description="Learn about Izzy Prior, a fractional CMO and brand strategist helping femtech, healthtech and social-impact founders create bold, heart-felt brands."
     >
-      {/* Cursor Trail Effect */}
-      <CursorTrail />
-      {/* Navigation */}
-      <Navigation />
       <div className="flex flex-col items-start w-full bg-white">
         {/* Hero Section */}
         <AboutHeroSection />
