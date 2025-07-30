@@ -61,7 +61,9 @@
 .logo-container {
   display: flex;
   align-items: center;
+  z-index: 1;
 }
+
 @media (min-width: 1024px) {
   .logo-container {
     margin-left: -1rem;
@@ -99,8 +101,13 @@
 .nav-items {
   display: none;
   align-items: center;
+  justify-content: center;
   gap: 1.5rem;
-  margin-left: 1.5rem;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(calc(-50% - 3px), -50%);
+  z-index: 0;
 }
 
 @media (min-width: 640px) {
@@ -112,8 +119,14 @@
 @media (min-width: 1024px) {
   .nav-items {
     gap: 2.5rem;
-    margin-left: 2rem;
   }
+}
+
+.get-started-container {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  z-index: 1;
 }
 
 .nav-item {

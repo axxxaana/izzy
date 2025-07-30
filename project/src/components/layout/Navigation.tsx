@@ -59,7 +59,7 @@ export const Navigation: React.FC<NavigationProps> = ({ className = '' }) => {
     <nav className={`navigation-bar ${className}`}>
       <div className="navigation-container">
         
-        {/* Logo */}
+        {/* Logo - Left Column */}
         <div className="logo-container">
           <Link to="/" className="logo-link">
             <img
@@ -68,45 +68,47 @@ export const Navigation: React.FC<NavigationProps> = ({ className = '' }) => {
               src="/bolt-logo.svg"
             />
           </Link>
-
-          {/* Navigation Items */}
-          <div className="nav-items">
-            {navItems.map((item, index) => (
-              item.hasDropdown ? (
-                <div 
-                  key={index}
-                  className="nav-item-dropdown-container"
-                  onMouseEnter={handleServicesMouseEnter}
-                  onMouseLeave={handleServicesMouseLeave}
-                >
-                  <button
-                    className={`nav-item nav-item-dropdown ${location.pathname === item.href ? 'active' : ''}`}
-                    onClick={handleServicesClick}
-                  >
-                    {item.label}
-                  </button>
-                  <ServicesDropdown 
-                    isOpen={isServicesOpen} 
-                    onClose={() => setIsServicesOpen(false)} 
-                  />
-                </div>
-              ) : (
-                <Link 
-                  key={index}
-                  to={item.href}
-                  className={`nav-item ${location.pathname === item.href ? 'active' : ''}`}
-                >
-                  {item.label}
-                </Link>
-              )
-            ))}
-          </div>
         </div>
 
-        {/* Get Started Button */}
-        <Link to="/get-started" className="get-started-btn">
-          Book a Call
-        </Link>
+        {/* Navigation Items - Center Column */}
+        <div className="nav-items">
+          {navItems.map((item, index) => (
+            item.hasDropdown ? (
+              <div 
+                key={index}
+                className="nav-item-dropdown-container"
+                onMouseEnter={handleServicesMouseEnter}
+                onMouseLeave={handleServicesMouseLeave}
+              >
+                <button
+                  className={`nav-item nav-item-dropdown ${location.pathname === item.href ? 'active' : ''}`}
+                  onClick={handleServicesClick}
+                >
+                  {item.label}
+                </button>
+                <ServicesDropdown 
+                  isOpen={isServicesOpen} 
+                  onClose={() => setIsServicesOpen(false)} 
+                />
+              </div>
+            ) : (
+              <Link 
+                key={index}
+                to={item.href}
+                className={`nav-item ${location.pathname === item.href ? 'active' : ''}`}
+              >
+                {item.label}
+              </Link>
+            )
+          ))}
+        </div>
+
+        {/* Get Started Button - Right Column */}
+        <div className="get-started-container">
+          <Link to="/get-started" className="get-started-btn">
+            Book a Call
+          </Link>
+        </div>
       </div>
     </nav>
   );
