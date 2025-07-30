@@ -17,6 +17,7 @@ export const Header: React.FC<HeaderProps> = ({ className = '' }) => {
     { label: "About", href: "/about" },
     { label: "Services", href: "/services" },
     { label: "Portfolio", href: "/portfolio" },
+    { label: "Resources", href: "/resources" },
   ];
   return (
     <div className={`fixed top-4 sm:top-6 lg:top-[39px] left-1/2 transform -translate-x-1/2 w-[95%] sm:w-[90%] max-w-[1280px] h-12 sm:h-14 lg:h-[66px] mx-auto bg-[#ffffffb2] rounded-2xl sm:rounded-3xl shadow-[0px_1px_1px_-0.5px_#00000008,0px_2px_2px_-1px_#00000008,0px_3px_3px_-1.5px_#00000008,0px_5px_5px_-2.5px_#00000008,0px_10px_10px_-5px_#00000008,0px_16px_16px_-8px_#00000008,0px_0px_0px_1px_#0000001a] backdrop-blur-md backdrop-brightness-[100%] [-webkit-backdrop-filter:blur(12px)_brightness(100%)] z-50 px-3 sm:px-4 ${className}`}>

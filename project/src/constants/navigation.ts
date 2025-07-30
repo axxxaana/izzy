@@ -8,6 +8,7 @@ export const NAV_ITEMS: NavItem[] = [
   { label: 'About', width: 'w-[72px]', href: '#about' },
   { label: 'Services', width: 'w-[88px]', href: '#services' },
   { label: 'Portfolio', width: 'w-[86px]', href: '#portfolio' },
+  { label: 'Resources', width: 'w-[88px]', href: '/resources' },
 ];
 
 export const BRAND_LOGOS = [

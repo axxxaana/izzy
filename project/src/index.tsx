@@ -11,6 +11,8 @@ import { PortfolioCaseStudiesPage } from "./pages/PortfolioCaseStudiesPage";
 import PortfolioNexusConnectedPage from "./pages/PortfolioNexusConnectedPage";
 import PortfolioWellnergyPage from "./pages/PortfolioWellnergyPage";
 import PortfolioGoFounderPage from "./pages/PortfolioGoFounderPage";
+import { ResourcesPage } from "./pages/ResourcesPage";
+import { ResourceDetailPage } from "./pages/ResourceDetailPage";
 import { NotFoundPage } from "./pages/NotFoundPage";
 import { ErrorBoundary } from "./components/ErrorBoundary";
 import ScrollToTop from "./components/layout/ScrollToTop";
@@ -32,6 +34,8 @@ createRoot(document.getElementById("app") as HTMLElement).render(
           <Route path="/portfolio/nexus-connected" element={<PortfolioNexusConnectedPage />} />
           <Route path="/portfolio/wellnergy" element={<PortfolioWellnergyPage />} />
           <Route path="/portfolio/gofounder" element={<PortfolioGoFounderPage />} />
+          <Route path="/resources" element={<ResourcesPage />} />
+          <Route path="/resources/:resourceId" element={<ResourceDetailPage />} />
           <Route path="*" element={<NotFoundPage />} />
         </Routes>
       </Router>

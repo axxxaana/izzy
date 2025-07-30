@@ -40,6 +40,15 @@ body {
   background: rgba(0, 0, 0, 0.5);
 }
 
+/* Resource card styling */
+.resource-card-radius {
+  border-radius: 0.84rem !important;
+}
+
+.resource-tag-radius {
+  border-radius: 0.84rem !important;
+}
+
 /* Animation keyframes */
 @keyframes fadeInUp {
   from {

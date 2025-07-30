@@ -16,6 +16,7 @@ export const Navigation: React.FC<NavigationProps> = ({ className = '' }) => {
     { label: "About", href: "/about" },
     { label: "Services", href: "/services", hasDropdown: true },
     { label: "Portfolio", href: "/portfolio" },
+    { label: "Resources", href: "/resources" },
   ];
 
   const handleServicesClick = (e: React.MouseEvent) => {

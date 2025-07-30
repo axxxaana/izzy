@@ -85,7 +85,7 @@ export const ServicesDropdown: React.FC<ServicesDropdownProps> = ({ isOpen, onCl
         <Link to="/services/fractional-marketing" className="service-dropdown-item" onClick={onClose}>
           <div className="service-content">
             <div className="service-tag">Strategic Marketing</div>
-            <div className="service-name">Fractional Marketing<br />& Brand Direction</div>
+            <div className="service-name">Fractional marketing<br />& brand direction</div>
           </div>
           <div className="service-arrow">→</div>
         </Link>

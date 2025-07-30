@@ -179,6 +179,9 @@ export const FooterSection = (): JSX.Element => {
                 <Link to="/portfolio" className="[font-family:'Inter',Helvetica] text-gray-600 hover:text-[#e44782] transition-colors duration-200 text-sm">Portfolio</Link>
               </motion.li>
               <motion.li whileHover={{ x: 5 }} transition={{ duration: 0.2 }}>
+                <Link to="/resources" className="[font-family:'Inter',Helvetica] text-gray-600 hover:text-[#e44782] transition-colors duration-200 text-sm">Resources</Link>
+              </motion.li>
+              <motion.li whileHover={{ x: 5 }} transition={{ duration: 0.2 }}>
                 <Link to="/get-started" className="[font-family:'Inter',Helvetica] text-gray-600 hover:text-[#e44782] transition-colors duration-200 text-sm">Book a Call</Link>
               </motion.li>
               </motion.ul>
