@@ -15,7 +15,6 @@ export const ServicesDropdown: React.FC<ServicesDropdownProps> = ({ isOpen, onCl
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
       if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
-        // Only close if not hovering
         if (!isHovering) {
           onClose();
         }
@@ -33,7 +32,6 @@ export const ServicesDropdown: React.FC<ServicesDropdownProps> = ({ isOpen, onCl
 
   const handleMouseEnter = () => {
     setIsHovering(true);
-    // Clear any pending close timeout
     if (closeTimeoutRef.current) {
       clearTimeout(closeTimeoutRef.current);
       closeTimeoutRef.current = null;
@@ -42,7 +40,6 @@ export const ServicesDropdown: React.FC<ServicesDropdownProps> = ({ isOpen, onCl
 
   const handleMouseLeave = () => {
     setIsHovering(false);
-    // Add a small delay before closing to make it more user-friendly
     closeTimeoutRef.current = setTimeout(() => {
       if (!isHovering) {
         onClose();
@@ -50,7 +47,6 @@ export const ServicesDropdown: React.FC<ServicesDropdownProps> = ({ isOpen, onCl
     }, 150);
   };
 
-  // Cleanup timeout on unmount
   useEffect(() => {
     return () => {
       if (closeTimeoutRef.current) {
@@ -59,11 +55,9 @@ export const ServicesDropdown: React.FC<ServicesDropdownProps> = ({ isOpen, onCl
     };
   }, []);
 
-  if (!isOpen) return null;
-
   return (
     <div 
-      className="services-dropdown-container" 
+      className={`services-dropdown-container ${isOpen ? 'show' : ''}`}
       ref={dropdownRef}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
