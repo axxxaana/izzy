@@ -20,7 +20,7 @@ if (!fs.existsSync(optimizedDir)) {
 }
 
 async function optimizeImages() {
-  console.log('🚀 Starting comprehensive image optimization...\n');
+  console.log('🚀 Starting comprehensive image optimization with WebP support...\n');
   
   const results = {
     jpeg: { count: 0, originalSize: 0, compressedSize: 0 },
@@ -127,6 +127,7 @@ async function optimizeImages() {
     
     let totalOriginalSize = 0;
     let totalCompressedSize = 0;
+    let totalWebPSize = 0;
     
     for (const file of [...jpegFiles, ...pngFiles, ...gifFiles, ...svgFiles]) {
       const originalPath = join(publicDir, file.sourcePath);
@@ -153,6 +154,14 @@ async function optimizeImages() {
       }
     }
 
+    // Calculate WebP sizes
+    const webpFilesList = fs.readdirSync(optimizedDir).filter(f => f.endsWith('.webp'));
+    
+    for (const file of webpFilesList) {
+      const stats = fs.statSync(join(optimizedDir, file));
+      totalWebPSize += stats.size;
+    }
+
     // Display summary by file type
     console.log('\n📈 Summary by File Type:');
     console.log('-'.repeat(30));
@@ -169,14 +178,18 @@ async function optimizeImages() {
 
     // Overall summary
     const totalSavings = ((totalOriginalSize - totalCompressedSize) / totalOriginalSize * 100).toFixed(1);
+    const webpSavings = ((totalOriginalSize - totalWebPSize) / totalOriginalSize * 100).toFixed(1);
+    
     const totalOriginalMB = (totalOriginalSize / 1024 / 1024).toFixed(2);
     const totalCompressedMB = (totalCompressedSize / 1024 / 1024).toFixed(2);
+    const totalWebPMB = (totalWebPSize / 1024 / 1024).toFixed(2);
     
     console.log('\n🎉 Overall Results:');
     console.log('='.repeat(30));
     console.log(`Total files processed: ${jpegFiles.length + pngFiles.length + gifFiles.length + svgFiles.length}`);
     console.log(`Total size: ${totalOriginalMB}MB → ${totalCompressedMB}MB`);
-    console.log(`Total savings: ${totalSavings}% (${(totalOriginalSize - totalCompressedSize) / 1024 / 1024}MB saved)`);
+    console.log(`Standard optimization: ${totalSavings}% smaller`);
+    console.log(`WebP optimization: ${webpSavings}% smaller (${totalWebPMB}MB)`);
     
     console.log(`\n📁 Optimized images saved to: ${optimizedDir}`);
     console.log('💡 Next steps:');
