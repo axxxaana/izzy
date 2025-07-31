@@ -197,7 +197,7 @@ export const MainContentSection = (): JSX.Element => {
                     transition={{ duration: 0.8, ease: 'easeOut', delay: 0.2 }}
                   >
                     <motion.img
-                      src="/izzy-image-hero.png"
+                      src="/izzy-image-hero.png?v=2"
                       alt="Izzy Prior"
                       className="w-[85%] sm:w-[82%] md:w-[80%] h-[80%] sm:h-[83%] md:h-[85%] object-cover object-top rounded-[15px] sm:rounded-[18px] lg:rounded-[22.5px]"
                     />
