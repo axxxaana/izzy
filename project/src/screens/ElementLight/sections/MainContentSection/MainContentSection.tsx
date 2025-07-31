@@ -25,9 +25,9 @@ export const MainContentSection = (): JSX.Element => {
   // Rotating words for the h1
   const [currentWordIndex, setCurrentWordIndex] = useState(0);
   const [isTransitioning, setIsTransitioning] = useState(false);
+  const rotatingWords = ["Connects", "Converts", "Scales", "Resonates"];
   const [activeCategory, setActiveCategory] = useState("FemTech");
   const [trueFocusIndex, setTrueFocusIndex] = useState(0); // For Strategy Voice Visibility animation
-  const rotatingWords = ["Branding", "Strategy", "Marketing", "Content", "Design"];
 
   const handleCategoryChange = (category: string) => {
     setActiveCategory(category);
@@ -176,26 +176,84 @@ export const MainContentSection = (): JSX.Element => {
         <div className="w-full relative mb-0">
           <div className="w-full h-[700px] relative p-3 sm:p-4 lg:p-[15px]">
             <div className="relative w-full h-[670px] mx-auto rounded-[15px] sm:rounded-[18px] lg:rounded-[22.5px] overflow-hidden">
-              <div className="relative h-full">
-                <div className="absolute w-full h-full top-0 left-0">
-                  <div className="relative h-full">
-                    <div className="absolute w-full h-full top-0 left-0 bg-white opacity-10 rounded-[15px] sm:rounded-[18px] lg:rounded-[22.5px]" />
-                    <div
-                      className="absolute w-full h-full top-0 left-0 rounded-[15px] sm:rounded-[18px] lg:rounded-[22.5px]"
-                      style={{
-                        backgroundImage: "url('/izzy 6.png')",
-                        backgroundPosition: "50% 40%",
-                        backgroundSize: "cover"
-                      }}
-                    >
-                      <Navigation />
-                    </div>
-                  </div>
+              {/* Animated Background for entire hero */}
+              <div 
+                className="absolute w-full h-full top-0 left-0 rounded-[15px] sm:rounded-[18px] lg:rounded-[22.5px] overflow-hidden"
+                style={{
+                  background: 'linear-gradient(45deg, rgba(228, 71, 130, 0.8), rgba(228, 71, 130, 0.2), rgba(228, 71, 130, 0.8))',
+                  backgroundSize: '300% 300%',
+                  animation: 'gradient-shift 8s ease-in-out infinite',
+                }}
+              />
+                            <div className="relative h-full flex">
+                                {/* Left Side - 50% */}
+                <div className="w-1/2 h-full relative">
+                  <Navigation />
+                  <motion.div 
+                    className="w-full h-full flex items-end justify-center pb-0 px-4 sm:px-6 md:px-8 lg:px-2 ml-[90px] xl:ml-[90px] hero-image-1440"
+                    style={{ marginLeft: '90px' }} 
+                    initial={{ opacity: 0, y: 60, scale: 0.9 }}
+                    animate={{ opacity: 1, y: 0, scale: 1 }}
+                    transition={{ duration: 0.8, ease: 'easeOut', delay: 0.2 }}
+                  >
+                    <motion.img
+                      src="/izzy-image-hero.png"
+                      alt="Izzy Prior"
+                      className="w-[85%] sm:w-[82%] md:w-[80%] h-[80%] sm:h-[83%] md:h-[85%] object-cover object-top rounded-[15px] sm:rounded-[18px] lg:rounded-[22.5px]"
+                    />
+                  </motion.div>
                 </div>
 
-                {/* Hero Content - Text Only */}
-                {/* Removed 'Let's get started' headline, subheadline, and button as requested */}
+                {/* Right Side - 50% */}
+                <div className="w-1/2 h-full relative">
+                  <div className="w-full h-full flex flex-col items-start justify-center px-6 sm:px-8 md:px-10 lg:px-12" style={{ paddingTop: '85px' }}>
+                    <motion.h1 
+                      className="text-[60px] font-bold text-black mb-6 leading-[1.05] max-w-2xl" 
+                      style={{ fontFamily: 'Montserrat, Helvetica' }}
+                      initial={{ opacity: 0, y: 30 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.8, ease: 'easeOut', delay: 0.4 }}
+                    >
+                      Turn Your Mission Into a Brand That{' '}
+                      <span className="relative inline-block">
+                        Connects
+                        <img
+                          src="/needle-underline.svg"
+                          alt=""
+                          className="absolute -bottom-3 sm:-bottom-4 lg:-bottom-5 left-0 w-full"
+                        />
+                      </span>
+                    </motion.h1>
+                    <motion.p 
+                      className="text-[20px] text-black mb-6 sm:mb-8 max-w-md lg:max-w-lg leading-relaxed"
+                      style={{ fontFamily: 'Inter, Helvetica', marginTop: '10px' }}
+                      initial={{ opacity: 0, y: 20 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.8, ease: 'easeOut', delay: 0.6 }}
+                    >
+                      Strategy for founders and startups who want to grow with clarity, not perform for clicks.
+                    </motion.p>
+                    <motion.div
+                      style={{ marginTop: '-5px' }}
+                      initial={{ opacity: 0, y: 20 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.8, ease: 'easeOut', delay: 0.8 }}
+                    >
+                      <Link to="/get-started">
+                        <motion.button 
+                          className="px-6 sm:px-8 py-3 sm:py-4 bg-[#e44782] text-white border-2 border-[#e44782] rounded-[0.84rem] font-semibold text-base sm:text-lg lg:text-xl hover:bg-white hover:text-[#e44782] transition-all duration-300 shadow-lg"
+                          whileTap={{ scale: 0.98 }}
+                        >
+                          Book a Call
+                        </motion.button>
+                      </Link>
+                    </motion.div>
+                  </div>
+                </div>
               </div>
+
+              {/* Hero Content - Text Only */}
+              {/* Removed 'Let's get started' headline, subheadline, and button as requested */}
             </div>
           </div>
 

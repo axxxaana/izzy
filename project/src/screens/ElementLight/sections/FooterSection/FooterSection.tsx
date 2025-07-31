@@ -19,16 +19,16 @@ export const FooterSection = (): JSX.Element => {
         <div className="w-full flex flex-col md:flex-row-reverse items-center justify-between gap-8 px-8">
           {/* Left: Image (if any) */}
           {/* Right: Text and Button */}
-          <div className="flex-1 flex flex-col items-center md:items-end justify-center py-16 pl-[100px]">
+          <div className="flex-1 flex flex-col items-center md:items-end justify-center py-16 pl-[50px] md:pl-[100px] lg:pl-[150px] xl:pl-[200px] 2xl:pl-[250px]">
             <motion.div 
-              className="max-w-[915px] text-left md:mr-[250px] ml-[100px]"
+              className="max-w-[915px] text-left md:mr-[100px] lg:mr-[150px] xl:mr-[200px] 2xl:mr-[250px] ml-[50px] md:ml-[100px] lg:ml-[150px] xl:ml-[200px] 2xl:ml-[250px]"
               initial={{ opacity: 0, x: 30 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
               viewport={{ once: true, margin: "-100px" }}
             >
               <motion.h2 
-                className="[font-family:'Montserrat',Helvetica] font-semibold text-white text-[75px] text-left tracking-[-1.2px] leading-[1.1] mb-2"
+                className="[font-family:'Montserrat',Helvetica] font-semibold text-white text-[48px] md:text-[64px] text-left tracking-[-1.2px] leading-[1.1] mb-2"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, ease: "easeOut", delay: 0.4 }}
@@ -52,12 +52,11 @@ export const FooterSection = (): JSX.Element => {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, ease: "easeOut", delay: 0.8 }}
                 viewport={{ once: true, margin: "-100px" }}
-                whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
                 <Link 
                   to="/get-started"
-                  className="inline-block bg-white text-[#e44782] border-2 border-[#e44782] rounded-[0.84rem] px-5 py-3 text-[20px] font-['Montserrat'] font-medium transition-all duration-300 ease-out shadow-[0_8px_25px_rgba(228,71,130,0.3)] hover:bg-[#e44782] hover:text-white hover:border-white hover:scale-105 cursor-pointer no-underline box-border"
+                  className="inline-block bg-white text-[#e44782] border-2 border-[#e44782] rounded-[0.84rem] px-5 py-3 text-[20px] font-['Montserrat'] font-medium transition-all duration-300 ease-out shadow-[0_8px_25px_rgba(228,71,130,0.3)] hover:bg-[#e44782] hover:text-white hover:border-white cursor-pointer no-underline box-border"
                 >
                   Book a Call
                 </Link>

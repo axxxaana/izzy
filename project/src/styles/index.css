@@ -234,3 +234,10 @@ body, html, #root, #app {
   height: auto !important;
   min-height: auto !important;
 }
+
+/* 1440px specific hero image positioning */
+@media (min-width: 1440px) and (max-width: 1535px) {
+  .hero-image-1440 {
+    margin-left: 0px !important;
+  }
+}

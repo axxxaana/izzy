@@ -50,6 +50,7 @@
 .services-dropdown-items {
   padding: 0.75rem 0;
   background-color: white;
+  border-radius: 0 0 0.75rem 0.75rem;
 }
 
 .service-dropdown-item {
@@ -64,6 +65,10 @@
 
 .service-dropdown-item:hover {
   background-color: rgba(228, 71, 130, 0.05);
+}
+
+.service-dropdown-item:last-child {
+  border-radius: 0 0 0.75rem 0.75rem;
 }
 
 .service-content {
