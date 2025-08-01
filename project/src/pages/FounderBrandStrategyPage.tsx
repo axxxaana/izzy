@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { Link } from 'react-router-dom';
 import { Layout } from '../components/layout/Layout';
 import { FooterSection } from '../screens/ElementLight/sections/FooterSection';
 import { TrustedByBanner } from '../components/TrustedByBanner';
@@ -65,18 +66,21 @@ export const FounderBrandStrategyPage: React.FC = () => {
                   Shape a story that lands, a message that sticks, and a brand people trust and remember
                 </motion.p>
                 
-                <motion.a 
-                  href="/get-started"
-                  className="mt-8 px-8 py-4 rounded-[0.84rem] bg-[#e44782] text-white text-xl font-semibold shadow-lg border-2 border-transparent hover:bg-white hover:text-[#e44782] hover:border-[#e44782] transition-all duration-200 inline-block" 
-                  style={{ fontFamily: 'Montserrat, Helvetica' }}
+                <motion.div
                   initial={{ opacity: 0, y: 30 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.8, delay: 0.8 }}
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.98 }}
                 >
-                  Book a Call
-                </motion.a>
+                  <Link 
+                    to="/get-started"
+                    className="mt-8 px-8 py-4 rounded-[0.84rem] bg-[#e44782] text-white text-xl font-semibold shadow-lg border-2 border-transparent hover:bg-white hover:text-[#e44782] hover:border-[#e44782] transition-all duration-200 inline-block" 
+                    style={{ fontFamily: 'Montserrat, Helvetica' }}
+                  >
+                    Book a Call
+                  </Link>
+                </motion.div>
               </div>
             </div>
           </motion.div>

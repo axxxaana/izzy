@@ -1,5 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 import { TestimonialsSection } from './TestimonialsSection';
 
 const stages = [
@@ -143,8 +144,8 @@ export const HowItWorksSectionFounder: React.FC = () => {
                               {isOpen && (
                                 <div>
                                   <div>{row.content}</div>
-                                  <a 
-                                    href="/get-started"
+                                  <Link 
+                                    to="/get-started"
                                     className="text-[#e44782] font-semibold text-base hover:opacity-80 transition-all duration-200 mt-3 flex items-center gap-2"
                                     style={{ fontFamily: 'Inter, Helvetica' }}
                                   >
@@ -152,7 +153,7 @@ export const HowItWorksSectionFounder: React.FC = () => {
                                     <svg width="16" height="16" fill="none" viewBox="0 0 16 16">
                                       <path d="M6 12l4-4-4-4" stroke="#e44782" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                                     </svg>
-                                  </a>
+                                  </Link>
                                 </div>
                               )}
                             </div>
@@ -203,8 +204,8 @@ export const HowItWorksSectionFounder: React.FC = () => {
                               {isOpen && (
                                 <div>
                                   <div>{row.content}</div>
-                                  <a 
-                                    href="/get-started"
+                                  <Link 
+                                    to="/get-started"
                                     className="text-[#e44782] font-semibold text-base hover:opacity-80 transition-all duration-200 mt-3 flex items-center gap-2"
                                     style={{ fontFamily: 'Inter, Helvetica' }}
                                   >
@@ -212,7 +213,7 @@ export const HowItWorksSectionFounder: React.FC = () => {
                                     <svg width="16" height="16" fill="none" viewBox="0 0 16 16">
                                       <path d="M6 12l4-4-4-4" stroke="#e44782" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                                     </svg>
-                                  </a>
+                                  </Link>
                                 </div>
                               )}
                             </div>
