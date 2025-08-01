@@ -137,4 +137,4 @@ export const FounderBrandStrategyPage: React.FC = () => {
     </div>
     </Layout>
   );
-}; 
+}; // Force new deployment - Fri Aug  1 19:52:16 WITA 2025
