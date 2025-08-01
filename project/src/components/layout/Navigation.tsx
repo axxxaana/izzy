@@ -66,6 +66,13 @@ export const Navigation: React.FC<NavigationProps> = ({ className = '' }) => {
               className="logo-image"
               alt="Logo"
               src="/bolt-logo.svg"
+              onError={(e) => {
+                console.error('Logo failed to load:', e);
+                e.currentTarget.style.border = '2px solid red';
+              }}
+              onLoad={() => {
+                console.log('Logo loaded successfully');
+              }}
             />
           </Link>
         </div>
