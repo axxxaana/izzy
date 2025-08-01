@@ -65,13 +65,13 @@ export const FounderBrandStrategyPage: React.FC = () => {
                   Shape a story that lands, a message that sticks, and a brand people trust and remember
                 </motion.p>
                 
-                <Link 
-                  to="#"
+                <button 
+                  onClick={(e) => e.preventDefault()}
                   className="relative bg-[#e44782] text-white font-['Montserrat'] font-semibold text-[14px] sm:text-[16px] px-4 sm:px-5 py-2 sm:py-3 rounded-[0.84rem] border-2 border-[#e44782] overflow-hidden group hover:bg-white hover:text-[#e44782] transition-all duration-300 ease-out" 
                   style={{ fontFamily: 'Montserrat, Helvetica' }}
                 >
                   Book a Call
-                </Link>
+                </button>
               </div>
             </div>
           </motion.div>
