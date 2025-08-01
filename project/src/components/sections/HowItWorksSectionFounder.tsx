@@ -6,6 +6,7 @@ import { TestimonialsSection } from './TestimonialsSection';
 // CRITICAL FIX: All Book a Call buttons now use React Router Link components
 // This fixes the 404 errors when clicking accordion buttons
 // Deployed: 2025-01-31
+// Build ID: 4c31282-debug-404-fix
 
 const stages = [
   {
