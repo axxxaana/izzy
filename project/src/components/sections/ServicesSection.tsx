@@ -51,7 +51,7 @@ export const ServicesSection: React.FC = () => {
                     <img
                       className="w-[22px] h-[18px]"
                       alt="Feature icon"
-                      src="/src/assets/vector-8.svg"
+                      src="/vector-8.svg"
                     />
                   </div>
                   <p className="[font-family:'Inter',Helvetica] font-normal text-gray-700 text-[15px] tracking-[0] leading-[25.2px]">
@@ -67,7 +67,7 @@ export const ServicesSection: React.FC = () => {
                       <img
                         className="w-[22px] h-[18px]"
                         alt="Feature icon"
-                        src="/src/assets/vector-8.svg"
+                        src="/vector-8.svg"
                       />
                     </div>
                     <p className="[font-family:'Inter',Helvetica] font-normal text-gray-700 text-[15px] tracking-[0] leading-[25.2px]">
@@ -102,7 +102,7 @@ export const ServicesSection: React.FC = () => {
                     <img
                       className="w-[22px] h-[18px]"
                       alt="Feature icon"
-                      src="/src/assets/vector-8.svg"
+                      src="/vector-8.svg"
                     />
                   </div>
                   <p className="[font-family:'Inter',Helvetica] font-normal text-gray-700 text-[16px] tracking-[0] leading-[25.2px]">
@@ -118,7 +118,7 @@ export const ServicesSection: React.FC = () => {
                       <img
                         className="w-[22px] h-[18px]"
                         alt="Feature icon"
-                        src="/src/assets/vector-8.svg"
+                        src="/vector-8.svg"
                       />
                     </div>
                     <p className="[font-family:'Inter',Helvetica] font-normal text-gray-700 text-[16px] tracking-[0] leading-[25.2px]">
