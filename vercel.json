@@ -4,11 +4,15 @@
   "installCommand": "npm install",
   "framework": "vite",
   "rootDirectory": "project",
-  "redirects": [
+  "functions": {
+    "app/api/**/*.js": {
+      "runtime": "nodejs18.x"
+    }
+  },
+  "rewrites": [
     {
       "source": "/((?!api/).*)",
-      "destination": "/index.html",
-      "permanent": false
+      "destination": "/index.html"
     }
   ]
 } 
