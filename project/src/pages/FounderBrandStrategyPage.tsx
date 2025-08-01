@@ -136,3 +136,4 @@ export const FounderBrandStrategyPage: React.FC = () => {
     </div>
     </Layout>
   );
+};
