@@ -8,7 +8,6 @@ import { IdealClientSectionFounder } from '../components/sections/IdealClientSec
 import { TestimonialsSection } from '../components/sections';
 import { HowItWorksSectionFounder } from '../components/sections/HowItWorksSectionFounder';
 
-// Force new deployment - simplified hero button implementation
 
 export const FounderBrandStrategyPage: React.FC = () => {
 
@@ -137,4 +136,3 @@ export const FounderBrandStrategyPage: React.FC = () => {
     </div>
     </Layout>
   );
-}; // Force new deployment - Fri Aug  1 19:52:16 WITA 2025
