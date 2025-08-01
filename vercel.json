@@ -4,10 +4,11 @@
   "installCommand": "npm install",
   "framework": "vite",
   "rootDirectory": "project",
-  "rewrites": [
+  "redirects": [
     {
-      "source": "/(.*)",
-      "destination": "/index.html"
+      "source": "/((?!api/).*)",
+      "destination": "/index.html",
+      "permanent": false
     }
   ]
 } 
