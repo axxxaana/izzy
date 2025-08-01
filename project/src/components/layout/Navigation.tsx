@@ -65,7 +65,7 @@ export const Navigation: React.FC<NavigationProps> = ({ className = '' }) => {
             <img
               className="logo-image"
               alt="Logo"
-              src="/bolt-logo.svg?v=1"
+              src="/bolt-logo.svg"
             />
           </Link>
         </div>
