@@ -496,13 +496,24 @@ export const MainContentSection = (): JSX.Element => {
                 ))}
                 
                 {/* Learn More Button */}
-                <div className="border-t border-[#0000001a] pt-5 mt-4">
+                <motion.div 
+                  className="border-t border-[#0000001a] pt-8 mt-8"
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, ease: "easeOut", delay: 1.4 }}
+                  viewport={{ once: true, margin: "-100px" }}
+                >
                   <div className="flex justify-start">
-                    <Link to="/services/fractional-marketing" className="relative bg-[#e44782] text-white font-['Montserrat'] font-semibold text-[14px] sm:text-[16px] px-6 sm:px-8 py-3 sm:py-4 rounded-[0.84rem] border-2 border-[#e44782] overflow-hidden group hover:bg-white hover:text-[#e44782] transition-all duration-300 ease-out shadow-lg">
-                      Learn More
-                    </Link>
+                    <motion.div
+                      whileHover={{ scale: 1.05 }}
+                      whileTap={{ scale: 0.98 }}
+                    >
+                      <Link to="/services/fractional-marketing" className="relative bg-[#e44782] text-white font-['Montserrat'] font-semibold text-[14px] sm:text-[16px] px-6 sm:px-8 py-3 sm:py-4 rounded-[0.84rem] border-2 border-[#e44782] overflow-hidden group hover:bg-white hover:text-[#e44782] transition-all duration-300 ease-out shadow-lg">
+                        Learn More
+                      </Link>
+                    </motion.div>
                   </div>
-                </div>
+                </motion.div>
               </div>
             </motion.div>
 
