@@ -3,6 +3,8 @@ import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { TestimonialsSection } from './TestimonialsSection';
 
+// Updated: All Book a Call buttons now use React Router Link components
+
 const stages = [
   {
     tag: "Strategy",
