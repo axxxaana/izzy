@@ -174,8 +174,8 @@ export const MainContentSection = (): JSX.Element => {
       <div className="flex flex-col items-center w-full relative">
         {/* Hero Section */}
         <div className="w-full relative mb-0">
-                  <div className="w-full h-auto min-h-[700px] sm:h-[750px] lg:h-[800px] relative p-0 sm:p-4 lg:p-[15px]">
-          <div className="relative w-full h-auto min-h-[670px] sm:h-[720px] lg:h-[770px] mx-auto rounded-[15px] sm:rounded-[18px] lg:rounded-[22.5px] overflow-hidden">
+          <div className="w-full h-auto min-h-[600px] sm:h-[650px] lg:h-[700px] relative p-3 sm:p-4 lg:p-[15px]">
+            <div className="relative w-full h-auto min-h-[570px] sm:h-[620px] lg:h-[670px] mx-auto rounded-[15px] sm:rounded-[18px] lg:rounded-[22.5px] overflow-hidden">
               {/* Animated Background for entire hero */}
               <div 
                 className="absolute w-full h-full top-0 left-0 rounded-[15px] sm:rounded-[18px] lg:rounded-[22.5px] overflow-hidden"
@@ -185,15 +185,15 @@ export const MainContentSection = (): JSX.Element => {
                   animation: 'gradient-shift 8s ease-in-out infinite',
                 }}
               />
-              <div className="relative h-full flex flex-col lg:flex-row max-w-[1400px] mx-auto">
+              <div className="relative h-full flex flex-col lg:flex-row">
                 {/* Left Side - Image (Mobile) / 50% (Desktop) */}
-                <div className="w-full lg:w-1/2 h-full relative order-2 lg:order-1 lg:pl-0">
+                <div className="w-full lg:w-1/2 h-full relative order-2 lg:order-1">
                   <div className="hidden lg:block">
                     <Navigation />
                   </div>
                   <motion.div 
-                    className="w-full h-full flex items-end justify-center pb-0 px-4 sm:px-6 md:px-8 lg:px-2 hero-image-1440"
-                    style={{ marginLeft: '-50px', paddingTop: '10px' }} 
+                    className="w-full h-full flex items-end justify-center pb-0 px-4 sm:px-6 md:px-8 lg:px-2 lg:ml-[90px] xl:ml-[90px] hero-image-1440"
+                    style={{ marginLeft: '0px' }} 
                     initial={{ opacity: 0, y: 60, scale: 0.9 }}
                     animate={{ opacity: 1, y: 0, scale: 1 }}
                     transition={{ duration: 0.8, ease: 'easeOut', delay: 0.2 }}
@@ -201,15 +201,14 @@ export const MainContentSection = (): JSX.Element => {
                     <motion.img
                       src="/izzy-image-hero.png?v=2"
                       alt="Izzy Prior"
-                      className="w-[75%] sm:w-[72%] md:w-[70%] h-[300px] sm:h-[350px] md:h-[400px] lg:h-[80%] xl:h-[85%] object-cover object-top rounded-[15px] sm:rounded-[18px] lg:rounded-[22.5px]"
-                      style={{ maxHeight: 'none', overflow: 'visible' }}
+                      className="w-[85%] sm:w-[82%] md:w-[80%] h-[300px] sm:h-[350px] md:h-[400px] lg:h-[80%] lg:h-[83%] xl:h-[85%] object-cover object-top rounded-[15px] sm:rounded-[18px] lg:rounded-[22.5px]"
                     />
                   </motion.div>
                 </div>
 
                 {/* Right Side - Text Content (Mobile) / 50% (Desktop) */}
                 <div className="w-full lg:w-1/2 h-full relative order-1 lg:order-2">
-                  <div className="w-full h-full flex flex-col items-center lg:items-start justify-center px-8 sm:px-6 md:px-8 lg:px-10 xl:px-12 pt-12 sm:pt-12 lg:pt-0" style={{ paddingTop: '120px' }}>
+                  <div className="w-full h-full flex flex-col items-start justify-center px-4 sm:px-6 md:px-8 lg:px-10 xl:px-12 pt-8 sm:pt-12 lg:pt-0" style={{ paddingTop: '85px' }}>
                     <motion.h1 
                       className="text-[32px] sm:text-[40px] md:text-[50px] lg:text-[60px] font-bold text-black mb-4 sm:mb-6 leading-[1.05] max-w-2xl text-center lg:text-left" 
                       style={{ fontFamily: 'Montserrat, Helvetica' }}
@@ -312,27 +311,27 @@ export const MainContentSection = (): JSX.Element => {
               viewport={{ once: true, margin: "-100px" }}
             >
               <motion.div 
-                className="w-full lg:w-[600px] h-[400px] sm:h-[400px] md:h-[500px] lg:h-[600px] flex-shrink-0 order-1"
+                className="w-full lg:w-[600px] h-[300px] sm:h-[400px] md:h-[500px] lg:h-[600px] flex-shrink-0 order-2 lg:order-1"
                 initial={{ opacity: 0, scale: 0.9, rotateY: -15 }}
                 whileInView={{ opacity: 1, scale: 1, rotateY: 0 }}
                 transition={{ duration: 1, ease: "easeOut", delay: 0.2 }}
                 viewport={{ once: true, margin: "-100px" }}
               >
                 <img
-                  className="w-full h-full object-cover object-top rounded-lg"
+                  className="w-full h-full object-cover rounded-lg"
                   alt="Founder brand strategy"
                   src="/Founder personal brand strategy image.png"
                 />
               </motion.div>
 
               <motion.div 
-                className="w-full lg:w-[480px] max-w-[480px] flex-shrink-0 order-2"
+                className="w-full lg:w-[480px] max-w-[480px] flex-shrink-0 order-1 lg:order-2"
                 initial={{ opacity: 0, x: 30 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.8, ease: "easeOut", delay: 0.4 }}
                 viewport={{ once: true, margin: "-100px" }}
               >
-                <div className="mb-0 text-left">
+                <div className="mb-0 text-center lg:text-left">
                   <motion.h3 
                     className="[font-family:'Montserrat',Helvetica] font-semibold text-black text-[28px] sm:text-[32px] md:text-[36px] lg:text-[40px] tracking-[-1.44px] leading-[1.2] sm:leading-[1.3] lg:leading-[50px] mb-2"
                     initial={{ opacity: 0, y: 20 }}
@@ -366,8 +365,13 @@ export const MainContentSection = (): JSX.Element => {
                       viewport={{ once: true, margin: "-100px" }}
                     >
                       <div className="flex items-start gap-3 sm:gap-5">
-                        <div 
+                        <motion.div 
                           className="w-[40px] sm:w-[54px] h-[40px] sm:h-[54px] rounded-xl sm:rounded-2xl bg-[#fce7f3] flex items-center justify-center flex-shrink-0"
+
+                          initial={{ scale: 0, rotate: -180 }}
+                          whileInView={{ scale: 1, rotate: 0 }}
+                          transition={{ duration: 0.5, ease: "backOut", delay: 0.9 + (index + 1) * 0.2 }}
+                          viewport={{ once: true, margin: "-100px" }}
                         >
                           <img
                             className="w-[24px] sm:w-[40px] h-[24px] sm:h-[40px]"
@@ -381,7 +385,7 @@ export const MainContentSection = (): JSX.Element => {
                               console.log('Icon loaded successfully:', e.currentTarget.src);
                             }}
                           />
-                        </div>
+                        </motion.div>
                         <motion.p 
                           className="[font-family:'Inter',Helvetica] font-normal text-gray-700 text-[13px] sm:text-[14px] md:text-[15.9px] tracking-[0] leading-[1.4] sm:leading-[1.5] lg:leading-[25.2px]"
                           initial={{ opacity: 0, y: 20 }}
@@ -394,29 +398,10 @@ export const MainContentSection = (): JSX.Element => {
                       </div>
                     </motion.div>
                   ))}
-                  
-                  {/* Learn More Button */}
-                  <motion.div 
-                    className="border-t border-[#0000001a] pt-8 mt-8"
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.6, ease: "easeOut", delay: 1.4 }}
-                    viewport={{ once: true, margin: "-100px" }}
-                  >
-                    <div className="flex justify-start">
-                      <motion.div
-                        whileHover={{ scale: 1.05 }}
-                        whileTap={{ scale: 0.98 }}
-                      >
-                        <Link to="/services/founder-brand-strategy" className="relative bg-[#e44782] text-white font-['Montserrat'] font-semibold text-[14px] sm:text-[16px] px-6 sm:px-8 py-3 sm:py-4 rounded-[0.84rem] border-2 border-[#e44782] overflow-hidden group hover:bg-white hover:text-[#e44782] transition-all duration-300 ease-out shadow-lg">
-                          Learn More
-                        </Link>
-                      </motion.div>
-                    </div>
-                  </motion.div>
                 </div>
               </motion.div>
             </motion.div>
+          </motion.div>
 
           {/* Fractional Marketing */}
           <motion.div 
@@ -433,7 +418,7 @@ export const MainContentSection = (): JSX.Element => {
               transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
               viewport={{ once: true, margin: "-100px" }}
             >
-              <div className="mb-0 text-left">
+              <div className="mb-0 text-center lg:text-left">
                 <motion.h3 
                   className="[font-family:'Montserrat',Helvetica] font-semibold text-black text-[28px] sm:text-[32px] md:text-[36px] lg:text-[40px] tracking-[-1.44px] leading-[1.2] sm:leading-[1.3] lg:leading-[55px] mb-2"
                   initial={{ opacity: 0, y: 20 }}
@@ -466,8 +451,13 @@ export const MainContentSection = (): JSX.Element => {
                     viewport={{ once: true, margin: "-100px" }}
                   >
                     <div className="flex items-start gap-3 sm:gap-5">
-                      <div 
+                      <motion.div 
                         className="w-[40px] sm:w-[54px] h-[40px] sm:h-[54px] rounded-xl sm:rounded-2xl bg-[#fce7f3] flex items-center justify-center flex-shrink-0"
+
+                        initial={{ scale: 0, rotate: -180 }}
+                        whileInView={{ scale: 1, rotate: 0 }}
+                        transition={{ duration: 0.5, ease: "backOut", delay: 1.3 + (index + 1) * 0.2 }}
+                        viewport={{ once: true, margin: "-100px" }}
                       >
                         <img
                           className="w-[24px] sm:w-[40px] h-[24px] sm:h-[40px]"
@@ -481,7 +471,7 @@ export const MainContentSection = (): JSX.Element => {
                             console.log('Icon loaded successfully:', e.currentTarget.src);
                           }}
                         />
-                      </div>
+                      </motion.div>
                       <motion.p 
                         className="[font-family:'Inter',Helvetica] font-normal text-gray-700 text-[13px] sm:text-[14px] md:text-[16px] tracking-[0] leading-[1.4] sm:leading-[1.5] lg:leading-[25.2px]"
                         initial={{ opacity: 0, x: 20 }}
@@ -496,25 +486,31 @@ export const MainContentSection = (): JSX.Element => {
                 ))}
                 
                 {/* Learn More Button */}
-                <div className="border-t border-[#0000001a] pt-5 mt-4">
-                  <div className="flex justify-start">
-                    <Link to="/services/fractional-marketing" className="relative bg-[#e44782] text-white font-['Montserrat'] font-semibold text-[14px] sm:text-[16px] px-6 sm:px-8 py-3 sm:py-4 rounded-[0.84rem] border-2 border-[#e44782] overflow-hidden group hover:bg-white hover:text-[#e44782] transition-all duration-300 ease-out shadow-lg">
+                <motion.div 
+                  className="border-t border-[#0000001a] pt-5"
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, ease: "easeOut", delay: 1.8 }}
+                  viewport={{ once: true, margin: "-100px" }}
+                >
+                  <div className="flex justify-center lg:justify-start">
+                    <Link to="/services/fractional-marketing" className="relative bg-[#e44782] text-white font-['Montserrat'] font-semibold text-[14px] sm:text-[16px] px-4 sm:px-5 py-2 sm:py-3 rounded-[0.84rem] border-2 border-[#e44782] overflow-hidden group hover:bg-white hover:text-[#e44782] transition-all duration-300 ease-out">
                       Learn More
                     </Link>
                   </div>
-                </div>
+                </motion.div>
               </div>
             </motion.div>
 
             <motion.div 
-              className="w-full lg:w-[600px] h-[400px] sm:h-[400px] md:h-[500px] lg:h-[600px] flex-shrink-0 order-2"
+              className="w-full lg:w-[600px] h-[300px] sm:h-[400px] md:h-[500px] lg:h-[600px] flex-shrink-0 order-2"
               initial={{ opacity: 0, scale: 0.9, rotateY: 15 }}
               whileInView={{ opacity: 1, scale: 1, rotateY: 0 }}
               transition={{ duration: 1, ease: "easeOut", delay: 0.4 }}
               viewport={{ once: true, margin: "-100px" }}
             >
               <img
-                className="w-full h-full object-cover object-top rounded-lg"
+                className="w-full h-full object-cover rounded-lg"
                 alt="Fractional marketing"
                 src="/Fractional marketing & brand direction image.png"
               />
@@ -545,7 +541,7 @@ export const MainContentSection = (): JSX.Element => {
               animationDuration={2}
               pauseBetweenAnimations={1}
               fontFamily="'Montserrat', Helvetica, Arial, sans-serif"
-              fontSize="4rem"
+              fontSize="2.5rem"
               currentIndex={trueFocusIndex}
             />
           </motion.div>

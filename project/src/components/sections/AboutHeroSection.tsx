@@ -20,35 +20,35 @@ export const AboutHeroSection: React.FC = () => {
 
   // Calculate margins based on screen width
   const getTextMargin = () => {
-    if (screenWidth >= 1920) return '350px';
-    if (screenWidth >= 1536) return '220px';
-    if (screenWidth >= 1280) return '195px';
-    if (screenWidth >= 1024) return '170px';
+    if (screenWidth >= 1920) return '50px';
+    if (screenWidth >= 1536) return '50px';
+    if (screenWidth >= 1280) return '50px';
+    if (screenWidth >= 1024) return '50px';
     return '70px';
   };
 
   const getImageMargin = () => {
-    if (screenWidth >= 1920) return '-470px';
-    if (screenWidth >= 1536) return '-250px';
-    if (screenWidth >= 1280) return '-225px';
-    if (screenWidth >= 1024) return '-200px';
-    return '-200px';
+    if (screenWidth >= 1920) return '50px';
+    if (screenWidth >= 1536) return '50px';
+    if (screenWidth >= 1280) return '50px';
+    if (screenWidth >= 1024) return '50px';
+    return '0px';
   };
 
   return (
     <div className="w-full relative mb-0">
-      <div className="w-full h-[700px] relative p-3 sm:p-4 lg:p-[15px]">
-        <div className="relative w-full h-[670px] mx-auto rounded-[15px] sm:rounded-[18px] lg:rounded-[22.5px] overflow-hidden">
+      <div className="w-full h-auto min-h-[700px] sm:h-[750px] lg:h-[800px] relative p-3 sm:p-4 lg:p-[15px]">
+        <div className="relative w-full h-auto min-h-[670px] sm:h-[720px] lg:h-[770px] mx-auto rounded-[15px] sm:rounded-[18px] lg:rounded-[22.5px] overflow-hidden">
           {/* Background with opacity */}
           <div className="absolute inset-0 bg-[#e44782] opacity-20"></div>
           
           {/* Content */}
-          <div className="relative h-full flex items-center z-10">
+          <div className="relative h-full flex flex-col lg:flex-row items-center z-10 max-w-[1400px] mx-auto">
             {/* Left Side - Text Content */}
             <div 
-              className="w-full lg:w-1/2 p-8 lg:p-12 mt-[90px]"
+              className="w-full lg:w-1/2 p-4 sm:p-6 lg:p-8 xl:p-12 mt-[90px] order-1 lg:order-1"
               style={{ 
-                marginLeft: getTextMargin(),
+                marginLeft: screenWidth >= 1024 ? getTextMargin() : '0px',
                 transition: 'margin-left 0.3s ease'
               }}
             >
@@ -60,19 +60,23 @@ export const AboutHeroSection: React.FC = () => {
               >
                 {/* Main Heading */}
                 <motion.h1 
-                  className="text-4xl sm:text-5xl md:text-6xl lg:text-[64px] font-bold text-black leading-tight mb-6 font-['Montserrat']"
+                  className="text-[28px] sm:text-[36px] md:text-[48px] lg:text-[64px] font-bold text-black leading-tight mb-4 sm:mb-6 font-['Montserrat'] text-center lg:text-left"
+                  style={{ 
+                    display: 'block',
+                    lineHeight: '1.1'
+                  }}
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
                   viewport={{ once: true, margin: "-50px" }}
                 >
-                  Where clarity<br className="hidden lg:block" />
-                  meets conviction
+                  Where Clarity<br />
+                  Meets&nbsp;Conviction
                 </motion.h1>
                 
                 {/* Subtitle */}
                 <motion.p 
-                  className="text-base sm:text-lg md:text-xl text-black/80 leading-relaxed max-w-[500px] mb-8"
+                  className="text-[14px] sm:text-[16px] md:text-[18px] lg:text-xl text-black/80 leading-relaxed max-w-[500px] mb-6 sm:mb-8 text-center lg:text-left"
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
@@ -82,26 +86,28 @@ export const AboutHeroSection: React.FC = () => {
                 </motion.p>
                 
                 {/* Book a Call Button */}
-                <Link to="/get-started">
-                  <motion.button 
-                    className="px-6 sm:px-8 py-3 sm:py-4 bg-[#e44782] text-white border-2 border-[#e44782] rounded-[0.84rem] font-semibold text-base sm:text-lg hover:bg-white hover:text-[#e44782] transition-all duration-300 shadow-lg"
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.8, delay: 0.6, ease: "easeOut" }}
-                    viewport={{ once: true, margin: "-50px" }}
-                    whileTap={{ scale: 0.98 }}
-                  >
-                    Book a Call
-                  </motion.button>
-                </Link>
+                <div className="flex justify-center lg:justify-start">
+                  <Link to="/get-started">
+                    <motion.button 
+                      className="px-4 sm:px-6 lg:px-8 py-2 sm:py-3 lg:py-4 bg-[#e44782] text-white border-2 border-[#e44782] rounded-[0.84rem] font-semibold text-[14px] sm:text-base lg:text-lg hover:bg-white hover:text-[#e44782] transition-all duration-300 shadow-lg"
+                      initial={{ opacity: 0, y: 20 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.8, delay: 0.6, ease: "easeOut" }}
+                      viewport={{ once: true, margin: "-50px" }}
+                      whileTap={{ scale: 0.98 }}
+                    >
+                      Book a Call
+                    </motion.button>
+                  </Link>
+                </div>
               </motion.div>
             </div>
 
             {/* Right Side - ProfileCard */}
             <div 
-              className="hidden lg:flex w-1/2 justify-center items-center mt-[70px]"
+              className="w-full lg:w-1/2 flex justify-center items-center mt-8 lg:mt-[70px] order-2 lg:order-2"
               style={{ 
-                marginLeft: getImageMargin(),
+                marginLeft: screenWidth >= 1024 ? getImageMargin() : '0px',
                 transition: 'margin-left 0.3s ease'
               }}
             >

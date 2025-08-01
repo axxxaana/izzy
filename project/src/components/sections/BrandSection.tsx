@@ -1,19 +1,47 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 
 export const ImageArchSection: React.FC = () => {
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [touchStart, setTouchStart] = useState<number | null>(null);
+  const [touchEnd, setTouchEnd] = useState<number | null>(null);
 
   // Animation configuration for perfect fanned-out arc layout
   const cardData = [
-    { src: '/Eddie-Whittingham.jpeg', zIndex: 94 }, // Far left
-    { src: '/Emma.jpeg', zIndex: 95 },
-    { src: '/Nick.jpeg', zIndex: 96 },
-    { src: '/Sally.jpeg', zIndex: 100 }, // Center (highest z-index)
-    { src: '/Jem.jpeg', zIndex: 96 },
-    { src: '/Emily.jpeg', zIndex: 95 },
-    { src: '/Ben.jpg', zIndex: 94 }, // Far right
+    { src: '/Eddie-Whittingham.jpeg', zIndex: 94, name: 'Eddie Whittingham' }, // Far left
+    { src: '/Emma.jpeg', zIndex: 95, name: 'Emma' },
+    { src: '/Nick.jpeg', zIndex: 96, name: 'Nick' },
+    { src: '/Sally.jpeg', zIndex: 100, name: 'Sally' }, // Center (highest z-index)
+    { src: '/Jem.jpeg', zIndex: 96, name: 'Jem' },
+    { src: '/Emily.jpeg', zIndex: 95, name: 'Emily' },
+    { src: '/Ben.jpg', zIndex: 94, name: 'Ben' }, // Far right
   ];
+
+  // Swipe handlers
+  const onTouchStart = (e: React.TouchEvent) => {
+    setTouchEnd(null);
+    setTouchStart(e.targetTouches[0].clientX);
+  };
+
+  const onTouchMove = (e: React.TouchEvent) => {
+    setTouchEnd(e.targetTouches[0].clientX);
+  };
+
+  const onTouchEnd = () => {
+    if (!touchStart || !touchEnd) return;
+    
+    const distance = touchStart - touchEnd;
+    const isLeftSwipe = distance > 50;
+    const isRightSwipe = distance < -50;
+
+    if (isLeftSwipe && currentIndex < cardData.length - 1) {
+      setCurrentIndex(currentIndex + 1);
+    }
+    if (isRightSwipe && currentIndex > 0) {
+      setCurrentIndex(currentIndex - 1);
+    }
+  };
 
   const getCardTransform = (index: number) => {
     const center = Math.floor(cardData.length / 2); // 3
@@ -37,12 +65,26 @@ export const ImageArchSection: React.FC = () => {
   };
 
   return (
-    <section className="w-full py-32 px-4 flex flex-col items-center justify-center" id="image-arch-section">
-      <div className="w-full text-center space-y-6 p-8">
+    <>
+      <style>
+        {`
+          .desktop-fanned-layout {
+            display: none !important;
+          }
+          @media (min-width: 1024px) {
+            .desktop-fanned-layout {
+              display: flex !important;
+            }
+          }
+        `}
+      </style>
+      <section className="w-full py-8 sm:py-24 lg:py-32 px-4 flex flex-col items-center justify-center" id="image-arch-section">
+        <div className="w-full text-center space-y-3 sm:space-y-6 p-2 sm:p-8">
         {/* 1. 🖼️ Stacked Images at Top */}
         <div className="flex justify-center">
+          {/* Desktop: Fanned-out layout - Hidden on mobile */}
           <motion.div 
-            className="relative"
+            className="relative hidden lg:block desktop-fanned-layout"
             initial={{
               opacity: 0,
               y: 60,
@@ -65,7 +107,7 @@ export const ImageArchSection: React.FC = () => {
             style={{
               width: '800px', // Increased width for more spacing
               height: '220px', // Increased height for arc
-              display: 'flex',
+              display: 'flex', // Show as flex
               justifyContent: 'center',
               alignItems: 'flex-end',
               position: 'relative',
@@ -123,6 +165,62 @@ export const ImageArchSection: React.FC = () => {
               );
             })}
           </motion.div>
+
+          {/* Mobile: Single Image Carousel - Only visible on mobile */}
+          <div className="block lg:hidden w-full max-w-xs mx-auto">
+            <motion.div 
+              className="relative w-full aspect-square flex items-center justify-center"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-100px" }}
+              transition={{ duration: 0.8, ease: "easeOut" }}
+              onTouchStart={onTouchStart}
+              onTouchMove={onTouchMove}
+              onTouchEnd={onTouchEnd}
+            >
+              {cardData.map((card, index) => (
+                <motion.img
+                  key={index}
+                  src={card.src}
+                  alt={card.name}
+                  className={`absolute w-full h-full object-cover rounded-[16px] cursor-pointer ${
+                    index === currentIndex ? 'opacity-100 z-10' : 'opacity-0 z-0'
+                  }`}
+                  style={{
+                    boxShadow: '0 12px 32px rgba(0, 0, 0, 0.15), 0 4px 12px rgba(0, 0, 0, 0.1)',
+                  }}
+                  initial={{ opacity: 0 }}
+                  animate={{
+                    opacity: index === currentIndex ? 1 : 0,
+                    scale: index === currentIndex ? 1 : 0.98,
+                  }}
+                  transition={{ 
+                    duration: 0.3, 
+                    ease: "easeInOut",
+                    opacity: { duration: 0.2 }
+                  }}
+                />
+              ))}
+            </motion.div>
+
+            {/* Navigation Dots */}
+            <div className="flex justify-center mt-4 space-x-3">
+              {cardData.map((_, index) => (
+                <button
+                  key={index}
+                  onClick={() => {
+                    console.log('Dot clicked:', index);
+                    setCurrentIndex(index);
+                  }}
+                  className={`w-4 h-4 rounded-full transition-all duration-300 ${
+                    index === currentIndex 
+                      ? 'bg-[#e44782] scale-125' 
+                      : 'bg-gray-300 hover:bg-gray-400'
+                  }`}
+                />
+              ))}
+            </div>
+          </div>
         </div>
 
         {/* 2. 💬 Capsule Tagline */}
@@ -134,7 +232,7 @@ export const ImageArchSection: React.FC = () => {
             viewport={{ once: true, amount: 0.3 }}
             transition={{ duration: 0.6, ease: "easeOut" }}
           >
-            <h2 className="[font-family:'Montserrat',Helvetica] font-semibold text-black text-[40px] text-center bg-gradient-to-r from-gray-900 to-gray-700 bg-clip-text text-transparent mb-0">
+            <h2 className="[font-family:'Montserrat',Helvetica] font-semibold text-black text-[40px] text-center bg-gradient-to-r from-gray-900 to-gray-700 bg-clip-text text-transparent mb-0 leading-tight sm:leading-normal">
               Trusted by the best
             </h2>
           </motion.div>
@@ -168,5 +266,6 @@ export const ImageArchSection: React.FC = () => {
 
       </div>
     </section>
+    </>
   );
 }; 

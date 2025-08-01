@@ -17,6 +17,12 @@
     color 0.3s ease;
 }
 
+@media (min-width: 1024px) {
+  .focus-word {
+    font-size: 64px;
+  }
+}
+
 .focus-word.active {
   filter: blur(0);
 }

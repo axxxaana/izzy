@@ -1,57 +1,48 @@
-import React, { useState } from 'react';
-import { motion, useInView } from 'framer-motion';
-import { Layout } from '../components/layout/Layout';
-import { FooterSection } from '../screens/ElementLight/sections/FooterSection';
-import { TrustedByBanner } from '../components/TrustedByBanner';
+import React, { useRef } from 'react';
+import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-
-// ResourcesPage-specific hero content
-const RESOURCES_HERO_TAG = 'RESOURCES';
-const RESOURCES_HERO_HEADLINE = 'Free Strategy Resources';
-const RESOURCES_HERO_SUBHEADLINE =
-  'Downloadable guides, templates, and frameworks to help you build a stronger brand strategy.';
+import { Layout } from '../components/layout';
 
 // Resource data
 const resources = [
   {
-    id: 1,
+    id: 'brand-strategy-framework',
     title: 'Brand Strategy Framework',
-    subtitle: 'Complete Guide',
     description: 'A comprehensive framework to help you define your brand strategy, positioning, and messaging. Perfect for founders and marketing teams.',
-    tags: ['Strategy', 'Positioning', 'Messaging'],
     image: '/GoFounder Cover.png',
-    downloadUrl: '/resources/brand-strategy-framework',
-    category: 'Strategy'
+    category: 'Strategy',
+    downloadUrl: '/resources/brand-strategy-framework'
   },
   {
-    id: 2,
+    id: 'content-calendar',
     title: 'Content Calendar Template',
-    subtitle: 'Marketing Tool',
     description: 'A 90-day content calendar template with strategic prompts and posting guidelines to keep your content consistent and engaging.',
-    tags: ['Content', 'Social Media', 'Planning'],
     image: '/GoFounder Cover.png',
-    downloadUrl: '/resources/content-calendar',
-    category: 'Marketing'
+    category: 'Marketing',
+    downloadUrl: '/resources/content-calendar'
   },
   {
-    id: 3,
+    id: 'founder-brand-audit',
     title: 'Founder Brand Audit',
-    subtitle: 'Assessment Tool',
     description: 'A step-by-step audit to evaluate your current brand positioning and identify opportunities for improvement and growth.',
-    tags: ['Audit', 'Assessment', 'Growth'],
     image: '/GoFounder Cover.png',
-    downloadUrl: '/resources/founder-brand-audit',
-    category: 'Assessment'
-  },
+    category: 'Assessment',
+    downloadUrl: '/resources/founder-brand-audit'
+  }
 ];
 
-// Resources Hero Component (similar to Portfolio Hero)
+// Hero section constants
+const RESOURCES_HERO_TAG = "RESOURCES";
+const RESOURCES_HERO_HEADLINE = "Free Resources to Level Up Your Brand";
+const RESOURCES_HERO_SUBHEADLINE = "Downloadable guides, templates, and frameworks to help you build a brand that connects and converts.";
+
+// Hero Component
 const ResourcesHero: React.FC = () => {
   return (
     <div className="w-full relative mb-0">
-      <div className="w-full p-3 sm:p-4 lg:p-[15px]" style={{ height: '700px', position: 'relative', overflow: 'hidden' }}>
+      <div className="w-full p-3 sm:p-4 lg:p-[15px]" style={{ height: '800px', position: 'relative', overflow: 'hidden' }}>
         <motion.div 
-          className="relative w-full h-[670px] mx-auto rounded-[15px] sm:rounded-[18px] lg:rounded-[22.5px] overflow-hidden"
+          className="relative w-full h-[770px] mx-auto rounded-[15px] sm:rounded-[18px] lg:rounded-[22.5px] overflow-hidden"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
@@ -107,25 +98,16 @@ const ResourcesHero: React.FC = () => {
 
 // Resource Card Component - Redesigned to match the image style
 const ResourceCard: React.FC<{ resource: typeof resources[0]; index: number }> = ({ resource, index }) => {
-  const ref = React.useRef(null);
-  const isInView = useInView(ref, { once: true, margin: "-100px" });
-
   return (
     <Link to={resource.downloadUrl} className="block group" tabIndex={0} role="link">
       <motion.div
-        ref={ref}
         initial={{ opacity: 0, y: 30 }}
-        animate={isInView ? {
-          opacity: 1,
-          y: 0
-        } : {
-          opacity: 0,
-          y: 30
-        }}
+        whileInView={{ opacity: 1, y: 0 }}
         transition={{
           duration: 0.6,
           delay: index * 0.1,
         }}
+        viewport={{ once: true, margin: "-100px" }}
         whileHover={{
           y: -4,
           transition: { duration: 0.2, ease: "easeOut" }
@@ -151,21 +133,21 @@ const ResourceCard: React.FC<{ resource: typeof resources[0]; index: number }> =
           </span>
 
           {/* Title */}
-          <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-pink-600 transition-colors duration-200 font-['Montserrat']">
+          <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-pink-600 transition-colors duration-300">
             {resource.title}
           </h3>
 
           {/* Description */}
-          <p className="text-gray-600 text-sm leading-relaxed mb-4 font-['Inter']">
+          <p className="text-gray-600 leading-relaxed mb-4">
             {resource.description}
           </p>
 
-          {/* Call to Action */}
-          <div className="flex items-center text-pink-600 font-semibold group-hover:text-pink-700 transition-colors duration-200">
-            <span>Download Now</span>
-            <svg className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-            </svg>
+          {/* Download Button */}
+          <div className="flex items-center justify-between">
+            <span className="text-sm text-gray-500">Free Download</span>
+            <span className="text-pink-600 font-semibold group-hover:translate-x-1 transition-transform duration-300">
+              Download →
+            </span>
           </div>
         </div>
       </motion.div>
@@ -173,48 +155,37 @@ const ResourceCard: React.FC<{ resource: typeof resources[0]; index: number }> =
   );
 };
 
+// Main Resources Page Component
 export const ResourcesPage: React.FC = () => {
   return (
     <Layout>
-      <div className="w-full bg-white">
+      <div className="flex flex-col items-center w-full bg-white">
         {/* Hero Section */}
         <ResourcesHero />
+        
+        {/* Resources Grid */}
+        <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20 lg:py-24">
+          <motion.div
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true, margin: "-100px" }}
+            className="text-center mb-12 sm:mb-16"
+          >
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
+              Free Resources
+            </h2>
+            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+              Download these free resources to help you build a stronger brand and grow your business.
+            </p>
+          </motion.div>
 
-        {/* Logo Scroller */}
-        <TrustedByBanner />
-
-        {/* Resources Section */}
-        <section className="w-full py-20 px-4 md:px-8 lg:px-12">
-          <div className="max-w-7xl mx-auto">
-            {/* Section Header */}
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
-              viewport={{ once: true }}
-              className="text-center mb-16"
-            >
-              <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4 font-['Montserrat']">
-                Free Downloads
-              </h2>
-              <p className="text-xl text-gray-600 max-w-2xl mx-auto font-['Inter']">
-                Click on any resource to learn more and download instantly.
-              </p>
-            </motion.div>
-
-            {/* Resources Grid */}
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {resources.map((resource, index) => (
-                <ResourceCard key={resource.id} resource={resource} index={index} />
-              ))}
-            </div>
-
-            <div style={{ height: '100px' }}></div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 sm:gap-10">
+            {resources.map((resource, index) => (
+              <ResourceCard key={resource.id} resource={resource} index={index} />
+            ))}
           </div>
-        </section>
-
-        {/* Footer */}
-        <FooterSection />
+        </div>
       </div>
     </Layout>
   );

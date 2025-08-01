@@ -16,9 +16,9 @@ export const FounderBrandStrategyPage: React.FC = () => {
       <div className="flex flex-col items-center w-full bg-white" style={{ minHeight: 'auto', height: 'auto', flexWrap: 'nowrap' }}>
       {/* Hero Section (with enhanced animations) */}
       <div className="w-full relative mb-0">
-        <div className="w-full h-[700px] relative p-3 sm:p-4 lg:p-[15px] pt-24">
+        <div className="w-full h-[800px] relative p-3 sm:p-4 lg:p-[15px] pt-24">
           <motion.div 
-            className="relative w-full h-[670px] mx-auto rounded-[15px] sm:rounded-[18px] lg:rounded-[22.5px] overflow-hidden"
+            className="relative w-full h-[770px] mx-auto rounded-[15px] sm:rounded-[18px] lg:rounded-[22.5px] overflow-hidden"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
