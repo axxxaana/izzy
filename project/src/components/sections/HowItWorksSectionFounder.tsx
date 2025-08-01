@@ -3,7 +3,9 @@ import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { TestimonialsSection } from './TestimonialsSection';
 
-// Updated: All Book a Call buttons now use React Router Link components
+// CRITICAL FIX: All Book a Call buttons now use React Router Link components
+// This fixes the 404 errors when clicking accordion buttons
+// Deployed: 2025-01-31
 
 const stages = [
   {
