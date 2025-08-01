@@ -1,6 +1,6 @@
 // Images
 export const IMAGES = {
-  logo: '/bolt-logo.svg',
+  logo: '/copy-of-bolt-logo-1.png',
   heroBackground: '/Izzy-Prior-Homepage-Heder.png',
   testimonials: {
     blake: '/blake.png',
