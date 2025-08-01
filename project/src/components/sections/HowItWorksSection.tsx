@@ -145,7 +145,7 @@ export const HowItWorksSection: React.FC = () => {
                                 <div>
                                   <div>{row.content}</div>
                                   <Link 
-                                    to="/get-started"
+                                    to="#"
                                     className="text-[#e44782] font-semibold text-base hover:opacity-80 transition-all duration-200 mt-3 flex items-center gap-2"
                                     style={{ fontFamily: 'Inter, Helvetica' }}
                                   >
@@ -205,7 +205,7 @@ export const HowItWorksSection: React.FC = () => {
                                 <div>
                                   <div>{row.content}</div>
                                   <Link 
-                                    to="/get-started"
+                                    to="#"
                                     className="text-[#e44782] font-semibold text-base hover:opacity-80 transition-all duration-200 mt-3 flex items-center gap-2"
                                     style={{ fontFamily: 'Inter, Helvetica' }}
                                   >

@@ -67,11 +67,11 @@ export const FounderBrandStrategyPage: React.FC = () => {
                 </motion.p>
                 
                 <Link 
-                  to="/about"
+                  to="#"
                   className="relative bg-[#e44782] text-white font-['Montserrat'] font-semibold text-[14px] sm:text-[16px] px-4 sm:px-5 py-2 sm:py-3 rounded-[0.84rem] border-2 border-[#e44782] overflow-hidden group hover:bg-white hover:text-[#e44782] transition-all duration-300 ease-out" 
                   style={{ fontFamily: 'Montserrat, Helvetica' }}
                 >
-                  Book a Call (TEST)
+                  Book a Call
                 </Link>
               </div>
             </div>

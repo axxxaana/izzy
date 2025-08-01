@@ -65,7 +65,7 @@ export const FractionalMarketingPage: React.FC = () => {
                   I help early-stage startups turn brand chaos into clarity, with messaging that lands, content that converts, and strategy built to scale.
                 </motion.p>
                 
-                <Link to="/get-started">
+                <Link to="#">
                   <motion.button 
                     className="mt-8 px-8 py-4 rounded-[0.84rem] bg-[#e44782] text-white text-xl font-semibold shadow-lg border-2 border-transparent hover:bg-white hover:text-[#e44782] hover:border-[#e44782] transition-all duration-200" 
                     style={{ fontFamily: 'Montserrat, Helvetica' }}
