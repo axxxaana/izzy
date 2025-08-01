@@ -152,6 +152,7 @@ export const HowItWorksSectionFounder: React.FC = () => {
                                     to="/get-started"
                                     className="text-[#e44782] font-semibold text-base hover:opacity-80 transition-all duration-200 mt-3 flex items-center gap-2"
                                     style={{ fontFamily: 'Inter, Helvetica' }}
+                                    onClick={() => console.log('Book a Call button clicked - navigating to /get-started')}
                                   >
                                     Book a Call
                                     <svg width="16" height="16" fill="none" viewBox="0 0 16 16">
@@ -212,6 +213,7 @@ export const HowItWorksSectionFounder: React.FC = () => {
                                     to="/get-started"
                                     className="text-[#e44782] font-semibold text-base hover:opacity-80 transition-all duration-200 mt-3 flex items-center gap-2"
                                     style={{ fontFamily: 'Inter, Helvetica' }}
+                                    onClick={() => console.log('Book a Call button clicked - navigating to /get-started')}
                                   >
                                     Book a Call
                                     <svg width="16" height="16" fill="none" viewBox="0 0 16 16">
