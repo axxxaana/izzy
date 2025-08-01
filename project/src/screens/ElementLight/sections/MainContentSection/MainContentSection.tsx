@@ -218,7 +218,7 @@ export const MainContentSection = (): JSX.Element => {
                       <span className="relative inline-block">
                         Connects
                         <img
-                          src="/needle-underline.svg"
+                          src="/needle-underline.svg?v=1"
                           alt=""
                           className="absolute -bottom-3 sm:-bottom-4 lg:-bottom-5 left-0 w-full"
                         />
@@ -355,40 +355,7 @@ export const MainContentSection = (): JSX.Element => {
 
               {/* Feature List */}
               <div className="space-y-4">
-                  <motion.div 
-                    className="border-t border-[#0000001a] pt-5"
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.6, ease: "easeOut", delay: 0.6 }}
-                    viewport={{ once: true, margin: "-100px" }}
-                  >
-                  <div className="flex items-start gap-5">
-                      <motion.div 
-                        className="w-[54px] h-[54px] rounded-2xl bg-[#fce7f3] flex items-center justify-center flex-shrink-0"
-                        initial={{ scale: 0, rotate: -180 }}
-                        whileInView={{ scale: 1, rotate: 0 }}
-                        transition={{ duration: 0.5, ease: "backOut", delay: 0.7 }}
-                        viewport={{ once: true, margin: "-100px" }}
-                      >
-                      <img
-                        className="w-[40px] h-[40px]"
-                        alt="Feature icon"
-                        src="/check-list-marketing.svg"
-                      />
-                      </motion.div>
-                      <motion.p 
-                        className="[font-family:'Inter',Helvetica] font-normal text-gray-700 text-[15px] tracking-[0] leading-[25.2px]"
-                        initial={{ opacity: 0, x: 20 }}
-                        whileInView={{ opacity: 1, x: 0 }}
-                        transition={{ duration: 0.6, ease: "easeOut", delay: 0.8 }}
-                        viewport={{ once: true, margin: "-100px" }}
-                      >
-                      {founderBrandFeatures[0]}
-                      </motion.p>
-                  </div>
-                  </motion.div>
-                
-                {founderBrandFeatures.slice(1).map((feature, index) => (
+                {founderBrandFeatures.map((feature, index) => (
                   <motion.div 
                     key={index + 1} 
                     className="border-t border-[#0000001a] pt-5"
@@ -400,6 +367,7 @@ export const MainContentSection = (): JSX.Element => {
                     <div className="flex items-start gap-5">
                       <motion.div 
                         className="w-[54px] h-[54px] rounded-2xl bg-[#fce7f3] flex items-center justify-center flex-shrink-0"
+
                         initial={{ scale: 0, rotate: -180 }}
                         whileInView={{ scale: 1, rotate: 0 }}
                         transition={{ duration: 0.5, ease: "backOut", delay: 0.9 + (index + 1) * 0.2 }}
@@ -408,7 +376,14 @@ export const MainContentSection = (): JSX.Element => {
                         <img
                           className="w-[40px] h-[40px]"
                           alt="Feature icon"
-                          src={index === 0 ? "/announcement-marketing.svg" : index === 1 ? "/eye-marketing.svg" : "/vector-8.svg"}
+                          src={index === 0 ? "/check-list-marketing.svg?v=1" : index === 1 ? "/announcement-marketing.svg?v=1" : "/eye-marketing.svg?v=1"}
+                          onError={(e) => {
+                            console.error('Icon failed to load:', e.currentTarget.src);
+                            e.currentTarget.style.border = '2px solid red';
+                          }}
+                          onLoad={(e) => {
+                            console.log('Icon loaded successfully:', e.currentTarget.src);
+                          }}
                         />
                       </motion.div>
                       <motion.p 
@@ -480,40 +455,7 @@ export const MainContentSection = (): JSX.Element => {
 
               {/* Feature List */}
               <div className="space-y-4">
-                <motion.div 
-                  className="border-t border-[#0000001a] pt-5"
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, ease: "easeOut", delay: 0.8 }}
-                  viewport={{ once: true, margin: "-100px" }}
-                >
-                  <div className="flex items-start gap-5">
-                    <motion.div 
-                      className="w-[54px] h-[54px] rounded-2xl bg-[#fce7f3] flex items-center justify-center flex-shrink-0"
-                      initial={{ scale: 0, rotate: -180 }}
-                      whileInView={{ scale: 1, rotate: 0 }}
-                      transition={{ duration: 0.5, ease: "backOut", delay: 0.9 }}
-                      viewport={{ once: true, margin: "-100px" }}
-                    >
-                      <img
-                        className="w-[40px] h-[40px]"
-                        alt="Feature icon"
-                        src="/check-list-marketing.svg"
-                      />
-                    </motion.div>
-                    <motion.p 
-                      className="[font-family:'Inter',Helvetica] font-normal text-gray-700 text-[16px] tracking-[0] leading-[25.2px]"
-                      initial={{ opacity: 0, x: 20 }}
-                      whileInView={{ opacity: 1, x: 0 }}
-                      transition={{ duration: 0.6, ease: "easeOut", delay: 1.0 }}
-                      viewport={{ once: true, margin: "-100px" }}
-                    >
-                      {fractionalMarketingFeatures[0]}
-                    </motion.p>
-                  </div>
-                </motion.div>
-                
-                {fractionalMarketingFeatures.slice(1).map((feature, index) => (
+                {fractionalMarketingFeatures.map((feature, index) => (
                   <motion.div 
                     key={index + 1} 
                     className="border-t border-[#0000001a] pt-5"
@@ -525,6 +467,7 @@ export const MainContentSection = (): JSX.Element => {
                     <div className="flex items-start gap-5">
                       <motion.div 
                         className="w-[54px] h-[54px] rounded-2xl bg-[#fce7f3] flex items-center justify-center flex-shrink-0"
+
                         initial={{ scale: 0, rotate: -180 }}
                         whileInView={{ scale: 1, rotate: 0 }}
                         transition={{ duration: 0.5, ease: "backOut", delay: 1.3 + (index + 1) * 0.2 }}
@@ -533,7 +476,14 @@ export const MainContentSection = (): JSX.Element => {
                         <img
                           className="w-[40px] h-[40px]"
                           alt="Feature icon"
-                          src={index === 0 ? "/announcement-marketing.svg" : index === 1 ? "/eye-marketing.svg" : "/vector-8.svg"}
+                          src={index === 0 ? "/check-list-marketing.svg?v=1" : index === 1 ? "/announcement-marketing.svg?v=1" : "/eye-marketing.svg?v=1"}
+                          onError={(e) => {
+                            console.error('Icon failed to load:', e.currentTarget.src);
+                            e.currentTarget.style.border = '2px solid red';
+                          }}
+                          onLoad={(e) => {
+                            console.log('Icon loaded successfully:', e.currentTarget.src);
+                          }}
                         />
                       </motion.div>
                       <motion.p 

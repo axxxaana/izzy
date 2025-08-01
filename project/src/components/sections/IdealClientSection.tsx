@@ -5,7 +5,7 @@ const features = [
     icon: (
       <span className="flex items-center justify-center w-20 h-20 rounded-full bg-gradient-to-br from-[#e44782]/30 to-[#e44782]/10 mb-7 shadow group-hover:scale-110 group-hover:shadow-lg transition-transform duration-200">
         {/* Heart icon for Purpose-Driven */}
-        <img src="/heart.svg" alt="Heart" width="42" height="42" />
+        <img src="/heart.svg?v=1" alt="Heart" width="42" height="42" />
       </span>
     ),
     title: "Purpose-Driven",
@@ -15,7 +15,7 @@ const features = [
     icon: (
       <span className="flex items-center justify-center w-20 h-20 rounded-full bg-gradient-to-br from-[#e44782]/30 to-[#e44782]/10 mb-7 shadow group-hover:scale-110 group-hover:shadow-lg transition-transform duration-200">
         {/* Eye marketing icon for Ambitious */}
-        <img src="/eye-marketing.svg" alt="Eye Marketing" width="42" height="42" />
+        <img src="/eye-marketing.svg?v=1" alt="Eye Marketing" width="42" height="42" />
       </span>
     ),
     title: "Ambitious",
@@ -25,7 +25,7 @@ const features = [
     icon: (
       <span className="flex items-center justify-center w-20 h-20 rounded-full bg-gradient-to-br from-[#e44782]/30 to-[#e44782]/10 mb-7 shadow group-hover:scale-110 group-hover:shadow-lg transition-transform duration-200">
         {/* Time icon for Time-Smart */}
-        <img src="/time.svg" alt="Time" width="42" height="42" />
+        <img src="/time.svg?v=1" alt="Time" width="42" height="42" />
       </span>
     ),
     title: "Time-Smart",
