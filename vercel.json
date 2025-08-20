@@ -2,5 +2,12 @@
   "buildCommand": "cd project && npm run build",
   "outputDirectory": "project/dist",
   "installCommand": "cd project && npm install",
-  "rootDirectory": "project"
+  "rootDirectory": "project",
+  "framework": "vite",
+  "rewrites": [
+    {
+      "source": "/((?!api/).*)",
+      "destination": "/index.html"
+    }
+  ]
 }
