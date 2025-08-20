@@ -101,8 +101,7 @@ export const IzzyProcessAccordion: React.FC = () => {
               >
                 <Link to="/get-started">
                   <motion.button 
-                    className="px-8 py-4 bg-[#e44782] text-white border-2 border-[#e44782] rounded-[0.84rem] font-semibold text-lg hover:bg-white hover:text-[#e44782] transition-all duration-300 shadow-lg"
-                    whileTap={{ scale: 0.98 }}
+                    className="px-5 py-3 bg-[#e44782] text-white font-['Montserrat'] font-semibold text-base hover:bg-white hover:text-[#e44782] transition-all duration-300 border-2 border-[#e44782] rounded-[0.84rem]"
                   >
                     Book a Call
                   </motion.button>
@@ -128,7 +127,7 @@ export const IzzyProcessAccordion: React.FC = () => {
               >
                 {/* Step Card */}
                 <div 
-                  className="relative rounded-[20px] lg:rounded-[24px] p-8 lg:p-12 shadow-lg hover:shadow-xl transform transition-all duration-500 ease-out group-hover:scale-[1.02] group-hover:-translate-y-2 overflow-hidden"
+                  className="relative rounded-[20px] lg:rounded-[24px] p-8 lg:p-12 shadow-lg hover:shadow-xl transform transition-all duration-500 ease-out overflow-hidden"
                   style={{ backgroundColor: step.bgColor }}
                 >
                   {/* Large Background Number */}
@@ -160,7 +159,7 @@ export const IzzyProcessAccordion: React.FC = () => {
                     {step.tags.map((tag, tagIndex) => (
                       <span
                         key={tagIndex}
-                        className="text-[13px] font-medium px-3 py-1.5 rounded-full border transition-all duration-200 hover:scale-105 hover:shadow-sm"
+                        className="text-[13px] font-medium px-3 py-1.5 rounded-full border transition-all duration-200 hover:shadow-sm"
                         style={{
                           color: step.textColor,
                           borderColor: step.textColor,

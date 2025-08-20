@@ -40,19 +40,9 @@ export const TrustedByBanner: React.FC<TrustedByBannerProps> = ({ className = ''
 
   return (
     <div className={`w-full h-[80px] sm:h-[100px] lg:h-[120px] mt-2 mx-auto flex items-center bg-white overflow-hidden ${className}`}>
-      <h2 className="font-medium text-black text-[18px] sm:text-[22px] lg:text-[28px] font-montserrat mr-8 sm:mr-12 lg:mr-16 whitespace-nowrap z-10 bg-white pl-3 sm:pl-4 lg:pl-5">
-        Trusted by
-      </h2>
-      
-      <div className="flex-1 relative overflow-hidden">
-        {/* Left fade mask - only affects logos */}
-        <div 
-          className="absolute top-0 left-0" style={{ width: '30px', height: '100%', zIndex: 20, pointerEvents: 'none', background: 'linear-gradient(to right, white 0%, rgba(255,255,255,0) 100%)' }}
-        />
-        {/* Right fade mask - only affects logos */}
-        <div 
-          className="absolute top-0 right-0" style={{ width: '30px', height: '100%', zIndex: 20, pointerEvents: 'none', background: 'linear-gradient(to left, white 0%, rgba(255,255,255,0) 100%)' }}
-        />
+      <div className="w-full relative overflow-hidden">
+
+
         <div 
           ref={scrollRef}
           className="flex items-center space-x-3 sm:space-x-4 lg:space-x-6"
@@ -95,8 +85,7 @@ export const TrustedByBanner: React.FC<TrustedByBannerProps> = ({ className = ''
               style={logo.name === 'Dear Bump' ? { marginRight: '5px' } : logo.name === 'Dream Factory' ? { marginLeft: '20px' } : {}}
             />
           ))}
-          {/* Spacer to push logos off-screen before reaching the text */}
-          <div style={{ minWidth: '10px' }} />
+
         </div>
       </div>
     </div>

@@ -68,7 +68,7 @@ export const TestimonialsSection: React.FC<TestimonialsSectionProps> = ({ additi
         transition={{ duration: 0.6, ease: "easeOut", delay: 0.2 }}
         viewport={{ once: true, margin: "-100px" }}
       >
-        What My Clients Say
+        Testimonials
       </motion.h2>
       <motion.div 
         className="w-full max-w-2xl mx-auto flex flex-col items-center"
@@ -125,12 +125,11 @@ export const TestimonialsSection: React.FC<TestimonialsSectionProps> = ({ additi
                 delay: 0.8 + (idx * 0.1) 
               }}
               viewport={{ once: true, margin: "-100px" }}
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
+
             >
               <div
                 className={`w-16 h-16 md:w-20 md:h-20 rounded-[0.84rem] border border-gray-200 transition-all duration-200 overflow-hidden flex items-center justify-center p-0 m-0
-                  ${idx === activeTestimonialIdx ? 'opacity-100 scale-105' : 'opacity-60 hover:opacity-90'} hover:scale-105 hover:brightness-110`}
+                  ${idx === activeTestimonialIdx ? 'opacity-100' : 'opacity-60 hover:opacity-90'} hover:brightness-110`}
                 style={{ boxSizing: 'border-box', borderWidth: '1.5px' }}
               >
                 <img

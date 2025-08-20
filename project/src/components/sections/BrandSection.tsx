@@ -253,7 +253,7 @@ export const ImageArchSection: React.FC = () => {
 
         {/* 4. 🚀 Get Started Button */}
         <motion.div 
-          className="flex justify-center mt-2"
+          className="flex justify-center mt-2 gap-4"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.3 }}
@@ -261,6 +261,9 @@ export const ImageArchSection: React.FC = () => {
         >
           <Link to="/get-started" className="relative bg-[#e44782] text-white font-['Montserrat'] font-semibold text-[16px] px-5 py-3 rounded-[0.84rem] border-2 border-[#e44782] overflow-hidden group hover:bg-white hover:text-[#e44782] transition-all duration-300 ease-out">
             Book a Call
+          </Link>
+          <Link to="/portfolio" className="relative bg-white text-[#e44782] font-['Montserrat'] font-semibold text-[16px] px-5 py-3 rounded-[0.84rem] border-2 border-[#e44782] overflow-hidden group hover:bg-[#e44782] hover:text-white transition-all duration-300 ease-out">
+            See Portfolio
           </Link>
         </motion.div>
 

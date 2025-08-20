@@ -25,8 +25,7 @@ export const FounderQuoteSection: React.FC = () => {
         >
           <Link to="/get-started">
             <motion.button 
-              className="px-8 py-4 bg-[#e44782] text-white border-2 border-[#e44782] rounded-[0.84rem] font-semibold text-lg hover:bg-white hover:text-[#e44782] transition-all duration-300 shadow-lg"
-              whileTap={{ scale: 0.98 }}
+              className="px-5 py-3 bg-[#e44782] text-white font-['Montserrat'] font-semibold text-base hover:bg-white hover:text-[#e44782] transition-all duration-300 border-2 border-[#e44782] rounded-[0.84rem]"
             >
               Book a Call
             </motion.button>

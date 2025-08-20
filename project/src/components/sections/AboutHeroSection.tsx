@@ -94,7 +94,6 @@ export const AboutHeroSection: React.FC = () => {
                       whileInView={{ opacity: 1, y: 0 }}
                       transition={{ duration: 0.8, delay: 0.6, ease: "easeOut" }}
                       viewport={{ once: true, margin: "-50px" }}
-                      whileTap={{ scale: 0.98 }}
                     >
                       Book a Call
                     </motion.button>

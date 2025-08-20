@@ -266,40 +266,137 @@ export const MainContentSection = (): JSX.Element => {
           {/* I'm Izzy Section */}
           <div 
             ref={elementRef}
-            className={`w-full max-w-[1580px] h-auto min-h-[300px] sm:h-[350px] lg:h-[400px] mt-12 sm:mt-16 lg:mt-24 pb-8 sm:pb-12 lg:pb-[150px] pt-8 sm:pt-12 lg:pt-[150px] mx-auto relative flex items-center justify-center transition-all duration-1200 ease-[cubic-bezier(0.25,0.46,0.45,0.94)] ${
+            className={`w-full max-w-[1580px] h-auto min-h-[400px] sm:h-[450px] lg:h-[500px] mt-12 sm:mt-16 lg:mt-24 pb-8 sm:pb-12 lg:pb-[150px] pt-8 sm:pt-12 lg:pt-[150px] mx-auto relative flex items-center transition-all duration-1200 ease-[cubic-bezier(0.25,0.46,0.45,0.94)] ${
               isVisible 
                 ? 'opacity-100 translate-y-0 scale-100 blur-0' 
                 : 'opacity-0 translate-y-12 scale-95 blur-sm'
             }`}
-            style={{ marginTop: '50px', paddingBottom: '150px' }}
+            style={{ marginTop: '50px', paddingBottom: '150px', marginLeft: '230px' }}
           >
-            {/* Content */}
-            <div className={`flex flex-col items-center transition-all duration-1000 ease-out px-4 sm:px-6 lg:px-8 ${
+            {/* Two Column Layout: Image on Left, Text on Right */}
+            <div className={`w-full flex flex-col lg:flex-row items-center gap-8 lg:gap-12 transition-all duration-1000 ease-out px-4 sm:px-6 lg:px-8 ${
               isAnimating ? 'animate-fade-in-up' : ''
             }`}>
-              <h2 className={`max-w-[800px] [font-family:'Montserrat',Helvetica] font-semibold text-[#0f0f10] text-[24px] sm:text-[32px] md:text-[40px] lg:text-[45px] text-center tracking-[-0.51px] leading-[1.2] sm:leading-[1.3] lg:leading-[56px] mb-6 sm:mb-8 transition-all duration-1000 ease-out ${
-                isAnimating ? 'animate-text-reveal' : 'opacity-0 translate-y-8 blur-sm'
-              }`}>
-                I help femtech, healthtech, and mission-driven founders cut through bloated
-                messaging and build bold, heart-led brands that <span className="px-2 sm:px-3 pt-0 pb-1 rounded-lg relative bg-gradient-to-r from-[#e447824d] to-[#e4478203]">actually move people.</span>
-              </h2>
-              <div className="flex justify-center mt-4">
-                <Link to="/get-started" className="relative bg-[#e44782] text-white font-['Montserrat'] font-semibold text-[14px] sm:text-[16px] px-4 sm:px-5 py-2 sm:py-3 rounded-[0.84rem] border-2 border-[#e44782] overflow-hidden group hover:bg-white hover:text-[#e44782] transition-all duration-300 ease-out">
-                  Book a Call
-                </Link>
-              </div>
+              {/* Left: Image */}
+              <motion.div 
+                className="w-full lg:w-1/2 flex justify-center lg:justify-end"
+                initial={{ opacity: 0, x: -30 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
+                viewport={{ once: true, margin: "-100px" }}
+                style={{ marginLeft: '-150px' }}
+              >
+                <img
+                  src="/izzy-about-home.png"
+                  alt="Izzy Prior"
+                  className="w-[600px] h-[600px] object-cover"
+                />
+              </motion.div>
+
+              {/* Right: Text Content */}
+              <motion.div 
+                className="w-full lg:w-1/2 flex flex-col items-center lg:items-start text-center lg:text-left"
+                initial={{ opacity: 0, x: 30 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.8, ease: "easeOut", delay: 0.4 }}
+                viewport={{ once: true, margin: "-100px" }}
+                style={{ marginLeft: '50px' }}
+              >
+                {/* "Hey I'm Izzy" in Pink */}
+                <motion.h3 
+                  className="text-[#e44782] font-bold text-[32px] sm:text-[36px] md:text-[40px] lg:text-[44px] mb-4 font-['Montserrat']"
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, ease: "easeOut", delay: 0.6 }}
+                  viewport={{ once: true, margin: "-100px" }}
+                >
+                  Hey I'm Izzy,
+                </motion.h3>
+
+                {/* Main Description */}
+                <motion.h2 
+                  className="max-w-[600px] [font-family:'Montserrat',Helvetica] font-semibold text-[#0f0f10] text-[20px] sm:text-[24px] md:text-[28px] lg:text-[32px] tracking-[-0.51px] leading-[1.3] sm:leading-[1.4] lg:leading-[1.4] mb-6 sm:mb-8"
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.8, ease: "easeOut", delay: 0.8 }}
+                  viewport={{ once: true, margin: "-100px" }}
+                >
+                  I help femtech, healthtech, and mission-driven founders cut through bloated
+                  messaging and build bold, heart-led brands that <span className="px-2 sm:px-3 pt-0 pb-1 rounded-lg relative bg-gradient-to-r from-[#e447824d] to-[#e4478203]">actually move people.</span>
+                </motion.h2>
+
+                {/* Learn More Button */}
+                <motion.div 
+                  className="flex justify-center lg:justify-start mt-6"
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, ease: "easeOut", delay: 1.0 }}
+                  viewport={{ once: true, margin: "-100px" }}
+                >
+                  <Link to="/about" className="bg-[#e44782] text-white font-['Montserrat'] font-semibold text-base py-3 px-5 rounded-[0.84rem] border-2 border-transparent transition-all duration-300 ease-out hover:bg-white hover:text-[#e44782] hover:border-[#e44782]">
+                    Learn More
+                  </Link>
+                </motion.div>
+              </motion.div>
             </div>
           </div>
 
-          {/* Image Arch Section */}
-          <div className="w-full mt-16">
-            <ImageArchSection />
-          </div>
+
 
           {/* Branding System Visual */}
           <div className="w-full">
             {/* <BrandingSystemVisual /> Removed as requested */}
           </div>
+
+          {/* Strategy Voice Visibility Section */}
+          <motion.section 
+            className="w-full flex flex-col items-center justify-center px-4 sm:px-6 lg:px-8" 
+            style={{ marginTop: '100px', padding: '60px 0 120px 0' }}
+            initial={{ opacity: 0, y: 60 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+            viewport={{ once: true, margin: "-100px" }}
+          >
+            <motion.div
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
+              viewport={{ once: true, margin: "-100px" }}
+            >
+              <TrueFocus 
+                sentence="Strategy Voice Visibility"
+                manualMode={true}
+                blurAmount={5}
+                borderColor="#e44782"
+                animationDuration={2}
+                pauseBetweenAnimations={1}
+                fontFamily="'Montserrat', Helvetica, Arial, sans-serif"
+                fontSize="4rem"
+                currentIndex={trueFocusIndex}
+              />
+            </motion.div>
+            <motion.p 
+              className="max-w-3xl text-center text-[#0f0f10] mt-8 sm:mt-10 text-[16px] sm:text-[18px]" 
+              style={{ fontFamily: "'Inter', Helvetica, Arial, sans-serif" }}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, ease: "easeOut", delay: 0.4 }}
+              viewport={{ once: true, margin: "-100px" }}
+            >
+              You don't need more noise. You need strategy that actually fits, a voice that actually sounds like you, and visibility that doesn't feel like screaming into the void. I help you shape all three, so your brand moves with meaning, not just motion.
+            </motion.p>
+            <motion.div 
+              className="flex justify-center mt-6 sm:mt-8"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, ease: "easeOut", delay: 0.6 }}
+              viewport={{ once: true, margin: "-100px" }}
+            >
+              <Link to="/get-started" className="bg-[#e44782] text-white font-['Montserrat'] font-semibold text-base py-3 px-5 rounded-[0.84rem] border-2 border-transparent transition-all duration-300 ease-out hover:bg-white hover:text-[#e44782] hover:border-[#e44782]">
+                Book a Call
+              </Link>
+            </motion.div>
+          </motion.section>
 
           {/* Services Section */}
           <div className="w-full max-w-[1200px] mx-auto mt-8 px-4">
@@ -404,13 +501,10 @@ export const MainContentSection = (): JSX.Element => {
                     viewport={{ once: true, margin: "-100px" }}
                   >
                     <div className="flex justify-start">
-                      <motion.div
-                        whileHover={{ scale: 1.05 }}
-                        whileTap={{ scale: 0.98 }}
-                      >
-                        <Link to="/services/founder-brand-strategy" className="relative bg-[#e44782] text-white font-['Montserrat'] font-semibold text-[14px] sm:text-[16px] px-6 sm:px-8 py-3 sm:py-4 rounded-[0.84rem] border-2 border-[#e44782] overflow-hidden group hover:bg-white hover:text-[#e44782] transition-all duration-300 ease-out shadow-lg">
-                          Learn More
-                        </Link>
+                      <motion.div>
+                                              <Link to="/services/founder-brand-strategy" className="bg-[#e44782] text-white font-['Montserrat'] font-semibold text-base py-3 px-5 rounded-[0.84rem] border-2 border-transparent transition-all duration-300 ease-out hover:bg-white hover:text-[#e44782] hover:border-[#e44782]">
+                        Learn More
+                      </Link>
                       </motion.div>
                     </div>
                   </motion.div>
@@ -504,11 +598,8 @@ export const MainContentSection = (): JSX.Element => {
                   viewport={{ once: true, margin: "-100px" }}
                 >
                   <div className="flex justify-start">
-                    <motion.div
-                      whileHover={{ scale: 1.05 }}
-                      whileTap={{ scale: 0.98 }}
-                    >
-                      <Link to="/services/fractional-marketing" className="relative bg-[#e44782] text-white font-['Montserrat'] font-semibold text-[14px] sm:text-[16px] px-6 sm:px-8 py-3 sm:py-4 rounded-[0.84rem] border-2 border-[#e44782] overflow-hidden group hover:bg-white hover:text-[#e44782] transition-all duration-300 ease-out shadow-lg">
+                    <motion.div>
+                      <Link to="/services/fractional-marketing" className="bg-[#e44782] text-white font-['Montserrat'] font-semibold text-base py-3 px-5 rounded-[0.84rem] border-2 border-transparent transition-all duration-300 ease-out hover:bg-white hover:text-[#e44782] hover:border-[#e44782]">
                         Learn More
                       </Link>
                     </motion.div>
@@ -533,57 +624,12 @@ export const MainContentSection = (): JSX.Element => {
           </motion.div>
         </div>
 
-        {/* Strategy Voice Visibility Section */}
-        <motion.section 
-          className="w-full flex flex-col items-center justify-center px-4 sm:px-6 lg:px-8" 
-          style={{ marginTop: '100px', padding: '60px 0 120px 0' }}
-          initial={{ opacity: 0, y: 60 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
-          viewport={{ once: true, margin: "-100px" }}
-        >
-          <motion.div
-            initial={{ opacity: 0, y: 40 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
-            viewport={{ once: true, margin: "-100px" }}
-          >
-            <TrueFocus 
-              sentence="Strategy Voice Visibility"
-              manualMode={true}
-              blurAmount={5}
-              borderColor="#e44782"
-              animationDuration={2}
-              pauseBetweenAnimations={1}
-              fontFamily="'Montserrat', Helvetica, Arial, sans-serif"
-              fontSize="4rem"
-              currentIndex={trueFocusIndex}
-            />
-          </motion.div>
-          <motion.p 
-            className="max-w-3xl text-center text-[#0f0f10] mt-8 sm:mt-10 text-[16px] sm:text-[18px]" 
-            style={{ fontFamily: "'Inter', Helvetica, Arial, sans-serif" }}
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, ease: "easeOut", delay: 0.4 }}
-            viewport={{ once: true, margin: "-100px" }}
-          >
-            You don't need more noise. You need strategy that actually fits, a voice that actually sounds like you, and visibility that doesn't feel like screaming into the void. I help you shape all three, so your brand moves with meaning, not just motion.
-          </motion.p>
-          <motion.div 
-            className="flex justify-center mt-6 sm:mt-8"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, ease: "easeOut", delay: 0.6 }}
-            viewport={{ once: true, margin: "-100px" }}
-          >
-            <Link to="/get-started" className="relative bg-[#e44782] text-white font-['Montserrat'] font-semibold text-[14px] sm:text-[16px] px-4 sm:px-5 py-2 sm:py-3 rounded-[0.84rem] border-2 border-[#e44782] overflow-hidden group hover:bg-white hover:text-[#e44782] transition-all duration-300 ease-out">
-              Book a Call
-            </Link>
-          </motion.div>
-        </motion.section>
 
 
+        {/* Image Arch Section */}
+        <div className="w-full mt-16">
+          <ImageArchSection />
+        </div>
 
         {/* Cut Through The Fluff - Pictures in Letters */}
         <div className="w-full bg-gradient-to-r from-[#e447821a] via-white to-[#e447821a] rounded-[25px] sm:rounded-[35px] lg:rounded-[50px] py-12 sm:py-16 lg:py-20 mt-8 sm:mt-12 lg:mt-16 overflow-hidden relative">

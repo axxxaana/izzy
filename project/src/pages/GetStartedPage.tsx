@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import { Layout } from '../components/layout/Layout';
 import { TYPOGRAPHY, COLORS, BORDER_RADIUS, SHADOWS } from '../constants/design-system';
 import { BRAND_LOGOS } from '../constants/navigation';
+import { TrustedByBanner } from '../components/TrustedByBanner';
 import './GetStartedPage.css';
 
 // Custom footer component for GetStartedPage (professional footer only)
@@ -381,29 +382,12 @@ export const GetStartedPage: React.FC = () => {
             
             {/* Trusted By Section */}
             <div className="pb-16">
-              <p className="text-black font-medium mb-4">
-                Trusted By
-              </p>
-              <div className="grid grid-cols-3 gap-x-12 gap-y-8 items-center justify-items-center">
-                <div className="flex justify-center items-center logo-item">
-                  <img src="/parent-promise-grey.png" alt="Parent Promise" className="h-auto w-auto object-contain" style={{maxHeight: '50px', maxWidth: '110px'}} />
-                </div>
-                <div className="flex justify-center items-center logo-item">
-                  <img src="/Ninjas-in-pyjamas.png" alt="Ninjas in Pyjamas" className="h-auto w-auto object-contain" style={{maxHeight: '50px', maxWidth: '110px', marginLeft: '-10px'}} />
-                </div>
-                <div className="flex justify-center items-center logo-item">
-                  <img src="/dear-bump-logo-gray.png" alt="Dear Bump" className="h-auto w-auto object-contain" style={{maxHeight: '50px', maxWidth: '90px', marginLeft: '-24px'}} />
-                </div>
-                <div className="flex justify-center items-center logo-item">
-                  <img src="/make-us-care.png" alt="Make Us Care" className="h-auto w-auto object-contain" style={{maxHeight: '50px', maxWidth: '100px'}} />
-                </div>
-                <div className="flex justify-center items-center logo-item">
-                  <img src="/gofounder-logo.png" alt="GoFounder" className="h-auto w-auto object-contain" style={{maxHeight: '50px', maxWidth: '100px', marginLeft: '-10px'}} />
-                </div>
-                <div className="flex justify-center items-center logo-item">
-                  <img src="/nexu-logo-grey.png" alt="Nexu" className="h-auto w-auto object-contain" style={{maxHeight: '50px', maxWidth: '100px', marginLeft: '-24px'}} />
-                </div>
-              </div>
+              <TrustedByBanner />
+
+
+
+
+
             </div>
           </motion.div>
         </div>
