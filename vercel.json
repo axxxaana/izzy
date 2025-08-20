@@ -3,10 +3,10 @@
   "outputDirectory": "project/dist",
   "installCommand": "cd project && npm install",
   "framework": "vite",
-  "routes": [
+  "rewrites": [
     {
-      "src": "/(.*)",
-      "dest": "/index.html"
+      "source": "/((?!api/).*)",
+      "destination": "/index.html"
     }
   ]
 }
