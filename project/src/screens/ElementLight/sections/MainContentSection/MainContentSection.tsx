@@ -266,7 +266,7 @@ export const MainContentSection = (): JSX.Element => {
           {/* I'm Izzy Section */}
           <div 
             ref={elementRef}
-            className={`w-full max-w-[1200px] h-auto min-h-[500px] mt-8 sm:mt-12 lg:mt-40 py-12 lg:py-16 mx-auto relative flex items-center transition-all duration-1200 ease-[cubic-bezier(0.25,0.46,0.45,0.94)] rounded-[25px] bg-white shadow-lg ${
+            className={`w-full max-w-[1200px] h-auto min-h-[500px] mt-8 sm:mt-12 lg:mt-40 py-12 lg:py-16 mx-auto relative flex items-center transition-all duration-1200 ease-[cubic-bezier(0.25,0.46,0.45,0.94)] rounded-[25px] bg-[#F8F9FA] shadow-lg ${
               isVisible 
                 ? 'opacity-100 translate-y-0 scale-100 blur-0' 
                 : 'opacity-0 translate-y-12 scale-95 blur-sm'
@@ -287,7 +287,7 @@ export const MainContentSection = (): JSX.Element => {
                 <img
                   src="/izzy-about-home.png"
                   alt="Izzy Prior"
-                  className="w-full max-w-[400px] h-auto object-cover rounded-lg"
+                  className="w-full max-w-[500px] h-auto object-cover rounded-lg"
                 />
               </motion.div>
 
