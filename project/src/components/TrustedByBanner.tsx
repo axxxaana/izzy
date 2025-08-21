@@ -39,7 +39,7 @@ export const TrustedByBanner: React.FC<TrustedByBannerProps> = ({ className = ''
   };
 
   return (
-    <div className={`w-full h-[80px] sm:h-[100px] lg:h-[120px] mt-2 mx-auto flex items-center bg-white overflow-hidden ${className}`}>
+    <div className={`w-full h-[80px] sm:h-[100px] lg:h-[120px] mt-2 mx-auto flex items-center overflow-hidden ${className}`}>
       <div className="w-full relative overflow-hidden">
 
 
