@@ -259,48 +259,45 @@ export const MainContentSection = (): JSX.Element => {
           </div>
 
           {/* Trusted By Section */}
-          <div className="w-full bg-white pt-0 pb-8">
+          <div className="w-full bg-white pt-0 pb-8 mb-24">
             <TrustedByBanner />
           </div>
 
           {/* I'm Izzy Section */}
           <div 
             ref={elementRef}
-            className={`w-full max-w-[1580px] h-auto min-h-[400px] sm:h-[450px] lg:h-[500px] mt-12 sm:mt-16 lg:mt-24 pb-8 sm:pb-12 lg:pb-[150px] pt-8 sm:pt-12 lg:pt-[150px] mx-auto relative flex items-center transition-all duration-1200 ease-[cubic-bezier(0.25,0.46,0.45,0.94)] ${
+            className={`w-full max-w-[1400px] h-[602px] mt-8 sm:mt-12 lg:mt-40 -pt-4 pb-[3px] mx-auto relative flex items-center transition-all duration-1200 ease-[cubic-bezier(0.25,0.46,0.45,0.94)] rounded-[25px] bg-[#F8F9FA] ${
               isVisible 
                 ? 'opacity-100 translate-y-0 scale-100 blur-0' 
                 : 'opacity-0 translate-y-12 scale-95 blur-sm'
             }`}
-            style={{ marginTop: '50px', paddingBottom: '150px', marginLeft: '230px' }}
           >
             {/* Two Column Layout: Image on Left, Text on Right */}
-            <div className={`w-full flex flex-col lg:flex-row items-center gap-8 lg:gap-12 transition-all duration-1000 ease-out px-4 sm:px-6 lg:px-8 ${
+            <div className={`w-full flex flex-col lg:flex-row items-end gap-8 lg:gap-12 transition-all duration-1000 ease-out px-8 sm:px-12 lg:px-16 xl:px-20 ${
               isAnimating ? 'animate-fade-in-up' : ''
             }`}>
-              {/* Left: Image */}
-              <motion.div 
-                className="w-full lg:w-1/2 flex justify-center lg:justify-end"
-                initial={{ opacity: 0, x: -30 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
-                viewport={{ once: true, margin: "-100px" }}
-                style={{ marginLeft: '-150px' }}
-              >
+                              {/* Left: Image */}
+                <motion.div 
+                  className="w-full lg:w-1/2 flex justify-end h-full -mt-24"
+                  initial={{ opacity: 0, x: -30 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
+                  viewport={{ once: true, margin: "-100px" }}
+                >
                 <img
                   src="/izzy-about-home.png"
                   alt="Izzy Prior"
-                  className="w-[600px] h-[600px] object-cover"
+                  className="w-[600px] h-full object-cover object-bottom pb-0 mb-0"
                 />
               </motion.div>
 
               {/* Right: Text Content */}
               <motion.div 
-                className="w-full lg:w-1/2 flex flex-col items-center lg:items-start text-center lg:text-left"
+                className="w-full lg:w-1/2 flex flex-col items-center lg:items-start text-center lg:text-left justify-center h-full -mt-80"
                 initial={{ opacity: 0, x: 30 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.8, ease: "easeOut", delay: 0.4 }}
                 viewport={{ once: true, margin: "-100px" }}
-                style={{ marginLeft: '50px' }}
               >
                 {/* "Hey I'm Izzy" in Pink */}
                 <motion.h3 
@@ -310,24 +307,34 @@ export const MainContentSection = (): JSX.Element => {
                   transition={{ duration: 0.6, ease: "easeOut", delay: 0.6 }}
                   viewport={{ once: true, margin: "-100px" }}
                 >
-                  Hey I'm Izzy,
+                  Hey I'm Izzy.
                 </motion.h3>
 
                 {/* Main Description */}
-                <motion.h2 
-                  className="max-w-[600px] [font-family:'Montserrat',Helvetica] font-semibold text-[#0f0f10] text-[20px] sm:text-[24px] md:text-[28px] lg:text-[32px] tracking-[-0.51px] leading-[1.3] sm:leading-[1.4] lg:leading-[1.4] mb-6 sm:mb-8"
+                <motion.div 
+                  className="max-w-[550px] lg:max-w-[580px] text-[#0f0f10] text-[16px] sm:text-[18px] leading-[1.6] mb-6 sm:mb-8 space-y-4"
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.8, ease: "easeOut", delay: 0.8 }}
                   viewport={{ once: true, margin: "-100px" }}
                 >
-                  I help femtech, healthtech, and mission-driven founders cut through bloated
-                  messaging and build bold, heart-led brands that <span className="px-2 sm:px-3 pt-0 pb-1 rounded-lg relative bg-gradient-to-r from-[#e447824d] to-[#e4478203]">actually move people.</span>
-                </motion.h2>
+                  <p>
+                    After years leading creative for VC-backed startups, I kept seeing the same thing: brilliant ideas buried under bloated messaging and brand bloat.
+                  </p>
+                  <p>
+                    That's why I now work directly with founders, cutting through the noise, shaping their story, and helping them scale with substance.
+                  </p>
+                  <p>
+                    I partner with femtech, healthtech, and mission-driven teams to build bold, heart-led brands that move people.
+                  </p>
+                  <p>
+                    What would your brand unlock if it finally spoke with clarity, courage, and heart?
+                  </p>
+                </motion.div>
 
                 {/* Learn More Button */}
                 <motion.div 
-                  className="flex justify-center lg:justify-start mt-6"
+                  className="flex justify-center lg:justify-start mt-0 mb-20"
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, ease: "easeOut", delay: 1.0 }}
@@ -430,6 +437,18 @@ export const MainContentSection = (): JSX.Element => {
                 viewport={{ once: true, margin: "-100px" }}
               >
                 <div className="mb-0 text-left">
+                  {/* Services Tag */}
+                  <motion.div 
+                    className="mb-6"
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.6, ease: "easeOut" }}
+                    viewport={{ once: true, margin: "-100px" }}
+                  >
+                    <span className="px-4 py-2 bg-white border border-[#e44782] rounded-lg text-sm font-bold text-[#e44782] tracking-widest uppercase">
+                      SERVICES
+                    </span>
+                  </motion.div>
                   <motion.h3 
                     className="[font-family:'Montserrat',Helvetica] font-semibold text-black text-[28px] sm:text-[32px] md:text-[36px] lg:text-[40px] tracking-[-1.44px] leading-[1.2] sm:leading-[1.3] lg:leading-[50px] mb-2"
                     initial={{ opacity: 0, y: 20 }}
@@ -528,6 +547,18 @@ export const MainContentSection = (): JSX.Element => {
               viewport={{ once: true, margin: "-100px" }}
             >
               <div className="mb-0 text-left">
+                {/* Services Tag */}
+                <motion.div 
+                  className="mb-6"
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, ease: "easeOut" }}
+                  viewport={{ once: true, margin: "-100px" }}
+                >
+                  <span className="px-4 py-2 bg-white border border-[#e44782] rounded-lg text-sm font-bold text-[#e44782] tracking-widest uppercase">
+                    SERVICES
+                  </span>
+                </motion.div>
                 <motion.h3 
                   className="[font-family:'Montserrat',Helvetica] font-semibold text-black text-[28px] sm:text-[32px] md:text-[36px] lg:text-[40px] tracking-[-1.44px] leading-[1.2] sm:leading-[1.3] lg:leading-[55px] mb-2"
                   initial={{ opacity: 0, y: 20 }}
@@ -632,9 +663,7 @@ export const MainContentSection = (): JSX.Element => {
         </div>
 
         {/* Cut Through The Fluff - Pictures in Letters */}
-        <div className="w-full bg-gradient-to-r from-[#e447821a] via-white to-[#e447821a] rounded-[25px] sm:rounded-[35px] lg:rounded-[50px] py-12 sm:py-16 lg:py-20 mt-8 sm:mt-12 lg:mt-16 overflow-hidden relative">
-          {/* Subtle background gradient */}
-          <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent pointer-events-none"></div>
+        <div className="w-full bg-[#F8F9FA] rounded-[25px] sm:rounded-[35px] lg:rounded-[50px] py-12 sm:py-16 lg:py-20 mt-8 sm:mt-12 lg:mt-16 overflow-hidden relative">
           {/* Main marquee container */}
           <div className="relative z-10">
             <div className="flex items-center animate-scroll whitespace-nowrap">
@@ -644,13 +673,7 @@ export const MainContentSection = (): JSX.Element => {
                     <div
                       className="[font-family:'Montserrat',Helvetica] font-black text-[40px] sm:text-[60px] md:text-[80px] lg:text-[100px] tracking-[-2px] sm:tracking-[-3px] lg:tracking-[-4px] leading-[1.1] sm:leading-[1.1] lg:leading-[110px]"
                       style={{
-                        backgroundImage: "url('/cut the fluff background.jpg')",
-                        backgroundSize: "cover",
-                        backgroundPosition: "center",
-                        WebkitBackgroundClip: "text",
-                        WebkitTextFillColor: "transparent",
-                        backgroundClip: "text",
-                        color: "transparent",
+                        color: "#E44782",
                         display: "inline-block",
                         whiteSpace: "nowrap"
                       }}
@@ -663,8 +686,6 @@ export const MainContentSection = (): JSX.Element => {
               </div>
             </div>
           </div>
-          {/* Subtle glow effect */}
-          <div className="absolute inset-0 bg-gradient-to-r from-transparent via-[#e447821a] to-transparent pointer-events-none"></div>
         </div>
 
         {/* Portfolio Section */}
