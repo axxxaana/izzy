@@ -22,10 +22,13 @@ const CounterBlocks: React.FC = () => {
       ([entry]) => {
         if (entry.isIntersecting && !hasAnimated) {
           setHasAnimated(true);
-          animateCounters();
+          // Small delay to ensure the component is fully visible
+          setTimeout(() => {
+            animateCounters();
+          }, 100);
         }
       },
-      { threshold: 0.5 }
+      { threshold: 0.3, rootMargin: '0px 0px -50px 0px' }
     );
 
     const element = document.getElementById('counter-blocks');
@@ -38,8 +41,8 @@ const CounterBlocks: React.FC = () => {
 
   const animateCounters = () => {
     const targets = { years: 6, startups: 30, brands: 20 };
-    const duration = 2000;
-    const steps = 60;
+    const duration = 4000; // Increased from 2500ms to 4000ms for more visible counting
+    const steps = 120; // Increased from 80 to 120 steps for smoother, more visible counting
     const stepDuration = duration / steps;
 
     let step = 0;
@@ -61,49 +64,73 @@ const CounterBlocks: React.FC = () => {
     }, stepDuration);
   };
 
+  // Reset animation when component unmounts or re-renders
+  useEffect(() => {
+    return () => {
+      setHasAnimated(false);
+      setCounts({ years: 0, startups: 0, brands: 0 });
+    };
+  }, []);
+
   return (
-    <div id="counter-blocks" className="flex flex-col sm:flex-row gap-6 mt-12 max-w-2xl mx-auto">
+    <div id="counter-blocks" className="flex flex-col sm:flex-row gap-8 mt-12 max-w-4xl mx-auto">
       <motion.div
         initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, delay: 1.0 }}
-        className="flex-1 bg-white/5 backdrop-blur-sm rounded-xl p-5 text-center border border-white/10"
+        className="flex-1 text-center"
       >
-        <div className="text-2xl md:text-3xl font-bold text-pink-600 mb-2 font-['Montserrat']">
+        <motion.div 
+          className="text-4xl md:text-5xl lg:text-6xl font-bold text-pink-600 mb-3 font-['Montserrat']"
+          animate={hasAnimated ? { scale: [1, 1.05, 1] } : {}}
+          transition={{ duration: 0.3, delay: 1.0 }}
+        >
           {counts.years}+
-        </div>
-        <div className="text-sm md:text-base text-gray-700 font-medium font-['Inter']">
+        </motion.div>
+        <div className="text-sm md:text-lg text-gray-700 font-medium font-['Inter'] whitespace-nowrap">
           Years in Brand Strategy
         </div>
       </motion.div>
+
+      {/* Vertical line separator */}
+      <div className="hidden sm:block w-px bg-gray-300 mx-4"></div>
 
       <motion.div
         initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, delay: 1.2 }}
-        className="flex-1 bg-white/5 backdrop-blur-sm rounded-xl p-5 text-center border border-white/10"
+        className="flex-1 text-center"
       >
-        <div className="text-2xl md:text-3xl font-bold text-pink-600 mb-2 font-['Montserrat']">
+        <motion.div 
+          className="text-4xl md:text-5xl lg:text-6xl font-bold text-pink-600 mb-3 font-['Montserrat']"
+          animate={hasAnimated ? { scale: [1, 1.05, 1] } : {}}
+          transition={{ duration: 0.3, delay: 1.2 }}
+        >
           {counts.startups}+
-        </div>
-        <div className="text-sm md:text-base text-gray-700 font-medium font-['Inter']">
-          Early-Stage<br />
-          Startups Scaled
+        </motion.div>
+        <div className="text-sm md:text-lg text-gray-700 font-medium font-['Inter'] whitespace-nowrap">
+          Early-Stage Startups Scaled
         </div>
       </motion.div>
+
+      {/* Vertical line separator */}
+      <div className="hidden sm:block w-px bg-gray-300 mx-4"></div>
 
       <motion.div
         initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, delay: 1.4 }}
-        className="flex-1 bg-white/5 backdrop-blur-sm rounded-xl p-5 text-center border border-white/10"
+        className="flex-1 text-center"
       >
-        <div className="text-2xl md:text-3xl font-bold text-pink-600 mb-2 font-['Montserrat']">
+        <motion.div 
+          className="text-4xl md:text-5xl lg:text-6xl font-bold text-pink-600 mb-3 font-['Montserrat']"
+          animate={hasAnimated ? { scale: [1, 1.05, 1] } : {}}
+          transition={{ duration: 0.3, delay: 1.4 }}
+        >
           {counts.brands}+
-        </div>
-        <div className="text-sm md:text-base text-gray-700 font-medium font-['Inter']">
-          Founder-Led<br />
-          Brands Built
+        </motion.div>
+        <div className="text-sm md:text-lg text-gray-700 font-medium font-['Inter'] whitespace-nowrap">
+          Founder-Led Brands Built
         </div>
       </motion.div>
     </div>
@@ -154,7 +181,7 @@ const PortfolioHero: React.FC = () => {
               </motion.h1>
 
               <motion.p
-                className="max-w-lg text-center text-[18px] md:text-[20px] text-[#0f0f10] opacity-90 leading-relaxed"
+                className="max-w-lg text-center text-[20px] text-[#0f0f10] opacity-90 leading-relaxed"
                 style={{ fontFamily: 'Inter, Helvetica' }}
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -162,9 +189,6 @@ const PortfolioHero: React.FC = () => {
               >
                 {PORTFOLIO_HERO_SUBHEADLINE}
               </motion.p>
-
-              {/* Counter Blocks */}
-              <CounterBlocks />
             </div>
           </div>
         </motion.div>
@@ -335,6 +359,13 @@ export const PortfolioPage: React.FC = () => {
 
         {/* Logo Scroller */}
         <TrustedByBanner />
+
+        {/* Statistics Section */}
+        <section className="w-full py-16 px-4 md:px-8 lg:px-12 bg-white">
+          <div className="max-w-7xl mx-auto">
+            <CounterBlocks />
+          </div>
+        </section>
 
         {/* Portfolio Section */}
         <section className="w-full py-20 px-4 md:px-8 lg:px-12">

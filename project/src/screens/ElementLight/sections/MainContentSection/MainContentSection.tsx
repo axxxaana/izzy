@@ -358,7 +358,7 @@ export const MainContentSection = (): JSX.Element => {
           {/* Strategy Voice Visibility Section */}
           <motion.section 
             className="w-full flex flex-col items-center justify-center px-4 sm:px-6 lg:px-8" 
-            style={{ marginTop: '100px', padding: '60px 0 120px 0' }}
+            style={{ marginTop: '160px', padding: '60px 0 120px 0' }}
             initial={{ opacity: 0, y: 60 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
