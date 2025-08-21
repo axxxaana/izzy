@@ -2,6 +2,7 @@ import React, { useRef } from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { Layout } from '../components/layout';
+import { FooterSection } from '../screens/ElementLight/sections/FooterSection';
 
 // Resource data
 const resources = [
@@ -186,6 +187,9 @@ export const ResourcesPage: React.FC = () => {
             ))}
           </div>
         </div>
+        
+        {/* Footer */}
+        <FooterSection />
       </div>
     </Layout>
   );
