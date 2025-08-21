@@ -3,6 +3,11 @@
   "outputDirectory": "project/dist",
   "installCommand": "cd project && npm install",
   "framework": "vite",
+  "functions": {
+    "project/dist/**/*.html": {
+      "runtime": "nodejs18.x"
+    }
+  },
   "rewrites": [
     {
       "source": "/((?!api/).*)",

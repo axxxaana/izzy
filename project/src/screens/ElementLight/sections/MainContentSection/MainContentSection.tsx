@@ -266,34 +266,34 @@ export const MainContentSection = (): JSX.Element => {
           {/* I'm Izzy Section */}
           <div 
             ref={elementRef}
-            className={`w-full max-w-[1400px] h-[602px] mt-8 sm:mt-12 lg:mt-40 -pt-4 pb-[3px] mx-auto relative flex items-center transition-all duration-1200 ease-[cubic-bezier(0.25,0.46,0.45,0.94)] rounded-[25px] bg-[#F8F9FA] ${
+            className={`w-full max-w-[1200px] h-auto min-h-[500px] mt-8 sm:mt-12 lg:mt-40 py-12 lg:py-16 mx-auto relative flex items-center transition-all duration-1200 ease-[cubic-bezier(0.25,0.46,0.45,0.94)] rounded-[25px] bg-white shadow-lg ${
               isVisible 
                 ? 'opacity-100 translate-y-0 scale-100 blur-0' 
                 : 'opacity-0 translate-y-12 scale-95 blur-sm'
             }`}
           >
             {/* Two Column Layout: Image on Left, Text on Right */}
-            <div className={`w-full flex flex-col lg:flex-row items-end gap-8 lg:gap-12 transition-all duration-1000 ease-out px-8 sm:px-12 lg:px-16 xl:px-20 ${
+            <div className={`w-full flex flex-col lg:flex-row items-center gap-8 lg:gap-12 transition-all duration-1000 ease-out px-8 sm:px-12 lg:px-16 xl:px-20 ${
               isAnimating ? 'animate-fade-in-up' : ''
             }`}>
-                              {/* Left: Image */}
-                <motion.div 
-                  className="w-full lg:w-1/2 flex justify-end h-full -mt-24"
-                  initial={{ opacity: 0, x: -30 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
-                  viewport={{ once: true, margin: "-100px" }}
-                >
+              {/* Left: Image */}
+              <motion.div 
+                className="w-full lg:w-1/2 flex justify-center lg:justify-start"
+                initial={{ opacity: 0, x: -30 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
+                viewport={{ once: true, margin: "-100px" }}
+              >
                 <img
                   src="/izzy-about-home.png"
                   alt="Izzy Prior"
-                  className="w-[600px] h-full object-cover object-bottom pb-0 mb-0"
+                  className="w-full max-w-[400px] h-auto object-cover rounded-lg"
                 />
               </motion.div>
 
               {/* Right: Text Content */}
               <motion.div 
-                className="w-full lg:w-1/2 flex flex-col items-center lg:items-start text-center lg:text-left justify-center h-full -mt-80"
+                className="w-full lg:w-1/2 flex flex-col items-center lg:items-start text-center lg:text-left justify-center"
                 initial={{ opacity: 0, x: 30 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.8, ease: "easeOut", delay: 0.4 }}
@@ -301,7 +301,7 @@ export const MainContentSection = (): JSX.Element => {
               >
                 {/* "Hey I'm Izzy" in Pink */}
                 <motion.h3 
-                  className="text-[#e44782] font-bold text-[32px] sm:text-[36px] md:text-[40px] lg:text-[44px] mb-4 font-['Montserrat']"
+                  className="text-[#e44782] font-bold text-[32px] sm:text-[36px] md:text-[40px] lg:text-[44px] mb-6 font-['Montserrat']"
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, ease: "easeOut", delay: 0.6 }}
@@ -312,7 +312,7 @@ export const MainContentSection = (): JSX.Element => {
 
                 {/* Main Description */}
                 <motion.div 
-                  className="max-w-[550px] lg:max-w-[580px] text-[#0f0f10] text-[16px] sm:text-[18px] leading-[1.6] mb-6 sm:mb-8 space-y-4"
+                  className="max-w-[500px] text-[#0f0f10] text-[16px] sm:text-[18px] leading-[1.6] mb-8 space-y-4"
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.8, ease: "easeOut", delay: 0.8 }}
@@ -334,7 +334,7 @@ export const MainContentSection = (): JSX.Element => {
 
                 {/* Learn More Button */}
                 <motion.div 
-                  className="flex justify-center lg:justify-start mt-0 mb-20"
+                  className="flex justify-center lg:justify-start"
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, ease: "easeOut", delay: 1.0 }}
