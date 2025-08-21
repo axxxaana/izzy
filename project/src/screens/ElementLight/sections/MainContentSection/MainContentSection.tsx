@@ -266,7 +266,7 @@ export const MainContentSection = (): JSX.Element => {
           {/* I'm Izzy Section */}
           <div 
             ref={elementRef}
-            className={`w-full max-w-[1200px] h-auto min-h-[500px] mt-8 sm:mt-12 lg:mt-40 py-12 lg:py-16 mx-auto relative flex items-center transition-all duration-1200 ease-[cubic-bezier(0.25,0.46,0.45,0.94)] rounded-[25px] bg-[#F8F9FA] shadow-lg ${
+            className={`w-full max-w-[1200px] h-auto min-h-[500px] mt-8 sm:mt-12 lg:mt-40 pt-12 mx-auto relative flex items-end transition-all duration-1200 ease-[cubic-bezier(0.25,0.46,0.45,0.94)] rounded-[25px] bg-[#F8F9FA] shadow-lg ${
               isVisible 
                 ? 'opacity-100 translate-y-0 scale-100 blur-0' 
                 : 'opacity-0 translate-y-12 scale-95 blur-sm'
@@ -293,7 +293,7 @@ export const MainContentSection = (): JSX.Element => {
 
               {/* Right: Text Content */}
               <motion.div 
-                className="w-full lg:w-1/2 flex flex-col items-center lg:items-start text-center lg:text-left justify-center"
+                className="w-full lg:w-1/2 flex flex-col items-center lg:items-start text-center lg:text-left justify-center mb-10"
                 initial={{ opacity: 0, x: 30 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.8, ease: "easeOut", delay: 0.4 }}
