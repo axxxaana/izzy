@@ -8,26 +8,26 @@ import { FooterSection } from '../screens/ElementLight/sections/FooterSection';
 const resources = [
   {
     id: 'brand-strategy-framework',
-    title: 'Brand Strategy Framework',
-    description: 'A comprehensive framework to help you define your brand strategy, positioning, and messaging. Perfect for founders and marketing teams.',
-    image: '/GoFounder Cover.png',
+    title: 'Messaging Gaps Costing You Leads',
+    description: 'Identify and fix messaging gaps costing you customers. Learn how to craft compelling messages that convert prospects into leads.',
+    image: '/resource-1.png',
     category: 'Strategy',
     downloadUrl: '/resources/brand-strategy-framework'
   },
   {
     id: 'content-calendar',
-    title: 'Content Calendar Template',
-    description: 'A 90-day content calendar template with strategic prompts and posting guidelines to keep your content consistent and engaging.',
-    image: '/GoFounder Cover.png',
-    category: 'Marketing',
+    title: 'Build Your LinkedIn Personal Brand',
+    description: 'A complete guide to building a powerful personal brand on LinkedIn. Learn the strategies and tactics that top founders use to grow their influence.',
+    image: '/resource-2.png',
+    category: 'Personal Branding',
     downloadUrl: '/resources/content-calendar'
   },
   {
     id: 'founder-brand-audit',
-    title: 'Founder Brand Audit',
-    description: 'A step-by-step audit to evaluate your current brand positioning and identify opportunities for improvement and growth.',
-    image: '/GoFounder Cover.png',
-    category: 'Assessment',
+    title: 'The Hook Framework',
+    description: 'Master the art of creating irresistible hooks that capture attention and drive engagement. Learn the proven framework used by top content creators and marketers to grow their audience.',
+    image: '/resource-3.png',
+    category: 'Content Strategy',
     downloadUrl: '/resources/founder-brand-audit'
   }
 ];
@@ -71,7 +71,7 @@ const ResourcesHero: React.FC = () => {
               </motion.span>
 
               <motion.h1
-                className="max-w-4xl mx-auto text-[36px] md:text-[56px] lg:text-[64px] font-bold text-center mb-6 leading-[1.1]"
+                className="max-w-2xl mx-auto text-[36px] md:text-[56px] lg:text-[64px] font-bold text-center mb-6 leading-[1.1]"
                 style={{ color: '#0f0f10', fontFamily: 'Montserrat, Helvetica', letterSpacing: '-1.5px' }}
                 initial={{ opacity: 0, y: 40 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -128,11 +128,6 @@ const ResourceCard: React.FC<{ resource: typeof resources[0]; index: number }> =
 
         {/* Content */}
         <div className="p-6">
-          {/* Category Tag */}
-          <span className="inline-block mb-4 px-3 py-1 bg-pink-100 text-pink-600 text-sm font-semibold uppercase tracking-wide" style={{ borderRadius: '0.84rem' }}>
-            {resource.category}
-          </span>
-
           {/* Title */}
           <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-pink-600 transition-colors duration-300">
             {resource.title}
@@ -165,7 +160,7 @@ export const ResourcesPage: React.FC = () => {
         <ResourcesHero />
         
         {/* Resources Grid */}
-        <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20 lg:py-24">
+        <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20 lg:py-32">
           <motion.div
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -173,11 +168,11 @@ export const ResourcesPage: React.FC = () => {
             viewport={{ once: true, margin: "-100px" }}
             className="text-center mb-12 sm:mb-16"
           >
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-4 max-w-lg mx-auto">
               Free Resources
             </h2>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              Download these free resources to help you build a stronger brand and grow your business.
+            <p className="text-lg text-gray-600 max-w-xl mx-auto">
+              Download these free resources to help you build a stronger brand.
             </p>
           </motion.div>
 

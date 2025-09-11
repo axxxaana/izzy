@@ -8,12 +8,12 @@ import { Link, useParams, useNavigate } from 'react-router-dom';
 const resources = [
   {
     id: 1,
-    title: 'Brand Strategy Framework',
-    subtitle: 'Complete Guide',
-    description: 'A comprehensive framework to help you define your brand strategy, positioning, and messaging. Perfect for founders and marketing teams.',
-    longDescription: 'This comprehensive brand strategy framework is designed specifically for founders and marketing teams who want to build a strong, differentiated brand. Inside you\'ll find step-by-step guidance on defining your brand purpose, identifying your target audience, crafting your unique value proposition, and developing a cohesive messaging strategy that resonates with your customers.',
-    tags: ['Strategy', 'Positioning', 'Messaging'],
-    image: '/GoFounder Cover.png',
+    title: 'Messaging Gaps Costing You Leads',
+    subtitle: 'Lead Generation Guide',
+    description: 'Identify and fix messaging gaps costing you customers. Learn how to craft compelling messages that convert prospects into leads.',
+    longDescription: 'Are you losing potential customers because your messaging isn\'t hitting the mark? This comprehensive guide reveals the most common messaging gaps that cost founders and businesses valuable leads. Learn practical strategies to identify weak spots and craft compelling value propositions that convert prospects into paying customers.',
+    tags: ['Messaging', 'Lead Generation', 'Conversion'],
+    image: '/resource-1.png',
     downloadUrl: '/resources/brand-strategy-framework',
     category: 'Strategy',
     fileSize: '2.3 MB',
@@ -22,31 +22,31 @@ const resources = [
   },
   {
     id: 2,
-    title: 'Content Calendar Template',
-    subtitle: 'Marketing Tool',
-    description: 'A 90-day content calendar template with strategic prompts and posting guidelines to keep your content consistent and engaging.',
-    longDescription: 'A 90-day content calendar template with strategic prompts and posting guidelines to keep your content consistent and engaging.',
-    tags: ['Content', 'Social Media', 'Planning'],
-    image: '/GoFounder Cover.png',
+    title: 'Build Your LinkedIn Personal Brand',
+    subtitle: 'Personal Branding Guide',
+    description: 'A complete guide to building a powerful personal brand on LinkedIn. Learn the strategies and tactics that top founders use to grow their influence.',
+    longDescription: 'Transform your LinkedIn presence into a powerful personal brand that attracts opportunities and drives business growth. Learn the exact strategies used by successful founders to build authority, craft compelling profiles, and position yourself as a thought leader in your industry.',
+    tags: ['LinkedIn', 'Personal Branding', 'Thought Leadership'],
+    image: '/resource-2.png',
     downloadUrl: '/resources/content-calendar',
-    category: 'Marketing',
+    category: 'Personal Branding',
     fileSize: '1.8 MB',
-    format: 'Excel/PDF',
-    pages: '12 pages'
+    format: 'PDF',
+    pages: '18 pages'
   },
   {
     id: 3,
-    title: 'Founder Brand Audit',
-    subtitle: 'Assessment Tool',
-    description: 'A step-by-step audit to evaluate your current brand positioning and identify opportunities for improvement and growth.',
-    longDescription: 'Take an honest look at your current brand positioning with this comprehensive audit tool. Designed specifically for founders, this assessment will help you identify gaps in your brand strategy, uncover opportunities for improvement, and create a roadmap for building a stronger, more authentic brand that connects with your audience.',
-    tags: ['Audit', 'Assessment', 'Growth'],
-    image: '/GoFounder Cover.png',
+    title: 'The Hook Framework',
+    subtitle: 'Content Strategy Guide',
+    description: 'Master the art of creating irresistible hooks that capture attention and drive engagement. Learn the proven framework used by top content creators and marketers to grow their audience.',
+    longDescription: 'Stop creating content that gets ignored. The Hook Framework reveals the psychology behind what makes people stop scrolling and pay attention. Learn how to craft compelling hooks that grab attention in the first 3 seconds, increase engagement rates, and turn casual scrollers into engaged followers.',
+    tags: ['Content Creation', 'Engagement', 'Psychology'],
+    image: '/resource-3.png',
     downloadUrl: '/resources/founder-brand-audit',
-    category: 'Assessment',
+    category: 'Content Strategy',
     fileSize: '3.1 MB',
     format: 'PDF',
-    pages: '18 pages'
+    pages: '22 pages'
   },
 ];
 
@@ -100,68 +100,42 @@ export const ResourceDetailPage: React.FC = () => {
   return (
     <Layout>
       <div className="w-full bg-white min-h-screen">
-        {/* Hero Section */}
-        <section className="w-full pt-44 pb-20 px-4 md:px-8 lg:px-12 bg-gradient-to-br from-pink-50 to-purple-50">
-          <div className="max-w-4xl mx-auto">
+        {/* Main Content Section */}
+        <section className="w-full pt-40 pb-24 px-4 md:px-8 lg:px-12 bg-white">
+          <div className="max-w-6xl mx-auto">
+            {/* Image Section */}
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
               className="mb-12"
             >
-              <div className="text-center">
-                <span className="inline-block mb-6 px-6 py-2 bg-pink-100 text-pink-600 text-lg font-bold uppercase" style={{ borderRadius: '0.84rem' }}>
-                  {resource.category}
-                </span>
-
-                <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6 font-['Montserrat']">
-                  {resource.title}
-                </h1>
-
-                <p className="text-xl text-gray-600 max-w-2xl mx-auto font-['Inter']">
-                  {resource.description}
-                </p>
+              <div className="max-w-3xl mx-auto">
+                <div className="rounded-3xl overflow-hidden shadow-2xl">
+                  <img
+                    src={resource.image}
+                    alt={resource.title}
+                    className="w-full h-64 lg:h-80 object-cover"
+                  />
+                </div>
               </div>
             </motion.div>
 
-            {/* Resource Details */}
+            {/* Content and Download Section */}
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12"
+              className="grid grid-cols-1 lg:grid-cols-2 gap-12"
             >
-              {/* Left Column - Image */}
-              <div className="relative">
-                <div className="rounded-2xl overflow-hidden shadow-lg">
-                  <img
-                    src={resource.image}
-                    alt={resource.title}
-                    className="w-full h-64 object-cover"
-                  />
-                </div>
-              </div>
-
-              {/* Right Column - Details */}
-              <div className="space-y-6">
-                <div>
-                  <h3 className="text-2xl font-bold text-gray-900 mb-4 font-['Montserrat']">
-                    What's Inside
-                  </h3>
-                  <p className="text-gray-600 leading-relaxed font-['Inter']">
-                    {resource.longDescription}
-                  </p>
-                </div>
-              </div>
-            </motion.div>
-
-            {/* Download Form */}
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.4 }}
-              className="bg-white rounded-2xl p-8 shadow-lg border border-gray-200"
-            >
+              {/* Left Column - Download Form */}
+              <div className="flex flex-col justify-center">
+                <motion.div
+                  initial={{ opacity: 0, y: 30 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: 0.4 }}
+                  className="bg-gradient-to-r from-pink-50 to-purple-50 rounded-3xl p-10 shadow-xl border border-pink-100"
+                >
               {!isDownloaded ? (
                 <div className="text-center">
                   <h3 className="text-2xl font-bold text-gray-900 mb-4 font-['Montserrat']">
@@ -226,6 +200,18 @@ export const ResourceDetailPage: React.FC = () => {
                   </div>
                 </div>
               )}
+                </motion.div>
+              </div>
+
+              {/* Right Column - What's Inside */}
+              <div className="flex flex-col justify-center space-y-6">
+                <h3 className="text-3xl font-bold text-gray-900 mb-1 font-['Montserrat']">
+                  What's Inside
+                </h3>
+                <p className="text-lg text-gray-600 leading-relaxed font-['Inter']">
+                  {resource.longDescription}
+                </p>
+              </div>
             </motion.div>
           </div>
         </section>
