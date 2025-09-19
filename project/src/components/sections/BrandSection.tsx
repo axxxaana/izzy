@@ -233,7 +233,7 @@ export const ImageArchSection: React.FC = () => {
             transition={{ duration: 0.6, ease: "easeOut" }}
           >
             <h2 className="[font-family:'Anton',Helvetica] font-semibold text-black text-[40px] text-center bg-gradient-to-r from-gray-900 to-gray-700 bg-clip-text text-transparent mb-0 leading-tight sm:leading-normal">
-              Trusted by the best
+              Trusted By The Best
             </h2>
           </motion.div>
 

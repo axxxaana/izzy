@@ -24,20 +24,16 @@ export const FounderBrandStrategyPage: React.FC = () => {
             transition={{ duration: 0.8, ease: "easeOut" }}
           >
             <div className="relative h-full">
-              {/* Simple Animated Background */}
+              {/* Simple Static Background */}
               <div 
                 className="absolute w-full h-full top-0 left-0 rounded-[15px] sm:rounded-[18px] lg:rounded-[22.5px] overflow-hidden"
-                style={{
-                  background: 'linear-gradient(45deg, rgba(228, 71, 130, 0.8), rgba(228, 71, 130, 0.2), rgba(228, 71, 130, 0.8))',
-                  backgroundSize: '300% 300%',
-                  animation: 'gradient-shift 8s ease-in-out infinite',
-                }}
+                style={{ background: '#F8F9FA' }}
               />
               {/* Hero Content - Enhanced with animations */}
               <div className="absolute w-full h-full flex flex-col items-center justify-center px-4 pt-32 pb-32" style={{ paddingTop: 'calc(8rem + 50px)' }}>
                 <motion.span 
                   className="inline-block mb-8 px-6 py-3 rounded-lg bg-white/10 backdrop-blur-sm border border-pink-400/30 text-pink-600 text-base font-semibold uppercase tracking-wide" 
-                  style={{ fontFamily: 'Inter, Helvetica' }}
+                  style={{ fontFamily: 'Montserrat, Helvetica, Arial, sans-serif' }}
                   initial={{ opacity: 0, y: 30 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: 0.4 }}
@@ -46,7 +42,7 @@ export const FounderBrandStrategyPage: React.FC = () => {
                 </motion.span>
                 
                 <motion.h1 
-                  className="max-w-4xl mx-auto text-[36px] md:text-[56px] lg:text-[64px] font-bold text-center mb-6 leading-[1.1]" 
+                  className="max-w-4xl mx-auto text-[36px] md:text-[56px] lg:text-[64px] font-bold text-center mb-6 leading-[1.25]" 
                   style={{ color: '#0f0f10', fontFamily: 'Anton, Helvetica', letterSpacing: '1.2px' }}
                   initial={{ opacity: 0, y: 40 }}
                   animate={{ opacity: 1, y: 0 }}

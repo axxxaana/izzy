@@ -388,7 +388,7 @@ export const MainContentSection = (): JSX.Element => {
                   transition={{ duration: 0.6, ease: "easeOut", delay: 0.4 }}
                   viewport={{ once: true, margin: "-100px" }}
                 >
-                  Fractional marketing<br />&amp; brand direction
+                  Fractional Marketing<br />&amp; Brand Direction
                 </motion.h3>
                 <motion.p 
                   className="[font-family:'Inter',Helvetica] font-normal text-gray-700 text-[14px] sm:text-[15px] md:text-[15.9px] tracking-[0] leading-[1.5] sm:leading-[1.6] lg:leading-[25.2px] pb-6"

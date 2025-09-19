@@ -1,4 +1,5 @@
-@import url('https://fonts.googleapis.com/css?family=Inter:500,400|Plus+Jakarta+Sans:400,600|Anton:400');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Inter:wght@400;500&family=Plus+Jakarta+Sans:wght@400;600&family=Anton:wght@400&display=swap');
+@import './tokens.css';
 
 /* Global Styles */
 * {
@@ -102,9 +103,18 @@ body {
 }
 
 /* Global heading tracking bump */
-h1, h2, h3, h4, h5, h6 {
-  letter-spacing: 0.05em !important;
-}
+h1 { letter-spacing: var(--tracking-h1) !important; font-family: var(--font-heading); }
+h2 { letter-spacing: var(--tracking-h2) !important; font-family: var(--font-heading); }
+h3 { letter-spacing: var(--tracking-h3) !important; font-family: var(--font-heading); }
+h4 { letter-spacing: var(--tracking-h4) !important; font-family: var(--font-heading); }
+h5 { letter-spacing: var(--tracking-h5) !important; font-family: var(--font-heading); }
+h6 { letter-spacing: var(--tracking-h6) !important; font-family: var(--font-heading); }
+
+/* Utilities */
+.u-heading-anton { font-family: var(--font-heading) !important; }
+.u-btn { letter-spacing: var(--tracking-btn) !important; font-family: var(--font-heading); border-radius: var(--radius-lg); box-shadow: var(--shadow-btn); }
+.u-btn--primary { background: var(--color-primary); color: var(--color-primary-contrast); border: 2px solid var(--color-primary); }
+.u-btn--primary:hover { background: var(--color-primary-contrast); color: var(--color-primary); }
 
 /* Marquee scroll animation */
 @keyframes scroll {
@@ -151,6 +161,16 @@ div.navigation-container div.nav-items button.nav-item:visited {
   letter-spacing: 0.8px !important;
   color: #000000 !important;
   font-family: 'Anton', Helvetica, sans-serif !important;
+}
+
+/* Hide 3rd-party floating chat/icon if injected */
+.bpfabicon,
+.bpFabIcon,
+.bpFab {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
 }
 
 /* Floating animations for process images */

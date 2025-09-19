@@ -7,28 +7,28 @@ import { FooterSection } from '../screens/ElementLight/sections/FooterSection';
 // Resource data
 const resources = [
   {
-    id: 'brand-strategy-framework',
+    id: '7-messaging-gaps',
     title: 'Messaging Gaps Costing You Leads',
     description: 'Identify and fix messaging gaps costing you customers. Learn how to craft compelling messages that convert prospects into leads.',
     image: '/resource-1.png',
     category: 'Strategy',
-    downloadUrl: '/resources/brand-strategy-framework'
+    downloadUrl: '/resources/7-messaging-gaps'
   },
   {
-    id: 'content-calendar',
+    id: 'daca-method',
     title: 'Build Your LinkedIn Personal Brand',
     description: 'A complete guide to building a powerful personal brand on LinkedIn. Learn the strategies and tactics that top founders use to grow their influence.',
     image: '/resource-2.png',
     category: 'Personal Branding',
-    downloadUrl: '/resources/content-calendar'
+    downloadUrl: '/resources/daca-method'
   },
   {
-    id: 'founder-brand-audit',
+    id: 'hook-framework',
     title: 'The Hook Framework',
     description: 'Master the art of creating irresistible hooks that capture attention and drive engagement. Learn the proven framework used by top content creators and marketers to grow their audience.',
     image: '/resource-3.png',
     category: 'Content Strategy',
-    downloadUrl: '/resources/founder-brand-audit'
+    downloadUrl: '/resources/hook-framework'
   }
 ];
 

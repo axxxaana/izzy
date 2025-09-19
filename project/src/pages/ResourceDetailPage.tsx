@@ -14,7 +14,7 @@ const resources = [
     longDescription: 'Are you losing potential customers because your messaging isn\'t hitting the mark? This comprehensive guide reveals the most common messaging gaps that cost founders and businesses valuable leads. Learn practical strategies to identify weak spots and craft compelling value propositions that convert prospects into paying customers.',
     tags: ['Messaging', 'Lead Generation', 'Conversion'],
     image: '/resource-1.png',
-    downloadUrl: '/resources/brand-strategy-framework',
+    downloadUrl: '/resources/7-messaging-gaps',
     category: 'Strategy',
     fileSize: '2.3 MB',
     format: 'PDF',
@@ -28,7 +28,7 @@ const resources = [
     longDescription: 'Transform your LinkedIn presence into a powerful personal brand that attracts opportunities and drives business growth. Learn the exact strategies used by successful founders to build authority, craft compelling profiles, and position yourself as a thought leader in your industry.',
     tags: ['LinkedIn', 'Personal Branding', 'Thought Leadership'],
     image: '/resource-2.png',
-    downloadUrl: '/resources/content-calendar',
+    downloadUrl: '/resources/daca-method',
     category: 'Personal Branding',
     fileSize: '1.8 MB',
     format: 'PDF',
@@ -42,7 +42,7 @@ const resources = [
     longDescription: 'Stop creating content that gets ignored. The Hook Framework reveals the psychology behind what makes people stop scrolling and pay attention. Learn how to craft compelling hooks that grab attention in the first 3 seconds, increase engagement rates, and turn casual scrollers into engaged followers.',
     tags: ['Content Creation', 'Engagement', 'Psychology'],
     image: '/resource-3.png',
-    downloadUrl: '/resources/founder-brand-audit',
+    downloadUrl: '/resources/hook-framework',
     category: 'Content Strategy',
     fileSize: '3.1 MB',
     format: 'PDF',
@@ -87,14 +87,19 @@ export const ResourceDetailPage: React.FC = () => {
     
     // Simulate API call
     await new Promise(resolve => setTimeout(resolve, 1000));
-    
+    // Trigger file download for the selected resource
+    const link = document.createElement('a');
+    let pdfPath = '/7-Messaging-Gaps.pdf';
+    if (resource.downloadUrl.endsWith('hook-framework')) pdfPath = '/LinkedIn-Hook-Framework.pdf';
+    if (resource.downloadUrl.endsWith('daca-method')) pdfPath = '/DACA-Method.pdf';
+    link.href = pdfPath;
+    link.download = pdfPath.replace('/', '');
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+
     setIsDownloaded(true);
     setIsSubmitting(false);
-    
-    // In a real implementation, you would:
-    // 1. Send email to your backend
-    // 2. Trigger download
-    // 3. Track the download
   };
 
   return (

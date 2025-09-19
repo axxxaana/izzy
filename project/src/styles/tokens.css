@@ -1,0 +1,24 @@
+:root {
+  /* Brand colors */
+  --color-primary: #e44782;
+  --color-primary-contrast: #ffffff;
+  --color-text: #0f0f10;
+
+  /* Typography */
+  --font-heading: 'Anton', Helvetica, sans-serif;
+  --font-body: 'Inter', Helvetica, sans-serif;
+
+  /* Letter spacing tokens */
+  --tracking-h1: 1.8px;
+  --tracking-h2: 1.4px;
+  --tracking-h3: 1.2px;
+  --tracking-h4: 1.0px;
+  --tracking-h5: 0.8px;
+  --tracking-h6: 0.7px;
+  --tracking-btn: 1.2px;
+
+  /* Radii & shadows */
+  --radius-lg: 0.84rem;
+  --shadow-btn: 0px 1px 1px -0.5px rgba(0,0,0,0.03), 0px 2px 2px -1px rgba(0,0,0,0.03), 0px 3px 3px -1.5px rgba(0,0,0,0.03), 0px 5px 5px -2.5px rgba(0,0,0,0.03), 0px 10px 10px -5px rgba(0,0,0,0.03), 0px 16px 16px -8px rgba(0,0,0,0.03);
+}
+
