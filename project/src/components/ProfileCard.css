@@ -61,8 +61,8 @@
 }
 
 .pc-card {
-  height: 72svh;
-  max-height: 486px;
+  height: 66svh;
+  max-height: 450px;
   display: grid;
   aspect-ratio: 0.718;
   border-radius: var(--card-radius);
@@ -347,8 +347,8 @@
 
 @media (max-width: 768px) {
   .pc-card {
-    height: 63svh;
-    max-height: 405px;
+    height: 58svh;
+    max-height: 375px;
   }
 
   .pc-details {
@@ -395,8 +395,8 @@
 
 @media (max-width: 480px) {
   .pc-card {
-    height: 54svh;
-    max-height: 342px;
+    height: 50svh;
+    max-height: 320px;
   }
 
   .pc-details {
@@ -446,8 +446,8 @@
 
 @media (max-width: 320px) {
   .pc-card {
-    height: 49.5svh;
-    max-height: 288px;
+    height: 46svh;
+    max-height: 270px;
   }
 
   .pc-details h3 {

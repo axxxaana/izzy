@@ -37,10 +37,10 @@ export const AboutHeroSection: React.FC = () => {
 
   return (
     <div className="w-full relative mb-0">
-      <div className="w-full h-auto min-h-[700px] sm:h-[750px] lg:h-[800px] relative p-3 sm:p-4 lg:p-[15px]">
-        <div className="relative w-full h-auto min-h-[670px] sm:h-[720px] lg:h-[770px] mx-auto rounded-[15px] sm:rounded-[18px] lg:rounded-[22.5px] overflow-hidden">
-          {/* Background with opacity */}
-          <div className="absolute inset-0 bg-[#e44782] opacity-20"></div>
+      <div className="w-full p-3 sm:p-4 lg:p-[15px]" style={{ height: '700px', position: 'relative', overflow: 'hidden' }}>
+        <div className="relative w-full h-[670px] mx-auto rounded-[15px] sm:rounded-[18px] lg:rounded-[22.5px] overflow-hidden">
+          {/* Static Background */}
+          <div className="absolute inset-0" style={{ background: '#FCEEF3' }}></div>
           
           {/* Content */}
           <div className="relative h-full flex flex-col lg:flex-row items-center z-10 max-w-[1400px] mx-auto">
@@ -60,10 +60,10 @@ export const AboutHeroSection: React.FC = () => {
               >
                 {/* Main Heading */}
                 <motion.h1 
-                  className="text-[28px] sm:text-[36px] md:text-[48px] lg:text-[64px] font-bold text-black leading-tight mb-4 sm:mb-6 font-['Anton'] text-center lg:text-left"
+                  className="text-[28px] sm:text-[36px] md:text-[48px] lg:text-[64px] font-bold text-black leading-[1.25] mb-4 sm:mb-6 font-['Anton'] text-center lg:text-left"
                   style={{ 
                     display: 'block',
-                    lineHeight: '1.1'
+                    lineHeight: '1.25'
                   }}
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}

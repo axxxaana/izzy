@@ -2,6 +2,7 @@ import React, { useRef } from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { Layout } from '../components/layout';
+import { TrustedByBanner } from '../components/TrustedByBanner';
 import { FooterSection } from '../screens/ElementLight/sections/FooterSection';
 
 // Resource data
@@ -41,37 +42,24 @@ const RESOURCES_HERO_SUBHEADLINE = "Downloadable guides, templates, and framewor
 const ResourcesHero: React.FC = () => {
   return (
     <div className="w-full relative mb-0">
-      <div className="w-full p-3 sm:p-4 lg:p-[15px]" style={{ height: '800px', position: 'relative', overflow: 'hidden' }}>
+      <div className="w-full p-3 sm:p-4 lg:p-[15px]" style={{ height: '700px', position: 'relative', overflow: 'hidden' }}>
         <motion.div 
-          className="relative w-full h-[770px] mx-auto rounded-[15px] sm:rounded-[18px] lg:rounded-[22.5px] overflow-hidden"
+          className="relative w-full h-[670px] mx-auto rounded-[15px] sm:rounded-[18px] lg:rounded-[22.5px] overflow-hidden"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
         >
           <div className="relative h-full">
-            {/* Simple Animated Background */}
+            {/* Static Background to match portfolio */}
             <div 
               className="absolute w-full h-full top-0 left-0 rounded-[15px] sm:rounded-[18px] lg:rounded-[22.5px] overflow-hidden"
-              style={{
-                background: 'linear-gradient(45deg, rgba(228, 71, 130, 0.8), rgba(228, 71, 130, 0.2), rgba(228, 71, 130, 0.8))',
-                backgroundSize: '300% 300%',
-                animation: 'gradient-shift 8s ease-in-out infinite',
-              }}
+              style={{ background: '#FCEEF3' }}
             />
             {/* Hero Content */}
-            <div className="absolute w-full h-full flex flex-col items-center justify-center px-4 pt-40 pb-32">
-              <motion.span
-                className="inline-block mb-8 px-6 py-3 rounded-lg bg-white/10 backdrop-blur-sm border border-pink-400/30 text-pink-600 text-base font-semibold uppercase tracking-wide"
-                style={{ fontFamily: 'Inter, Helvetica' }}
-                initial={{ opacity: 0, y: 30 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.4 }}
-              >
-                {RESOURCES_HERO_TAG}
-              </motion.span>
+            <div className="absolute w-full h-full flex flex-col items-center justify-center px-4 pt-40 pb-32" style={{ paddingTop: 'calc(8rem + 80px)' }}>
 
               <motion.h1
-                className="max-w-2xl mx-auto text-[36px] md:text-[56px] lg:text-[64px] font-bold text-center mb-6 leading-[1.1]"
+                className="max-w-2xl mx-auto text-[36px] md:text-[56px] lg:text-[64px] font-bold text-center mb-6 leading-[1.25]"
                 style={{ color: '#0f0f10', fontFamily: 'Anton, Helvetica', letterSpacing: '1.2px' }}
                 initial={{ opacity: 0, y: 40 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -89,6 +77,20 @@ const ResourcesHero: React.FC = () => {
               >
                 {RESOURCES_HERO_SUBHEADLINE}
               </motion.p>
+
+              {/* CTA Button (match portfolio/services) */}
+              <motion.button 
+                onClick={(e: React.MouseEvent) => e.preventDefault()}
+                className="mt-8 px-8 py-4 rounded-[0.84rem] bg-[#e44782] text-white text-xl font-semibold shadow-lg border-2 border-transparent hover:bg-white hover:text-[#e44782] hover:border-[#e44782] transition-all duration-200"
+                style={{ fontFamily: 'Anton, Helvetica' }}
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 1.0 }}
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.98 }}
+              >
+                Book a Call
+              </motion.button>
             </div>
           </div>
         </motion.div>
@@ -158,6 +160,9 @@ export const ResourcesPage: React.FC = () => {
       <div className="flex flex-col items-center w-full bg-white">
         {/* Hero Section */}
         <ResourcesHero />
+
+        {/* Logo Scroller (Trusted By) */}
+        <TrustedByBanner />
         
         {/* Resources Grid */}
         <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20 lg:py-32">
