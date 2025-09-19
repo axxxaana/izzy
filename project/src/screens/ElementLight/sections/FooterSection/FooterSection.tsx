@@ -28,7 +28,7 @@ export const FooterSection = (): JSX.Element => {
               viewport={{ once: true, margin: "-100px" }}
             >
               <motion.h2 
-                className="[font-family:'Montserrat',Helvetica] font-semibold text-white text-[48px] md:text-[64px] text-left tracking-[-1.2px] leading-[1.1] mb-2"
+                className="[font-family:'Anton',Helvetica] font-semibold text-white text-[48px] md:text-[64px] text-left tracking-[1.2px] leading-[1.1] mb-2"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, ease: "easeOut", delay: 0.4 }}
@@ -56,7 +56,7 @@ export const FooterSection = (): JSX.Element => {
               >
                 <Link 
                   to="/get-started"
-                  className="inline-block bg-white text-[#e44782] border-2 border-[#e44782] rounded-[0.84rem] px-5 py-3 text-[20px] font-['Montserrat'] font-medium transition-all duration-300 ease-out shadow-[0_8px_25px_rgba(228,71,130,0.3)] hover:bg-[#e44782] hover:text-white hover:border-white cursor-pointer no-underline box-border"
+                  className="inline-block bg-white text-[#e44782] border-2 border-[#e44782] rounded-[0.84rem] px-5 py-3 text-[20px] font-['Anton'] font-medium transition-all duration-300 ease-out shadow-[0_8px_25px_rgba(228,71,130,0.3)] hover:bg-[#e44782] hover:text-white hover:border-white cursor-pointer no-underline box-border tracking-[1.2px]"
                 >
                   Book a Call
                 </Link>
@@ -151,7 +151,7 @@ export const FooterSection = (): JSX.Element => {
               viewport={{ once: true, margin: "-100px" }}
             >
               <motion.h3 
-                className="[font-family:'Montserrat',Helvetica] font-semibold text-black text-base mb-4"
+                className="[font-family:'Anton',Helvetica] font-semibold text-black text-base mb-4"
                 initial={{ opacity: 0, y: 15 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, ease: "easeOut", delay: 0.3 }}
@@ -189,7 +189,7 @@ export const FooterSection = (): JSX.Element => {
               viewport={{ once: true, margin: "-100px" }}
             >
               <motion.h3 
-                className="[font-family:'Montserrat',Helvetica] font-semibold text-black text-base mb-4"
+                className="[font-family:'Anton',Helvetica] font-semibold text-black text-base mb-4"
                 initial={{ opacity: 0, y: 15 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, ease: "easeOut", delay: 0.4 }}
@@ -221,7 +221,7 @@ export const FooterSection = (): JSX.Element => {
               viewport={{ once: true, margin: "-100px" }}
             >
               <motion.h3 
-                className="[font-family:'Montserrat',Helvetica] font-semibold text-black text-base mb-4"
+                className="[font-family:'Anton',Helvetica] font-semibold text-black text-base mb-4"
                 initial={{ opacity: 0, y: 15 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, ease: "easeOut", delay: 0.5 }}

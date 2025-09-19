@@ -118,7 +118,7 @@ export const HowItWorksSectionFounder: React.FC = () => {
                     <span className="inline-block mb-4 px-6 py-2 text-[#e44782] text-base font-semibold shadow-sm bg-white uppercase tracking-wide border" style={{ fontFamily: 'Inter, Helvetica', borderRadius: '0.84rem', letterSpacing: '0.04em', borderColor: '#e44782', fontWeight: 600 }}>
                       {stage.tag}
                     </span>
-                    <h3 className="text-[34px] font-extrabold mb-4" style={{ color: '#0f0f10', fontFamily: 'Montserrat, Helvetica' }}>
+                    <h3 className="text-[34px] font-extrabold mb-4" style={{ color: '#0f0f10', fontFamily: 'Anton, Helvetica' }}>
                       {stage.heading}
                     </h3>
                     <p className="text-lg mb-6 max-w-lg opacity-80" style={{ fontFamily: 'Inter, Helvetica' }}>{stage.subtext}</p>
@@ -151,8 +151,7 @@ export const HowItWorksSectionFounder: React.FC = () => {
                                   <div>{row.content}</div>
                                   <Link 
                                     to="#"
-                                    className="text-[#e44782] font-semibold text-base hover:opacity-80 transition-all duration-200 mt-3 flex items-center gap-2"
-                                    style={{ fontFamily: 'Inter, Helvetica' }}
+                                    className="text-[#e44782] font-['Anton'] font-semibold text-base hover:opacity-80 transition-all duration-200 mt-3 flex items-center gap-2 tracking-[1.2px]"
                                   >
                                     Book a Call
                                     <svg width="16" height="16" fill="none" viewBox="0 0 16 16">
@@ -178,7 +177,7 @@ export const HowItWorksSectionFounder: React.FC = () => {
                     <span className="inline-block mb-4 px-6 py-2 text-[#e44782] text-base font-semibold shadow-sm bg-white uppercase tracking-wide border" style={{ fontFamily: 'Inter, Helvetica', borderRadius: '0.84rem', letterSpacing: '0.04em', borderColor: '#e44782', fontWeight: 600 }}>
                       {stage.tag}
                     </span>
-                    <h3 className="text-[34px] font-extrabold mb-4" style={{ color: '#0f0f10', fontFamily: 'Montserrat, Helvetica' }}>
+                    <h3 className="text-[34px] font-extrabold mb-4" style={{ color: '#0f0f10', fontFamily: 'Anton, Helvetica' }}>
                       {stage.heading}
                     </h3>
                     <p className="text-lg mb-6 max-w-lg opacity-80" style={{ fontFamily: 'Inter, Helvetica' }}>{stage.subtext}</p>
@@ -211,8 +210,7 @@ export const HowItWorksSectionFounder: React.FC = () => {
                                   <div>{row.content}</div>
                                   <Link 
                                     to="#"
-                                    className="text-[#e44782] font-semibold text-base hover:opacity-80 transition-all duration-200 mt-3 flex items-center gap-2"
-                                    style={{ fontFamily: 'Inter, Helvetica' }}
+                                    className="text-[#e44782] font-['Anton'] font-semibold text-base hover:opacity-80 transition-all duration-200 mt-3 flex items-center gap-2 tracking-[1.2px]"
                                   >
                                     Book a Call
                                     <svg width="16" height="16" fill="none" viewBox="0 0 16 16">
@@ -266,7 +264,7 @@ export const HowItWorksSectionFounder: React.FC = () => {
       >
         <motion.h2 
           className="text-4xl md:text-5xl font-extrabold text-center mb-4" 
-          style={{ color: '#0f0f10', fontFamily: 'Montserrat, Helvetica' }}
+          style={{ color: '#0f0f10', fontFamily: 'Anton, Helvetica' }}
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, ease: "easeOut", delay: 0.2 }}

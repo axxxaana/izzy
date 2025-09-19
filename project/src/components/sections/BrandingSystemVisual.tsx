@@ -57,7 +57,7 @@ export const BrandingSystemVisual: React.FC = () => {
   return (
     <div className="w-full flex flex-col items-center justify-center py-16" style={{ background: '#fff' }}>
       <div className="mb-8 text-center">
-        <h2 style={{ fontFamily: 'Montserrat, Helvetica', fontWeight: 800, fontSize: 34, color: '#18181B', letterSpacing: -1, marginBottom: 8, borderRadius: 12 }}>Branding as a System</h2>
+        <h2 style={{ fontFamily: 'Anton, Helvetica', fontWeight: 800, fontSize: 34, color: '#18181B', letterSpacing: 1.0, marginBottom: 8, borderRadius: 12 }}>Branding as a System</h2>
         <p style={{ fontFamily: 'Inter, Helvetica', fontSize: 18, color: '#444', maxWidth: 420, margin: '0 auto', borderRadius: 8 }}>
           Branding is the playful result of <span style={{ color: COLORS.strategy, fontWeight: 700 }}>Strategy</span>, <span style={{ color: COLORS.voice, fontWeight: 700 }}>Voice</span>, and <span style={{ color: COLORS.visibility, fontWeight: 700 }}>Visibility</span> — all deeply connected.
         </p>
@@ -102,10 +102,10 @@ export const BrandingSystemVisual: React.FC = () => {
               flexDirection: 'column',
               alignItems: 'center',
               justifyContent: 'center',
-              fontFamily: 'Montserrat, Helvetica',
+              fontFamily: 'Anton, Helvetica',
               fontWeight: 800,
               fontSize: 20,
-              letterSpacing: 0.5,
+              letterSpacing: 1.2,
               cursor: 'pointer',
               zIndex: 2,
               boxShadow: `0 2px 16px 0 ${LABELS[i].color}22`,
@@ -139,11 +139,11 @@ export const BrandingSystemVisual: React.FC = () => {
             alignItems: 'center',
             justifyContent: 'center',
             zIndex: 5,
-            fontFamily: 'Montserrat, Helvetica',
+            fontFamily: 'Anton, Helvetica',
             fontWeight: 900,
             fontSize: 19,
             color: '#fff',
-            letterSpacing: 1,
+            letterSpacing: 1.0,
             textTransform: 'uppercase',
             boxSizing: 'border-box',
             textAlign: 'center',

@@ -7,7 +7,7 @@ export const ServicesSection: React.FC = () => {
     <>
       {/* Services Intro Section */}
       <div className="w-full max-w-[1512px] mt-16 mx-auto flex flex-col items-center" style={{marginTop: '164px'}}>
-        <h2 className="[font-family:'Montserrat',Helvetica] font-semibold text-[#0f0f10] text-[50px] text-center tracking-[-0.51px] leading-[61.4px] mb-8">
+        <h2 className="[font-family:'Anton',Helvetica] font-semibold text-[#0f0f10] text-[50px] text-center tracking-[1.4px] leading-[61.4px] mb-8">
           Strategy. Voice. Visibility
         </h2>
 
@@ -32,7 +32,7 @@ export const ServicesSection: React.FC = () => {
 
           <div className="w-[480px] max-w-[480px] flex-shrink-0">
             <div className="mb-0">
-              <h3 className="[font-family:'Montserrat',Helvetica] font-medium text-black text-[40px] tracking-[-1.44px] leading-[55px] mb-2">
+              <h3 className="[font-family:'Anton',Helvetica] font-medium text-black text-[40px] tracking-[1.2px] leading-[55px] mb-2">
                 Founder personal <br />
                 brand strategy
               </h3>
@@ -85,7 +85,7 @@ export const ServicesSection: React.FC = () => {
         <div className="flex items-center justify-between gap-6">
           <div className="w-[480px] max-w-[480px] flex-shrink-0">
             <div className="mb-0">
-              <h3 className="[font-family:'Montserrat',Helvetica] font-medium text-black text-[40px] tracking-[-1.44px] leading-[55px] mb-2">
+              <h3 className="[font-family:'Anton',Helvetica] font-medium text-black text-[40px] tracking-[1.2px] leading-[55px] mb-2">
                 Fractional marketing <br />
                 &amp; brand direction
               </h3>

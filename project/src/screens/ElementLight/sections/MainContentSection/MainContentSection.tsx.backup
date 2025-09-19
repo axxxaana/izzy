@@ -276,14 +276,14 @@ export const MainContentSection = (): JSX.Element => {
             <div className={`flex flex-col items-center transition-all duration-1000 ease-out px-4 sm:px-6 lg:px-8 ${
               isAnimating ? 'animate-fade-in-up' : ''
             }`}>
-              <h2 className={`max-w-[800px] [font-family:'Montserrat',Helvetica] font-semibold text-[#0f0f10] text-[24px] sm:text-[32px] md:text-[40px] lg:text-[45px] text-center tracking-[-0.51px] leading-[1.2] sm:leading-[1.3] lg:leading-[56px] mb-6 sm:mb-8 transition-all duration-1000 ease-out ${
+              <h2 className={`max-w-[800px] [font-family:'Anton',Helvetica] font-semibold text-[#0f0f10] text-[24px] sm:text-[32px] md:text-[40px] lg:text-[45px] text-center tracking-[1.2px] leading-[1.2] sm:leading-[1.3] lg:leading-[56px] mb-6 sm:mb-8 transition-all duration-1000 ease-out ${
                 isAnimating ? 'animate-text-reveal' : 'opacity-0 translate-y-8 blur-sm'
               }`}>
                 I help femtech, healthtech, and mission-driven founders cut through bloated
                 messaging and build bold, heart-led brands that <span className="px-2 sm:px-3 pt-0 pb-1 rounded-lg relative bg-gradient-to-r from-[#e447824d] to-[#e4478203]">actually move people.</span>
               </h2>
               <div className="flex justify-center mt-4">
-                <Link to="/get-started" className="relative bg-[#e44782] text-white font-['Montserrat'] font-semibold text-[14px] sm:text-[16px] px-4 sm:px-5 py-2 sm:py-3 rounded-[0.84rem] border-2 border-[#e44782] overflow-hidden group hover:bg-white hover:text-[#e44782] transition-all duration-300 ease-out">
+                <Link to="/get-started" className="relative bg-[#e44782] text-white font-['Anton'] font-semibold text-[14px] sm:text-[16px] px-4 sm:px-5 py-2 sm:py-3 rounded-[0.84rem] border-2 border-[#e44782] overflow-hidden group hover:bg-white hover:text-[#e44782] transition-all duration-300 ease-out tracking-[1.2px]">
                   Book a Call
                 </Link>
               </div>
@@ -333,7 +333,7 @@ export const MainContentSection = (): JSX.Element => {
               >
                 <div className="mb-0 text-center lg:text-left">
                   <motion.h3 
-                    className="[font-family:'Montserrat',Helvetica] font-semibold text-black text-[28px] sm:text-[32px] md:text-[36px] lg:text-[40px] tracking-[-1.44px] leading-[1.2] sm:leading-[1.3] lg:leading-[50px] mb-2"
+                    className="[font-family:'Anton',Helvetica] font-semibold text-black text-[28px] sm:text-[32px] md:text-[36px] lg:text-[40px] tracking-[1.0px] leading-[1.2] sm:leading-[1.3] lg:leading-[50px] mb-2"
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.6, ease: "easeOut", delay: 0.2 }}
@@ -420,7 +420,7 @@ export const MainContentSection = (): JSX.Element => {
             >
               <div className="mb-0 text-center lg:text-left">
                 <motion.h3 
-                  className="[font-family:'Montserrat',Helvetica] font-semibold text-black text-[28px] sm:text-[32px] md:text-[36px] lg:text-[40px] tracking-[-1.44px] leading-[1.2] sm:leading-[1.3] lg:leading-[55px] mb-2"
+                  className="[font-family:'Anton',Helvetica] font-semibold text-black text-[28px] sm:text-[32px] md:text-[36px] lg:text-[40px] tracking-[1.0px] leading-[1.2] sm:leading-[1.3] lg:leading-[55px] mb-2"
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, ease: "easeOut", delay: 0.4 }}
@@ -494,7 +494,7 @@ export const MainContentSection = (): JSX.Element => {
                   viewport={{ once: true, margin: "-100px" }}
                 >
                   <div className="flex justify-center lg:justify-start">
-                    <Link to="/services/fractional-marketing" className="relative bg-[#e44782] text-white font-['Montserrat'] font-semibold text-[14px] sm:text-[16px] px-4 sm:px-5 py-2 sm:py-3 rounded-[0.84rem] border-2 border-[#e44782] overflow-hidden group hover:bg-white hover:text-[#e44782] transition-all duration-300 ease-out">
+                    <Link to="/services/fractional-marketing" className="relative bg-[#e44782] text-white font-['Anton'] font-semibold text-[14px] sm:text-[16px] px-4 sm:px-5 py-2 sm:py-3 rounded-[0.84rem] border-2 border-[#e44782] overflow-hidden group hover:bg-white hover:text-[#e44782] transition-all duration-300 ease-out tracking-[1.2px]">
                       Learn More
                     </Link>
                   </div>
@@ -562,7 +562,7 @@ export const MainContentSection = (): JSX.Element => {
             transition={{ duration: 0.6, ease: "easeOut", delay: 0.6 }}
             viewport={{ once: true, margin: "-100px" }}
           >
-            <Link to="/get-started" className="relative bg-[#e44782] text-white font-['Montserrat'] font-semibold text-[14px] sm:text-[16px] px-4 sm:px-5 py-2 sm:py-3 rounded-[0.84rem] border-2 border-[#e44782] overflow-hidden group hover:bg-white hover:text-[#e44782] transition-all duration-300 ease-out">
+            <Link to="/get-started" className="relative bg-[#e44782] text-white font-['Anton'] font-semibold text-[14px] sm:text-[16px] px-4 sm:px-5 py-2 sm:py-3 rounded-[0.84rem] border-2 border-[#e44782] overflow-hidden group hover:bg-white hover:text-[#e44782] transition-all duration-300 ease-out tracking-[1.2px]">
               Book a Call
             </Link>
           </motion.div>
@@ -581,7 +581,7 @@ export const MainContentSection = (): JSX.Element => {
                 {[...Array(8)].map((_, index) => (
                   <div key={index} className="flex items-center group relative">
                     <div
-                      className="[font-family:'Montserrat',Helvetica] font-black text-[40px] sm:text-[60px] md:text-[80px] lg:text-[100px] tracking-[-2px] sm:tracking-[-3px] lg:tracking-[-4px] leading-[1.1] sm:leading-[1.1] lg:leading-[110px]"
+                      className="[font-family:'Anton',Helvetica] font-black text-[40px] sm:text-[60px] md:text-[80px] lg:text-[100px] tracking-[1.5px] sm:tracking-[1.8px] lg:tracking-[2.0px] leading-[1.1] sm:leading-[1.1] lg:leading-[110px]"
                       style={{
                         backgroundImage: "url('/cut the fluff background.jpg')",
                         backgroundSize: "cover",

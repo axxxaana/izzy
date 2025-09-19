@@ -84,7 +84,7 @@ export const SimpleFooter = (): JSX.Element => {
             viewport={{ once: true, margin: "-100px" }}
           >
             <motion.h3 
-              className="[font-family:'Montserrat',Helvetica] font-semibold text-black text-base mb-4"
+              className="[font-family:'Anton',Helvetica] font-semibold text-black text-base mb-4"
               initial={{ opacity: 0, y: 15 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, ease: "easeOut", delay: 0.3 }}
@@ -122,7 +122,7 @@ export const SimpleFooter = (): JSX.Element => {
             viewport={{ once: true, margin: "-100px" }}
           >
             <motion.h3 
-              className="[font-family:'Montserrat',Helvetica] font-semibold text-black text-base mb-4"
+              className="[font-family:'Anton',Helvetica] font-semibold text-black text-base mb-4"
               initial={{ opacity: 0, y: 15 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, ease: "easeOut", delay: 0.4 }}
@@ -154,7 +154,7 @@ export const SimpleFooter = (): JSX.Element => {
             viewport={{ once: true, margin: "-100px" }}
           >
             <motion.h3 
-              className="[font-family:'Montserrat',Helvetica] font-semibold text-black text-base mb-4"
+              className="[font-family:'Anton',Helvetica] font-semibold text-black text-base mb-4"
               initial={{ opacity: 0, y: 15 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, ease: "easeOut", delay: 0.5 }}

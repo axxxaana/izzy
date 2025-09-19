@@ -83,7 +83,7 @@ export const IzzyProcessAccordion: React.FC = () => {
               </div>
               
               {/* Main Title */}
-              <h2 className="text-[36px] md:text-[48px] lg:text-[56px] font-bold text-gray-900 mb-6 font-['Montserrat'] tracking-tight leading-[1.1]">
+              <h2 className="text-[36px] md:text-[48px] lg:text-[56px] font-bold text-gray-900 mb-6 font-['Anton'] tracking-tight leading-[1.1]">
                 A Brand Process That Actually Works
               </h2>
               
@@ -101,7 +101,8 @@ export const IzzyProcessAccordion: React.FC = () => {
               >
                 <Link to="/get-started">
                   <motion.button 
-                    className="px-5 py-3 bg-[#e44782] text-white font-['Montserrat'] font-semibold text-base hover:bg-white hover:text-[#e44782] transition-all duration-300 border-2 border-[#e44782] rounded-[0.84rem]"
+                    className="px-5 py-3 bg-[#e44782] text-white font-['Anton'] font-semibold text-base hover:bg-white hover:text-[#e44782] transition-all duration-300 border-2 border-[#e44782] rounded-[0.84rem] tracking-[1.2px]"
+                    style={{ letterSpacing: '1.2px', fontFamily: "Anton, Helvetica, Arial, sans-serif" }}
                   >
                     Book a Call
                   </motion.button>
@@ -140,7 +141,7 @@ export const IzzyProcessAccordion: React.FC = () => {
                   
                   {/* Title */}
                   <h3 
-                    className="text-[28px] lg:text-[40px] font-bold font-['Montserrat'] leading-tight mb-16 lg:mb-24 relative z-10"
+                    className="text-[28px] lg:text-[40px] font-bold font-['Anton'] leading-tight mb-16 lg:mb-24 relative z-10"
                     style={{ color: step.textColor }}
                   >
                     {step.title}

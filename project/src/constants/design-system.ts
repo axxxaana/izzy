@@ -4,59 +4,59 @@
 export const TYPOGRAPHY = {
   // Font Families
   fonts: {
-    primary: "'Montserrat', Helvetica",
+    primary: "'Anton', Helvetica",
     secondary: "'Inter', Helvetica",
   },
   
   // Heading Sizes
   headings: {
     h1: {
-      fontFamily: "'Montserrat', Helvetica",
+      fontFamily: "'Anton', Helvetica",
       fontSize: "75px",
       fontWeight: "semibold",
-      tracking: "-1.2px",
+      tracking: "1.8px",
       leading: "1.1",
-      classes: "[font-family:'Montserrat',Helvetica] font-semibold text-[75px] tracking-[-1.2px] leading-[1.1]"
+      classes: "[font-family:'Anton',Helvetica] font-semibold text-[75px] tracking-[1.8px] leading-[1.1]"
     },
     h2: {
-      fontFamily: "'Montserrat', Helvetica",
+      fontFamily: "'Anton', Helvetica",
       fontSize: "50px",
       fontWeight: "semibold",
-      tracking: "-0.51px",
+      tracking: "1.4px",
       leading: "61.4px",
-      classes: "[font-family:'Montserrat',Helvetica] font-semibold text-[50px] tracking-[-0.51px] leading-[61.4px]"
+      classes: "[font-family:'Anton',Helvetica] font-semibold text-[50px] tracking-[1.4px] leading-[61.4px]"
     },
     h3: {
-      fontFamily: "'Montserrat', Helvetica",
+      fontFamily: "'Anton', Helvetica",
       fontSize: "40px",
       fontWeight: "semibold",
-      tracking: "-1.44px",
+      tracking: "1.2px",
       leading: "50px",
-      classes: "[font-family:'Montserrat',Helvetica] font-semibold text-[40px] tracking-[-1.44px] leading-[50px]"
+      classes: "[font-family:'Anton',Helvetica] font-semibold text-[40px] tracking-[1.2px] leading-[50px]"
     },
     h4: {
-      fontFamily: "'Montserrat', Helvetica",
+      fontFamily: "'Anton', Helvetica",
       fontSize: "28px",
       fontWeight: "medium",
-      tracking: "0",
+      tracking: "1.0px",
       leading: "32px",
-      classes: "[font-family:'Montserrat',Helvetica] font-medium text-[28px] tracking-[0] leading-[32px]"
+      classes: "[font-family:'Anton',Helvetica] font-medium text-[28px] tracking-[1.0px] leading-[32px]"
     },
     h5: {
-      fontFamily: "'Montserrat', Helvetica",
+      fontFamily: "'Anton', Helvetica",
       fontSize: "20px",
       fontWeight: "medium",
-      tracking: "0",
+      tracking: "0.8px",
       leading: "normal",
-      classes: "[font-family:'Montserrat',Helvetica] font-medium text-[20px]"
+      classes: "[font-family:'Anton',Helvetica] font-medium text-[20px] tracking-[0.8px]"
     },
     h6: {
-      fontFamily: "'Montserrat', Helvetica",
+      fontFamily: "'Anton', Helvetica",
       fontSize: "18px",
       fontWeight: "semibold",
-      tracking: "0",
+      tracking: "0.7px",
       leading: "normal",
-      classes: "[font-family:'Montserrat',Helvetica] font-semibold text-[18px]"
+      classes: "[font-family:'Anton',Helvetica] font-semibold text-[18px] tracking-[0.7px]"
     }
   },
   

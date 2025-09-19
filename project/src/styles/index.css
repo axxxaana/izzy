@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Inter:500,400|Plus+Jakarta+Sans:400,600|Montserrat:400,500,600,700');
+@import url('https://fonts.googleapis.com/css?family=Inter:500,400|Plus+Jakarta+Sans:400,600|Anton:400');
 
 /* Global Styles */
 * {
@@ -101,6 +101,11 @@ body {
   text-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
 }
 
+/* Global heading tracking bump */
+h1, h2, h3, h4, h5, h6 {
+  letter-spacing: 0.05em !important;
+}
+
 /* Marquee scroll animation */
 @keyframes scroll {
   0% {
@@ -113,6 +118,39 @@ body {
 
 .animate-scroll {
   animation: scroll 6s linear infinite;
+}
+
+/* Navigation font weight override - force to 200 */
+.nav-item,
+a.nav-item,
+.nav-item:link,
+.nav-item:visited {
+  font-weight: 200 !important;
+  letter-spacing: 0.8px !important;
+  color: #000000 !important;
+}
+
+/* Button letter spacing - all buttons */
+button,
+.btn,
+.get-started-btn,
+.mobile-get-started-btn,
+[class*="button"],
+[class*="btn"] {
+  letter-spacing: 0.6px !important;
+}
+
+/* Maximum specificity override for navigation */
+div.navigation-container div.nav-items a.nav-item,
+div.navigation-container div.nav-items button.nav-item,
+div.navigation-container div.nav-items a.nav-item:link,
+div.navigation-container div.nav-items a.nav-item:visited,
+div.navigation-container div.nav-items button.nav-item:link,
+div.navigation-container div.nav-items button.nav-item:visited {
+  font-weight: 200 !important;
+  letter-spacing: 0.8px !important;
+  color: #000000 !important;
+  font-family: 'Anton', Helvetica, sans-serif !important;
 }
 
 /* Floating animations for process images */

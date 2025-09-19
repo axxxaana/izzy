@@ -138,7 +138,7 @@ export const ResourceDetailPage: React.FC = () => {
                 >
               {!isDownloaded ? (
                 <div className="text-center">
-                  <h3 className="text-2xl font-bold text-gray-900 mb-4 font-['Montserrat']">
+                  <h3 className="text-2xl font-bold text-gray-900 mb-4 font-['Anton']">
                     Get Your Free Download
                   </h3>
                   <p className="text-gray-600 mb-6 font-['Inter']">
@@ -177,7 +177,7 @@ export const ResourceDetailPage: React.FC = () => {
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                     </svg>
                   </div>
-                  <h3 className="text-2xl font-bold text-gray-900 mb-4 font-['Montserrat']">
+                  <h3 className="text-2xl font-bold text-gray-900 mb-4 font-['Anton']">
                     Download Complete!
                   </h3>
                   <p className="text-gray-600 mb-6 font-['Inter']">
@@ -205,7 +205,7 @@ export const ResourceDetailPage: React.FC = () => {
 
               {/* Right Column - What's Inside */}
               <div className="flex flex-col justify-center space-y-6">
-                <h3 className="text-3xl font-bold text-gray-900 mb-1 font-['Montserrat']">
+                <h3 className="text-3xl font-bold text-gray-900 mb-1 font-['Anton']">
                   What's Inside
                 </h3>
                 <p className="text-lg text-gray-600 leading-relaxed font-['Inter']">

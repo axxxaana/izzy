@@ -25,7 +25,7 @@ export const PortfolioCaseStudiesPage: React.FC = () => {
     <div className="flex flex-col items-center w-full bg-white min-h-screen">
       <Navigation />
       <div className="w-full max-w-5xl mx-auto pt-32 pb-16 px-4">
-        <h1 className="text-4xl md:text-5xl font-extrabold mb-12 text-center" style={{ fontFamily: 'Montserrat, Helvetica' }}>
+        <h1 className="text-4xl md:text-5xl font-extrabold mb-12 text-center" style={{ fontFamily: 'Anton, Helvetica' }}>
           Portfolio Case Studies
         </h1>
         <ScrollStack>
@@ -33,7 +33,7 @@ export const PortfolioCaseStudiesPage: React.FC = () => {
             <ScrollStackItem key={cs.title}>
               <div className="flex flex-col md:flex-row items-center gap-8 w-full h-full">
                 <div className="flex-1 text-left">
-                  <h2 className="text-2xl md:text-3xl font-bold mb-4" style={{ fontFamily: 'Montserrat, Helvetica' }}>{cs.title}</h2>
+                  <h2 className="text-2xl md:text-3xl font-bold mb-4" style={{ fontFamily: 'Anton, Helvetica' }}>{cs.title}</h2>
                   <p className="text-lg text-gray-700 mb-4" style={{ fontFamily: 'Inter, Helvetica' }}>{cs.description}</p>
                 </div>
                 <div className="flex-1 flex justify-center items-center">

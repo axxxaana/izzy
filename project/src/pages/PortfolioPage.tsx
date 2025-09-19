@@ -81,7 +81,7 @@ const CounterBlocks: React.FC = () => {
         className="flex-1 text-center"
       >
         <motion.div 
-          className="text-4xl md:text-5xl lg:text-6xl font-bold text-pink-600 mb-3 font-['Montserrat']"
+          className="text-4xl md:text-5xl lg:text-6xl font-bold text-pink-600 mb-3 font-['Anton']"
           animate={hasAnimated ? { scale: [1, 1.05, 1] } : {}}
           transition={{ duration: 0.3, delay: 1.0 }}
         >
@@ -102,7 +102,7 @@ const CounterBlocks: React.FC = () => {
         className="flex-1 text-center"
       >
         <motion.div 
-          className="text-4xl md:text-5xl lg:text-6xl font-bold text-pink-600 mb-3 font-['Montserrat']"
+          className="text-4xl md:text-5xl lg:text-6xl font-bold text-pink-600 mb-3 font-['Anton']"
           animate={hasAnimated ? { scale: [1, 1.05, 1] } : {}}
           transition={{ duration: 0.3, delay: 1.2 }}
         >
@@ -123,7 +123,7 @@ const CounterBlocks: React.FC = () => {
         className="flex-1 text-center"
       >
         <motion.div 
-          className="text-4xl md:text-5xl lg:text-6xl font-bold text-pink-600 mb-3 font-['Montserrat']"
+          className="text-4xl md:text-5xl lg:text-6xl font-bold text-pink-600 mb-3 font-['Anton']"
           animate={hasAnimated ? { scale: [1, 1.05, 1] } : {}}
           transition={{ duration: 0.3, delay: 1.4 }}
         >
@@ -172,7 +172,7 @@ const PortfolioHero: React.FC = () => {
 
               <motion.h1
                 className="max-w-4xl mx-auto text-[36px] md:text-[56px] lg:text-[64px] font-bold text-center mb-6 leading-[1.1]"
-                style={{ color: '#0f0f10', fontFamily: 'Montserrat, Helvetica', letterSpacing: '-1.5px' }}
+                style={{ color: '#0f0f10', fontFamily: 'Anton, Helvetica', letterSpacing: '1.2px' }}
                 initial={{ opacity: 0, y: 40 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.6 }}
@@ -288,7 +288,7 @@ const PortfolioCard: React.FC<{ item: typeof portfolioItems[0]; index: number }>
               )}
               {/* Subtitle badge removed */}
 
-              <h2 className="text-3xl md:text-4xl font-bold text-[#e44782] mb-4 group-hover:text-pink-600 transition-colors duration-300 font-['Montserrat']">
+              <h2 className="text-3xl md:text-4xl font-bold text-[#e44782] mb-4 group-hover:text-pink-600 transition-colors duration-300 font-['Anton']">
                 {item.title}
               </h2>
 
@@ -378,7 +378,7 @@ export const PortfolioPage: React.FC = () => {
               viewport={{ once: true }}
               className="text-center mb-16"
             >
-              <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4 font-['Montserrat']">
+              <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4 font-['Anton']">
                 Featured Projects
               </h2>
               <p className="text-xl text-gray-600 max-w-2xl mx-auto font-['Inter']">

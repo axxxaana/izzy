@@ -10,7 +10,7 @@ export const TrustedBySection: React.FC<TrustedBySectionProps> = ({ className = 
     <div className={`w-full h-[120px] mt-6 mx-auto flex items-center relative overflow-hidden bg-white ${className}`}>
       {/* Trusted by text - fixed on left */}
       <div className="absolute left-8 z-30 bg-white">
-        <h2 className="[font-family:'Montserrat',Helvetica] font-medium text-black text-[28px] tracking-[0] leading-[32px] whitespace-nowrap">
+        <h2 className="[font-family:'Anton',Helvetica] font-medium text-black text-[28px] tracking-[0] leading-[32px] whitespace-nowrap">
           Trusted by
         </h2>
       </div>

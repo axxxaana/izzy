@@ -1,20 +1,8 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { motion, AnimatePresence } from "framer-motion";
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from "../../../../components/ui/accordion";
-import { Badge } from "../../../../components/ui/badge";
-
-import { Card, CardContent } from "../../../../components/ui/card";
-import { Separator } from "../../../../components/ui/separator";
+import { motion } from "framer-motion";
 import { useScrollAnimation } from "../../../../hooks/useScrollAnimation";
 import { ImageArchSection } from "../../../../components/sections/BrandSection";
-import { BrandingSystemVisual } from "../../../../components/sections/BrandingSystemVisual";
-import SpotlightCard from "../../../../components/SpotlightCard";
 import { TrustedByBanner } from "../../../../components/TrustedByBanner";
 import { Navigation } from "../../../../components/layout/Navigation";
 import { TestimonialsSection } from "../../../../components/sections/TestimonialsSection";
@@ -22,28 +10,7 @@ import { PortfolioSection } from '../../../../components/sections/PortfolioSecti
 import TrueFocus from '../../../../components/ui/TrueFocus';
 
 export const MainContentSection = (): JSX.Element => {
-  // Rotating words for the h1
-  const [currentWordIndex, setCurrentWordIndex] = useState(0);
-  const [isTransitioning, setIsTransitioning] = useState(false);
-  const rotatingWords = ["Connects", "Converts", "Scales", "Resonates"];
-  const [activeCategory, setActiveCategory] = useState("FemTech");
   const [trueFocusIndex, setTrueFocusIndex] = useState(0); // For Strategy Voice Visibility animation
-
-  const handleCategoryChange = (category: string) => {
-    setActiveCategory(category);
-  };
-  
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setIsTransitioning(true);
-      setTimeout(() => {
-        setCurrentWordIndex((prevIndex) => (prevIndex + 1) % rotatingWords.length);
-        setIsTransitioning(false);
-      }, 300); // Half of the transition duration
-    }, 3000); // Change word every 3 seconds
-    
-    return () => clearInterval(interval);
-  }, []);
 
   // Scroll animation hook for the "I'm Izzy" text
   const { elementRef, isVisible, isAnimating } = useScrollAnimation({
@@ -85,87 +52,6 @@ export const MainContentSection = (): JSX.Element => {
     "Show up where it counts. We'll map the channels and cadence to grow trust, build demand, and move the needle.",
   ];
 
-  // Industry categories data
-  const industryCategories = [
-    {
-      name: "Mental Health",
-      color: "bg-[#ffdcea]",
-      top: "top-[163px]",
-      left: "left-[87px]",
-      width: "w-[117px]",
-      height: "h-9",
-    },
-    {
-      name: "Active Life",
-      color: "bg-[#d9f4f7]",
-      top: "top-0",
-      left: "left-[102px]",
-      width: "w-[97px]",
-      height: "h-12",
-    },
-    {
-      name: "Personal Care",
-      color: "bg-[#e8f9dd]",
-      top: "top-0",
-      left: "left-[30px]",
-      width: "w-[119px]",
-      height: "h-12",
-    },
-    {
-      name: "Pets",
-      color: "bg-[#d9f4f7]",
-      top: "top-0",
-      left: "left-0",
-      width: "w-[62px]",
-      height: "h-12",
-    },
-    {
-      name: "Dental Care",
-      color: "bg-[#ffdcea]",
-      top: "top-[113px]",
-      left: "left-0",
-      width: "w-[106px]",
-      height: "h-9",
-    },
-    {
-      name: "Training",
-      color: "bg-[#fff4d9]",
-      top: "top-[163px]",
-      left: "left-0",
-      width: "w-[82px]",
-      height: "h-12",
-    },
-    {
-      name: "Culinary\nSubscriptions",
-      color: "bg-[#e8f9dd]",
-      top: "top-[111px]",
-      left: "left-[-15px]",
-      width: "w-[117px]",
-      height: "h-16",
-    },
-    {
-      name: "Entertainment",
-      color: "bg-[#fff4d9]",
-      top: "top-[163px]",
-      left: "left-[85px]",
-      width: "w-[119px]",
-      height: "h-12",
-    },
-  ];
-
-  // FAQ items
-  const faqItems = [
-    { question: "What is Tedy?" },
-    { question: "Can I support employee recognition initiatives with Tedy?" },
-    { question: "Is Tedy an insurance?" },
-    { question: "How much does Tedy cost?" },
-    { question: "Is there a minimum amount to allocate to employees?" },
-    {
-      question: "Is there a minimum or maximum number of categories to choose?",
-    },
-    { question: "How often can I schedule allocations?" },
-    { question: "When do I have to pay the amount allocated to my employees?" },
-  ];
 
 
 
@@ -174,87 +60,23 @@ export const MainContentSection = (): JSX.Element => {
       <div className="flex flex-col items-center w-full relative">
         {/* Hero Section */}
         <div className="w-full relative mb-0">
-                  <div className="w-full h-auto min-h-[700px] sm:h-[750px] lg:h-[800px] relative p-0 sm:p-4 lg:p-[15px]">
-          <div className="relative w-full h-auto min-h-[670px] sm:h-[720px] lg:h-[770px] mx-auto rounded-[15px] sm:rounded-[18px] lg:rounded-[22.5px] overflow-hidden">
-              {/* Animated Background for entire hero */}
-              <div 
-                className="absolute w-full h-full top-0 left-0 rounded-[15px] sm:rounded-[18px] lg:rounded-[22.5px] overflow-hidden"
-                style={{
-                  background: 'linear-gradient(45deg, rgba(228, 71, 130, 0.8), rgba(228, 71, 130, 0.2), rgba(228, 71, 130, 0.8))',
-                  backgroundSize: '300% 300%',
-                  animation: 'gradient-shift 8s ease-in-out infinite',
-                }}
-              />
-              <div className="relative h-full flex flex-col lg:flex-row max-w-[1400px] mx-auto">
-                {/* Left Side - Image (Mobile) / 50% (Desktop) */}
-                <div className="w-full lg:w-1/2 h-full relative order-2 lg:order-1 lg:pl-0">
-                  <div className="hidden lg:block">
-                    <Navigation />
-                  </div>
-                  <motion.div 
-                    className="w-full h-full flex items-end justify-center pb-0 px-4 sm:px-6 md:px-8 lg:px-2 hero-image-1440"
-                    style={{ marginLeft: '-50px', paddingTop: '10px' }} 
-                    initial={{ opacity: 0, y: 60, scale: 0.9 }}
-                    animate={{ opacity: 1, y: 0, scale: 1 }}
-                    transition={{ duration: 0.8, ease: 'easeOut', delay: 0.2 }}
-                  >
-                    <motion.img
-                      src="/izzy-image-hero.png?v=2"
-                      alt="Izzy Prior"
-                      className="w-[75%] sm:w-[72%] md:w-[70%] h-[300px] sm:h-[350px] md:h-[400px] lg:h-[80%] xl:h-[85%] object-cover object-top rounded-[15px] sm:rounded-[18px] lg:rounded-[22.5px]"
-                      style={{ maxHeight: 'none', overflow: 'visible' }}
-                    />
-                  </motion.div>
-                </div>
-
-                {/* Right Side - Text Content (Mobile) / 50% (Desktop) */}
-                <div className="w-full lg:w-1/2 h-full relative order-1 lg:order-2">
-                  <div className="w-full h-full flex flex-col items-center lg:items-start justify-center px-8 sm:px-6 md:px-8 lg:px-10 xl:px-12 pt-12 sm:pt-12 lg:pt-0" style={{ paddingTop: '120px' }}>
-                    <motion.h1 
-                      className="text-[32px] sm:text-[40px] md:text-[50px] lg:text-[60px] font-bold text-black mb-4 sm:mb-6 leading-[1.05] max-w-2xl text-center lg:text-left" 
-                      style={{ fontFamily: 'Montserrat, Helvetica' }}
-                      initial={{ opacity: 0, y: 30 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      transition={{ duration: 0.8, ease: 'easeOut', delay: 0.4 }}
-                    >
-                      Turn Your Mission Into a Brand That{' '}
-                      <span className="relative inline-block">
-                        Connects
-                        <img
-                          src="/needle-underline.svg?v=1"
-                          alt=""
-                          className="absolute -bottom-2 sm:-bottom-3 lg:-bottom-4 left-0 w-full"
-                        />
-                      </span>
-                    </motion.h1>
-                    <motion.p 
-                      className="text-[16px] sm:text-[18px] md:text-[20px] text-black mb-6 sm:mb-8 max-w-md lg:max-w-lg leading-relaxed text-center lg:text-left"
-                      style={{ fontFamily: 'Inter, Helvetica', marginTop: '10px' }}
-                      initial={{ opacity: 0, y: 20 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      transition={{ duration: 0.8, ease: 'easeOut', delay: 0.6 }}
-                    >
-                      Strategy for founders and startups who want to grow with clarity, not perform for clicks.
-                    </motion.p>
-                    <motion.div
-                      className="flex justify-center lg:justify-start"
-                      style={{ marginTop: '-5px' }}
-                      initial={{ opacity: 0, y: 20 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      transition={{ duration: 0.8, ease: 'easeOut', delay: 0.8 }}
-                    >
-                      <Link to="/get-started">
-                        <motion.button 
-                          className="px-6 sm:px-8 py-3 sm:py-4 bg-[#e44782] text-white border-2 border-[#e44782] rounded-[0.84rem] font-semibold text-base sm:text-lg lg:text-xl hover:bg-white hover:text-[#e44782] transition-all duration-300 shadow-lg"
-                          whileTap={{ scale: 0.98 }}
-                        >
-                          Book a Call
-                        </motion.button>
-                      </Link>
-                    </motion.div>
-                  </div>
-                </div>
+          <div className="w-full h-auto min-h-[700px] sm:h-[750px] lg:h-[800px] relative p-0 sm:p-4 lg:p-[15px]">
+            <div className="relative w-full h-auto min-h-[670px] sm:h-[720px] lg:h-[770px] mx-auto rounded-[15px] sm:rounded-[18px] lg:rounded-[22.5px] overflow-hidden">
+              <div className="hidden lg:block absolute top-0 left-0 z-10">
+                <Navigation />
               </div>
+              <motion.div 
+                className="w-full h-full flex items-center justify-center"
+                initial={{ opacity: 0, scale: 0.9 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.8, ease: 'easeOut' }}
+              >
+                <motion.img
+                  src="/Izzy-home-finals.png"
+                  alt="Izzy Prior"
+                  className="w-full h-full object-cover object-center rounded-[15px] sm:rounded-[18px] lg:rounded-[22.5px]"
+                />
+              </motion.div>
             </div>
           </div>
 
@@ -301,7 +123,7 @@ export const MainContentSection = (): JSX.Element => {
               >
                 {/* "Hey I'm Izzy" in Pink */}
                 <motion.h3 
-                  className="text-[#e44782] font-bold text-[32px] sm:text-[36px] md:text-[40px] lg:text-[44px] mb-6 font-['Montserrat']"
+                  className="text-[#a8e10c] font-bold text-[32px] sm:text-[36px] md:text-[40px] lg:text-[44px] mb-6 font-['Anton']"
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, ease: "easeOut", delay: 0.6 }}
@@ -340,7 +162,7 @@ export const MainContentSection = (): JSX.Element => {
                   transition={{ duration: 0.6, ease: "easeOut", delay: 1.0 }}
                   viewport={{ once: true, margin: "-100px" }}
                 >
-                  <Link to="/about" className="bg-[#e44782] text-white font-['Montserrat'] font-semibold text-base py-3 px-5 rounded-[0.84rem] border-2 border-transparent transition-all duration-300 ease-out hover:bg-white hover:text-[#e44782] hover:border-[#e44782]">
+                  <Link to="/about" className="bg-[#e44782] text-white font-['Anton'] font-semibold text-base py-3 px-5 rounded-[0.84rem] border-2 border-transparent transition-all duration-300 ease-out hover:bg-white hover:text-[#e44782] hover:border-[#e44782] tracking-[1.2px]">
                     Learn More
                   </Link>
                 </motion.div>
@@ -377,7 +199,7 @@ export const MainContentSection = (): JSX.Element => {
                 borderColor="#e44782"
                 animationDuration={2}
                 pauseBetweenAnimations={1}
-                fontFamily="'Montserrat', Helvetica, Arial, sans-serif"
+                fontFamily="'Anton', Helvetica, Arial, sans-serif"
                 fontSize="4rem"
                 currentIndex={trueFocusIndex}
               />
@@ -399,7 +221,7 @@ export const MainContentSection = (): JSX.Element => {
               transition={{ duration: 0.6, ease: "easeOut", delay: 0.6 }}
               viewport={{ once: true, margin: "-100px" }}
             >
-              <Link to="/get-started" className="bg-[#e44782] text-white font-['Montserrat'] font-semibold text-base py-3 px-5 rounded-[0.84rem] border-2 border-transparent transition-all duration-300 ease-out hover:bg-white hover:text-[#e44782] hover:border-[#e44782]">
+              <Link to="/get-started" className="bg-[#e44782] text-white font-['Anton'] font-semibold text-base py-3 px-5 rounded-[0.84rem] border-2 border-transparent transition-all duration-300 ease-out hover:bg-white hover:text-[#e44782] hover:border-[#e44782] tracking-[1.2px]">
                 Book a Call
               </Link>
             </motion.div>
@@ -450,7 +272,7 @@ export const MainContentSection = (): JSX.Element => {
                     </span>
                   </motion.div>
                   <motion.h3 
-                    className="[font-family:'Montserrat',Helvetica] font-semibold text-black text-[28px] sm:text-[32px] md:text-[36px] lg:text-[40px] tracking-[-1.44px] leading-[1.2] sm:leading-[1.3] lg:leading-[50px] mb-2"
+                    className="[font-family:'Anton',Helvetica] font-semibold text-black text-[28px] sm:text-[32px] md:text-[36px] lg:text-[40px] tracking-[1.0px] leading-[1.2] sm:leading-[1.3] lg:leading-[50px] mb-2"
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.6, ease: "easeOut", delay: 0.2 }}
@@ -521,7 +343,7 @@ export const MainContentSection = (): JSX.Element => {
                   >
                     <div className="flex justify-start">
                       <motion.div>
-                                              <Link to="/services/founder-brand-strategy" className="bg-[#e44782] text-white font-['Montserrat'] font-semibold text-base py-3 px-5 rounded-[0.84rem] border-2 border-transparent transition-all duration-300 ease-out hover:bg-white hover:text-[#e44782] hover:border-[#e44782]">
+                                              <Link to="/services/founder-brand-strategy" className="bg-[#e44782] text-white font-['Anton'] font-semibold text-base py-3 px-5 rounded-[0.84rem] border-2 border-transparent transition-all duration-300 ease-out hover:bg-white hover:text-[#e44782] hover:border-[#e44782] tracking-[1.2px]">
                         Learn More
                       </Link>
                       </motion.div>
@@ -560,7 +382,7 @@ export const MainContentSection = (): JSX.Element => {
                   </span>
                 </motion.div>
                 <motion.h3 
-                  className="[font-family:'Montserrat',Helvetica] font-semibold text-black text-[28px] sm:text-[32px] md:text-[36px] lg:text-[40px] tracking-[-1.44px] leading-[1.2] sm:leading-[1.3] lg:leading-[55px] mb-2"
+                  className="[font-family:'Anton',Helvetica] font-semibold text-black text-[28px] sm:text-[32px] md:text-[36px] lg:text-[40px] tracking-[1.0px] leading-[1.2] sm:leading-[1.3] lg:leading-[55px] mb-2"
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, ease: "easeOut", delay: 0.4 }}
@@ -630,7 +452,7 @@ export const MainContentSection = (): JSX.Element => {
                 >
                   <div className="flex justify-start">
                     <motion.div>
-                      <Link to="/services/fractional-marketing" className="bg-[#e44782] text-white font-['Montserrat'] font-semibold text-base py-3 px-5 rounded-[0.84rem] border-2 border-transparent transition-all duration-300 ease-out hover:bg-white hover:text-[#e44782] hover:border-[#e44782]">
+                      <Link to="/services/fractional-marketing" className="bg-[#e44782] text-white font-['Anton'] font-semibold text-base py-3 px-5 rounded-[0.84rem] border-2 border-transparent transition-all duration-300 ease-out hover:bg-white hover:text-[#e44782] hover:border-[#e44782] tracking-[1.2px]">
                         Learn More
                       </Link>
                     </motion.div>
@@ -671,7 +493,7 @@ export const MainContentSection = (): JSX.Element => {
                 {[...Array(8)].map((_, index) => (
                   <div key={index} className="flex items-center group relative">
                     <div
-                      className="[font-family:'Montserrat',Helvetica] font-black text-[40px] sm:text-[60px] md:text-[80px] lg:text-[100px] tracking-[-2px] sm:tracking-[-3px] lg:tracking-[-4px] leading-[1.1] sm:leading-[1.1] lg:leading-[110px]"
+                      className="[font-family:'Anton',Helvetica] font-black text-[40px] sm:text-[60px] md:text-[80px] lg:text-[100px] tracking-[1.5px] sm:tracking-[1.8px] lg:tracking-[2.0px] leading-[1.1] sm:leading-[1.1] lg:leading-[110px]"
                       style={{
                         color: "#E44782",
                         display: "inline-block",

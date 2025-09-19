@@ -99,7 +99,7 @@ export const MyValuesAnimated: React.FC = () => {
           whileInView="visible"
           viewport={{ once: true, amount: 0.3 }}
         >
-          <h2 className="[font-family:'Montserrat',Helvetica] font-semibold text-[#0f0f10] text-[48px] md:text-[56px] text-center tracking-[-0.02em] leading-[1.1] mb-2">
+          <h2 className="[font-family:'Anton',Helvetica] font-semibold text-[#0f0f10] text-[48px] md:text-[56px] text-center tracking-[1.4px] leading-[1.1] mb-2">
             My Values
           </h2>
           <p className="[font-family:'Inter',Helvetica] text-[18px] text-[#4a4a4a] max-w-2xl mx-auto leading-[1.6]">
@@ -134,7 +134,7 @@ export const MyValuesAnimated: React.FC = () => {
                     
                     {/* Content Section */}
                     <div className="flex flex-col items-center">
-                      <h3 className="[font-family:'Montserrat',Helvetica] font-semibold text-[#e44782] text-[24px] tracking-[-0.26px] leading-[30px] mb-4 flex-shrink-0 text-center">
+                      <h3 className="[font-family:'Anton',Helvetica] font-semibold text-[#e44782] text-[24px] tracking-[1.0px] leading-[30px] mb-4 flex-shrink-0 text-center">
                         {value.title}
                       </h3>
                       <p className="[font-family:'Inter',Helvetica] font-normal text-[#091329] text-[16px] tracking-[0] leading-[25.2px] text-center">

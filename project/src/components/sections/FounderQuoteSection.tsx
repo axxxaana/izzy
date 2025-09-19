@@ -7,7 +7,7 @@ export const FounderQuoteSection: React.FC = () => {
     <section className="w-full bg-white py-24 md:py-32">
       <div className="max-w-[1000px] mx-auto px-6 text-center">
         <motion.h2 
-          className="[font-family:'Montserrat',Helvetica] font-semibold text-[#0f0f10] text-[50px] text-center tracking-[-0.51px] leading-[61.4px] mb-8"
+          className="[font-family:'Anton',Helvetica] font-semibold text-[#0f0f10] text-[50px] text-center tracking-[1.2px] leading-[61.4px] mb-8"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
@@ -25,7 +25,8 @@ export const FounderQuoteSection: React.FC = () => {
         >
           <Link to="/get-started">
             <motion.button 
-              className="px-5 py-3 bg-[#e44782] text-white font-['Montserrat'] font-semibold text-base hover:bg-white hover:text-[#e44782] transition-all duration-300 border-2 border-[#e44782] rounded-[0.84rem]"
+              className="px-5 py-3 bg-[#e44782] text-white font-['Anton'] font-semibold text-base hover:bg-white hover:text-[#e44782] transition-all duration-300 border-2 border-[#e44782] rounded-[0.84rem] tracking-[1.2px]"
+              style={{ letterSpacing: '1.2px', fontFamily: "Anton, Helvetica, Arial, sans-serif" }}
             >
               Book a Call
             </motion.button>

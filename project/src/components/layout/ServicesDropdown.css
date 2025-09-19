@@ -33,7 +33,7 @@
 }
 
 .dropdown-title {
-  font-family: 'Montserrat', Helvetica, sans-serif;
+  font-family: 'Anton', Helvetica, sans-serif;
   font-weight: 700;
   font-size: 1.125rem;
   color: #000000;
@@ -41,7 +41,7 @@
 }
 
 .dropdown-subtitle {
-  font-family: 'Montserrat', Helvetica, sans-serif;
+  font-family: 'Anton', Helvetica, sans-serif;
   font-weight: 400;
   font-size: 0.875rem;
   color: #6b7280;
@@ -78,7 +78,7 @@
 }
 
 .service-tag {
-  font-family: 'Montserrat', Helvetica, sans-serif;
+  font-family: 'Anton', Helvetica, sans-serif;
   font-weight: 500;
   font-size: 0.75rem;
   color: #e44782;
@@ -90,7 +90,7 @@
 }
 
 .service-name {
-  font-family: 'Montserrat', Helvetica, sans-serif;
+  font-family: 'Anton', Helvetica, sans-serif;
   font-weight: 600;
   font-size: 16px;
   color: #1f2937;

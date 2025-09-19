@@ -47,7 +47,7 @@ export const FounderBrandStrategyPage: React.FC = () => {
                 
                 <motion.h1 
                   className="max-w-4xl mx-auto text-[36px] md:text-[56px] lg:text-[64px] font-bold text-center mb-6 leading-[1.1]" 
-                  style={{ color: '#0f0f10', fontFamily: 'Montserrat, Helvetica', letterSpacing: '-1.5px' }}
+                  style={{ color: '#0f0f10', fontFamily: 'Anton, Helvetica', letterSpacing: '1.2px' }}
                   initial={{ opacity: 0, y: 40 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.8, delay: 0.6 }}
@@ -68,7 +68,7 @@ export const FounderBrandStrategyPage: React.FC = () => {
                 <motion.button 
                   onClick={(e: React.MouseEvent) => e.preventDefault()}
                   className="mt-8 px-8 py-4 rounded-[0.84rem] bg-[#e44782] text-white text-xl font-semibold shadow-lg border-2 border-transparent hover:bg-white hover:text-[#e44782] hover:border-[#e44782] transition-all duration-200" 
-                  style={{ fontFamily: 'Montserrat, Helvetica' }}
+                  style={{ fontFamily: 'Anton, Helvetica' }}
                   initial={{ opacity: 0, y: 30 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.8, delay: 0.8 }}
@@ -106,7 +106,7 @@ export const FounderBrandStrategyPage: React.FC = () => {
       >
         <motion.h2 
           className="text-[40px] md:text-[48px] font-extrabold text-center mb-6" 
-          style={{ color: '#0f0f10', fontFamily: 'Montserrat, Helvetica' }}
+          style={{ color: '#0f0f10', fontFamily: 'Anton, Helvetica' }}
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.2 }}

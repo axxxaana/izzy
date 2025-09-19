@@ -89,8 +89,17 @@ export const Navigation: React.FC<NavigationProps> = ({ className = '' }) => {
   };
 
   return (
-    <nav className={`navigation-bar ${className}`}>
-      <div className="navigation-container">
+    <>
+      <style>{`
+        .nav-item, a.nav-item, button.nav-item {
+          font-weight: 200 !important;
+          letter-spacing: 0.8px !important;
+          color: #000000 !important;
+          font-family: 'Anton', Helvetica, sans-serif !important;
+        }
+      `}</style>
+      <nav className={`navigation-bar ${className}`}>
+        <div className="navigation-container">
         
         {/* Logo - Left Column */}
         <div className="logo-container">
@@ -138,6 +147,7 @@ export const Navigation: React.FC<NavigationProps> = ({ className = '' }) => {
                 <button
                   className={`nav-item nav-item-dropdown ${location.pathname === item.href ? 'active' : ''}`}
                   onClick={handleServicesClick}
+                  style={{ fontWeight: 200, letterSpacing: '0.8px', color: '#000000' }}
                 >
                   {item.label}
                 </button>
@@ -151,6 +161,12 @@ export const Navigation: React.FC<NavigationProps> = ({ className = '' }) => {
                 key={index}
                 to={item.href}
                 className={`nav-item ${location.pathname === item.href ? 'active' : ''}`}
+                style={{ 
+                  fontWeight: 200, 
+                  letterSpacing: '0.8px', 
+                  color: '#000000',
+                  fontFamily: "'Anton', Helvetica, sans-serif"
+                }}
               >
                 {item.label}
               </Link>
@@ -232,7 +248,8 @@ export const Navigation: React.FC<NavigationProps> = ({ className = '' }) => {
         } else {
           return null;
         }
-      })()}
+      })(      )}
     </nav>
+    </>
   );
-}; 
+};

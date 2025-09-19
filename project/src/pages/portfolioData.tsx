@@ -71,7 +71,7 @@ export const PortfolioCard: React.FC<{ item: typeof portfolioItems[0]; index: nu
           
           <div className="flex-1 flex flex-col">
             <div className="flex items-center justify-between mb-3">
-              <h3 className="text-2xl font-bold text-gray-900 font-['Montserrat']">
+              <h3 className="text-2xl font-bold text-gray-900 font-['Anton']">
                 {item.title}
               </h3>
             </div>

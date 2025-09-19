@@ -64,7 +64,7 @@ export const AboutValuesSection: React.FC = () => {
           <p className={`${TYPOGRAPHY.body.large.classes} mb-8`}>
             Ready to build a brand that truly connects with your audience?
           </p>
-          <button className="bg-[#e44782] text-white font-montserrat text-base px-8 py-4 rounded-[0.84rem] hover:bg-white hover:text-[#e44782] hover:border-2 hover:border-[#e44782] transition-all duration-200">
+          <button className="bg-[#e44782] text-white font-['Anton'] text-base px-8 py-4 rounded-[0.84rem] hover:bg-white hover:text-[#e44782] hover:border-2 hover:border-[#e44782] transition-all duration-200 tracking-[1.2px]" style={{ letterSpacing: '1.2px', fontFamily: "Anton, Helvetica, Arial, sans-serif" }}>
             Let's Work Together
           </button>
         </div>
