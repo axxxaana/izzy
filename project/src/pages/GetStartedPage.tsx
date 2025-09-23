@@ -420,7 +420,7 @@ export const GetStartedPage: React.FC = () => {
                   <div className="flex items-start">
                     <div className="flex flex-col items-center mr-8 flex-shrink-0">
                       <div className="w-12 h-12 bg-[#F8F9FA] rounded-xl flex items-center justify-center">
-                        <img src="/check-list-marketing.svg" alt="Check list" className="w-[40px] h-[40px]" style={{ filter: 'brightness(0) saturate(100%) invert(60%) sepia(70%) saturate(600%) hue-rotate(60deg) brightness(85%) contrast(85%)' }} />
+                        <img src="/check-list-marketing.svg" alt="Check list" className="w-[40px] h-[40px]" />
                       </div>
                     </div>
                     <div className="flex-1 max-w-none">
@@ -437,7 +437,7 @@ export const GetStartedPage: React.FC = () => {
                   <div className="flex items-start">
                     <div className="flex flex-col items-center mr-8 flex-shrink-0">
                       <div className="w-12 h-12 bg-[#F8F9FA] rounded-xl flex items-center justify-center">
-                        <img src="/announcement-marketing.svg" alt="Announcement" className="w-[40px] h-[40px]" style={{ filter: 'brightness(0) saturate(100%) invert(60%) sepia(70%) saturate(600%) hue-rotate(60deg) brightness(85%) contrast(85%)' }} />
+                        <img src="/announcement-marketing.svg" alt="Announcement" className="w-[40px] h-[40px]" />
                       </div>
                     </div>
                     <div className="flex-1 max-w-none">
@@ -454,7 +454,7 @@ export const GetStartedPage: React.FC = () => {
                   <div className="flex items-start">
                     <div className="flex flex-col items-center mr-8 flex-shrink-0">
                       <div className="w-12 h-12 bg-[#F8F9FA] rounded-xl flex items-center justify-center">
-                        <img src="/eye-marketing.svg" alt="Eye" className="w-[40px] h-[40px]" style={{ filter: 'brightness(0) saturate(100%) invert(60%) sepia(70%) saturate(600%) hue-rotate(60deg) brightness(85%) contrast(85%)' }} />
+                        <img src="/eye-marketing.svg" alt="Eye" className="w-[40px] h-[40px]" />
                       </div>
                     </div>
                     <div className="flex-1 max-w-none">

@@ -312,7 +312,6 @@ export const MainContentSection = (): JSX.Element => {
                             className="w-[24px] sm:w-[40px] h-[24px] sm:h-[40px]"
                             alt="Feature icon"
                             src={index === 0 ? "/check-list-marketing.svg?v=1" : index === 1 ? "/announcement-marketing.svg?v=1" : "/eye-marketing.svg?v=1"}
-                            style={{ filter: 'brightness(0) saturate(100%) invert(60%) sepia(70%) saturate(600%) hue-rotate(60deg) brightness(85%) contrast(85%)' }}
                             onError={(e) => {
                               console.error('Icon failed to load:', e.currentTarget.src);
                               e.currentTarget.style.border = '2px solid red';
@@ -422,7 +421,6 @@ export const MainContentSection = (): JSX.Element => {
                           className="w-[24px] sm:w-[40px] h-[24px] sm:h-[40px]"
                           alt="Feature icon"
                           src={index === 0 ? "/check-list-marketing.svg?v=1" : index === 1 ? "/announcement-marketing.svg?v=1" : "/eye-marketing.svg?v=1"}
-                          style={{ filter: 'brightness(0) saturate(100%) invert(60%) sepia(70%) saturate(600%) hue-rotate(60deg) brightness(85%) contrast(85%)' }}
                           onError={(e) => {
                             console.error('Icon failed to load:', e.currentTarget.src);
                             e.currentTarget.style.border = '2px solid red';

@@ -52,7 +52,6 @@ export const ServicesSection: React.FC = () => {
                       className="w-[22px] h-[18px]"
                       alt="Feature icon"
                       src="/vector-8.svg"
-                      style={{ color: '#a8e10c' }}
                     />
                   </div>
                   <p className="[font-family:'Inter',Helvetica] font-normal text-gray-700 text-[15px] tracking-[0] leading-[25.2px]">
@@ -104,7 +103,6 @@ export const ServicesSection: React.FC = () => {
                       className="w-[22px] h-[18px]"
                       alt="Feature icon"
                       src="/vector-8.svg"
-                      style={{ color: '#a8e10c' }}
                     />
                   </div>
                   <p className="[font-family:'Inter',Helvetica] font-normal text-gray-700 text-[16px] tracking-[0] leading-[25.2px]">
