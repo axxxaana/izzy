@@ -6,7 +6,7 @@ import { TrustedByBanner } from '../components/TrustedByBanner';
 import { Link } from 'react-router-dom';
 
 // PortfolioPage-specific hero content
-const PORTFOLIO_HERO_HEADLINE = 'Real Strategy. Real Results.';
+const PORTFOLIO_HERO_HEADLINE = 'Real Strategy.<br />Real Results.';
 
 const PORTFOLIO_HERO_SUBHEADLINE =
   'From femtech to founder brands. This is what happens when strategy turns into results.';
@@ -80,7 +80,8 @@ const CounterBlocks: React.FC = () => {
         className="flex-1 text-center"
       >
         <motion.div 
-          className="text-4xl md:text-5xl lg:text-6xl font-bold text-pink-600 mb-3 font-['Montserrat']"
+          className="text-4xl md:text-5xl lg:text-6xl font-bold mb-3 font-['Montserrat']"
+          style={{ color: '#a8e10c' }}
           animate={hasAnimated ? { scale: [1, 1.05, 1] } : {}}
           transition={{ duration: 0.3, delay: 1.0 }}
         >
@@ -101,7 +102,8 @@ const CounterBlocks: React.FC = () => {
         className="flex-1 text-center"
       >
         <motion.div 
-          className="text-4xl md:text-5xl lg:text-6xl font-bold text-pink-600 mb-3 font-['Montserrat']"
+          className="text-4xl md:text-5xl lg:text-6xl font-bold mb-3 font-['Montserrat']"
+          style={{ color: '#a8e10c' }}
           animate={hasAnimated ? { scale: [1, 1.05, 1] } : {}}
           transition={{ duration: 0.3, delay: 1.2 }}
         >
@@ -122,7 +124,8 @@ const CounterBlocks: React.FC = () => {
         className="flex-1 text-center"
       >
         <motion.div 
-          className="text-4xl md:text-5xl lg:text-6xl font-bold text-pink-600 mb-3 font-['Montserrat']"
+          className="text-4xl md:text-5xl lg:text-6xl font-bold mb-3 font-['Montserrat']"
+          style={{ color: '#a8e10c' }}
           animate={hasAnimated ? { scale: [1, 1.05, 1] } : {}}
           transition={{ duration: 0.3, delay: 1.4 }}
         >
@@ -163,7 +166,7 @@ const PortfolioHero: React.FC = () => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.6 }}
               >
-                {PORTFOLIO_HERO_HEADLINE}
+                <span dangerouslySetInnerHTML={{ __html: PORTFOLIO_HERO_HEADLINE }} />
               </motion.h1>
 
               <motion.p

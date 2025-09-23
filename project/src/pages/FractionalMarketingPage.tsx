@@ -33,7 +33,7 @@ export const FractionalMarketingPage: React.FC = () => {
               <div className="absolute w-full h-full flex flex-col items-center justify-center px-4 pt-32 pb-32" style={{ paddingTop: 'calc(8rem + 80px)' }}>
                 
                 <motion.h1 
-                  className="max-w-3xl mx-auto text-[36px] md:text-[56px] lg:text-[64px] font-bold text-center mb-6 leading-[1.25]" 
+                  className="max-w-4xl mx-auto text-[36px] md:text-[56px] lg:text-[64px] font-bold text-center mb-6 leading-[1.25]" 
                   style={{ color: '#0f0f10', fontFamily: 'Montserrat, Helvetica', letterSpacing: '1.2px' }}
                   initial={{ opacity: 0, y: 40 }}
                   animate={{ opacity: 1, y: 0 }}
@@ -185,7 +185,7 @@ function FAQSection() {
               aria-expanded={open}
               style={{ fontWeight: 700, color: '#0f0f10', fontSize: '1.15rem' }}
             >
-              <span className="inline-block mr-6 text-3xl font-black select-none" style={{ width: '2rem', display: 'inline-block', color: '#e44782' }}>{open ? '−' : '+'}</span>
+              <span className="inline-block mr-6 text-3xl font-black select-none" style={{ width: '2rem', display: 'inline-block', color: '#a8e10c' }}>{open ? '−' : '+'}</span>
               <span className="flex-1">
                 {faq.q}
               </span>

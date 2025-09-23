@@ -81,7 +81,7 @@ const stages = [
 const PlusMinusIcon = ({ open }: { open: boolean }) => (
   <span
     className="inline-block mr-6 text-3xl font-black select-none"
-    style={{ width: '2rem', display: 'inline-block', color: '#e44782' }}
+    style={{ width: '2rem', display: 'inline-block', color: '#a8e10c' }}
   >
     {open ? '−' : '+'}
   </span>

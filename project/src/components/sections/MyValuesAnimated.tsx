@@ -30,7 +30,7 @@ const values: Value[] = [
     title: "No Fluff",
     text: "No jargon. No filler. Just clear, sharp messaging that makes people feel something and take action.",
     icon: (
-      <img src="/time.svg" alt="Time" width="36" height="36" style={{ filter: 'brightness(0) saturate(100%) invert(60%) sepia(70%) saturate(600%) hue-rotate(60deg) brightness(85%) contrast(85%)' }} />
+      <img src="/time.svg?v=4" alt="Time" width="36" height="36" style={{ filter: 'brightness(0) saturate(100%) invert(60%) sepia(70%) saturate(600%) hue-rotate(60deg) brightness(85%) contrast(85%)' }} />
     ),
     delay: 300
   }

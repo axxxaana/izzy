@@ -59,7 +59,7 @@ const ResourcesHero: React.FC = () => {
             <div className="absolute w-full h-full flex flex-col items-center justify-center px-4 pt-40 pb-32" style={{ paddingTop: 'calc(8rem + 80px)' }}>
 
               <motion.h1
-                className="max-w-2xl mx-auto text-[36px] md:text-[56px] lg:text-[64px] font-bold text-center mb-6 leading-[1.25]"
+                className="max-w-3xl mx-auto text-[36px] md:text-[56px] lg:text-[64px] font-bold text-center mb-6 leading-[1.25]"
                 style={{ color: '#0f0f10', fontFamily: 'Montserrat, Helvetica', letterSpacing: '1.2px' }}
                 initial={{ opacity: 0, y: 40 }}
                 animate={{ opacity: 1, y: 0 }}
