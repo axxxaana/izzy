@@ -16,10 +16,10 @@ export const AboutSection: React.FC = () => {
         </h2>
         
         <div className="flex flex-col sm:flex-row gap-4 justify-center mt-8">
-          <Link to="/about" className="px-5 py-3 bg-[#e44782] text-white font-['Anton'] font-semibold text-base hover:bg-white hover:text-[#e44782] transition-all duration-300 border-2 border-[#e44782] rounded-[0.84rem] tracking-[1.2px]">
+          <Link to="/about" className="px-5 py-3 bg-[#e44782] text-white font-['Montserrat'] font-semibold text-base hover:bg-white hover:text-[#e44782] transition-all duration-300 border-2 border-[#e44782] rounded-[0.84rem] ">
             About Izzy
           </Link>
-          <Link to="/get-started" className="px-5 py-3 bg-[#e44782] text-white font-['Anton'] font-semibold text-base hover:bg-white hover:text-[#e44782] transition-all duration-300 border-2 border-[#e44782] rounded-[0.84rem] tracking-[1.2px]">
+          <Link to="/get-started" className="px-5 py-3 bg-[#e44782] text-white font-['Montserrat'] font-semibold text-base hover:bg-white hover:text-[#e44782] transition-all duration-300 border-2 border-[#e44782] rounded-[0.84rem] ">
             Book a Call
           </Link>
         </div>

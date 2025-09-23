@@ -5,17 +5,17 @@
   --color-text: #0f0f10;
 
   /* Typography */
-  --font-heading: 'Anton', Helvetica, sans-serif;
+  --font-heading: 'Montserrat', Helvetica, sans-serif;
   --font-body: 'Inter', Helvetica, sans-serif;
 
   /* Letter spacing tokens */
-  --tracking-h1: 1.8px;
-  --tracking-h2: 1.4px;
-  --tracking-h3: 1.2px;
-  --tracking-h4: 1.0px;
-  --tracking-h5: 0.8px;
-  --tracking-h6: 0.7px;
-  --tracking-btn: 1.2px;
+  --tracking-h1: 0px;
+  --tracking-h2: 0px;
+  --tracking-h3: 0px;
+  --tracking-h4: 0px;
+  --tracking-h5: 0px;
+  --tracking-h6: 0px;
+  --tracking-btn: 0px;
 
   /* Radii & shadows */
   --radius-lg: 0.84rem;

@@ -31,7 +31,7 @@ export const AboutStorySection: React.FC = () => {
 
             {/* Heading */}
             <motion.h3 
-              className="text-[40px] font-bold text-black leading-tight tracking-tight mb-8 font-['Anton'] text-left max-w-[500px]"
+              className="text-[40px] font-bold text-black leading-tight tracking-tight mb-8 font-['Montserrat'] text-left max-w-[500px]"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, ease: "easeOut", delay: 0.4 }}
@@ -49,7 +49,7 @@ export const AboutStorySection: React.FC = () => {
               viewport={{ once: true, margin: "-100px" }}
             >
               <svg width="120" height="8" viewBox="0 0 120 8" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M0 4C20 0 40 8 60 4C80 0 100 8 120 4" stroke="#e44782" strokeWidth="2" strokeLinecap="round"/>
+                <path d="M0 4C20 0 40 8 60 4C80 0 100 8 120 4" stroke="#a8e10c" strokeWidth="2" strokeLinecap="round"/>
               </svg>
             </motion.div>
 
@@ -80,8 +80,8 @@ export const AboutStorySection: React.FC = () => {
               >
                 <Link to="/get-started">
                   <motion.button 
-                    className="px-5 py-3 bg-[#e44782] text-white font-['Anton'] font-semibold text-base hover:bg-white hover:text-[#e44782] transition-all duration-300 border-2 border-[#e44782] rounded-[0.84rem] tracking-[1.2px]"
-                    style={{ letterSpacing: '1.2px', fontFamily: "Anton, Helvetica, Arial, sans-serif" }}
+                    className="px-5 py-3 bg-[#e44782] text-white font-['Montserrat'] font-semibold text-base hover:bg-white hover:text-[#e44782] transition-all duration-300 border-2 border-[#e44782] rounded-[0.84rem] "
+                    style={{ fontFamily: "Montserrat, Helvetica, Arial, sans-serif" }}
                     whileTap={{ scale: 0.98 }}
                   >
                     Book a Call
@@ -155,7 +155,7 @@ export const AboutStorySection: React.FC = () => {
 
             {/* Heading */}
             <motion.h3
-              className="text-[40px] font-bold text-black leading-tight tracking-tight mb-8 font-['Anton'] text-left max-w-[500px]"
+              className="text-[40px] font-bold text-black leading-tight tracking-tight mb-8 font-['Montserrat'] text-left max-w-[500px]"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, ease: "easeOut", delay: 0.4 }}
@@ -173,7 +173,7 @@ export const AboutStorySection: React.FC = () => {
               viewport={{ once: true, margin: "-100px" }}
             >
               <svg width="120" height="8" viewBox="0 0 120 8" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M0 4C20 0 40 8 60 4C80 0 100 8 120 4" stroke="#e44782" strokeWidth="2" strokeLinecap="round"/>
+                <path d="M0 4C20 0 40 8 60 4C80 0 100 8 120 4" stroke="#a8e10c" strokeWidth="2" strokeLinecap="round"/>
               </svg>
             </motion.div>
 
@@ -210,8 +210,8 @@ export const AboutStorySection: React.FC = () => {
               >
                 <Link to="/get-started">
                   <motion.button 
-                    className="px-5 py-3 bg-[#e44782] text-white font-['Anton'] font-semibold text-base hover:bg-white hover:text-[#e44782] transition-all duration-300 border-2 border-[#e44782] rounded-[0.84rem] tracking-[1.2px]"
-                    style={{ letterSpacing: '1.2px', fontFamily: "Anton, Helvetica, Arial, sans-serif" }}
+                    className="px-5 py-3 bg-[#e44782] text-white font-['Montserrat'] font-semibold text-base hover:bg-white hover:text-[#e44782] transition-all duration-300 border-2 border-[#e44782] rounded-[0.84rem] "
+                    style={{ fontFamily: "Montserrat, Helvetica, Arial, sans-serif" }}
                     whileTap={{ scale: 0.98 }}
                   >
                     Book a Call

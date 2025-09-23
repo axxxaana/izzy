@@ -60,7 +60,7 @@ export const AboutHeroSection: React.FC = () => {
               >
                 {/* Main Heading */}
                 <motion.h1 
-                  className="text-[28px] sm:text-[36px] md:text-[48px] lg:text-[64px] font-bold text-black leading-[1.25] mb-4 sm:mb-6 font-['Anton'] text-center lg:text-left"
+                  className="text-[28px] sm:text-[36px] md:text-[48px] lg:text-[64px] font-bold text-black leading-[1.25] mb-4 sm:mb-6 font-['Montserrat'] text-center lg:text-left"
                   style={{ 
                     display: 'block',
                     lineHeight: '1.25'
@@ -89,8 +89,8 @@ export const AboutHeroSection: React.FC = () => {
                 <div className="flex justify-center lg:justify-start">
                   <Link to="/get-started">
                     <motion.button 
-                      className="px-4 sm:px-6 lg:px-8 py-2 sm:py-3 lg:py-4 bg-[#e44782] text-white border-2 border-[#e44782] rounded-[0.84rem] font-['Anton'] font-semibold text-[14px] sm:text-base lg:text-lg hover:bg-white hover:text-[#e44782] transition-all duration-300 shadow-lg tracking-[1.2px]"
-                      style={{ letterSpacing: '1.2px', fontFamily: "Anton, Helvetica, Arial, sans-serif" }}
+                      className="px-4 sm:px-6 lg:px-8 py-2 sm:py-3 lg:py-4 bg-[#e44782] text-white border-2 border-[#e44782] rounded-[0.84rem] font-['Montserrat'] font-semibold text-[14px] sm:text-base lg:text-lg hover:bg-white hover:text-[#e44782] transition-all duration-300 shadow-lg"
+                      style={{ fontFamily: "Montserrat, Helvetica, Arial, sans-serif" }}
                       initial={{ opacity: 0, y: 20 }}
                       whileInView={{ opacity: 1, y: 0 }}
                       transition={{ duration: 0.8, delay: 0.6, ease: "easeOut" }}

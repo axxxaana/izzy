@@ -13,7 +13,7 @@ export const TrustedByBanner: React.FC<TrustedByBannerProps> = ({ className = ''
     if (!scrollElement) return;
 
     let position = 0;
-    const speed = 1;
+    const speed = 2;
 
     const animate = () => {
       position -= speed;

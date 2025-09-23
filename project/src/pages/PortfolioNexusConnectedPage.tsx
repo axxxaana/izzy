@@ -81,7 +81,7 @@ const PortfolioCard: React.FC<{ item: typeof portfolioItems[0]; index: number }>
                 B2B COACHING
               </span>
             )}
-            <h2 className="text-3xl md:text-4xl font-bold text-[#e44782] mb-4 group-hover:text-pink-600 transition-colors duration-300 font-['Anton']">
+            <h2 className="text-3xl md:text-4xl font-bold text-[#e44782] mb-4 group-hover:text-pink-600 transition-colors duration-300 font-['Montserrat']">
               {item.title}
             </h2>
             <p className="text-lg text-gray-700 leading-relaxed mb-6 font-['Inter']">
@@ -150,7 +150,7 @@ const PortfolioNexusConnectedPage: React.FC = () => {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, ease: 'easeOut', delay: 0.4 }}
-              className="text-5xl md:text-6xl lg:text-7xl font-black mb-6 leading-[0.9] font-['Anton'] text-gray-900 tracking-tight"
+              className="text-5xl md:text-6xl lg:text-7xl font-black mb-6 leading-[0.9] font-['Montserrat'] text-gray-900 tracking-tight"
             >
               <span className="bg-gradient-to-r from-gray-900 via-pink-800 to-pink-600 bg-clip-text text-transparent">
                 {HERO_HEADING}
@@ -416,7 +416,7 @@ const PortfolioNexusConnectedPage: React.FC = () => {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4 font-['Anton']">
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4 font-['Montserrat']">
               More Portfolio Case Studies
             </h2>
             <p className="text-xl text-gray-600 max-w-2xl mx-auto font-['Inter']">

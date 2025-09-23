@@ -13,21 +13,21 @@ interface ProcessStep {
 const processSteps: ProcessStep[] = [
   {
     title: "Strategy",
-    bgColor: "#e44782",
-    textColor: "#ffffff",
+    bgColor: "#F8F9FA",
+    textColor: "#1e1e1e",
     contentText: "Before any brand shows up boldly, it needs to get clear. This is where we go deep into your goals, your audience, and your positioning. We define what sets you apart and shape a foundation that guides every move.",
     tags: []
   },
   {
     title: "Voice",
-    bgColor: "#f473ae",
-    textColor: "#ffffff",
+    bgColor: "#F8F9FA",
+    textColor: "#1e1e1e",
     contentText: "Forget bloated decks and buzzword soup. This is where we sharpen your message. We craft clear, human, confident language that sounds like you and actually connects.",
     tags: []
   },
   {
     title: "Visibility",
-    bgColor: "#ffe4ed",
+    bgColor: "#F8F9FA",
     textColor: "#1e1e1e",
     contentText: "Now we bring it to life. From content systems to design direction, we shape how your brand shows up with consistency, intention, and impact.",
     tags: []
@@ -64,7 +64,7 @@ const itemVariants = {
 
 export const IzzyProcessAccordion: React.FC = () => {
   return (
-    <section className="w-full bg-[#fff4f7] py-32 md:py-40">
+    <section className="w-full bg-white py-32 md:py-40">
       <div className="max-w-[1200px] mx-auto px-6">
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20">
           
@@ -83,7 +83,7 @@ export const IzzyProcessAccordion: React.FC = () => {
               </div>
               
               {/* Main Title */}
-              <h2 className="text-[36px] md:text-[48px] lg:text-[56px] font-bold text-gray-900 mb-6 font-['Anton'] tracking-tight leading-[1.1]">
+              <h2 className="text-[36px] md:text-[48px] lg:text-[56px] font-bold text-gray-900 mb-6 font-['Montserrat'] tracking-tight leading-[1.1]">
                 A Brand Process That Actually Works
               </h2>
               
@@ -101,8 +101,8 @@ export const IzzyProcessAccordion: React.FC = () => {
               >
                 <Link to="/get-started">
                   <motion.button 
-                    className="px-5 py-3 bg-[#e44782] text-white font-['Anton'] font-semibold text-base hover:bg-white hover:text-[#e44782] transition-all duration-300 border-2 border-[#e44782] rounded-[0.84rem] tracking-[1.2px]"
-                    style={{ letterSpacing: '1.2px', fontFamily: "Anton, Helvetica, Arial, sans-serif" }}
+                    className="px-5 py-3 bg-[#e44782] text-white font-['Montserrat'] font-semibold text-base hover:bg-white hover:text-[#e44782] transition-all duration-300 border-2 border-[#e44782] rounded-[0.84rem] "
+                    style={{ fontFamily: "Montserrat, Helvetica, Arial, sans-serif" }}
                   >
                     Book a Call
                   </motion.button>
@@ -133,15 +133,15 @@ export const IzzyProcessAccordion: React.FC = () => {
                 >
                   {/* Large Background Number */}
                   <div 
-                    className="absolute top-3 right-3 lg:top-4 lg:right-4 text-[80px] lg:text-[120px] font-black opacity-10 leading-none pointer-events-none"
-                    style={{ color: step.textColor }}
+                    className="absolute top-3 right-3 lg:top-4 lg:right-4 text-[80px] lg:text-[120px] font-black opacity-100 leading-none pointer-events-none"
+                    style={{ color: "#a8e10c" }}
                   >
                     {index + 1}
                   </div>
                   
                   {/* Title */}
                   <h3 
-                    className="text-[28px] lg:text-[40px] font-bold font-['Anton'] leading-tight mb-16 lg:mb-24 relative z-10"
+                    className="text-[28px] lg:text-[40px] font-bold font-['Montserrat'] leading-tight mb-8 lg:mb-12 relative z-10"
                     style={{ color: step.textColor }}
                   >
                     {step.title}

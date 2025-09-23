@@ -23,7 +23,7 @@ const TrueFocus: React.FC<TrueFocusProps> = ({
   glowColor = "rgba(0, 255, 0, 0.6)",
   animationDuration = 0.5,
   pauseBetweenAnimations = 1,
-  fontFamily = "'Anton', Helvetica, Arial, sans-serif",
+  fontFamily = "'Montserrat', Helvetica, Arial, sans-serif",
   fontSize = "4rem",
   currentIndex: externalCurrentIndex,
 }) => {

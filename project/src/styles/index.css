@@ -103,16 +103,16 @@ body {
 }
 
 /* Global heading tracking bump */
-h1 { letter-spacing: var(--tracking-h1) !important; font-family: var(--font-heading); }
-h2 { letter-spacing: var(--tracking-h2) !important; font-family: var(--font-heading); }
-h3 { letter-spacing: var(--tracking-h3) !important; font-family: var(--font-heading); }
-h4 { letter-spacing: var(--tracking-h4) !important; font-family: var(--font-heading); }
-h5 { letter-spacing: var(--tracking-h5) !important; font-family: var(--font-heading); }
-h6 { letter-spacing: var(--tracking-h6) !important; font-family: var(--font-heading); }
+h1 { font-family: var(--font-heading); }
+h2 { font-family: var(--font-heading); }
+h3 { font-family: var(--font-heading); }
+h4 { font-family: var(--font-heading); }
+h5 { font-family: var(--font-heading); }
+h6 { font-family: var(--font-heading); }
 
 /* Utilities */
-.u-heading-anton { font-family: var(--font-heading) !important; }
-.u-btn { letter-spacing: var(--tracking-btn) !important; font-family: var(--font-heading); border-radius: var(--radius-lg); box-shadow: var(--shadow-btn); }
+.u-heading-montserrat { font-family: var(--font-heading) !important; }
+.u-btn { font-family: var(--font-heading); border-radius: var(--radius-lg); box-shadow: var(--shadow-btn); }
 .u-btn--primary { background: var(--color-primary); color: var(--color-primary-contrast); border: 2px solid var(--color-primary); }
 .u-btn--primary:hover { background: var(--color-primary-contrast); color: var(--color-primary); }
 
@@ -135,7 +135,7 @@ h6 { letter-spacing: var(--tracking-h6) !important; font-family: var(--font-head
 a.nav-item,
 .nav-item:link,
 .nav-item:visited {
-  font-weight: 200 !important;
+  font-weight: 600 !important;
   letter-spacing: 0.8px !important;
   color: #000000 !important;
 }
@@ -147,7 +147,7 @@ button,
 .mobile-get-started-btn,
 [class*="button"],
 [class*="btn"] {
-  letter-spacing: 0.6px !important;
+  font-family: 'Montserrat', Helvetica, sans-serif !important;
 }
 
 /* Maximum specificity override for navigation */
@@ -157,10 +157,10 @@ div.navigation-container div.nav-items a.nav-item:link,
 div.navigation-container div.nav-items a.nav-item:visited,
 div.navigation-container div.nav-items button.nav-item:link,
 div.navigation-container div.nav-items button.nav-item:visited {
-  font-weight: 200 !important;
+  font-weight: 600 !important;
   letter-spacing: 0.8px !important;
   color: #000000 !important;
-  font-family: 'Anton', Helvetica, sans-serif !important;
+  font-family: 'Montserrat', Helvetica, sans-serif !important;
 }
 
 /* Hide 3rd-party floating chat/icon if injected */

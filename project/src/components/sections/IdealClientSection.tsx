@@ -36,7 +36,7 @@ const features = [
 export const IdealClientSection: React.FC = () => {
   return (
     <section className="w-full max-w-6xl mx-auto pt-[94px] pb-16 px-6 flex flex-col items-center mb-16">
-      <h2 className="text-4xl md:text-5xl font-extrabold text-center mb-6" style={{ color: '#0f0f10', fontFamily: 'Anton, Helvetica' }}>Made for Startups Like Yours</h2>
+      <h2 className="text-4xl md:text-5xl font-extrabold text-center mb-6" style={{ color: '#0f0f10', fontFamily: 'Montserrat, Helvetica' }}>Made for Startups Like Yours</h2>
       <p className="text-lg text-center mb-14 max-w-lg opacity-80" style={{ fontFamily: 'Inter, Helvetica' }}>
         If you're here to grow with clarity, not burn out or blend in, you're in the right place.
       </p>
@@ -48,7 +48,7 @@ export const IdealClientSection: React.FC = () => {
             style={{ minWidth: 260 }}
           >
             {f.icon}
-            <div className="text-2xl font-extrabold mb-5 mt-2" style={{ color: '#e44782', fontFamily: 'Anton, Helvetica' }}>{f.title}</div>
+            <div className="text-2xl font-extrabold mb-5 mt-2" style={{ color: '#e44782', fontFamily: 'Montserrat, Helvetica' }}>{f.title}</div>
             <div className="text-base opacity-80" style={{ fontFamily: 'Inter, Helvetica', lineHeight: 1.7 }}>{f.desc}</div>
           </div>
         ))}

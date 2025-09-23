@@ -29,7 +29,7 @@ export const CaseStudiesSection: React.FC = () => {
             viewport={{ once: true, amount: 0.3 }}
             transition={{ duration: 0.6, ease: "easeOut" }}
           >
-            <h3 className="[font-family:'Anton',Helvetica] font-semibold text-[#091329] text-[40px] tracking-[1.2px] leading-[50px] mb-6">
+            <h3 className="[font-family:'Montserrat',Helvetica] font-semibold text-[#091329] text-[40px]  leading-[50px] mb-6">
               Client Results
             </h3>
             <p className="[font-family:'Inter',Helvetica] text-[#091329]/70 text-[16px] leading-[24px] max-w-lg mx-auto">
@@ -90,7 +90,7 @@ export const CaseStudiesSection: React.FC = () => {
                           <Badge className="bg-white border border-[#e44782] text-[#e44782] text-xs px-3 py-1.5 rounded-[0.84rem] font-medium shadow-sm mb-3 hover:bg-[#e44782] hover:text-white transition-colors duration-300">
                             Marketing
                           </Badge>
-                          <h4 className="[font-family:'Anton',Helvetica] font-bold text-[#091329] text-[26px] tracking-tight">
+                          <h4 className="[font-family:'Montserrat',Helvetica] font-bold text-[#091329] text-[26px] tracking-tight">
                             Nexus Connected
                           </h4>
                         </div>
@@ -123,7 +123,7 @@ export const CaseStudiesSection: React.FC = () => {
                           <Badge className="bg-white border border-[#e44782] text-[#e44782] text-xs px-3 py-1.5 rounded-[0.84rem] font-medium shadow-sm mb-3 hover:bg-[#e44782] hover:text-white transition-colors duration-300">
                             Ghostwriting
                           </Badge>
-                          <h4 className="[font-family:'Anton',Helvetica] font-bold text-[#091329] text-[26px] tracking-tight">
+                          <h4 className="[font-family:'Montserrat',Helvetica] font-bold text-[#091329] text-[26px] tracking-tight">
                             Parent Promise
                           </h4>
                         </div>
@@ -156,7 +156,7 @@ export const CaseStudiesSection: React.FC = () => {
                           <Badge className="bg-white border border-[#e44782] text-[#e44782] text-xs px-3 py-1.5 rounded-[0.84rem] font-medium shadow-sm mb-3 hover:bg-[#e44782] hover:text-white transition-colors duration-300">
                             Ghostwriting
                           </Badge>
-                          <h4 className="[font-family:'Anton',Helvetica] font-bold text-[#091329] text-[26px] tracking-tight">
+                          <h4 className="[font-family:'Montserrat',Helvetica] font-bold text-[#091329] text-[26px] tracking-tight">
                             Dear Bump
                           </h4>
                         </div>
@@ -203,7 +203,7 @@ export const CaseStudiesSection: React.FC = () => {
                           <Badge className="bg-white border border-[#e44782] text-[#e44782] text-xs px-3 py-1.5 rounded-[0.84rem] font-medium shadow-sm mb-3 hover:bg-[#e44782] hover:text-white transition-colors duration-300">
                             Multi-Service
                           </Badge>
-                          <h4 className="[font-family:'Anton',Helvetica] font-bold text-[#091329] text-[26px] tracking-tight">
+                          <h4 className="[font-family:'Montserrat',Helvetica] font-bold text-[#091329] text-[26px] tracking-tight">
                             GoFounder
                           </h4>
                         </div>
@@ -236,7 +236,7 @@ export const CaseStudiesSection: React.FC = () => {
                           <Badge className="bg-white border border-[#e44782] text-[#e44782] text-xs px-3 py-1.5 rounded-[0.84rem] font-medium shadow-sm mb-3 hover:bg-[#e44782] hover:text-white transition-colors duration-300">
                             Multi-Service
                           </Badge>
-                          <h4 className="[font-family:'Anton',Helvetica] font-bold text-[#091329] text-[26px] tracking-tight">
+                          <h4 className="[font-family:'Montserrat',Helvetica] font-bold text-[#091329] text-[26px] tracking-tight">
                             Wellnergy
                           </h4>
                         </div>
@@ -269,7 +269,7 @@ export const CaseStudiesSection: React.FC = () => {
                           <Badge className="bg-white border border-[#e44782] text-[#e44782] text-xs px-3 py-1.5 rounded-[0.84rem] font-medium shadow-sm mb-3 hover:bg-[#e44782] hover:text-white transition-colors duration-300">
                             Creator Commerce
                           </Badge>
-                          <h4 className="[font-family:'Anton',Helvetica] font-bold text-[#091329] text-[26px] tracking-tight">
+                          <h4 className="[font-family:'Montserrat',Helvetica] font-bold text-[#091329] text-[26px] tracking-tight">
                             Enara
                           </h4>
                         </div>

@@ -110,10 +110,10 @@ export const HowItWorksSection: React.FC = () => {
                 {/* Content Side */}
                 {stage.heading === "Shape the Message" ? (
                   <div className={contentOrder}>
-                    <span className="inline-block mb-4 px-6 py-2 text-[#e44782] text-base font-semibold shadow-sm bg-white uppercase tracking-wide border" style={{ fontFamily: 'Inter, Helvetica', borderRadius: '0.84rem', letterSpacing: '0.04em', borderColor: '#e44782', fontWeight: 600 }}>
+                    <span className="inline-block mb-4 px-6 py-2 text-[#e44782] text-base font-semibold shadow-sm bg-white uppercase tracking-wide border" style={{ fontFamily: 'Inter, Helvetica', borderRadius: '0.5rem', letterSpacing: '0.04em', borderColor: '#e44782', fontWeight: 600 }}>
                       {stage.tag}
                     </span>
-                    <h3 className="text-[34px] font-extrabold mb-4" style={{ color: '#0f0f10', fontFamily: 'Anton, Helvetica' }}>
+                    <h3 className="text-[34px] font-extrabold mb-4" style={{ color: '#0f0f10', fontFamily: 'Montserrat, Helvetica' }}>
                       {stage.heading}
                     </h3>
                     <p className="text-lg mb-6 max-w-xl opacity-80" style={{ fontFamily: 'Inter, Helvetica' }}>{stage.subtext}</p>
@@ -146,7 +146,7 @@ export const HowItWorksSection: React.FC = () => {
                                   <div>{row.content}</div>
                                   <Link 
                                     to="#"
-                                    className="text-[#e44782] font-['Anton'] font-semibold text-base hover:opacity-80 transition-all duration-200 mt-3 flex items-center gap-2 tracking-[1.2px]"
+                                    className="text-[#e44782] font-['Montserrat'] font-semibold text-base hover:opacity-80 transition-all duration-200 mt-3 flex items-center gap-2 "
                                   >
                                     Book a Call
                                     <svg width="16" height="16" fill="none" viewBox="0 0 16 16">
@@ -169,10 +169,10 @@ export const HowItWorksSection: React.FC = () => {
                     transition={{ duration: 0.8, ease: 'easeOut' }}
                     viewport={{ once: true, amount: 0.2 }}
                   >
-                    <span className="inline-block mb-4 px-6 py-2 text-[#e44782] text-base font-semibold shadow-sm bg-white uppercase tracking-wide border" style={{ fontFamily: 'Inter, Helvetica', borderRadius: '0.84rem', letterSpacing: '0.04em', borderColor: '#e44782', fontWeight: 600 }}>
+                    <span className="inline-block mb-4 px-6 py-2 text-[#e44782] text-base font-semibold shadow-sm bg-white uppercase tracking-wide border" style={{ fontFamily: 'Inter, Helvetica', borderRadius: '0.5rem', letterSpacing: '0.04em', borderColor: '#e44782', fontWeight: 600 }}>
                       {stage.tag}
                     </span>
-                    <h3 className="text-[34px] font-extrabold mb-4" style={{ color: '#0f0f10', fontFamily: 'Anton, Helvetica' }}>
+                    <h3 className="text-[34px] font-extrabold mb-4" style={{ color: '#0f0f10', fontFamily: 'Montserrat, Helvetica' }}>
                       {stage.heading}
                     </h3>
                     <p className="text-lg mb-6 max-w-xl opacity-80" style={{ fontFamily: 'Inter, Helvetica' }}>{stage.subtext}</p>
@@ -205,7 +205,7 @@ export const HowItWorksSection: React.FC = () => {
                                   <div>{row.content}</div>
                                   <Link 
                                     to="#"
-                                    className="text-[#e44782] font-['Anton'] font-semibold text-base hover:opacity-80 transition-all duration-200 mt-3 flex items-center gap-2 tracking-[1.2px]"
+                                    className="text-[#e44782] font-['Montserrat'] font-semibold text-base hover:opacity-80 transition-all duration-200 mt-3 flex items-center gap-2 "
                                   >
                                     Book a Call
                                     <svg width="16" height="16" fill="none" viewBox="0 0 16 16">

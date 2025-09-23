@@ -123,7 +123,7 @@ export const MainContentSection = (): JSX.Element => {
               >
                 {/* "Hey I'm Izzy" in Pink */}
                 <motion.h3 
-                  className="text-[#a8e10c] font-bold text-[32px] sm:text-[36px] md:text-[40px] lg:text-[44px] mb-6 font-['Anton']"
+                  className="text-black font-bold text-[32px] sm:text-[36px] md:text-[40px] lg:text-[44px] mb-6 font-['Montserrat']"
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, ease: "easeOut", delay: 0.6 }}
@@ -162,7 +162,7 @@ export const MainContentSection = (): JSX.Element => {
                   transition={{ duration: 0.6, ease: "easeOut", delay: 1.0 }}
                   viewport={{ once: true, margin: "-100px" }}
                 >
-                  <Link to="/about" className="bg-[#e44782] text-white font-['Anton'] font-semibold text-base py-3 px-5 rounded-[0.84rem] border-2 border-transparent transition-all duration-300 ease-out hover:bg-white hover:text-[#e44782] hover:border-[#e44782] tracking-[1.2px]">
+                  <Link to="/about" className="bg-[#e44782] text-white font-['Montserrat'] font-semibold text-base py-3 px-5 rounded-[0.84rem] border-2 border-transparent transition-all duration-300 ease-out hover:bg-white hover:text-[#e44782] hover:border-[#e44782] ">
                     Learn More
                   </Link>
                 </motion.div>
@@ -196,10 +196,10 @@ export const MainContentSection = (): JSX.Element => {
                 sentence="Strategy Voice Visibility"
                 manualMode={true}
                 blurAmount={5}
-                borderColor="#e44782"
+                borderColor="#a8e10c"
                 animationDuration={2}
                 pauseBetweenAnimations={1}
-                fontFamily="'Anton', Helvetica, Arial, sans-serif"
+                fontFamily="'Montserrat', Helvetica, Arial, sans-serif"
                 fontSize="4rem"
                 currentIndex={trueFocusIndex}
               />
@@ -221,7 +221,7 @@ export const MainContentSection = (): JSX.Element => {
               transition={{ duration: 0.6, ease: "easeOut", delay: 0.6 }}
               viewport={{ once: true, margin: "-100px" }}
             >
-              <Link to="/get-started" className="bg-[#e44782] text-white font-['Anton'] font-semibold text-base py-3 px-5 rounded-[0.84rem] border-2 border-transparent transition-all duration-300 ease-out hover:bg-white hover:text-[#e44782] hover:border-[#e44782] tracking-[1.2px]">
+              <Link to="/get-started" className="bg-[#e44782] text-white font-['Montserrat'] font-semibold text-base py-3 px-5 rounded-[0.84rem] border-2 border-transparent transition-all duration-300 ease-out hover:bg-white hover:text-[#e44782] hover:border-[#e44782] ">
                 Book a Call
               </Link>
             </motion.div>
@@ -272,7 +272,7 @@ export const MainContentSection = (): JSX.Element => {
                     </span>
                   </motion.div>
                   <motion.h3 
-                    className="[font-family:'Anton',Helvetica] font-semibold text-black text-[28px] sm:text-[32px] md:text-[36px] lg:text-[40px] tracking-[1.0px] leading-[1.2] sm:leading-[1.3] lg:leading-[50px] mb-2"
+                    className="[font-family:'Montserrat',Helvetica] font-semibold text-black text-[28px] sm:text-[32px] md:text-[36px] lg:text-[40px] tracking-[0.5px] leading-[1.2] sm:leading-[1.3] lg:leading-[50px] mb-2"
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.6, ease: "easeOut", delay: 0.2 }}
@@ -305,12 +305,13 @@ export const MainContentSection = (): JSX.Element => {
                     >
                       <div className="flex items-start gap-3 sm:gap-5">
                         <div 
-                          className="w-[40px] sm:w-[54px] h-[40px] sm:h-[54px] rounded-xl sm:rounded-2xl bg-[#fce7f3] flex items-center justify-center flex-shrink-0"
+                          className="w-[40px] sm:w-[54px] h-[40px] sm:h-[54px] rounded-xl sm:rounded-2xl bg-[#F8F9FA] flex items-center justify-center flex-shrink-0"
                         >
                           <img
                             className="w-[24px] sm:w-[40px] h-[24px] sm:h-[40px]"
                             alt="Feature icon"
                             src={index === 0 ? "/check-list-marketing.svg?v=1" : index === 1 ? "/announcement-marketing.svg?v=1" : "/eye-marketing.svg?v=1"}
+                            style={{ filter: 'brightness(0) saturate(100%) invert(67%) sepia(99%) saturate(1234%) hue-rotate(60deg) brightness(101%) contrast(101%)' }}
                             onError={(e) => {
                               console.error('Icon failed to load:', e.currentTarget.src);
                               e.currentTarget.style.border = '2px solid red';
@@ -343,7 +344,7 @@ export const MainContentSection = (): JSX.Element => {
                   >
                     <div className="flex justify-start">
                       <motion.div>
-                                              <Link to="/services/founder-brand-strategy" className="bg-[#e44782] text-white font-['Anton'] font-semibold text-base py-3 px-5 rounded-[0.84rem] border-2 border-transparent transition-all duration-300 ease-out hover:bg-white hover:text-[#e44782] hover:border-[#e44782] tracking-[1.2px]">
+                                              <Link to="/services/founder-brand-strategy" className="bg-[#e44782] text-white font-['Montserrat'] font-semibold text-base py-3 px-5 rounded-[0.84rem] border-2 border-transparent transition-all duration-300 ease-out hover:bg-white hover:text-[#e44782] hover:border-[#e44782] ">
                         Learn More
                       </Link>
                       </motion.div>
@@ -382,7 +383,7 @@ export const MainContentSection = (): JSX.Element => {
                   </span>
                 </motion.div>
                 <motion.h3 
-                  className="[font-family:'Anton',Helvetica] font-semibold text-black text-[28px] sm:text-[32px] md:text-[36px] lg:text-[40px] tracking-[1.0px] leading-[1.2] sm:leading-[1.3] lg:leading-[55px] mb-2"
+                  className="[font-family:'Montserrat',Helvetica] font-semibold text-black text-[28px] sm:text-[32px] md:text-[36px] lg:text-[40px] tracking-[0.5px] leading-[1.2] sm:leading-[1.3] lg:leading-[55px] mb-2"
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, ease: "easeOut", delay: 0.4 }}
@@ -414,12 +415,13 @@ export const MainContentSection = (): JSX.Element => {
                   >
                     <div className="flex items-start gap-3 sm:gap-5">
                       <div 
-                        className="w-[40px] sm:w-[54px] h-[40px] sm:h-[54px] rounded-xl sm:rounded-2xl bg-[#fce7f3] flex items-center justify-center flex-shrink-0"
+                        className="w-[40px] sm:w-[54px] h-[40px] sm:h-[54px] rounded-xl sm:rounded-2xl bg-[#F8F9FA] flex items-center justify-center flex-shrink-0"
                       >
                         <img
                           className="w-[24px] sm:w-[40px] h-[24px] sm:h-[40px]"
                           alt="Feature icon"
                           src={index === 0 ? "/check-list-marketing.svg?v=1" : index === 1 ? "/announcement-marketing.svg?v=1" : "/eye-marketing.svg?v=1"}
+                          style={{ filter: 'brightness(0) saturate(100%) invert(67%) sepia(99%) saturate(1234%) hue-rotate(60deg) brightness(101%) contrast(101%)' }}
                           onError={(e) => {
                             console.error('Icon failed to load:', e.currentTarget.src);
                             e.currentTarget.style.border = '2px solid red';
@@ -452,7 +454,7 @@ export const MainContentSection = (): JSX.Element => {
                 >
                   <div className="flex justify-start">
                     <motion.div>
-                      <Link to="/services/fractional-marketing" className="bg-[#e44782] text-white font-['Anton'] font-semibold text-base py-3 px-5 rounded-[0.84rem] border-2 border-transparent transition-all duration-300 ease-out hover:bg-white hover:text-[#e44782] hover:border-[#e44782] tracking-[1.2px]">
+                      <Link to="/services/fractional-marketing" className="bg-[#e44782] text-white font-['Montserrat'] font-semibold text-base py-3 px-5 rounded-[0.84rem] border-2 border-transparent transition-all duration-300 ease-out hover:bg-white hover:text-[#e44782] hover:border-[#e44782] ">
                         Learn More
                       </Link>
                     </motion.div>
@@ -493,16 +495,16 @@ export const MainContentSection = (): JSX.Element => {
                 {[...Array(8)].map((_, index) => (
                   <div key={index} className="flex items-center group relative">
                     <div
-                      className="[font-family:'Anton',Helvetica] font-black text-[40px] sm:text-[60px] md:text-[80px] lg:text-[100px] tracking-[1.5px] sm:tracking-[1.8px] lg:tracking-[2.0px] leading-[1.1] sm:leading-[1.1] lg:leading-[110px]"
+                      className="[font-family:'Montserrat',Helvetica] font-black text-[40px] sm:text-[60px] md:text-[80px] lg:text-[100px] tracking-[1.5px] sm:tracking-[1.8px] lg:tracking-[2.0px] leading-[1.1] sm:leading-[1.1] lg:leading-[110px]"
                       style={{
-                        color: "#E44782",
+                        color: "#a8e10c",
                         display: "inline-block",
                         whiteSpace: "nowrap"
                       }}
                     >
                       Cut Through The Fluff
                     </div>
-                    <div className="ml-4 sm:ml-6 lg:ml-8 w-2 sm:w-2.5 lg:w-3 h-2 sm:h-2.5 lg:h-3 bg-[#e44782] rounded-full opacity-60"></div>
+                    <div className="ml-4 sm:ml-6 lg:ml-8 w-2 sm:w-2.5 lg:w-3 h-2 sm:h-2.5 lg:h-3 bg-[#a8e10c] rounded-full opacity-60"></div>
                   </div>
                 ))}
               </div>

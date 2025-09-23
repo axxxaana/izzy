@@ -62,7 +62,7 @@ export const TestimonialsSection: React.FC<TestimonialsSectionProps> = ({ additi
     >
       <motion.h2 
         className="text-4xl md:text-5xl font-extrabold text-center mb-12 tracking-tight" 
-        style={{ fontFamily: 'Anton, Helvetica', color: '#091329' }}
+        style={{ fontFamily: 'Montserrat, Helvetica', color: '#091329' }}
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, ease: "easeOut", delay: 0.2 }}
@@ -94,7 +94,7 @@ export const TestimonialsSection: React.FC<TestimonialsSectionProps> = ({ additi
             </p>
           )}
           <div className="flex flex-col items-center">
-            <span className="font-bold text-lg md:text-xl text-[#091329]" style={{ fontFamily: 'Anton, Helvetica' }}>
+            <span className="font-bold text-lg md:text-xl text-[#091329]" style={{ fontFamily: 'Montserrat, Helvetica' }}>
               {testimonials[activeTestimonialIdx].name}
             </span>
             <span className="text-sm md:text-base text-[#091329]/50 mt-1" style={{ fontFamily: 'Inter, Helvetica' }}>

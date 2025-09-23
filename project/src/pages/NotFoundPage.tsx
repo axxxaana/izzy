@@ -21,7 +21,7 @@ export const NotFoundPage: React.FC = () => {
               transition={{ duration: 0.8, ease: "easeOut" }}
             >
               {/* 404 Number */}
-              <div className="text-8xl sm:text-9xl font-bold text-[#e44782] leading-none mb-6 font-['Anton']">
+              <div className="text-8xl sm:text-9xl font-bold text-[#e44782] leading-none mb-6 font-['Montserrat']">
                 404
               </div>
               

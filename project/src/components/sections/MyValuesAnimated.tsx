@@ -14,9 +14,7 @@ const values: Value[] = [
     title: "Purpose-Driven",
     text: "Strategy starts with clarity, not campaigns. We define the problem and anchor every message in what matters.",
     icon: (
-      <svg width="36" height="36" fill="none" viewBox="0 0 36 36">
-        <path d="M18 8v20M18 8l-8 8M18 8l8 8" stroke="#e44782" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"/>
-      </svg>
+      <img src="/eye-marketing.svg" alt="Eye Marketing" width="36" height="36" style={{ filter: 'brightness(0) saturate(100%) invert(67%) sepia(99%) saturate(1234%) hue-rotate(60deg) brightness(101%) contrast(101%)' }} />
     ),
     delay: 0
   },
@@ -24,9 +22,7 @@ const values: Value[] = [
     title: "Heart-First",
     text: "People buy into people. I help you show up with honesty and care. Your message should feel human, not hollow.",
     icon: (
-      <svg width="36" height="36" fill="none" viewBox="0 0 36 36">
-        <path d="M18 30s-9-6.6-9-12.6A5.4 5.4 0 0118 11.7a5.4 5.4 0 019 5.7C27 23.4 18 30 18 30z" fill="#e44782"/>
-      </svg>
+      <img src="/heart.svg" alt="Heart" width="36" height="36" style={{ filter: 'brightness(0) saturate(100%) invert(67%) sepia(99%) saturate(1234%) hue-rotate(60deg) brightness(101%) contrast(101%)' }} />
     ),
     delay: 150
   },
@@ -34,11 +30,7 @@ const values: Value[] = [
     title: "No Fluff",
     text: "No jargon. No filler. Just clear, sharp messaging that makes people feel something and take action.",
     icon: (
-      <svg width="36" height="36" fill="none" viewBox="0 0 36 36">
-        <circle cx="18" cy="18" r="15" stroke="#e44782" strokeWidth="2.5" fill="#e44782" fillOpacity="0.12"/>
-        <circle cx="18" cy="18" r="2.5" fill="#e44782"/>
-        <path d="M18 12v6l4 2" stroke="#e44782" strokeWidth="2" strokeLinecap="round"/>
-      </svg>
+      <img src="/time.svg" alt="Time" width="36" height="36" style={{ filter: 'brightness(0) saturate(100%) invert(67%) sepia(99%) saturate(1234%) hue-rotate(60deg) brightness(101%) contrast(101%)' }} />
     ),
     delay: 300
   }
@@ -99,7 +91,7 @@ export const MyValuesAnimated: React.FC = () => {
           whileInView="visible"
           viewport={{ once: true, amount: 0.3 }}
         >
-          <h2 className="[font-family:'Anton',Helvetica] font-semibold text-[#0f0f10] text-[48px] md:text-[56px] text-center tracking-[1.4px] leading-[1.1] mb-2">
+          <h2 className="[font-family:'Montserrat',Helvetica] font-semibold text-[#0f0f10] text-[48px] md:text-[56px] text-center leading-[1.1] mb-2">
             My Values
           </h2>
           <p className="[font-family:'Inter',Helvetica] text-[18px] text-[#4a4a4a] max-w-2xl mx-auto leading-[1.6]">
@@ -127,14 +119,14 @@ export const MyValuesAnimated: React.FC = () => {
                   <div className="px-16 pt-16 pb-16 flex flex-col items-center text-center">
                     {/* Icon Section */}
                     <div className="relative mb-6 flex-shrink-0 flex justify-center">
-                      <div className="w-20 h-20 rounded-full bg-gradient-to-br from-[#e44782]/30 to-[#e44782]/10 flex items-center justify-center shadow group-hover:scale-110 group-hover:shadow-lg transition-transform duration-200">
+                      <div className="w-20 h-20 rounded-full bg-[#F8F9FA] flex items-center justify-center shadow group-hover:scale-110 group-hover:shadow-lg transition-transform duration-200">
                         {value.icon}
                       </div>
                     </div>
                     
                     {/* Content Section */}
                     <div className="flex flex-col items-center">
-                      <h3 className="[font-family:'Anton',Helvetica] font-semibold text-[#e44782] text-[24px] tracking-[1.0px] leading-[30px] mb-4 flex-shrink-0 text-center">
+                      <h3 className="[font-family:'Montserrat',Helvetica] font-semibold text-[#e44782] text-[24px]  leading-[30px] mb-4 flex-shrink-0 text-center">
                         {value.title}
                       </h3>
                       <p className="[font-family:'Inter',Helvetica] font-normal text-[#091329] text-[16px] tracking-[0] leading-[25.2px] text-center">

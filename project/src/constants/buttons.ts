@@ -4,38 +4,38 @@
 export const BUTTON_STYLES = {
   // Primary Button (Main CTA)
   primary: {
-    base: "inline-block bg-white text-[#e44782] border-2 border-[#e44782] rounded-[0.84rem] px-5 py-3 text-[20px] font-['Anton'] font-semibold tracking-[1.2px] transition-all duration-300 ease-out shadow-[0_8px_25px_rgba(228,71,130,0.3)] hover:bg-[#e44782] hover:text-white hover:scale-105 cursor-pointer no-underline",
-    small: "inline-block bg-white text-[#e44782] border-2 border-[#e44782] rounded-[0.84rem] px-4 py-2 text-[16px] font-['Anton'] font-semibold tracking-[1.2px] transition-all duration-300 ease-out shadow-[0_8px_25px_rgba(228,71,130,0.3)] hover:bg-[#e44782] hover:text-white hover:scale-105 cursor-pointer no-underline",
-    large: "inline-block bg-white text-[#e44782] border-2 border-[#e44782] rounded-[0.84rem] px-6 py-4 text-[24px] font-['Anton'] font-semibold tracking-[1.2px] transition-all duration-300 ease-out shadow-[0_8px_25px_rgba(228,71,130,0.3)] hover:bg-[#e44782] hover:text-white hover:scale-105 cursor-pointer no-underline"
+    base: "inline-block bg-white text-[#e44782] border-2 border-[#e44782] rounded-[0.84rem] px-5 py-3 text-[20px] font-['Montserrat'] font-semibold transition-all duration-300 ease-out shadow-[0_8px_25px_rgba(228,71,130,0.3)] hover:bg-[#e44782] hover:text-white hover:scale-105 cursor-pointer no-underline",
+    small: "inline-block bg-white text-[#e44782] border-2 border-[#e44782] rounded-[0.84rem] px-4 py-2 text-[16px] font-['Montserrat'] font-semibold transition-all duration-300 ease-out shadow-[0_8px_25px_rgba(228,71,130,0.3)] hover:bg-[#e44782] hover:text-white hover:scale-105 cursor-pointer no-underline",
+    large: "inline-block bg-white text-[#e44782] border-2 border-[#e44782] rounded-[0.84rem] px-6 py-4 text-[24px] font-['Montserrat'] font-semibold transition-all duration-300 ease-out shadow-[0_8px_25px_rgba(228,71,130,0.3)] hover:bg-[#e44782] hover:text-white hover:scale-105 cursor-pointer no-underline"
   },
 
   // Secondary Button (Alternative CTA)
   secondary: {
-    base: "inline-block bg-[#e44782] text-white border-2 border-[#e44782] rounded-[0.84rem] px-5 py-3 text-[20px] font-['Anton'] font-semibold tracking-[1.2px] transition-all duration-300 ease-out hover:bg-white hover:text-[#e44782] hover:scale-105 cursor-pointer no-underline",
-    small: "inline-block bg-[#e44782] text-white border-2 border-[#e44782] rounded-[0.84rem] px-4 py-2 text-[16px] font-['Anton'] font-semibold tracking-[1.2px] transition-all duration-300 ease-out hover:bg-white hover:text-[#e44782] hover:scale-105 cursor-pointer no-underline",
-    large: "inline-block bg-[#e44782] text-white border-2 border-[#e44782] rounded-[0.84rem] px-6 py-4 text-[24px] font-['Anton'] font-semibold tracking-[1.2px] transition-all duration-300 ease-out hover:bg-white hover:text-[#e44782] hover:scale-105 cursor-pointer no-underline"
+    base: "inline-block bg-[#e44782] text-white border-2 border-[#e44782] rounded-[0.84rem] px-5 py-3 text-[20px] font-['Montserrat'] font-semibold transition-all duration-300 ease-out hover:bg-white hover:text-[#e44782] hover:scale-105 cursor-pointer no-underline",
+    small: "inline-block bg-[#e44782] text-white border-2 border-[#e44782] rounded-[0.84rem] px-4 py-2 text-[16px] font-['Montserrat'] font-semibold transition-all duration-300 ease-out hover:bg-white hover:text-[#e44782] hover:scale-105 cursor-pointer no-underline",
+    large: "inline-block bg-[#e44782] text-white border-2 border-[#e44782] rounded-[0.84rem] px-6 py-4 text-[24px] font-['Montserrat'] font-semibold transition-all duration-300 ease-out hover:bg-white hover:text-[#e44782] hover:scale-105 cursor-pointer no-underline"
   },
 
   // Tertiary Button (Subtle)
   tertiary: {
-    base: "inline-block bg-transparent text-[#e44782] border-2 border-transparent rounded-[0.84rem] px-5 py-3 text-[20px] font-['Anton'] font-semibold tracking-[1.2px] transition-all duration-300 ease-out hover:border-[#e44782] hover:scale-105 cursor-pointer no-underline",
-    small: "inline-block bg-transparent text-[#e44782] border-2 border-transparent rounded-[0.84rem] px-4 py-2 text-[16px] font-['Anton'] font-semibold tracking-[1.2px] transition-all duration-300 ease-out hover:border-[#e44782] hover:scale-105 cursor-pointer no-underline"
+    base: "inline-block bg-transparent text-[#e44782] border-2 border-transparent rounded-[0.84rem] px-5 py-3 text-[20px] font-['Montserrat'] font-semibold transition-all duration-300 ease-out hover:border-[#e44782] hover:scale-105 cursor-pointer no-underline",
+    small: "inline-block bg-transparent text-[#e44782] border-2 border-transparent rounded-[0.84rem] px-4 py-2 text-[16px] font-['Montserrat'] font-semibold transition-all duration-300 ease-out hover:border-[#e44782] hover:scale-105 cursor-pointer no-underline"
   },
 
   // Form Button
   form: {
-    base: "w-full bg-[#e44782] text-white px-4 py-2 rounded-md text-sm font-['Anton'] font-semibold tracking-[1.2px] hover:bg-[#e44782]/90 transition-colors duration-200",
-    submit: "w-full bg-[#e44782] text-white px-4 py-3 rounded-md text-base font-['Anton'] font-semibold tracking-[1.2px] hover:bg-[#e44782]/90 transition-all duration-200 hover:scale-[1.02]"
+    base: "w-full bg-[#e44782] text-white px-4 py-2 rounded-md text-sm font-['Montserrat'] font-semibold hover:bg-[#e44782]/90 transition-colors duration-200",
+    submit: "w-full bg-[#e44782] text-white px-4 py-3 rounded-md text-base font-['Montserrat'] font-semibold hover:bg-[#e44782]/90 transition-all duration-200 hover:scale-[1.02]"
   },
 
   // Navigation Button
   nav: {
-    base: "bg-[#e44782] text-white font-['Anton'] font-semibold text-[16px] px-5 py-3 rounded-[0.84rem] border-2 border-[#e44782] overflow-hidden group hover:bg-white hover:text-[#e44782] transition-all duration-300 ease-out tracking-[1.2px]"
+    base: "bg-[#e44782] text-white font-['Montserrat'] font-semibold text-[16px] px-5 py-3 rounded-[0.84rem] border-2 border-[#e44782] overflow-hidden group hover:bg-white hover:text-[#e44782] transition-all duration-300 ease-out"
   },
 
   // Card Button
   card: {
-    base: "relative bg-[#e44782] text-white font-['Anton'] font-semibold text-[16px] px-5 py-3 rounded-[0.84rem] border-2 border-[#e44782] overflow-hidden group hover:bg-white hover:text-[#e44782] transition-all duration-300 ease-out tracking-[1.2px]"
+    base: "relative bg-[#e44782] text-white font-['Montserrat'] font-semibold text-[16px] px-5 py-3 rounded-[0.84rem] border-2 border-[#e44782] overflow-hidden group hover:bg-white hover:text-[#e44782] transition-all duration-300 ease-out"
   }
 };
 

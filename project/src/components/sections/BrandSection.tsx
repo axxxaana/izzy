@@ -232,7 +232,7 @@ export const ImageArchSection: React.FC = () => {
             viewport={{ once: true, amount: 0.3 }}
             transition={{ duration: 0.6, ease: "easeOut" }}
           >
-            <h2 className="[font-family:'Anton',Helvetica] font-semibold text-black text-[40px] text-center bg-gradient-to-r from-gray-900 to-gray-700 bg-clip-text text-transparent mb-0 leading-tight sm:leading-normal">
+            <h2 className="[font-family:'Montserrat',Helvetica] font-semibold text-black text-[40px] text-center bg-gradient-to-r from-gray-900 to-gray-700 bg-clip-text text-transparent mb-0 leading-tight sm:leading-normal">
               Trusted By The Best
             </h2>
           </motion.div>
@@ -259,10 +259,10 @@ export const ImageArchSection: React.FC = () => {
           viewport={{ once: true, amount: 0.3 }}
           transition={{ duration: 0.6, ease: "easeOut", delay: 0.4 }}
         >
-          <Link to="/get-started" className="relative bg-[#e44782] text-white font-['Anton'] font-semibold text-[16px] px-5 py-3 rounded-[0.84rem] border-2 border-[#e44782] overflow-hidden group hover:bg-white hover:text-[#e44782] transition-all duration-300 ease-out tracking-[1.2px]">
+          <Link to="/get-started" className="relative bg-[#e44782] text-white font-['Montserrat'] font-semibold text-[16px] px-5 py-3 rounded-[0.84rem] border-2 border-[#e44782] overflow-hidden group hover:bg-white hover:text-[#e44782] transition-all duration-300 ease-out">
             Book a Call
           </Link>
-          <Link to="/portfolio" className="relative bg-white text-[#e44782] font-['Anton'] font-semibold text-[16px] px-5 py-3 rounded-[0.84rem] border-2 border-[#e44782] overflow-hidden group hover:bg-[#e44782] hover:text-white transition-all duration-300 ease-out tracking-[1.2px]">
+          <Link to="/portfolio" className="relative bg-white text-[#e44782] font-['Montserrat'] font-semibold text-[16px] px-5 py-3 rounded-[0.84rem] border-2 border-[#e44782] overflow-hidden group hover:bg-[#e44782] hover:text-white transition-all duration-300 ease-out">
             See Portfolio
           </Link>
         </motion.div>
