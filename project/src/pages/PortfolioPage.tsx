@@ -4,6 +4,7 @@ import { Layout } from '../components/layout/Layout';
 import { FooterSection } from '../screens/ElementLight/sections/FooterSection';
 import { TrustedByBanner } from '../components/TrustedByBanner';
 import { Link } from 'react-router-dom';
+import { ANIMATIONS, ANIMATION_DELAYS, VIEWPORT_SETTINGS } from '../constants/animations';
 
 // PortfolioPage-specific hero content
 const PORTFOLIO_HERO_HEADLINE = 'Real Strategy.<br />Real Results.';
@@ -162,9 +163,9 @@ const PortfolioHero: React.FC = () => {
               <motion.h1
                 className="max-w-4xl mx-auto text-[36px] md:text-[56px] lg:text-[64px] font-bold text-center mb-6 leading-[1.25]"
                 style={{ color: '#0f0f10', fontFamily: 'Montserrat, Helvetica', letterSpacing: '1.2px' }}
-                initial={{ opacity: 0, y: 40 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.6 }}
+                initial={ANIMATIONS.fadeIn.up.initial}
+                animate={ANIMATIONS.fadeIn.up.animate}
+                transition={{ ...ANIMATIONS.fadeIn.up.transition, delay: ANIMATION_DELAYS.lg }}
               >
                 <span dangerouslySetInnerHTML={{ __html: PORTFOLIO_HERO_HEADLINE }} />
               </motion.h1>
@@ -172,9 +173,9 @@ const PortfolioHero: React.FC = () => {
               <motion.p
                 className="max-w-lg text-center text-[20px] text-[#0f0f10] opacity-90 leading-relaxed"
                 style={{ fontFamily: 'Inter, Helvetica' }}
-                initial={{ opacity: 0, y: 30 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.8 }}
+                initial={ANIMATIONS.text.reveal.initial}
+                animate={ANIMATIONS.text.reveal.animate}
+                transition={{ ...ANIMATIONS.text.reveal.transition, delay: ANIMATION_DELAYS.xl }}
               >
                 {PORTFOLIO_HERO_SUBHEADLINE}
               </motion.p>

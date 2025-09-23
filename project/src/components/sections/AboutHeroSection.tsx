@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import ProfileCard from '../ProfileCard';
+import { ANIMATIONS, ANIMATION_DELAYS, VIEWPORT_SETTINGS } from '../../constants/animations';
 
 export const AboutHeroSection: React.FC = () => {
   const [screenWidth, setScreenWidth] = useState(0);
@@ -53,10 +54,10 @@ export const AboutHeroSection: React.FC = () => {
               }}
             >
               <motion.div
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 1, ease: "easeOut" }}
-                viewport={{ once: true, margin: "-50px" }}
+                initial={ANIMATIONS.fadeIn.up.initial}
+                whileInView={ANIMATIONS.fadeIn.up.animate}
+                transition={ANIMATIONS.fadeIn.up.transition}
+                viewport={VIEWPORT_SETTINGS}
               >
                 {/* Main Heading */}
                 <motion.h1 
@@ -77,10 +78,10 @@ export const AboutHeroSection: React.FC = () => {
                 {/* Subtitle */}
                 <motion.p 
                   className="text-[14px] sm:text-[16px] md:text-[18px] lg:text-xl text-black/80 leading-relaxed max-w-[500px] mb-6 sm:mb-8 text-center lg:text-left"
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
-                  viewport={{ once: true, margin: "-50px" }}
+                  initial={ANIMATIONS.text.reveal.initial}
+                  whileInView={ANIMATIONS.text.reveal.animate}
+                  transition={{ ...ANIMATIONS.text.reveal.transition, delay: ANIMATION_DELAYS.md }}
+                  viewport={VIEWPORT_SETTINGS}
                 >
                   I help bold, mission-driven founders turn their story into strategy. So their brand doesn't just look the part it leads, resonates, and gets results.
                 </motion.p>

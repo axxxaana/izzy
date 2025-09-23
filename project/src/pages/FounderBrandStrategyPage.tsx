@@ -7,6 +7,7 @@ import { TrustedByBanner } from '../components/TrustedByBanner';
 import { IdealClientSectionFounder } from '../components/sections/IdealClientSectionFounder';
 import { TestimonialsSection } from '../components/sections';
 import { HowItWorksSectionFounder } from '../components/sections/HowItWorksSectionFounder';
+import { ANIMATIONS, ANIMATION_DELAYS, VIEWPORT_SETTINGS } from '../constants/animations';
 
 
 export const FounderBrandStrategyPage: React.FC = () => {
@@ -32,12 +33,12 @@ export const FounderBrandStrategyPage: React.FC = () => {
               {/* Hero Content - Enhanced with animations */}
               <div className="absolute w-full h-full flex flex-col items-center justify-center px-4 pt-32 pb-32" style={{ paddingTop: 'calc(8rem + 80px)' }}>
                 
-                <motion.h1 
-                  className="max-w-5xl mx-auto text-[36px] md:text-[56px] lg:text-[64px] font-bold text-center mb-6 leading-[1.1]" 
+                <motion.h1
+                  className="max-w-5xl mx-auto text-[36px] md:text-[56px] lg:text-[64px] font-bold text-center mb-6 leading-[1.1]"
                   style={{ color: '#0f0f10', fontFamily: 'Montserrat, Helvetica', letterSpacing: '0.5px' }}
-                  initial={{ opacity: 0, y: 40 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.8, delay: 0.6 }}
+                  initial={ANIMATIONS.fadeIn.up.initial}
+                  animate={ANIMATIONS.fadeIn.up.animate}
+                  transition={{ ...ANIMATIONS.fadeIn.up.transition, delay: ANIMATION_DELAYS.lg }}
                 >
                   Build a Personal Brand That Makes You Unforgettable
                 </motion.h1>

@@ -8,6 +8,7 @@ import { Navigation } from "../../../../components/layout/Navigation";
 import { TestimonialsSection } from "../../../../components/sections/TestimonialsSection";
 import { PortfolioSection } from '../../../../components/sections/PortfolioSection';
 import TrueFocus from '../../../../components/ui/TrueFocus';
+import { ANIMATIONS, ANIMATION_DELAYS, VIEWPORT_SETTINGS } from "../../../../constants/animations";
 
 export const MainContentSection = (): JSX.Element => {
   const [trueFocusIndex, setTrueFocusIndex] = useState(0); // For Strategy Voice Visibility animation
@@ -101,10 +102,10 @@ export const MainContentSection = (): JSX.Element => {
               {/* Left: Image */}
               <motion.div 
                 className="w-full lg:w-1/2 flex justify-center lg:justify-start"
-                initial={{ opacity: 0, x: -30 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
-                viewport={{ once: true, margin: "-100px" }}
+                initial={ANIMATIONS.fadeIn.left.initial}
+                whileInView={ANIMATIONS.fadeIn.left.animate}
+                transition={{ ...ANIMATIONS.fadeIn.left.transition, delay: ANIMATION_DELAYS.sm }}
+                viewport={VIEWPORT_SETTINGS}
               >
                 <img
                   src="/izzy-about-home.png"
@@ -116,18 +117,18 @@ export const MainContentSection = (): JSX.Element => {
               {/* Right: Text Content */}
               <motion.div 
                 className="w-full lg:w-1/2 flex flex-col items-center lg:items-start text-center lg:text-left justify-center mb-10"
-                initial={{ opacity: 0, x: 30 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.8, ease: "easeOut", delay: 0.4 }}
-                viewport={{ once: true, margin: "-100px" }}
+                initial={ANIMATIONS.fadeIn.right.initial}
+                whileInView={ANIMATIONS.fadeIn.right.animate}
+                transition={{ ...ANIMATIONS.fadeIn.right.transition, delay: ANIMATION_DELAYS.md }}
+                viewport={VIEWPORT_SETTINGS}
               >
                 {/* "Hey I'm Izzy" in Pink */}
                 <motion.h3 
                   className="text-black font-bold text-[32px] sm:text-[36px] md:text-[40px] lg:text-[44px] mb-6 font-['Montserrat']"
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, ease: "easeOut", delay: 0.6 }}
-                  viewport={{ once: true, margin: "-100px" }}
+                  initial={ANIMATIONS.text.reveal.initial}
+                  whileInView={ANIMATIONS.text.reveal.animate}
+                  transition={{ ...ANIMATIONS.text.reveal.transition, delay: ANIMATION_DELAYS.lg }}
+                  viewport={VIEWPORT_SETTINGS}
                 >
                   Hey I'm Izzy.
                 </motion.h3>
