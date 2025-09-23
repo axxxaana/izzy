@@ -14,7 +14,7 @@ const values: Value[] = [
     title: "Purpose-Driven",
     text: "Strategy starts with clarity, not campaigns. We define the problem and anchor every message in what matters.",
     icon: (
-      <img src="/eye-marketing.svg" alt="Eye Marketing" width="36" height="36" style={{ filter: 'brightness(0) saturate(100%) invert(65%) sepia(85%) saturate(800%) hue-rotate(60deg) brightness(95%) contrast(95%)' }} />
+      <img src="/eye-marketing.svg" alt="Eye Marketing" width="36" height="36" style={{ filter: 'brightness(0) saturate(100%) invert(60%) sepia(70%) saturate(600%) hue-rotate(60deg) brightness(85%) contrast(85%)' }} />
     ),
     delay: 0
   },
@@ -22,7 +22,7 @@ const values: Value[] = [
     title: "Heart-First",
     text: "People buy into people. I help you show up with honesty and care. Your message should feel human, not hollow.",
     icon: (
-      <img src="/heart.svg" alt="Heart" width="36" height="36" style={{ filter: 'brightness(0) saturate(100%) invert(65%) sepia(85%) saturate(800%) hue-rotate(60deg) brightness(95%) contrast(95%)' }} />
+      <img src="/heart.svg" alt="Heart" width="36" height="36" style={{ filter: 'brightness(0) saturate(100%) invert(60%) sepia(70%) saturate(600%) hue-rotate(60deg) brightness(85%) contrast(85%)' }} />
     ),
     delay: 150
   },
@@ -30,7 +30,7 @@ const values: Value[] = [
     title: "No Fluff",
     text: "No jargon. No filler. Just clear, sharp messaging that makes people feel something and take action.",
     icon: (
-      <img src="/time.svg" alt="Time" width="36" height="36" style={{ filter: 'brightness(0) saturate(100%) invert(65%) sepia(85%) saturate(800%) hue-rotate(60deg) brightness(95%) contrast(95%)' }} />
+      <img src="/time.svg" alt="Time" width="36" height="36" style={{ filter: 'brightness(0) saturate(100%) invert(60%) sepia(70%) saturate(600%) hue-rotate(60deg) brightness(85%) contrast(85%)' }} />
     ),
     delay: 300
   }
