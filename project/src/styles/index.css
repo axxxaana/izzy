@@ -299,3 +299,37 @@ body, html, #root, #app {
     margin-left: 0px !important;
   }
 }
+
+/* 1440px specific image sizing */
+.image-1440-responsive {
+  max-width: 85% !important;
+}
+
+@media (min-width: 1440px) and (max-width: 1535px) {
+  .image-1440-responsive {
+    max-width: 95% !important;
+  }
+}
+
+/* Tagline positioning for different screen sizes */
+@media (max-width: 1440px) {
+  .tagline-left {
+    padding-left: 188px !important;
+    text-align: left !important;
+  }
+  .tagline-right {
+    padding-right: 200px !important;
+    text-align: left !important;
+  }
+}
+
+@media (min-width: 1441px) {
+  .tagline-left {
+    padding-left: 188px !important;
+    text-align: left !important;
+  }
+  .tagline-right {
+    padding-right: 200px !important;
+    text-align: left !important;
+  }
+}

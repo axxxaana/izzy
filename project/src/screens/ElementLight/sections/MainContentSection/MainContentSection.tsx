@@ -61,14 +61,66 @@ export const MainContentSection = (): JSX.Element => {
     <>
       <div className="flex flex-col items-center w-full relative">
         {/* Hero Section */}
-        <div className="w-full relative mb-0">
-          <div className="w-full h-auto min-h-[700px] sm:h-[750px] lg:h-[800px] relative p-0 sm:p-4 lg:p-[15px]">
-            <div className="relative w-full h-auto min-h-[670px] sm:h-[720px] lg:h-[770px] mx-auto rounded-[15px] sm:rounded-[18px] lg:rounded-[22.5px] overflow-hidden">
+        <div className="w-full relative mb-0 p-0 sm:p-4 lg:p-[15px]">
+          <div className="w-full h-[800px] xl:h-screen 2xl:h-screen relative rounded-[15px] sm:rounded-[18px] lg:rounded-[22.5px] overflow-hidden" style={{ backgroundColor: '#FCEEF3' }}>
+            <div className="relative w-full h-full mx-auto">
               <div className="hidden lg:block absolute top-0 left-0 z-10">
                 <Navigation />
               </div>
+              {/* H1 Behind Image */}
+              <motion.h1 
+                className="absolute inset-0 flex items-center justify-center font-['Montserrat'] font-black text-[10rem] sm:text-[14rem] lg:text-[18rem] text-center z-0 tracking-[0.05em] sm:tracking-[0.08em] lg:tracking-[0.1em]"
+                style={{ 
+                  color: '#E75B8F',
+                  textShadow: '0 0 20px rgba(231, 91, 143, 0.3)',
+                  filter: 'blur(0.5px)',
+                  transform: 'translateY(-30px)'
+                }}
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: -30 }}
+                transition={{ duration: 1, ease: 'easeOut', delay: 0.5 }}
+              >
+                <div className="flex flex-col leading-[0.8]">
+                  <span>Izzy</span>
+                  <span>Prior</span>
+                </div>
+              </motion.h1>
+              {/* Tagline Text - Bottom Left */}
               <motion.div 
-                className="w-full h-full flex items-center justify-center"
+                className="absolute z-20 bottom-16"
+                style={{ 
+                  left: '100px'
+                }}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 1, ease: 'easeOut', delay: 1.2 }}
+              >
+                <p className="text-black text-base sm:text-lg lg:text-xl font-medium leading-relaxed tagline-left">
+                  Build a brand that<br />
+                  <span className="text-[#a8e10c]">connects</span> and<br />
+                  converts...
+                </p>
+              </motion.div>
+
+              {/* Tagline Text - Bottom Right */}
+              <motion.div 
+                className="absolute z-20 bottom-16"
+                style={{ 
+                  right: '100px'
+                }}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 1, ease: 'easeOut', delay: 1.4 }}
+              >
+                <p className="text-black text-base sm:text-lg lg:text-xl font-medium leading-relaxed tagline-right">
+                  ...without losing<br />
+                  your <span className="text-[#a8e10c]">authentic</span><br />
+                  voice.
+                </p>
+              </motion.div>
+
+              <motion.div 
+                className="w-full h-full flex items-end justify-center relative z-10"
                 initial={{ opacity: 0, scale: 0.9 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.8, ease: 'easeOut' }}
@@ -76,7 +128,7 @@ export const MainContentSection = (): JSX.Element => {
                 <motion.img
                   src="/Izzy-home-finals.png"
                   alt="Izzy Prior"
-                  className="w-full h-full object-cover object-center rounded-[15px] sm:rounded-[18px] lg:rounded-[22.5px]"
+                  className="w-auto h-full object-contain object-bottom rounded-[15px] sm:rounded-[18px] lg:rounded-[22.5px] image-1440-responsive"
                 />
               </motion.div>
             </div>
