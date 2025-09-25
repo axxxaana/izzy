@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
+import { TYPOGRAPHY } from '../../constants/design-system';
 
 export const AboutStorySection: React.FC = () => {
   return (
@@ -31,7 +32,7 @@ export const AboutStorySection: React.FC = () => {
 
             {/* Heading */}
             <motion.h3 
-              className="text-[40px] font-bold text-black leading-tight tracking-tight mb-8 font-['Montserrat'] text-left max-w-[500px]"
+              className={`${TYPOGRAPHY.headings.h3.classes} text-black mb-8 text-left max-w-[500px]`}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, ease: "easeOut", delay: 0.4 }}
@@ -61,13 +62,13 @@ export const AboutStorySection: React.FC = () => {
               transition={{ duration: 0.8, ease: "easeOut", delay: 0.6 }}
               viewport={{ once: true, margin: "-100px" }}
             >
-              <p className="text-lg text-[#4F4F4F] leading-relaxed mb-6">
+              <p className={`${TYPOGRAPHY.body.large.classes} text-[#4F4F4F] mb-6`}>
                 Whether you're a founder building your personal brand or a startup scaling your reach, the symptoms are the same, scattered messaging, inconsistent content, draining platforms, and growth that doesn't match your effort.
               </p>
-              <p className="text-lg text-[#4F4F4F] leading-relaxed mb-6">
+              <p className={`${TYPOGRAPHY.body.large.classes} text-[#4F4F4F] mb-6`}>
                 You're showing up and saying something worth hearing. But the message isn't landing. The content isn't converting. And the brand feels like it's trying too hard while still missing the mark.
               </p>
-              <p className="text-lg text-[#4F4F4F] leading-relaxed mb-8">
+              <p className={`${TYPOGRAPHY.body.large.classes} text-[#4F4F4F] mb-8`}>
                 This isn't about posting more or hiring a social media manager. It's about clarity and knowing what you stand for, how to say it, and where to show up so everything you share actually works.
               </p>
 
@@ -155,7 +156,7 @@ export const AboutStorySection: React.FC = () => {
 
             {/* Heading */}
             <motion.h3
-              className="text-[40px] font-bold text-black leading-tight tracking-tight mb-8 font-['Montserrat'] text-left max-w-[500px]"
+              className={`${TYPOGRAPHY.headings.h3.classes} text-black mb-8 text-left max-w-[500px]`}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, ease: "easeOut", delay: 0.4 }}
@@ -185,19 +186,19 @@ export const AboutStorySection: React.FC = () => {
               transition={{ duration: 0.8, ease: "easeOut", delay: 0.6 }}
               viewport={{ once: true, margin: "-100px" }}
             >
-              <p className="text-lg text-[#4F4F4F] leading-relaxed mb-6">
+              <p className={`${TYPOGRAPHY.body.large.classes} text-[#4F4F4F] mb-6`}>
                 Most marketing advice tells you to do more. I help you do less, better.
               </p>
-              <p className="text-lg text-[#4F4F4F] leading-relaxed mb-6">
+              <p className={`${TYPOGRAPHY.body.large.classes} text-[#4F4F4F] mb-6`}>
                 That starts by getting to the root of what you're really about. We dig into your story, your strengths, your positioning and build a clear foundation that makes everything else easier.
               </p>
-              <p className="text-lg text-[#4F4F4F] leading-relaxed mb-6">
+              <p className={`${TYPOGRAPHY.body.large.classes} text-[#4F4F4F] mb-6`}>
                 Then we shape your voice: the words, tone, and messaging that actually sound like you and land with the right people.
               </p>
-              <p className="text-lg text-[#4F4F4F] leading-relaxed mb-6">
+              <p className={`${TYPOGRAPHY.body.large.classes} text-[#4F4F4F] mb-6`}>
                 Finally, we map where and how to show up. Whether it's content, brand, or campaigns, you'll have a strategy that's focused, aligned, and built to grow.
               </p>
-              <p className="text-lg text-[#4F4F4F] leading-relaxed mb-8">
+              <p className={`${TYPOGRAPHY.body.large.classes} text-[#4F4F4F] mb-8`}>
                 Because when the message is clear, the marketing works.
               </p>
 

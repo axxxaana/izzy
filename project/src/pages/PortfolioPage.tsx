@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from 'react';
-import { motion, AnimatePresence, useInView } from 'framer-motion';
+import { motion, useInView } from 'framer-motion';
 import { Layout } from '../components/layout/Layout';
 import { FooterSection } from '../screens/ElementLight/sections/FooterSection';
 import { TrustedByBanner } from '../components/TrustedByBanner';
 import { Link } from 'react-router-dom';
-import { ANIMATIONS, ANIMATION_DELAYS, VIEWPORT_SETTINGS } from '../constants/animations';
+import { ANIMATIONS, ANIMATION_DELAYS } from '../constants/animations';
+import { TYPOGRAPHY } from '../constants/design-system';
 
 // PortfolioPage-specific hero content
 const PORTFOLIO_HERO_HEADLINE = 'Real Strategy.<br />Real Results.';
@@ -161,8 +162,8 @@ const PortfolioHero: React.FC = () => {
             <div className="absolute w-full h-full flex flex-col items-center justify-center px-4 pt-40 pb-32" style={{ paddingTop: 'calc(8rem + 80px)' }}>
 
               <motion.h1
-                className="max-w-4xl mx-auto text-[36px] md:text-[56px] lg:text-[64px] font-bold text-center mb-6 leading-[1.25]"
-                style={{ color: '#0f0f10', fontFamily: 'Montserrat, Helvetica', letterSpacing: '1.2px' }}
+                className={`${TYPOGRAPHY.headings.h1.classes} max-w-4xl mx-auto text-center mb-6`}
+                style={{ color: '#0f0f10' }}
                 initial={ANIMATIONS.fadeIn.up.initial}
                 animate={ANIMATIONS.fadeIn.up.animate}
                 transition={{ ...ANIMATIONS.fadeIn.up.transition, delay: ANIMATION_DELAYS.lg }}
@@ -171,8 +172,7 @@ const PortfolioHero: React.FC = () => {
               </motion.h1>
 
               <motion.p
-                className="max-w-lg text-center text-[20px] text-[#0f0f10] opacity-90 leading-relaxed"
-                style={{ fontFamily: 'Inter, Helvetica' }}
+                className={`${TYPOGRAPHY.body.large.classes} max-w-lg text-center text-[#0f0f10] opacity-90`}
                 initial={ANIMATIONS.text.reveal.initial}
                 animate={ANIMATIONS.text.reveal.animate}
                 transition={{ ...ANIMATIONS.text.reveal.transition, delay: ANIMATION_DELAYS.xl }}
@@ -292,11 +292,11 @@ const PortfolioCard: React.FC<{ item: typeof portfolioItems[0]; index: number }>
               )}
               {/* Subtitle badge removed */}
 
-              <h2 className="text-3xl md:text-4xl font-bold text-[#e44782] mb-4 group-hover:text-pink-600 transition-colors duration-300 font-['Montserrat']">
+              <h2 className={`${TYPOGRAPHY.headings.h3.classes} text-[#e44782] mb-4 group-hover:text-pink-600 transition-colors duration-300`}>
                 {item.title}
               </h2>
 
-              <p className="text-lg text-gray-700 leading-relaxed mb-6 font-['Inter']">
+              <p className={`${TYPOGRAPHY.body.large.classes} text-gray-700 mb-6`}>
                 {item.description}
               </p>
               <button
@@ -382,10 +382,10 @@ export const PortfolioPage: React.FC = () => {
               viewport={{ once: true }}
               className="text-center mb-16"
             >
-              <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4 font-['Montserrat']">
+              <h2 className={`${TYPOGRAPHY.headings.h2.classes} text-gray-900 mb-4`}>
                 Featured Projects
               </h2>
-              <p className="text-xl text-gray-600 max-w-2xl mx-auto font-['Inter']">
+              <p className={`${TYPOGRAPHY.body.large.classes} text-gray-600 max-w-2xl mx-auto`}>
                 Each project tells a unique story of transformation and growth.
               </p>
             </motion.div>

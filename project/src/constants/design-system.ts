@@ -12,11 +12,11 @@ export const TYPOGRAPHY = {
   headings: {
     h1: {
       fontFamily: "'Montserrat', Helvetica",
-      fontSize: "80px",
+      fontSize: "60px",
       fontWeight: "semibold",
       tracking: "0px",
       leading: "1.1",
-      classes: "[font-family:'Montserrat',Helvetica] font-semibold text-[80px] leading-[1.1]"
+      classes: "[font-family:'Montserrat',Helvetica] font-semibold text-[60px] leading-[1.1]"
     },
     h2: {
       fontFamily: "'Montserrat', Helvetica",

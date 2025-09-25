@@ -50,7 +50,7 @@ const stages = [
           "Clarity builds credibility. We shape messaging that moves your audience to act, not just nod and scroll.",
       },
     ],
-    visual: <img src="/deliver-image.png" alt="Deliver Image" className="w-full h-full object-contain rounded-[40px]" />,
+    visual: <img src="/deliver-image.jpg" alt="Deliver Image" className="w-full h-full object-contain rounded-[40px]" />,
   },
   {
     tag: "Visibility",
@@ -96,9 +96,9 @@ export const HowItWorksSection: React.FC = () => {
       <section className="w-full max-w-6xl mx-auto py-24 px-4 flex flex-col gap-24 relative">
         {/* Stages */}
         {stages.map((stage, idx) => {
-          // Fade + subtle upward motion for all sections except "Shape the Message"
-          const contentInitial = stage.heading === "Shape the Message" ? { y: 0, opacity: 1 } : { y: 30, opacity: 0 };
-          const imageInitial = stage.heading === "Shape the Message" ? { y: 0, opacity: 1 } : { y: 30, opacity: 0 };
+          // Fade + subtle upward motion for all sections
+          const contentInitial = { y: 30, opacity: 0 };
+          const imageInitial = { y: 30, opacity: 0 };
           const contentOrder = idx % 2 === 0 ? 'order-2' : '';
           const imageOrder = idx % 2 === 0 ? 'order-1' : '';
           return (
@@ -108,66 +108,12 @@ export const HowItWorksSection: React.FC = () => {
                 style={{ minHeight: 520 }}
               >
                 {/* Content Side */}
-                {stage.heading === "Shape the Message" ? (
-                  <div className={contentOrder}>
-                    <span className="inline-block mb-4 px-6 py-2 text-[#e44782] text-base font-semibold shadow-sm bg-white uppercase tracking-wide border" style={{ fontFamily: 'Inter, Helvetica', borderRadius: '0.5rem', letterSpacing: '0.04em', borderColor: '#e44782', fontWeight: 600 }}>
-                      {stage.tag}
-                    </span>
-                    <h3 className="text-[34px] font-extrabold mb-4" style={{ color: '#0f0f10', fontFamily: 'Montserrat, Helvetica' }}>
-                      {stage.heading}
-                    </h3>
-                    <p className="text-lg mb-6 max-w-xl opacity-80" style={{ fontFamily: 'Inter, Helvetica' }}>{stage.subtext}</p>
-                    <div className="flex flex-col gap-1 w-full h-[400px]">
-                      {stage.accordion.map((row, i) => {
-                        const isOpen = openIndexes[idx] === i;
-                        return (
-                          <div
-                            key={i}
-                            className={`transition-all duration-500 ease-[cubic-bezier(0.4,0,0.2,1)] ${isOpen ? 'bg-[rgba(228,71,130,0.12)] rounded-2xl p-6' : 'bg-transparent p-6'} flex flex-col`}
-                            style={{ minHeight: 0 }}
-                          >
-                            <button
-                              className="flex items-center w-full text-left focus:outline-none"
-                              onClick={() => {
-                                setOpenIndexes((prev) => prev.map((v, sidx) => (sidx === idx ? (isOpen ? -1 : i) : v)));
-                              }}
-                              aria-expanded={isOpen}
-                              style={{ fontWeight: 700, color: '#0f0f10', fontSize: '1.15rem' }}
-                            >
-                              <PlusMinusIcon open={isOpen} />
-                              {row.title}
-                            </button>
-                            <div
-                              className={`overflow-hidden transition-all duration-500 ease-[cubic-bezier(0.4,0,0.2,1)] ${isOpen ? 'max-h-40 opacity-100 scale-100' : 'max-h-0 opacity-0 scale-95'}`}
-                              style={{ fontSize: '1rem', color: '#222', fontWeight: 400, lineHeight: 1.7, transitionProperty: 'max-height, opacity, transform', paddingTop: isOpen ? 16 : 0 }}
-                            >
-                              {isOpen && (
-                                <div>
-                                  <div>{row.content}</div>
-                                  <Link 
-                                    to="#"
-                                    className="text-[#e44782] font-['Montserrat'] font-semibold text-base hover:opacity-80 transition-all duration-200 mt-3 flex items-center gap-2 "
-                                  >
-                                    Book a Call
-                                    <svg width="16" height="16" fill="none" viewBox="0 0 16 16">
-                                      <path d="M6 12l4-4-4-4" stroke="#e44782" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                                    </svg>
-                                  </Link>
-                                </div>
-                              )}
-                            </div>
-                          </div>
-                        );
-                      })}
-                    </div>
-                  </div>
-                ) : (
                   <motion.div
                     className={contentOrder}
                     initial={contentInitial}
                     whileInView={{ y: 0, opacity: 1 }}
-                    transition={{ duration: 0.8, ease: 'easeOut' }}
-                    viewport={{ once: true, amount: 0.2 }}
+                    transition={{ duration: 0.5, ease: 'easeOut' }}
+                    viewport={{ once: true, amount: 0.3 }}
                   >
                     <span className="inline-block mb-4 px-6 py-2 text-[#e44782] text-base font-semibold shadow-sm bg-white uppercase tracking-wide border" style={{ fontFamily: 'Inter, Helvetica', borderRadius: '0.5rem', letterSpacing: '0.04em', borderColor: '#e44782', fontWeight: 600 }}>
                       {stage.tag}
@@ -182,8 +128,8 @@ export const HowItWorksSection: React.FC = () => {
                         return (
                           <div
                             key={i}
-                            className={`transition-all duration-500 ease-[cubic-bezier(0.4,0,0.2,1)] ${isOpen ? 'bg-[rgba(228,71,130,0.12)] rounded-2xl p-6' : 'bg-transparent p-6'} flex flex-col`}
-                            style={{ minHeight: 0 }}
+                            className={`transition-colors duration-300 ease-out ${isOpen ? 'bg-[rgba(228,71,130,0.12)] rounded-2xl p-6' : 'bg-transparent p-6'} flex flex-col`}
+                            style={{ minHeight: 0, willChange: 'background-color' }}
                           >
                             <button
                               className="flex items-center w-full text-left focus:outline-none"
@@ -197,8 +143,8 @@ export const HowItWorksSection: React.FC = () => {
                               {row.title}
                             </button>
                             <div
-                              className={`overflow-hidden transition-all duration-500 ease-[cubic-bezier(0.4,0,0.2,1)] ${isOpen ? 'max-h-40 opacity-100 scale-100' : 'max-h-0 opacity-0 scale-95'}`}
-                              style={{ fontSize: '1rem', color: '#222', fontWeight: 400, lineHeight: 1.7, transitionProperty: 'max-height, opacity, transform', paddingTop: isOpen ? 16 : 0 }}
+                              className={`overflow-hidden transition-all duration-300 ease-out ${isOpen ? 'max-h-40 opacity-100' : 'max-h-0 opacity-0'}`}
+                              style={{ fontSize: '1rem', color: '#222', fontWeight: 400, lineHeight: 1.7, paddingTop: isOpen ? 16 : 0, willChange: 'max-height, opacity' }}
                             >
                               {isOpen && (
                                 <div>
@@ -220,28 +166,19 @@ export const HowItWorksSection: React.FC = () => {
                       })}
                     </div>
                   </motion.div>
-                )}
                 
                 {/* Visual Side */}
-                {stage.heading === "Shape the Message" ? (
-                  <div className={`flex justify-center items-center ${imageOrder}`}>
-                    <div className="w-full max-w-md h-[520px] rounded-[40px] flex items-center justify-center overflow-hidden">
-                      {stage.visual}
-                    </div>
-                  </div>
-                ) : (
                   <motion.div
                     className={`flex justify-center items-center ${imageOrder}`}
                     initial={imageInitial}
                     whileInView={{ y: 0, opacity: 1 }}
-                    transition={{ duration: 0.8, ease: 'easeOut', delay: 0.1 }}
-                    viewport={{ once: true, amount: 0.2 }}
+                    transition={{ duration: 0.5, ease: 'easeOut', delay: 0.05 }}
+                    viewport={{ once: true, amount: 0.3 }}
                   >
                     <div className="w-full max-w-md h-[520px] rounded-[40px] flex items-center justify-center overflow-hidden">
                       {stage.visual}
                     </div>
                   </motion.div>
-                )}
               </div>
             </React.Fragment>
           );

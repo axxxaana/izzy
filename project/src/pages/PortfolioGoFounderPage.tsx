@@ -5,6 +5,7 @@ import { Navigation } from '../components/layout/Navigation';
 import { FooterSection } from '../screens/ElementLight/sections/FooterSection';
 import { CursorTrail } from '../components/CursorTrail';
 import { Accordion, AccordionItem, AccordionTrigger, AccordionContent } from '../components/ui/accordion';
+import { TYPOGRAPHY } from '../constants/design-system';
 
 const HERO_IMAGE = '/GoFounder Cover.png';
 const HERO_HEADING = 'GoFounder';
@@ -66,10 +67,10 @@ const PortfolioCard: React.FC<{ item: typeof portfolioItems[0]; index: number }>
         {/* Content - Left Side */}
         <div className="relative z-10 flex-1 flex flex-col justify-center py-8 px-8 max-w-xl">
           <div>
-            <h2 className="text-3xl md:text-4xl font-bold text-[#e44782] mb-4 group-hover:text-pink-600 transition-colors duration-300 font-['Montserrat']">
+            <h2 className={`${TYPOGRAPHY.headings.h3.classes} text-[#e44782] mb-4 group-hover:text-pink-600 transition-colors duration-300`}>
               {item.title}
             </h2>
-            <p className="text-lg text-gray-700 leading-relaxed mb-6 font-['Inter']">
+            <p className={`${TYPOGRAPHY.body.large.classes} text-gray-700 mb-6`}>
               {item.description}
             </p>
             <div className="inline-flex items-center px-0 py-4 rounded-[12px] bg-transparent text-[#e44782] text-2xl font-bold transition-transform duration-200 group-hover:scale-105">
@@ -156,7 +157,7 @@ const PortfolioGoFounderPage: React.FC = () => {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, ease: 'easeOut', delay: 0.4 }}
-              className="text-5xl md:text-6xl lg:text-7xl font-black mb-6 leading-[0.9] font-['Montserrat'] text-gray-900 tracking-tight"
+              className={`${TYPOGRAPHY.headings.h1.classes} mb-6 text-gray-900`}
             >
               <span className="bg-gradient-to-r from-gray-900 via-pink-800 to-pink-600 bg-clip-text text-transparent">
                 {HERO_HEADING}
@@ -180,7 +181,7 @@ const PortfolioGoFounderPage: React.FC = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, ease: 'easeOut', delay: 0.7 }}
-              className="text-lg md:text-xl text-gray-700 leading-relaxed font-['Inter'] max-w-xl"
+              className={`${TYPOGRAPHY.body.large.classes} text-gray-700 max-w-xl`}
             >
               {HERO_DESCRIPTION}
             </motion.p>
@@ -211,7 +212,7 @@ const PortfolioGoFounderPage: React.FC = () => {
                 transition={{ duration: 0.8, delay: 0.2 }}
                 viewport={{ once: true }}
               >
-                <h2 className="text-[40px] font-bold text-black mb-4">The Challenge</h2>
+                <h2 className={`${TYPOGRAPHY.headings.h3.classes} text-black mb-4`}>The Challenge</h2>
                 <p className="text-lg text-gray-700 mb-4">
                   GoFounder had a compelling product, but its brand wasn't telling the story. The digital presence lacked polish and consistency, making it difficult to leverage success stories, build trust at scale, or position the business for growth. Brand channels were fragmented, and founder-led content wasn't being used to its full advantage.
                 </p>
@@ -271,7 +272,7 @@ const PortfolioGoFounderPage: React.FC = () => {
           className="max-w-7xl w-full mx-auto flex flex-col md:flex-row-reverse items-center gap-12 mb-16 p-8 md:p-12 mt-[75px]"
         >
           <div className="flex-1">
-            <h2 className="text-[40px] font-bold text-black mb-4">What I Did</h2>
+            <h2 className={`${TYPOGRAPHY.headings.h3.classes} text-black mb-4`}>What I Did</h2>
             <p className="text-lg text-gray-700 mb-4">My focus was to unify GoFounder's message, streamline content across platforms, and help the founder show up as a trusted voice in the coaching space. From brand assets to thought leadership to community design, everything was aligned around clarity and consistency.</p>
             <div style={{ marginTop: '40px' }}>
               <Accordion type="single" collapsible className="w-full bg-transparent mt-0" defaultValue="step1">
@@ -337,7 +338,7 @@ const PortfolioGoFounderPage: React.FC = () => {
                 transition={{ duration: 0.8, delay: 0.2 }}
                 viewport={{ once: true }}
               >
-                <h2 className="text-[40px] font-bold text-black mb-4">Results & Impact</h2>
+                <h2 className={`${TYPOGRAPHY.headings.h3.classes} text-black mb-4`}>Results & Impact</h2>
                 <p className="text-lg text-gray-700 mb-4">The results weren't just visual — they were tangible. From thousands of new followers to consistent inbound leads and strong client retention, every system we built helped the brand grow louder, sharper, and more scalable.</p>
                 <Accordion type="single" collapsible className="w-full bg-transparent mt-[10px]" defaultValue="result1">
                   <AccordionItem value="result1" className={saasAccordionItem + " data-[state=open]:border-l-4 data-[state=open]:border-pink-500"}>
@@ -397,10 +398,10 @@ const PortfolioGoFounderPage: React.FC = () => {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4 font-['Montserrat']">
+            <h2 className={`${TYPOGRAPHY.headings.h2.classes} text-gray-900 mb-4`}>
               More Portfolio Case Studies
             </h2>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto font-['Inter']">
+            <p className={`${TYPOGRAPHY.body.large.classes} text-gray-600 max-w-2xl mx-auto`}>
               Explore more projects that showcase strategy, storytelling, and results
             </p>
           </motion.div>

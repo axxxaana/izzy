@@ -9,6 +9,7 @@ import { TestimonialsSection } from "../../../../components/sections/Testimonial
 import { PortfolioSection } from '../../../../components/sections/PortfolioSection';
 import TrueFocus from '../../../../components/ui/TrueFocus';
 import { ANIMATIONS, ANIMATION_DELAYS, VIEWPORT_SETTINGS } from "../../../../constants/animations";
+import { TYPOGRAPHY } from "../../../../constants/design-system";
 
 export const MainContentSection = (): JSX.Element => {
   const [trueFocusIndex, setTrueFocusIndex] = useState(0); // For Strategy Voice Visibility animation
@@ -89,14 +90,14 @@ export const MainContentSection = (): JSX.Element => {
           {/* I'm Izzy Section */}
           <div 
             ref={elementRef}
-            className={`w-full max-w-[1200px] h-auto min-h-[500px] mt-8 sm:mt-12 lg:mt-40 pt-12 mx-auto relative flex items-end transition-all duration-1200 ease-[cubic-bezier(0.25,0.46,0.45,0.94)] rounded-[25px] bg-[#F8F9FA] shadow-lg ${
+            className={`w-full max-w-[1200px] h-auto min-h-[500px] mt-8 sm:mt-12 lg:mt-40 pt-6 mx-auto relative flex items-end transition-all duration-1200 ease-[cubic-bezier(0.25,0.46,0.45,0.94)] rounded-[25px] bg-[#F8F9FA] shadow-lg ${
               isVisible 
                 ? 'opacity-100 translate-y-0 scale-100 blur-0' 
                 : 'opacity-0 translate-y-12 scale-95 blur-sm'
             }`}
           >
             {/* Two Column Layout: Image on Left, Text on Right */}
-            <div className={`w-full flex flex-col lg:flex-row items-center gap-8 lg:gap-12 transition-all duration-1000 ease-out px-8 sm:px-12 lg:px-16 xl:px-20 ${
+            <div className={`w-full flex flex-col lg:flex-row items-center gap-4 lg:gap-6 transition-all duration-1000 ease-out px-8 sm:px-12 lg:px-16 xl:px-20 ${
               isAnimating ? 'animate-fade-in-up' : ''
             }`}>
               {/* Left: Image */}
@@ -124,7 +125,7 @@ export const MainContentSection = (): JSX.Element => {
               >
                 {/* "Hey I'm Izzy" in Pink */}
                 <motion.h3 
-                  className="text-black font-bold text-[32px] sm:text-[36px] md:text-[40px] lg:text-[44px] mb-6 font-['Montserrat']"
+                  className={`${TYPOGRAPHY.headings.h3.classes} text-black mb-6`}
                   initial={ANIMATIONS.text.reveal.initial}
                   whileInView={ANIMATIONS.text.reveal.animate}
                   transition={{ ...ANIMATIONS.text.reveal.transition, delay: ANIMATION_DELAYS.lg }}
@@ -135,22 +136,22 @@ export const MainContentSection = (): JSX.Element => {
 
                 {/* Main Description */}
                 <motion.div 
-                  className="max-w-[500px] text-[#0f0f10] text-[16px] sm:text-[18px] leading-[1.6] mb-8 space-y-4"
+                  className={`max-w-[500px] text-[#0f0f10] mb-8 space-y-4`}
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.8, ease: "easeOut", delay: 0.8 }}
                   viewport={{ once: true, margin: "-100px" }}
                 >
-                  <p>
+                  <p className={TYPOGRAPHY.body.large.classes}>
                     After years leading creative for VC-backed startups, I kept seeing the same thing: brilliant ideas buried under bloated messaging and brand bloat.
                   </p>
-                  <p>
+                  <p className={TYPOGRAPHY.body.large.classes}>
                     That's why I now work directly with founders, cutting through the noise, shaping their story, and helping them scale with substance.
                   </p>
-                  <p>
+                  <p className={TYPOGRAPHY.body.large.classes}>
                     I partner with femtech, healthtech, and mission-driven teams to build bold, heart-led brands that move people.
                   </p>
-                  <p>
+                  <p className={TYPOGRAPHY.body.large.classes}>
                     What would your brand unlock if it finally spoke with clarity, courage, and heart?
                   </p>
                 </motion.div>
@@ -206,8 +207,7 @@ export const MainContentSection = (): JSX.Element => {
               />
             </motion.div>
             <motion.p 
-              className="max-w-3xl text-center text-[#0f0f10] mt-8 sm:mt-10 text-[16px] sm:text-[18px]" 
-              style={{ fontFamily: "'Inter', Helvetica, Arial, sans-serif" }}
+              className={`max-w-3xl text-center text-[#0f0f10] mt-8 sm:mt-10 ${TYPOGRAPHY.body.large.classes}`}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, ease: "easeOut", delay: 0.4 }}
@@ -273,7 +273,7 @@ export const MainContentSection = (): JSX.Element => {
                     </span>
                   </motion.div>
                   <motion.h3 
-                    className="[font-family:'Montserrat',Helvetica] font-semibold text-black text-[28px] sm:text-[32px] md:text-[36px] lg:text-[40px] tracking-[0.5px] leading-[1.2] sm:leading-[1.3] lg:leading-[50px] mb-2"
+                    className={`${TYPOGRAPHY.headings.h3.classes} text-black mb-2`}
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.6, ease: "easeOut", delay: 0.2 }}
@@ -283,7 +283,7 @@ export const MainContentSection = (): JSX.Element => {
                     Brand Strategy
                   </motion.h3>
                   <motion.p 
-                    className="[font-family:'Inter',Helvetica] font-normal text-gray-700 text-[14px] sm:text-[15px] md:text-[15.9px] tracking-[0] leading-[1.5] sm:leading-[1.6] lg:leading-[25.2px] pb-6"
+                    className={`${TYPOGRAPHY.body.small.classes} text-gray-700 pb-6`}
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.6, ease: "easeOut", delay: 0.4 }}
@@ -322,7 +322,7 @@ export const MainContentSection = (): JSX.Element => {
                           />
                         </div>
                         <motion.p 
-                          className="[font-family:'Inter',Helvetica] font-normal text-gray-700 text-[13px] sm:text-[14px] md:text-[15.9px] tracking-[0] leading-[1.4] sm:leading-[1.5] lg:leading-[25.2px]"
+                          className={`${TYPOGRAPHY.body.small.classes} text-gray-700`}
                           initial={{ opacity: 0, y: 20 }}
                           whileInView={{ opacity: 1, y: 0 }}
                           transition={{ duration: 0.6, ease: "easeOut", delay: 1.0 + (index + 1) * 0.2 }}
@@ -383,7 +383,7 @@ export const MainContentSection = (): JSX.Element => {
                   </span>
                 </motion.div>
                 <motion.h3 
-                  className="[font-family:'Montserrat',Helvetica] font-semibold text-black text-[28px] sm:text-[32px] md:text-[36px] lg:text-[40px] tracking-[0.5px] leading-[1.2] sm:leading-[1.3] lg:leading-[55px] mb-2"
+                  className={`${TYPOGRAPHY.headings.h3.classes} text-black mb-2`}
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, ease: "easeOut", delay: 0.4 }}
@@ -392,7 +392,7 @@ export const MainContentSection = (): JSX.Element => {
                   Fractional Marketing<br />&amp; Brand Direction
                 </motion.h3>
                 <motion.p 
-                  className="[font-family:'Inter',Helvetica] font-normal text-gray-700 text-[14px] sm:text-[15px] md:text-[15.9px] tracking-[0] leading-[1.5] sm:leading-[1.6] lg:leading-[25.2px] pb-6"
+                  className={`${TYPOGRAPHY.body.small.classes} text-gray-700 pb-6`}
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, ease: "easeOut", delay: 0.6 }}
@@ -431,7 +431,7 @@ export const MainContentSection = (): JSX.Element => {
                         />
                       </div>
                       <motion.p 
-                        className="[font-family:'Inter',Helvetica] font-normal text-gray-700 text-[13px] sm:text-[14px] md:text-[16px] tracking-[0] leading-[1.4] sm:leading-[1.5] lg:leading-[25.2px]"
+                        className={`${TYPOGRAPHY.body.small.classes} text-gray-700`}
                         initial={{ opacity: 0, x: 20 }}
                         whileInView={{ opacity: 1, x: 0 }}
                         transition={{ duration: 0.6, ease: "easeOut", delay: 1.4 + (index + 1) * 0.2 }}
@@ -496,14 +496,14 @@ export const MainContentSection = (): JSX.Element => {
                     <div
                       className="[font-family:'Montserrat',Helvetica] font-black text-[40px] sm:text-[60px] md:text-[80px] lg:text-[100px] tracking-[1.5px] sm:tracking-[1.8px] lg:tracking-[2.0px] leading-[1.1] sm:leading-[1.1] lg:leading-[110px]"
                       style={{
-                        color: "#a8e10c",
+                        color: "#ec407a",
                         display: "inline-block",
                         whiteSpace: "nowrap"
                       }}
                     >
                       Cut Through The Fluff
                     </div>
-                    <div className="ml-4 sm:ml-6 lg:ml-8 w-2 sm:w-2.5 lg:w-3 h-2 sm:h-2.5 lg:h-3 bg-[#a8e10c] rounded-full opacity-60"></div>
+                    <div className="ml-4 sm:ml-6 lg:ml-8 w-2 sm:w-2.5 lg:w-3 h-2 sm:h-2.5 lg:h-3 bg-[#ec407a] rounded-full opacity-60"></div>
                   </div>
                 ))}
               </div>

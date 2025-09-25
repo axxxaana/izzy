@@ -5,6 +5,7 @@ import { Layout } from '../components/layout';
 import { TrustedByBanner } from '../components/TrustedByBanner';
 import { FooterSection } from '../screens/ElementLight/sections/FooterSection';
 import { ANIMATIONS, ANIMATION_DELAYS, VIEWPORT_SETTINGS } from '../constants/animations';
+import { TYPOGRAPHY } from '../constants/design-system';
 
 // Resource data
 const resources = [
@@ -60,8 +61,8 @@ const ResourcesHero: React.FC = () => {
             <div className="absolute w-full h-full flex flex-col items-center justify-center px-4 pt-40 pb-32" style={{ paddingTop: 'calc(8rem + 80px)' }}>
 
               <motion.h1
-                className="max-w-3xl mx-auto text-[36px] md:text-[56px] lg:text-[64px] font-bold text-center mb-6 leading-[1.25]"
-                style={{ color: '#0f0f10', fontFamily: 'Montserrat, Helvetica', letterSpacing: '1.2px' }}
+                className={`${TYPOGRAPHY.headings.h1.classes} max-w-3xl mx-auto text-center mb-6`}
+                style={{ color: '#0f0f10' }}
                 initial={ANIMATIONS.fadeIn.up.initial}
                 animate={ANIMATIONS.fadeIn.up.animate}
                 transition={{ ...ANIMATIONS.fadeIn.up.transition, delay: ANIMATION_DELAYS.lg }}
@@ -70,8 +71,7 @@ const ResourcesHero: React.FC = () => {
               </motion.h1>
 
               <motion.p
-                className="max-w-lg text-center text-[18px] md:text-[20px] text-[#0f0f10] opacity-90 leading-relaxed"
-                style={{ fontFamily: 'Inter, Helvetica' }}
+                className={`${TYPOGRAPHY.body.large.classes} max-w-lg text-center text-[#0f0f10] opacity-90`}
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.8 }}
@@ -132,12 +132,12 @@ const ResourceCard: React.FC<{ resource: typeof resources[0]; index: number }> =
         {/* Content */}
         <div className="p-6">
           {/* Title */}
-          <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-pink-600 transition-colors duration-300">
+          <h3 className={`${TYPOGRAPHY.headings.h5.classes} text-gray-900 mb-3 group-hover:text-pink-600 transition-colors duration-300`}>
             {resource.title}
           </h3>
 
           {/* Description */}
-          <p className="text-gray-600 leading-relaxed mb-4">
+          <p className={`${TYPOGRAPHY.body.medium.classes} text-gray-600 mb-4`}>
             {resource.description}
           </p>
 
@@ -174,10 +174,10 @@ export const ResourcesPage: React.FC = () => {
             viewport={{ once: true, margin: "-100px" }}
             className="text-center mb-12 sm:mb-16"
           >
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-4 max-w-lg mx-auto">
+            <h2 className={`${TYPOGRAPHY.headings.h2.classes} text-gray-900 mb-4 max-w-lg mx-auto`}>
               Free Resources
             </h2>
-            <p className="text-lg text-gray-600 max-w-xl mx-auto">
+            <p className={`${TYPOGRAPHY.body.large.classes} text-gray-600 max-w-xl mx-auto`}>
               Download these free resources to help you build a stronger brand.
             </p>
           </motion.div>

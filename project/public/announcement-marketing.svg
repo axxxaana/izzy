@@ -1,7 +1,21 @@
-<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<!-- Uploaded to: SVG Repo, www.svgrepo.com, Transformed by: SVG Repo Mixer Tools -->
-<svg width="800px" height="800px" viewBox="0 0 64 64" version="1.1" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill="#e44782">
-<g id="SVGRepo_bgCarrier" stroke-width="0"/>
-<g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"/>
-<g id="SVGRepo_iconCarrier"> <style type="text/css"> .st0{fill:none;stroke:#EDEDED;stroke-width:0.25;stroke-miterlimit:10;} .st1{fill:none;stroke:#BDBDBD;stroke-width:0.25;stroke-miterlimit:10;} .st2{fill:none;stroke:#000000;stroke-width:2;stroke-miterlimit:10;} .st3{fill:#35C6F4;} .st4{fill:#EA386E;} .st5{fill:#7065AD;} .st6{fill:#FDBE57;} .st7{fill:#7BC89C;} .st8{fill:#FDD304;} .st9{fill:#27255F;} .st10{fill:#00AEEF;} </style> <g id="Layer_1"/> <g id="Layer_2"> <g> <path d="M49.4,11.7L24.2,18H9.4v3h-6v14h1h5v3h1H13l2.7,14h0.8h6.5l-2.7-14h3.8l25.1,6.3V43v-8h3.3V21h-3.3V11.7z M9.4,33h-4V23h4 V33z M20.7,50h-3.3l-2.3-12h3.3L20.7,50z M23.4,36H20h-7.4h-1.3v-1V21v-1h12V36z M47.4,21L47.4,21l0,14h0v6.7l-22-5.5V19.8l22-5.5 V21z M50.6,23v10h-1.3V23H50.6z"/> <rect height="2" width="4.8" x="54.9" y="27"/> <rect height="2" transform="matrix(0.9126 -0.4088 0.4088 0.9126 -3.5859 25.19)" width="5" x="54.7" y="20"/> <rect height="5" transform="matrix(0.4088 -0.9126 0.9126 0.4088 1.827 72.8513)" width="2" x="56.1" y="32.5"/> </g> </g> </g>
-</svg>
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_1" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 800 800">
+  <!-- Generator: Adobe Illustrator 29.8.1, SVG Export Plug-In . SVG Version: 2.1.1 Build 2)  -->
+  <defs>
+    <style>
+      .st0 {
+        fill: #a8e10c;
+      }
+    </style>
+  </defs>
+  <g id="SVGRepo_iconCarrier">
+    <g id="Layer_2">
+      <g>
+        <path class="st0" d="M617.5,146.25l-315,78.75H117.5v37.5H42.5v175h75v37.5h45l33.75,175h91.25l-33.75-175h47.5l313.75,78.75v-116.25h41.25v-175h-41.25v-116.25h2.5ZM117.5,412.5h-50v-125h50v125ZM258.75,625h-41.25l-28.75-150h41.25l28.75,150ZM292.5,450h-151.25v-200h150v200h1.25ZM592.5,262.5h0v175h0v83.75l-275-68.75v-205l275-68.75v83.75ZM632.5,287.5v125h-16.25v-125h16.25Z"/>
+        <rect class="st0" x="686.25" y="337.5" width="60" height="25"/>
+        <rect class="st0" x="683.75" y="249.64" width="62.5" height="25" transform="translate(-44.69 315.2) rotate(-24.13)"/>
+        <rect class="st0" x="701.38" y="406.87" width="25" height="62.5" transform="translate(22.2 910.52) rotate(-65.87)"/>
+      </g>
+    </g>
+  </g>
+</svg>

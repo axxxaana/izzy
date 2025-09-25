@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import ProfileCard from '../ProfileCard';
 import { ANIMATIONS, ANIMATION_DELAYS, VIEWPORT_SETTINGS } from '../../constants/animations';
+import { TYPOGRAPHY } from '../../constants/design-system';
 
 export const AboutHeroSection: React.FC = () => {
   const [screenWidth, setScreenWidth] = useState(0);
@@ -61,11 +62,7 @@ export const AboutHeroSection: React.FC = () => {
               >
                 {/* Main Heading */}
                 <motion.h1 
-                  className="text-[28px] sm:text-[36px] md:text-[48px] lg:text-[64px] font-bold text-black leading-[1.25] mb-4 sm:mb-6 font-['Montserrat'] text-center lg:text-left"
-                  style={{ 
-                    display: 'block',
-                    lineHeight: '1.25'
-                  }}
+                  className={`${TYPOGRAPHY.headings.h1.classes} text-black mb-4 sm:mb-6 text-center lg:text-left`}
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
@@ -77,7 +74,7 @@ export const AboutHeroSection: React.FC = () => {
                 
                 {/* Subtitle */}
                 <motion.p 
-                  className="text-[14px] sm:text-[16px] md:text-[18px] lg:text-xl text-black/80 leading-relaxed max-w-[500px] mb-6 sm:mb-8 text-center lg:text-left"
+                  className={`${TYPOGRAPHY.body.large.classes} text-black/80 max-w-[500px] mb-6 sm:mb-8 text-center lg:text-left`}
                   initial={ANIMATIONS.text.reveal.initial}
                   whileInView={ANIMATIONS.text.reveal.animate}
                   transition={{ ...ANIMATIONS.text.reveal.transition, delay: ANIMATION_DELAYS.md }}

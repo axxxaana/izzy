@@ -1,12 +1,18 @@
-<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<!-- Uploaded to: SVG Repo, www.svgrepo.com, Transformed by: SVG Repo Mixer Tools -->
-<svg width="800px" height="800px" viewBox="0 0 48 48" id="b" xmlns="http://www.w3.org/2000/svg" fill="#000000" stroke="#000000" stroke-width="1.6320000000000001">
-<g id="SVGRepo_bgCarrier" stroke-width="0"/>
-<g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"/>
-<g id="SVGRepo_iconCarrier">
-<defs>
-<style>.c{fill:none;stroke:#e44782;stroke-linecap:round;stroke-linejoin:round;}</style>
-</defs>
-<path class="c" d="m43,17.0766c0-5.6539-4.5835-10.2373-10.2374-10.2373-3.7223,0-6.9708,1.9932-8.7626,4.964-1.7919-2.9708-5.0403-4.964-8.7626-4.964-5.6539,0-10.2373,4.5834-10.2373,10.2373,0,1.2925.2496,2.524.6866,3.6627,3.3851,9.7368,18.3134,20.4215,18.3134,20.4215,0,0,14.9282-10.6847,18.3134-20.4215.437-1.1386.6867-2.3702.6867-3.6627Z"/>
-</g>
-</svg>
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="b" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 800 800">
+  <!-- Generator: Adobe Illustrator 29.8.1, SVG Export Plug-In . SVG Version: 2.1.1 Build 2)  -->
+  <defs>
+    <style>
+      .st0 {
+        fill: none;
+        stroke: #a8e10c;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        stroke-width: 27.2px;
+      }
+    </style>
+  </defs>
+  <g id="SVGRepo_iconCarrier">
+    <path class="st0" d="M716.67,284.61c0-94.23-76.39-170.62-170.62-170.62-62.04,0-116.18,33.22-146.04,82.73-29.87-49.51-84.01-82.73-146.04-82.73-94.23,0-170.62,76.39-170.62,170.62,0,21.54,4.16,42.07,11.44,61.05,56.42,162.28,305.22,340.36,305.22,340.36,0,0,248.8-178.08,305.22-340.36,7.28-18.98,11.44-39.5,11.44-61.05h0Z"/>
+  </g>
+</svg>

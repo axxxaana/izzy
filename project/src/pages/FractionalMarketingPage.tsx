@@ -1,12 +1,12 @@
-import React, { useEffect, useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-import { Link } from 'react-router-dom';
+import React from 'react';
+import { motion } from 'framer-motion';
 import { Layout } from '../components/layout/Layout';
 import { FooterSection } from '../screens/ElementLight/sections/FooterSection';
 import { TrustedByBanner } from '../components/TrustedByBanner';
-import { IdealClientSection, TestimonialsSection } from '../components/sections';
+import { IdealClientSection } from '../components/sections';
 import { HowItWorksSection } from '../components/sections/HowItWorksSection';
-import { ANIMATIONS, ANIMATION_DELAYS, VIEWPORT_SETTINGS } from '../constants/animations';
+import { ANIMATIONS, ANIMATION_DELAYS } from '../constants/animations';
+import { TYPOGRAPHY } from '../constants/design-system';
 
 
 
@@ -34,8 +34,8 @@ export const FractionalMarketingPage: React.FC = () => {
               <div className="absolute w-full h-full flex flex-col items-center justify-center px-4 pt-32 pb-32" style={{ paddingTop: 'calc(8rem + 80px)' }}>
                 
                 <motion.h1 
-                  className="max-w-4xl mx-auto text-[36px] md:text-[56px] lg:text-[64px] font-bold text-center mb-6 leading-[1.25]" 
-                  style={{ color: '#0f0f10', fontFamily: 'Montserrat, Helvetica', letterSpacing: '1.2px' }}
+                  className={`${TYPOGRAPHY.headings.h1.classes} max-w-4xl mx-auto text-center mb-6`}
+                  style={{ color: '#0f0f10' }}
                   initial={ANIMATIONS.fadeIn.up.initial}
                   animate={ANIMATIONS.fadeIn.up.animate}
                   transition={{ ...ANIMATIONS.fadeIn.up.transition, delay: ANIMATION_DELAYS.lg }}
@@ -44,8 +44,7 @@ export const FractionalMarketingPage: React.FC = () => {
                 </motion.h1>
                 
                 <motion.p 
-                  className="max-w-3xl text-center text-[18px] md:text-[20px] text-[#0f0f10] opacity-90 leading-relaxed" 
-                  style={{ fontFamily: 'Inter, Helvetica' }}
+                  className={`${TYPOGRAPHY.body.large.classes} max-w-3xl text-center text-[#0f0f10] opacity-90`}
                   initial={{ opacity: 0, y: 30 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.8, delay: 0.8 }}
@@ -86,31 +85,41 @@ export const FractionalMarketingPage: React.FC = () => {
       
       {/* How It Works Section Heading with enhanced styling */}
       <motion.div 
-        className="w-full flex flex-col items-center justify-center mb-16 mt-20"
+        className="w-full flex flex-col items-center justify-center mb-8 mt-20"
         initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
         viewport={{ once: true, margin: "-100px" }}
       >
-        <motion.h2 
-          className="text-[40px] md:text-[48px] font-extrabold text-center mb-6" 
-          style={{ color: '#0f0f10', fontFamily: 'Montserrat, Helvetica' }}
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.2 }}
-          viewport={{ once: true }}
-        >
-          How It Works
-        </motion.h2>
+        <div className="relative inline-block">
+          <motion.h2 
+            className={`${TYPOGRAPHY.headings.h2.classes} text-center mb-6 relative z-10`}
+            style={{ color: '#0f0f10' }}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            viewport={{ once: true }}
+          >
+            How It Works
+          </motion.h2>
+          
+          {/* Background Image with Twirly Arrow - positioned to the right of heading */}
+          <div 
+            className="absolute left-0 top-1/2 transform -translate-y-1/2 translate-x-[125px] -translate-y-[34px] w-[400px] h-[200px] bg-contain bg-no-repeat bg-center z-0"
+            style={{
+              backgroundImage: 'url(/how-it-works.png)'
+            }}
+          />
+        </div>
+        
         <motion.p 
-          className="text-lg text-center max-w-2xl opacity-80 px-4" 
-          style={{ fontFamily: 'Inter, Helvetica' }}
+          className={`${TYPOGRAPHY.body.large.classes} text-center max-w-sm opacity-80 px-4`}
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.4 }}
           viewport={{ once: true }}
         >
-          A clear, focused process to align your brand and marketing, so you can scale without the chaos or second-guessing.
+          A clear, focused process to align your brand and marketing.
         </motion.p>
       </motion.div>
       
@@ -128,10 +137,10 @@ export const FractionalMarketingPage: React.FC = () => {
 
       {/* FAQ Section */}
       <section className="w-full max-w-4xl mx-auto flex flex-col items-center pt-[60px] pb-32 px-4">
-        <h2 className="text-4xl md:text-5xl font-extrabold text-center mb-4" style={{ color: '#0f0f10', fontFamily: 'Montserrat, Helvetica' }}>
+        <h2 className={`${TYPOGRAPHY.headings.h2.classes} text-center mb-4`} style={{ color: '#0f0f10' }}>
           Frequently Asked Questions
         </h2>
-        <p className="text-lg text-center mb-8 opacity-80" style={{ fontFamily: 'Inter, Helvetica' }}>
+        <p className={`${TYPOGRAPHY.body.large.classes} text-center mb-8 opacity-80`}>
           Straight answers to what founders actually want to know.
         </p>
         <FAQSection />

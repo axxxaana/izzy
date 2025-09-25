@@ -2,9 +2,7 @@ import React, { useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { Layout } from '../components/layout/Layout';
-import { TYPOGRAPHY, COLORS, BORDER_RADIUS, SHADOWS } from '../constants/design-system';
-import { BRAND_LOGOS } from '../constants/navigation';
-import { TrustedByBanner } from '../components/TrustedByBanner';
+import { TYPOGRAPHY } from '../constants/design-system';
 import { TRUSTED_BY_LOGOS } from '../constants/trustedBy';
 import './GetStartedPage.css';
 
@@ -393,8 +391,7 @@ export const GetStartedPage: React.FC = () => {
                 transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
               >
                 <h1 
-                  className="text-gray-900 mb-6 font-semibold"
-                  style={{ fontSize: '70px', lineHeight: '1.05', fontFamily: 'Montserrat, Helvetica', letterSpacing: '0.5px' }}
+                  className={`${TYPOGRAPHY.headings.h1.classes} text-gray-900 mb-6`}
                 >
                   Let's talk.
                 </h1>
@@ -408,7 +405,6 @@ export const GetStartedPage: React.FC = () => {
               >
                 <p 
                   className={`${TYPOGRAPHY.body.large.classes} text-gray-600`}
-                  style={{ fontSize: '20px', lineHeight: '1.4' }}
                 >
                   Whether you're building your personal brand or scaling your startup it starts with clarity.
                 </p>
@@ -424,7 +420,7 @@ export const GetStartedPage: React.FC = () => {
                       </div>
                     </div>
                     <div className="flex-1 max-w-none">
-                      <p className="text-gray-700 text-base leading-relaxed max-w-4xl">
+                      <p className={`${TYPOGRAPHY.body.medium.classes} text-gray-700 max-w-4xl`}>
                         We'll sharpen your story so it actually connects not just sounds good on paper.
                       </p>
                     </div>
@@ -441,7 +437,7 @@ export const GetStartedPage: React.FC = () => {
                       </div>
                     </div>
                     <div className="flex-1 max-w-none">
-                      <p className="text-gray-700 text-base leading-relaxed max-w-4xl">
+                      <p className={`${TYPOGRAPHY.body.medium.classes} text-gray-700 max-w-4xl`}>
                         We'll create high-impact content that builds trust and authority without draining your time.
                       </p>
                     </div>
@@ -458,7 +454,7 @@ export const GetStartedPage: React.FC = () => {
                       </div>
                     </div>
                     <div className="flex-1 max-w-none">
-                      <p className="text-gray-700 text-base leading-relaxed max-w-4xl">
+                      <p className={`${TYPOGRAPHY.body.medium.classes} text-gray-700 max-w-4xl`}>
                         We'll map a visibility strategy that fits your energy and goals and drives real growth.
                       </p>
                     </div>

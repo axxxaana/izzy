@@ -23,11 +23,22 @@ export const PortfolioSection: React.FC = () => {
             viewport={{ once: true, amount: 0.3 }}
             transition={{ duration: 0.6, ease: 'easeOut' }}
           >
-            <h3 className="[font-family:'Montserrat',Helvetica] font-semibold text-[#091329] text-[40px]  leading-[50px] mb-6">
-              Client Results
-            </h3>
-            <p className="[font-family:'Inter',Helvetica] text-[#091329]/70 text-[16px] leading-[24px] max-w-lg mx-auto">
-              Real work with real outcomes. Strategy, voice, and visibility in action, built to perform, not just impress.
+            <div className="relative inline-block">
+              <h3 className="[font-family:'Montserrat',Helvetica] font-semibold text-[#091329] text-[40px]  leading-[50px] mb-6 relative z-10">
+                Client Results
+              </h3>
+              
+              {/* Background Image with Twirly Arrow - positioned to the left of heading */}
+              <div 
+                className="absolute left-0 top-1/2 transform -translate-y-1/2 -translate-x-[175px] -translate-y-[61px] w-[400px] h-[200px] bg-contain bg-no-repeat bg-center z-0"
+                style={{
+                  backgroundImage: 'url(/results-background.png)'
+                }}
+              />
+            </div>
+            
+            <p className="[font-family:'Inter',Helvetica] text-[#091329]/70 text-[16px] leading-[24px] max-w-sm mx-auto">
+              Strategy, voice, and visibility in action, built to perform, not just impress.
             </p>
           </motion.div>
           {/* Portfolio Cards - Only Nexus, Wellnergy, GoFounder */}

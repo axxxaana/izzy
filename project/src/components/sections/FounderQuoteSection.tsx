@@ -4,8 +4,16 @@ import { Link } from 'react-router-dom';
 
 export const FounderQuoteSection: React.FC = () => {
   return (
-    <section className="w-full bg-white py-24 md:py-32">
-      <div className="max-w-[1000px] mx-auto px-6 text-center">
+    <section 
+      className="w-full bg-white py-24 md:py-32 relative"
+      style={{
+        backgroundImage: 'url(/quote-arrow.png)',
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backgroundRepeat: 'no-repeat'
+      }}
+    >
+      <div className="max-w-[1000px] mx-auto px-6 text-center relative z-10">
         <motion.h2 
           className="[font-family:'Montserrat',Helvetica] font-semibold text-[#0f0f10] text-[50px] text-center  leading-[61.4px] mb-8"
           initial={{ opacity: 0, y: 30 }}
