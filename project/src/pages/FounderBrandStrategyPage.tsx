@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
 import { Layout } from '../components/layout/Layout';
 import { FooterSection } from '../screens/ElementLight/sections/FooterSection';
 import { TrustedByBanner } from '../components/TrustedByBanner';
@@ -59,18 +60,19 @@ export const FounderBrandStrategyPage: React.FC = () => {
                   Most founders treat LinkedIn like a slot machine - post, pray, repeat. Sometimes you win, most of the time you don't. I'll help you build something steadier - a foundation of authority and trust that doesn't disappear with the algorithm's mood swings.
                 </motion.p>
                 
-                <motion.button 
-                  onClick={(e: React.MouseEvent) => e.preventDefault()}
-                  className="mt-8 px-8 py-4 rounded-[0.84rem] bg-[#e44782] text-white text-xl font-semibold shadow-lg border-2 border-transparent hover:bg-white hover:text-[#e44782] hover:border-[#e44782] transition-colors duration-200" 
-                  style={{ fontFamily: 'Montserrat, Helvetica' }}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.5, ease: 'easeOut', delay: 0.7 }}
-                  whileHover={{ scale: 1.02 }}
-                  whileTap={{ scale: 0.98 }}
-                >
-                  Book a Call
-                </motion.button>
+                <Link to="/get-started">
+                  <motion.button 
+                    className="mt-8 px-8 py-4 rounded-[0.84rem] bg-[#e44782] text-white text-xl font-semibold shadow-lg border-2 border-transparent hover:bg-white hover:text-[#e44782] hover:border-[#e44782] transition-colors duration-200" 
+                    style={{ fontFamily: 'Montserrat, Helvetica' }}
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.5, ease: 'easeOut', delay: 0.7 }}
+                    whileHover={{ scale: 1.02 }}
+                    whileTap={{ scale: 0.98 }}
+                  >
+                    Book a Call
+                  </motion.button>
+                </Link>
               </div>
             </div>
           </motion.div>

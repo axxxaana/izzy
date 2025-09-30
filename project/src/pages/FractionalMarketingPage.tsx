@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
 import { Layout } from '../components/layout/Layout';
 import { FooterSection } from '../screens/ElementLight/sections/FooterSection';
 import { TrustedByBanner } from '../components/TrustedByBanner';
@@ -71,18 +72,19 @@ export const FractionalMarketingPage: React.FC = () => {
                   Hiring a full-time exec is like buying the whole orchestra when all you really need is the conductor. With me, you get the brains and direction of a CMO, without the overhead or the "we'll circle back" nonsense.
                 </motion.p>
                 
-                <motion.button 
-                  onClick={(e: React.MouseEvent) => e.preventDefault()}
-                  className="mt-8 px-8 py-4 rounded-[0.84rem] bg-[#e44782] text-white text-xl font-semibold shadow-lg border-2 border-transparent hover:bg-white hover:text-[#e44782] hover:border-[#e44782] transition-all duration-200 tracking-[1.2px]" 
-                  style={{ fontFamily: 'Montserrat, Helvetica' }}
-                  initial={{ opacity: 0, y: 30 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.8, delay: 0.8 }}
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.98 }}
-                >
-                  Book a Call
-                </motion.button>
+                <Link to="/get-started">
+                  <motion.button 
+                    className="mt-8 px-8 py-4 rounded-[0.84rem] bg-[#e44782] text-white text-xl font-semibold shadow-lg border-2 border-transparent hover:bg-white hover:text-[#e44782] hover:border-[#e44782] transition-all duration-200 tracking-[1.2px]" 
+                    style={{ fontFamily: 'Montserrat, Helvetica' }}
+                    initial={{ opacity: 0, y: 30 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.8, delay: 0.8 }}
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.98 }}
+                  >
+                    Book a Call
+                  </motion.button>
+                </Link>
               </div>
             </div>
           </motion.div>
