@@ -28,10 +28,16 @@ export const FractionalMarketingPage: React.FC = () => {
             transition={{ duration: 0.8, ease: "easeOut" }}
           >
             <div className="relative h-full">
-              {/* Simple Static Background */}
+              {/* Background Image */}
               <div 
-                className="absolute w-full h-full top-0 left-0 rounded-[15px] sm:rounded-[18px] lg:rounded-[22.5px] overflow-hidden"
-                style={{ background: '#FCEEF3' }}
+                className="absolute w-full h-full top-0 left-0 rounded-[15px] sm:rounded-[18px] lg:rounded-[22.5px] overflow-hidden bg-cover bg-center bg-no-repeat"
+                style={{ 
+                  backgroundImage: 'url(/fractional-marketing-hero.png)',
+                  backgroundSize: 'cover',
+                  backgroundPosition: 'center',
+                  backgroundRepeat: 'no-repeat',
+                  imageRendering: 'auto'
+                }}
               />
               {/* Hero Content */}
               <div className="absolute w-full h-full flex flex-col items-center justify-center px-4 pt-32 pb-32" style={{ paddingTop: 'calc(8rem + 80px)' }}>
