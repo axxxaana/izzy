@@ -303,6 +303,13 @@ body, html, #root, #app {
 /* 1440px specific image sizing */
 .image-1440-responsive {
   max-width: 85% !important;
+  image-rendering: high-quality;
+  -webkit-image-rendering: high-quality;
+  -moz-image-rendering: high-quality;
+  -ms-image-rendering: high-quality;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
 }
 
 @media (min-width: 1440px) and (max-width: 1535px) {

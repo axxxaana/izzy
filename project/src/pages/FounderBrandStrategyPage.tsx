@@ -32,7 +32,9 @@ export const FounderBrandStrategyPage: React.FC = () => {
                 style={{ 
                   backgroundImage: 'url(/founder-brand-strategy-hero.png)',
                   backgroundSize: 'cover',
-                  backgroundPosition: 'center'
+                  backgroundPosition: 'center',
+                  backgroundRepeat: 'no-repeat',
+                  imageRendering: 'auto'
                 }}
               />
               {/* Hero Content - Enhanced with animations */}

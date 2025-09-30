@@ -75,10 +75,12 @@ export const MainContentSection = (): JSX.Element => {
                 style={{ 
                   color: '#E75B8F',
                   textShadow: '0 0 20px rgba(231, 91, 143, 0.3)',
-                  filter: 'blur(0.5px)',
                   transform: 'translateY(-50%) translateX(25px) translateY(-30px)',
                   letterSpacing: '0.1em',
-                  lineHeight: '0.9'
+                  lineHeight: '0.9',
+                  textRendering: 'optimizeLegibility',
+                  WebkitFontSmoothing: 'antialiased',
+                  MozOsxFontSmoothing: 'grayscale'
                 }}
               >
                 <div>Izzy</div>
@@ -126,6 +128,15 @@ export const MainContentSection = (): JSX.Element => {
                   src="/Izzy-home-finals.png"
                   alt="Izzy Prior"
                   className="w-auto h-full object-contain object-bottom rounded-[15px] sm:rounded-[18px] lg:rounded-[22.5px] image-1440-responsive"
+                  style={{
+                    imageRendering: 'high-quality',
+                    WebkitImageRendering: 'high-quality',
+                    MozImageRendering: 'high-quality',
+                    msImageRendering: 'high-quality',
+                    transform: 'translateZ(0)',
+                    backfaceVisibility: 'hidden',
+                    WebkitBackfaceVisibility: 'hidden'
+                  }}
                 />
               </div>
             </div>
