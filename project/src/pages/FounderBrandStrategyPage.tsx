@@ -47,7 +47,7 @@ export const FounderBrandStrategyPage: React.FC = () => {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, ease: 'easeOut', delay: 0.3 }}
                 >
-                  Build Authority Without Turning Into a LinkedIn Cliché.
+                  Build Authority Without Turning Into a LinkedIn Cliché
                 </motion.h1>
                 
                 <motion.p 
