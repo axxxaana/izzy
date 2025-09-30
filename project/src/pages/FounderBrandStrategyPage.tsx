@@ -13,7 +13,7 @@ export const FounderBrandStrategyPage: React.FC = () => {
   return (
     <Layout 
       title="Founder Brand Strategy Service | Izzy Prior"
-      description="Transform your founder story into a compelling brand strategy. Get clarity on your brand positioning, messaging, and visual identity to attract your ideal customers."
+      description="Transform your founder story into a compelling brand strategy. Get clarity on positioning, messaging, and visual identity."
     >
       <div className="flex flex-col items-center w-full bg-white" style={{ minHeight: 'auto', height: 'auto', flexWrap: 'nowrap' }}>
       {/* Hero Section (with enhanced animations) */}

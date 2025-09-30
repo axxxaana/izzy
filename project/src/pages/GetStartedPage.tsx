@@ -357,7 +357,7 @@ export const GetStartedPage: React.FC = () => {
   return (
     <Layout 
       title="Book a Free Brand Strategy Call | Izzy Prior"
-      description="Book a free 20-minute brand strategy call with Izzy Prior. Get clarity on your brand story, marketing strategy, and next steps. No sales pitch, just actionable insights."
+      description="Book a free 20-minute brand strategy call with Izzy Prior. Get clarity on your brand story and next steps. No sales pitch."
     >
       <div className="flex flex-col items-start w-full min-h-screen" style={{ backgroundColor: 'rgba(228, 71, 130, 0.1)' }}>
         {/* Main Content - Full Height */}
