@@ -370,7 +370,10 @@ export { portfolioItems, PortfolioCard };
 
 export const PortfolioPage: React.FC = () => {
   return (
-    <Layout>
+    <Layout 
+      title="Portfolio & Case Studies | Izzy Prior"
+      description="Explore successful brand strategies and marketing campaigns for femtech, healthtech, and social-impact startups. See real results from Izzy Prior's fractional CMO work."
+    >
       <div className="w-full bg-white">
         {/* Hero Section */}
         <PortfolioHero />
