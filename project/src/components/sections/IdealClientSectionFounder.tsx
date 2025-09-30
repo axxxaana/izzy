@@ -9,7 +9,7 @@ const features = [
       </span>
     ),
     title: "Purpose-Driven",
-    desc: "You're building something bigger than revenue. A brand that means something and moves people."
+    desc: "Revenue's matters, but you're here to build more than numbers. You want a brand with meaning and depth, one that makes people seriously care."
   },
   {
     icon: (
@@ -19,7 +19,7 @@ const features = [
       </span>
     ),
     title: "Ambitious",
-    desc: "You're ready to lead. You want to grow your influence, shape your narrative, and own your space with confidence."
+    desc: "You're not looking to blend into the feed, you want to shape the conversation. A narrative that makes people pause mid-scroll, lean in and actually listen."
   },
   {
     icon: (
@@ -29,16 +29,16 @@ const features = [
       </span>
     ),
     title: "Time-Smart",
-    desc: "You want a brand that fits your life, one that builds momentum without demanding content every waking hour."
+    desc: "You don't want your life swallowed by content calendars, you've got better things to do. You want momentum (the kind that compounds)."
   }
 ];
 
 export const IdealClientSectionFounder: React.FC = () => {
   return (
     <section className="w-full max-w-6xl mx-auto py-16 pt-[calc(4rem+50px)] px-6 flex flex-col items-center mb-16">
-      <h2 className="text-4xl md:text-5xl font-extrabold text-center mb-2" style={{ color: '#0f0f10', fontFamily: 'Montserrat, Helvetica' }}>Made for Founders Like You</h2>
-      <p className="text-lg text-center mb-10 max-w-2xl opacity-80" style={{ fontFamily: 'Inter, Helvetica' }}>
-        If this sounds like you, you’re in the right place.
+      <h2 className="text-4xl md:text-5xl font-extrabold text-center mb-6" style={{ color: '#0f0f10', fontFamily: 'Montserrat, Helvetica' }}>Made for Founders Like You</h2>
+      <p className="text-lg text-center mb-10 max-w-sm opacity-80" style={{ fontFamily: 'Inter, Helvetica' }}>
+        If this sounds familiar, you're in the right place (and if not, you'll hate me anyway).
       </p>
       <div className="flex flex-col md:flex-row gap-10 w-full justify-center items-stretch">
         {features.map((f, i) => (
@@ -49,7 +49,17 @@ export const IdealClientSectionFounder: React.FC = () => {
           >
             {f.icon}
             <div className="text-2xl font-extrabold mb-5 mt-2" style={{ color: '#e44782', fontFamily: 'Montserrat, Helvetica' }}>{f.title}</div>
-            <div className="text-base opacity-80" style={{ fontFamily: 'Inter, Helvetica', lineHeight: 1.7 }}>{f.desc}</div>
+            <div 
+              className="text-base opacity-80" 
+              style={{ 
+                fontFamily: 'Inter, Helvetica', 
+                lineHeight: 1.7,
+                width: i === 1 ? '100%' : '110%',
+                textAlign: 'center'
+              }}
+            >
+              {f.desc}
+            </div>
           </div>
         ))}
       </div>

@@ -91,14 +91,52 @@ export const Navigation: React.FC<NavigationProps> = ({ className = '' }) => {
   return (
     <>
       <style>{`
-        .nav-item, a.nav-item, button.nav-item {
+        :root {
+          --nav-text-color: #374151;
+          --nav-hover-color: #e44782;
+        }
+        .nav-item, a.nav-item, button.nav-item, .navigation-container .nav-item, .navigation-container a.nav-item, .navigation-container button.nav-item {
           font-weight: 600 !important;
           letter-spacing: 0.8px !important;
-          color: #000000 !important;
+          color: var(--nav-text-color) !important;
           font-family: 'Montserrat', Helvetica, sans-serif !important;
         }
-        .nav-item:hover, a.nav-item:hover, button.nav-item:hover {
-          color: #e44782 !important;
+        .nav-item:hover, a.nav-item:hover, button.nav-item:hover, .navigation-container .nav-item:hover, .navigation-container a.nav-item:hover, .navigation-container button.nav-item:hover {
+          color: var(--nav-hover-color) !important;
+        }
+        .mobile-nav-item, .mobile-dropdown-item {
+          color: var(--nav-text-color) !important;
+        }
+        .mobile-nav-item:hover, .mobile-dropdown-item:hover {
+          color: var(--nav-hover-color) !important;
+        }
+        /* Force override any conflicting styles */
+        nav .nav-item, nav a.nav-item, nav button.nav-item {
+          color: var(--nav-text-color) !important;
+        }
+        nav .nav-item:hover, nav a.nav-item:hover, nav button.nav-item:hover {
+          color: var(--nav-hover-color) !important;
+        }
+        /* Ultra-specific override */
+        .custom-nav-color, a.custom-nav-color, button.custom-nav-color {
+          color: var(--nav-text-color) !important;
+        }
+        .custom-nav-color:hover, a.custom-nav-color:hover, button.custom-nav-color:hover {
+          color: var(--nav-hover-color) !important;
+        }
+        /* Nuclear option - target everything */
+        *[class*="nav-item"], *[class*="nav-item"]:not(:hover) {
+          color: var(--nav-text-color) !important;
+        }
+        *[class*="nav-item"]:hover {
+          color: var(--nav-hover-color) !important;
+        }
+        /* Data attribute override - highest specificity */
+        [data-nav-color="true"], [data-nav-color="true"]:not(:hover) {
+          color: var(--nav-text-color) !important;
+        }
+        [data-nav-color="true"]:hover {
+          color: var(--nav-hover-color) !important;
         }
       `}</style>
       <nav className={`navigation-bar ${className}`}>
@@ -148,9 +186,10 @@ export const Navigation: React.FC<NavigationProps> = ({ className = '' }) => {
                 onMouseLeave={handleServicesMouseLeave}
               >
                 <button
-                  className={`nav-item nav-item-dropdown ${location.pathname === item.href ? 'active' : ''}`}
+                  className={`nav-item nav-item-dropdown custom-nav-color ${location.pathname === item.href ? 'active' : ''}`}
+                  data-nav-color="true"
                   onClick={handleServicesClick}
-                  style={{ fontWeight: 600, letterSpacing: '0.8px', color: '#000000' }}
+                  style={{ fontWeight: 600, letterSpacing: '0.8px', color: '#374151' }}
                 >
                   {item.label}
                 </button>
@@ -163,11 +202,12 @@ export const Navigation: React.FC<NavigationProps> = ({ className = '' }) => {
               <Link 
                 key={index}
                 to={item.href}
-                className={`nav-item ${location.pathname === item.href ? 'active' : ''}`}
+                className={`nav-item custom-nav-color ${location.pathname === item.href ? 'active' : ''}`}
+                data-nav-color="true"
                 style={{ 
                   fontWeight: 600, 
                   letterSpacing: '0.8px', 
-                  color: '#000000',
+                  color: '#374151',
                   fontFamily: "'Montserrat', Helvetica, sans-serif"
                 }}
               >

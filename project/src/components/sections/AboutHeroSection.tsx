@@ -48,7 +48,7 @@ export const AboutHeroSection: React.FC = () => {
           <div className="relative h-full flex flex-col lg:flex-row items-center z-10 max-w-[1400px] mx-auto">
             {/* Left Side - Text Content */}
             <div 
-              className="w-full lg:w-1/2 p-4 sm:p-6 lg:p-8 xl:p-12 mt-[90px] order-1 lg:order-1"
+              className="w-full lg:w-1/2 p-4 sm:p-6 lg:p-8 xl:pt-12 xl:pb-12 xl:pl-12 xl:pr-0 mt-[90px] order-1 lg:order-1"
               style={{ 
                 marginLeft: screenWidth >= 1024 ? getTextMargin() : '0px',
                 transition: 'margin-left 0.3s ease'
@@ -62,25 +62,26 @@ export const AboutHeroSection: React.FC = () => {
               >
                 {/* Main Heading */}
                 <motion.h1 
-                  className={`${TYPOGRAPHY.headings.h1.classes} text-black mb-4 sm:mb-6 text-center lg:text-left`}
+                  className={`${TYPOGRAPHY.headings.h1.classes} text-black mb-4 sm:mb-6 text-center lg:text-left pr-0 lg:text-[60px] max-w-4xl`}
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
                   viewport={{ once: true, margin: "-50px" }}
                 >
-                  Where Clarity<br />
-                  Meets&nbsp;Conviction
+                  Your Brand Isn't<br />
+                  Boring. It's Just<br />
+                  Buried.
                 </motion.h1>
                 
                 {/* Subtitle */}
                 <motion.p 
-                  className={`${TYPOGRAPHY.body.large.classes} text-black/80 max-w-[500px] mb-6 sm:mb-8 text-center lg:text-left`}
+                  className={`${TYPOGRAPHY.body.large.classes} text-black/80 max-w-[550px] mb-6 sm:mb-8 text-center lg:text-left`}
                   initial={ANIMATIONS.text.reveal.initial}
                   whileInView={ANIMATIONS.text.reveal.animate}
                   transition={{ ...ANIMATIONS.text.reveal.transition, delay: ANIMATION_DELAYS.md }}
                   viewport={VIEWPORT_SETTINGS}
                 >
-                  I help bold, mission-driven founders turn their story into strategy. So their brand doesn't just look the part it leads, resonates, and gets results.
+                  I help founders dig it out, sharpen the story and show up with the kind of clarity that moves people (and yes, sales too).
                 </motion.p>
                 
                 {/* Book a Call Button */}

@@ -1,0 +1,61 @@
+/* MainContentSection Responsive Tagline Positioning */
+
+/* Reset any conflicting styles */
+.tagline-left,
+.tagline-right {
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+/* Base positioning for smaller screens */
+.tagline-left {
+  left: -130px; /* Moved left 50px more from -80px */
+}
+
+.tagline-right {
+  right: -90px; /* Moved left 50px from -140px */
+}
+
+/* 1440px screens - PERFECTLY BALANCED */
+@media (min-width: 1440px) {
+  .tagline-left {
+    left: -58px; /* Moved left 50px more from -8px */
+  }
+  
+  .tagline-right {
+    right: -18px; /* Moved left 50px from -68px */
+  }
+}
+
+/* 1680px screens - PERFECTLY BALANCED */
+@media (min-width: 1680px) {
+  .tagline-left {
+    left: -8px; /* Moved left 50px more from 42px */
+  }
+  
+  .tagline-right {
+    right: 32px; /* Moved left 50px from -18px */
+  }
+}
+
+/* 1920px screens - PERFECTLY BALANCED */
+@media (min-width: 1920px) {
+  .tagline-left {
+    left: 37px; /* Moved left 50px more from 87px */
+  }
+  
+  .tagline-right {
+    right: 77px; /* Moved left 50px from 27px */
+  }
+}
+
+/* Ultra-wide screens - Balanced scaling */
+@media (min-width: 2560px) {
+  .tagline-left {
+    left: 120px; /* Moved left 50px more from 170px */
+  }
+  
+  .tagline-right {
+    right: 160px; /* Moved left 50px from 110px */
+  }
+}

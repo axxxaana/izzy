@@ -80,11 +80,11 @@ export const TYPOGRAPHY = {
     },
     small: {
       fontFamily: "'Inter', Helvetica",
-      fontSize: "15.9px",
+      fontSize: "16px",
       fontWeight: "normal",
       tracking: "0",
       leading: "25.2px",
-      classes: "[font-family:'Inter',Helvetica] font-normal text-[15.9px] tracking-[0] leading-[25.2px]"
+      classes: "[font-family:'Inter',Helvetica] font-normal text-[16px] tracking-[0] leading-[25.2px]"
     },
     xsmall: {
       fontFamily: "'Inter', Helvetica",

@@ -242,7 +242,7 @@
   background: none;
   border: none;
   text-decoration: none;
-  color: #000000;
+  color: #374151;
   font-family: 'Montserrat', Helvetica, sans-serif;
   font-weight: 600 !important;
   font-size: 1.125rem;
@@ -275,7 +275,7 @@
   display: block;
   padding: 0.5rem 0;
   text-decoration: none;
-  color: #000000;
+  color: #374151;
   font-family: 'Montserrat', Helvetica, sans-serif;
   font-weight: 600 !important;
   font-size: 1rem;
@@ -359,7 +359,7 @@ a.nav-item,
   padding: 0 !important;
   text-decoration: none !important;
   transition: color 0.2s ease !important;
-  color: #000000 !important;
+  color: #374151 !important;
   font-family: 'Montserrat', Helvetica, sans-serif !important;
   font-weight: 600 !important;
   font-size: 16px !important;
@@ -515,10 +515,13 @@ button.nav-item:hover {
 .navigation-container .nav-item,
 .navigation-container a.nav-item,
 .navigation-container .nav-item:link,
-.navigation-container .nav-item:visited {
+.navigation-container .nav-item:visited,
+.navigation-bar .nav-item,
+.navigation-bar a.nav-item,
+.navigation-bar button.nav-item {
   font-weight: 600 !important;
   letter-spacing: 0.8px !important;
-  color: #000000 !important;
+  color: #374151 !important;
 }
 
 /* Force navigation hover - highest priority */

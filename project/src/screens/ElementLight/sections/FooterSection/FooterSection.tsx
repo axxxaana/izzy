@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 
@@ -6,29 +6,62 @@ import { Card } from "../../../../components/ui/card";
 import { Separator } from "../../../../components/ui/separator";
 
 export const FooterSection = (): JSX.Element => {
+  const [email, setEmail] = useState('');
+  const [error, setError] = useState('');
+  const [isSubmitted, setIsSubmitted] = useState(false);
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    
+    if (!email.trim()) {
+      setError('Please enter your email address');
+      return;
+    }
+    
+    if (!email.includes('@')) {
+      setError('Please enter a valid email address');
+      return;
+    }
+    
+    // Clear error and show success
+    setError('');
+    setIsSubmitted(true);
+    
+    // Here you would typically send the email to your service
+    console.log('Email submitted:', email);
+  };
+
   return (
     <>
       {/* Main Footer with Background Image */}
       <motion.footer 
-        className="w-full bg-[url(/izzy-background-footer.png)] bg-cover bg-center bg-no-repeat rounded-[25px] pt-[50px] pb-48 p-3 sm:p-4 lg:p-[15px]"
+        className="w-full bg-[#FCEDF3] rounded-[25px] pt-0 p-0"
         initial={{ opacity: 0, y: 60 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, ease: "easeOut" }}
         viewport={{ once: true, margin: "-100px" }}
       >
-        <div className="w-full flex flex-col md:flex-row-reverse items-center justify-between gap-8 px-8">
-          {/* Left: Image (if any) */}
+        <div className="w-full max-w-[1200px] mx-auto flex flex-col lg:flex-row items-end justify-between px-8">
+          {/* Left: Image */}
+          <div className="w-full lg:w-1/2 flex justify-center lg:justify-start items-end">
+            <img
+              src="/footer-izzy-cta.png"
+              alt="Izzy Prior"
+              className="w-full max-w-[500px] h-auto object-contain"
+            />
+          </div>
+          
           {/* Right: Text and Button */}
-          <div className="flex-1 flex flex-col items-center md:items-end justify-center py-16 pl-[50px] md:pl-[100px] lg:pl-[150px] xl:pl-[200px] 2xl:pl-[250px]">
+            <div className="w-full lg:w-1/2 flex flex-col items-center lg:items-start justify-center min-h-[400px]">
             <motion.div 
-              className="max-w-[915px] text-left md:mr-[100px] lg:mr-[150px] xl:mr-[200px] 2xl:mr-[250px] ml-[50px] md:ml-[100px] lg:ml-[150px] xl:ml-[200px] 2xl:ml-[250px]"
+              className="w-full"
               initial={{ opacity: 0, x: 30 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
               viewport={{ once: true, margin: "-100px" }}
             >
               <motion.h2 
-                className="[font-family:'Montserrat',Helvetica] font-semibold text-black text-[48px] md:text-[64px] text-left tracking-[0.5px] leading-[1.1] mb-2"
+                className="[font-family:'Montserrat',Helvetica] font-semibold text-black text-[48px] lg:text-[52px] text-left tracking-[0.5px] leading-[1.1] mb-1"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, ease: "easeOut", delay: 0.4 }}
@@ -38,7 +71,7 @@ export const FooterSection = (): JSX.Element => {
               </motion.h2>
 
               <motion.p 
-                className="[font-family:'Inter',Helvetica] font-normal text-black text-[18px] text-left tracking-[0] leading-[28px] mt-8 max-w-[580px] mb-8"
+                className="[font-family:'Inter',Helvetica] font-normal text-[#374151] text-[18px] text-left tracking-[0] leading-[28px] mt-4 max-w-[520px] mb-6"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, ease: "easeOut", delay: 0.6 }}
@@ -100,7 +133,7 @@ export const FooterSection = (): JSX.Element => {
                 />
               </motion.div>
               <motion.p 
-                className="[font-family:'Inter',Helvetica] text-gray-600 text-sm leading-relaxed mb-6"
+                className="[font-family:'Inter',Helvetica] text-[#374151] text-sm leading-relaxed mb-6"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, ease: "easeOut", delay: 0.3 }}
@@ -167,16 +200,16 @@ export const FooterSection = (): JSX.Element => {
                 viewport={{ once: true, margin: "-100px" }}
               >
                               <motion.li whileHover={{ x: 5 }} transition={{ duration: 0.2 }}>
-                <Link to="/about" className="[font-family:'Inter',Helvetica] text-gray-600 hover:text-[#e44782] transition-colors duration-200 text-sm">About</Link>
+                <Link to="/about" className="[font-family:'Inter',Helvetica] text-[#374151] hover:text-[#e44782] transition-colors duration-200 text-sm">About</Link>
               </motion.li>
               <motion.li whileHover={{ x: 5 }} transition={{ duration: 0.2 }}>
-                <Link to="/portfolio" className="[font-family:'Inter',Helvetica] text-gray-600 hover:text-[#e44782] transition-colors duration-200 text-sm">Portfolio</Link>
+                <Link to="/portfolio" className="[font-family:'Inter',Helvetica] text-[#374151] hover:text-[#e44782] transition-colors duration-200 text-sm">Portfolio</Link>
               </motion.li>
               <motion.li whileHover={{ x: 5 }} transition={{ duration: 0.2 }}>
-                <Link to="/resources" className="[font-family:'Inter',Helvetica] text-gray-600 hover:text-[#e44782] transition-colors duration-200 text-sm">Resources</Link>
+                <Link to="/resources" className="[font-family:'Inter',Helvetica] text-[#374151] hover:text-[#e44782] transition-colors duration-200 text-sm">Resources</Link>
               </motion.li>
               <motion.li whileHover={{ x: 5 }} transition={{ duration: 0.2 }}>
-                <Link to="/get-started" className="[font-family:'Inter',Helvetica] text-gray-600 hover:text-[#e44782] transition-colors duration-200 text-sm">Book a Call</Link>
+                <Link to="/get-started" className="[font-family:'Inter',Helvetica] text-[#374151] hover:text-[#e44782] transition-colors duration-200 text-sm">Book a Call</Link>
               </motion.li>
               </motion.ul>
             </motion.div>
@@ -205,10 +238,10 @@ export const FooterSection = (): JSX.Element => {
                 viewport={{ once: true, margin: "-100px" }}
               >
                               <motion.li whileHover={{ x: 5 }} transition={{ duration: 0.2 }}>
-                <Link to="/services/founder-brand-strategy" className="[font-family:'Inter',Helvetica] text-gray-600 hover:text-[#e44782] transition-colors duration-200 text-sm">Founder Brand Strategy</Link>
+                <Link to="/services/founder-brand-strategy" className="[font-family:'Inter',Helvetica] text-[#374151] hover:text-[#e44782] transition-colors duration-200 text-sm">Founder Brand Strategy</Link>
               </motion.li>
               <motion.li whileHover={{ x: 5 }} transition={{ duration: 0.2 }}>
-                <Link to="/services/fractional-marketing" className="[font-family:'Inter',Helvetica] text-gray-600 hover:text-[#e44782] transition-colors duration-200 text-sm">Fractional Marketing</Link>
+                <Link to="/services/fractional-marketing" className="[font-family:'Inter',Helvetica] text-[#374151] hover:text-[#e44782] transition-colors duration-200 text-sm">Fractional Marketing</Link>
               </motion.li>
               </motion.ul>
             </motion.div>
@@ -227,16 +260,29 @@ export const FooterSection = (): JSX.Element => {
                 transition={{ duration: 0.5, ease: "easeOut", delay: 0.5 }}
                 viewport={{ once: true, margin: "-100px" }}
               >
-                Get Free Resources
+                Tools to sharpen your brand, in one email a month.
               </motion.h3>
               <motion.p 
-                className="[font-family:'Inter',Helvetica] text-gray-600 text-sm mb-4"
+                className="[font-family:'Inter',Helvetica] text-[#374151] text-sm mb-4"
                 initial={{ opacity: 0, y: 15 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, ease: "easeOut", delay: 0.6 }}
                 viewport={{ once: true, margin: "-100px" }}
               >
-                Join my mailing list for exclusive brand strategy insights and actionable tips.
+                <div className="space-y-2">
+                  <div className="flex items-start gap-3">
+                    <span className="text-[#a8e10c] text-lg font-bold">✓</span>
+                    <span>Actionable strategies on brand, voice and visibility</span>
+                  </div>
+                  <div className="flex items-start gap-3">
+                    <span className="text-[#a8e10c] text-lg font-bold">✓</span>
+                    <span>Stories and campaign lessons (what worked, what didn't)</span>
+                  </div>
+                  <div className="flex items-start gap-3">
+                    <span className="text-[#a8e10c] text-lg font-bold">✓</span>
+                    <span>Exclusive resources before they go public</span>
+                  </div>
+                </div>
               </motion.p>
               <motion.form 
                 className="space-y-3"
@@ -244,21 +290,49 @@ export const FooterSection = (): JSX.Element => {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, ease: "easeOut", delay: 0.7 }}
                 viewport={{ once: true, margin: "-100px" }}
+                onSubmit={handleSubmit}
               >
                 <motion.input
                   type="email"
                   placeholder="Enter your email"
-                  className="w-full px-3 py-2 border border-gray-300 rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-[#e44782] focus:border-transparent"
+                  value={email}
+                  onChange={(e) => {
+                    setEmail(e.target.value);
+                    setError(''); // Clear error when user starts typing
+                  }}
+                  className={`w-full px-3 py-2 border rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-[#e44782] focus:border-transparent ${
+                    error ? 'border-red-500' : 'border-gray-300'
+                  }`}
                   whileFocus={{ scale: 1.02 }}
                   transition={{ duration: 0.2 }}
                 />
+                {error && (
+                  <motion.p 
+                    className="text-red-500 text-sm"
+                    initial={{ opacity: 0, y: -10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.3 }}
+                  >
+                    {error}
+                  </motion.p>
+                )}
+                {isSubmitted && (
+                  <motion.p 
+                    className="text-[#e44782] text-sm"
+                    initial={{ opacity: 0, y: -10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.3 }}
+                  >
+                    Thanks! You're all set.
+                  </motion.p>
+                )}
                 <motion.button
                   type="submit"
                   className="w-full bg-[#e44782] text-white px-4 py-2 rounded-md text-sm font-medium hover:bg-[#e44782]/90 transition-colors duration-200"
                   whileHover={{ scale: 1.02, y: -1 }}
                   whileTap={{ scale: 0.98 }}
                 >
-                  Subscribe
+                  I'm in!
                 </motion.button>
               </motion.form>
             </motion.div>

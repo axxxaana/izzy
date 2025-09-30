@@ -8,7 +8,8 @@ import { ANIMATIONS, ANIMATION_DELAYS } from '../constants/animations';
 import { TYPOGRAPHY } from '../constants/design-system';
 
 // PortfolioPage-specific hero content
-const PORTFOLIO_HERO_HEADLINE = 'Real Strategy.<br />Real Results.';
+const PORTFOLIO_HERO_HEADLINE = 'The receipts';
+const PORTFOLIO_HERO_SUBTITLE = '(I mean, results*)';
 
 const PORTFOLIO_HERO_SUBHEADLINE =
   'From femtech to founder brands. This is what happens when strategy turns into results.';
@@ -89,8 +90,11 @@ const CounterBlocks: React.FC = () => {
         >
           {counts.years}+
         </motion.div>
-        <div className="text-sm md:text-lg text-gray-700 font-medium font-['Inter'] whitespace-nowrap">
+        <div className="text-sm md:text-lg text-[#374151] font-medium font-['Inter'] whitespace-nowrap">
           Years in Brand Strategy
+        </div>
+        <div className="text-xs md:text-sm text-[#6B7280] font-normal font-['Inter'] mt-1 max-w-[200px] mx-auto leading-tight">
+          aka long enough to know what works, short enough not to be jaded.
         </div>
       </motion.div>
 
@@ -111,8 +115,11 @@ const CounterBlocks: React.FC = () => {
         >
           {counts.startups}+
         </motion.div>
-        <div className="text-sm md:text-lg text-gray-700 font-medium font-['Inter'] whitespace-nowrap">
+        <div className="text-sm md:text-lg text-[#374151] font-medium font-['Inter'] whitespace-nowrap">
           Early-Stage Startups Scaled
+        </div>
+        <div className="text-xs md:text-sm text-[#6B7280] font-normal font-['Inter'] mt-1 max-w-[200px] mx-auto leading-tight">
+          sharpened, scaled and uncluttered.
         </div>
       </motion.div>
 
@@ -133,8 +140,11 @@ const CounterBlocks: React.FC = () => {
         >
           {counts.brands}+
         </motion.div>
-        <div className="text-sm md:text-lg text-gray-700 font-medium font-['Inter'] whitespace-nowrap">
+        <div className="text-sm md:text-lg text-[#374151] font-medium font-['Inter'] whitespace-nowrap">
           Founder-Led Brands Built
+        </div>
+        <div className="text-xs md:text-sm text-[#6B7280] font-normal font-['Inter'] mt-1 max-w-[200px] mx-auto leading-tight">
+          turned from "kind of confusing" into "ohhh, now I get it."
         </div>
       </motion.div>
     </div>
@@ -161,18 +171,22 @@ const PortfolioHero: React.FC = () => {
             {/* Hero Content */}
             <div className="absolute w-full h-full flex flex-col items-center justify-center px-4 pt-40 pb-32" style={{ paddingTop: 'calc(8rem + 80px)' }}>
 
-              <motion.h1
-                className={`${TYPOGRAPHY.headings.h1.classes} max-w-4xl mx-auto text-center mb-6`}
-                style={{ color: '#0f0f10' }}
+              <motion.div
+                className="max-w-lg mx-auto text-center mb-6"
                 initial={ANIMATIONS.fadeIn.up.initial}
                 animate={ANIMATIONS.fadeIn.up.animate}
                 transition={{ ...ANIMATIONS.fadeIn.up.transition, delay: ANIMATION_DELAYS.lg }}
               >
-                <span dangerouslySetInnerHTML={{ __html: PORTFOLIO_HERO_HEADLINE }} />
-              </motion.h1>
+                <h1 className={`${TYPOGRAPHY.headings.h1.classes}`} style={{ color: '#0f0f10', marginBottom: '0' }}>
+                  {PORTFOLIO_HERO_HEADLINE}
+                </h1>
+                <div className="text-2xl" style={{ color: '#e44782', marginTop: '1rem' }}>
+                  {PORTFOLIO_HERO_SUBTITLE}
+                </div>
+              </motion.div>
 
               <motion.p
-                className={`${TYPOGRAPHY.body.large.classes} max-w-lg text-center text-[#0f0f10] opacity-90`}
+                className={`${TYPOGRAPHY.body.large.classes} max-w-lg text-center text-[#374151] opacity-90`}
                 initial={ANIMATIONS.text.reveal.initial}
                 animate={ANIMATIONS.text.reveal.animate}
                 transition={{ ...ANIMATIONS.text.reveal.transition, delay: ANIMATION_DELAYS.xl }}
@@ -281,12 +295,12 @@ const PortfolioCard: React.FC<{ item: typeof portfolioItems[0]; index: number }>
             <div>
               {/* Service badges for each card */}
               {(item.title === 'GoFounder' || item.title === 'Wellnergy') && (
-                <span className="inline-block mb-6 px-6 py-2 rounded-md bg-transparent border border-pink-500 text-pink-600 text-lg font-bold shadow-sm uppercase" style={{ fontFamily: 'Inter, Helvetica' }}>
+                <span className="inline-block mb-6 px-6 py-2 rounded-[0.84rem] bg-transparent border border-pink-500 text-pink-600 text-lg font-bold shadow-sm uppercase" style={{ fontFamily: 'Inter, Helvetica' }}>
                   Multi-Service
                 </span>
               )}
               {item.title === 'Nexus Connected' && (
-                <span className="inline-block mb-6 px-6 py-2 rounded-md bg-transparent border border-pink-500 text-pink-600 text-lg font-bold shadow-sm uppercase" style={{ fontFamily: 'Inter, Helvetica' }}>
+                <span className="inline-block mb-6 px-6 py-2 rounded-[0.84rem] bg-transparent border border-pink-500 text-pink-600 text-lg font-bold shadow-sm uppercase" style={{ fontFamily: 'Inter, Helvetica' }}>
                   Marketing
                 </span>
               )}
@@ -296,7 +310,7 @@ const PortfolioCard: React.FC<{ item: typeof portfolioItems[0]; index: number }>
                 {item.title}
               </h2>
 
-              <p className={`${TYPOGRAPHY.body.large.classes} text-gray-700 mb-6`}>
+              <p className={`${TYPOGRAPHY.body.large.classes} text-[#374151] mb-6`}>
                 {item.description}
               </p>
               <button
@@ -385,8 +399,8 @@ export const PortfolioPage: React.FC = () => {
               <h2 className={`${TYPOGRAPHY.headings.h2.classes} text-gray-900 mb-4`}>
                 Featured Projects
               </h2>
-              <p className={`${TYPOGRAPHY.body.large.classes} text-gray-600 max-w-2xl mx-auto`}>
-                Each project tells a unique story of transformation and growth.
+              <p className={`${TYPOGRAPHY.body.large.classes} text-[#374151] max-w-xl mx-auto`}>
+                Real stories of founders and startups who stopped winging it and started scaling with clarity.
               </p>
             </motion.div>
 

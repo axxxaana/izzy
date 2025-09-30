@@ -10,6 +10,7 @@ import { PortfolioSection } from '../../../../components/sections/PortfolioSecti
 import TrueFocus from '../../../../components/ui/TrueFocus';
 import { ANIMATIONS, ANIMATION_DELAYS, VIEWPORT_SETTINGS } from "../../../../constants/animations";
 import { TYPOGRAPHY } from "../../../../constants/design-system";
+import "./MainContentSection.css";
 
 export const MainContentSection = (): JSX.Element => {
   const [trueFocusIndex, setTrueFocusIndex] = useState(0); // For Strategy Voice Visibility animation
@@ -43,15 +44,15 @@ export const MainContentSection = (): JSX.Element => {
 
   // Service features data
   const founderBrandFeatures = [
-    "Craft a brand foundation that actually fits your story, your values, your positioning, so everything you say is rooted, intentional, and clear.",
-    "Find the words that sound like you. Then say them well. From LinkedIn posts to longform thought pieces, we'll shape content that builds trust and cuts through.",
-    "Show up where it matters. We'll map the right channels and rhythm to amplify your voice, attract the right people, and drive real growth.",
+    "<strong>Foundation, not fluff.</strong> A brand rooted in your story, values and mission - so everything you say has meaning.",
+    "<strong>Words that don't, erm, suck.</strong> We're anti-AI sludge around here. Let's find the words that sound like you on your best day and make people give a damn.",
+    "<strong>Show up where it matters.</strong> We'll map the right channels and rhythm to amplify your voice (no tap-dancing for the algorithm gods required).",
   ];
 
   const fractionalMarketingFeatures = [
-    "Build a brand backbone that can scale with clear pillars, smart positioning, and a plan that's actually built for your business.",
-    "Shape content that sounds like you, not a content bot with thought leadership, social, emails, and more, all grounded in your voice.",
-    "Show up where it counts. We'll map the channels and cadence to grow trust, build demand, and move the needle.",
+    "<strong>Cut the waste.</strong> I pinpoint what's working (and bin what isn't) so your strategy stops leaking money and starts making it.",
+    "<strong>Content systems that you'll actually use.</strong> I'm all about clear messaging, repeatable processes and campaigns that get people talking after launch day.",
+    "<strong>Strategy that ships.</strong> Translating brand strategy into action so your team knows what to do, why it matters and how it drives growth.",
   ];
 
 
@@ -67,70 +68,66 @@ export const MainContentSection = (): JSX.Element => {
               <div className="hidden lg:block absolute top-0 left-0 z-10">
                 <Navigation />
               </div>
-              {/* H1 Behind Image */}
-              <motion.h1 
-                className="absolute inset-0 flex items-center justify-center font-['Montserrat'] font-black text-[10rem] sm:text-[14rem] lg:text-[18rem] text-center z-0 tracking-[0.05em] sm:tracking-[0.08em] lg:tracking-[0.1em]"
+              
+              {/* H1 - Properly Centered */}
+              <h1 
+                className="absolute top-1/2 left-0 right-0 font-['Montserrat'] font-black text-[10rem] sm:text-[14rem] lg:text-[18rem] z-0 flex flex-col items-center justify-center"
                 style={{ 
                   color: '#E75B8F',
                   textShadow: '0 0 20px rgba(231, 91, 143, 0.3)',
                   filter: 'blur(0.5px)',
-                  transform: 'translateY(-30px)'
+                  transform: 'translateY(-50%) translateX(25px) translateY(-30px)',
+                  letterSpacing: '0.1em',
+                  lineHeight: '0.9'
                 }}
-                initial={{ opacity: 0, y: 30 }}
-                animate={{ opacity: 1, y: -30 }}
-                transition={{ duration: 1, ease: 'easeOut', delay: 0.5 }}
               >
-                <div className="flex flex-col leading-[0.8]">
-                  <span>Izzy</span>
-                  <span>Prior</span>
+                <div>Izzy</div>
+                <div style={{ letterSpacing: '0.2em' }}>Prior</div>
+              </h1>
+              {/* Tagline Container - Full Width */}
+              <div className="absolute z-20 bottom-16 left-0 right-0 px-4 sm:px-6 lg:px-8">
+                <div className="flex justify-between items-end w-full mx-auto" style={{ maxWidth: '891px' }}>
+                  {/* Tagline Text - Left */}
+                  <motion.div 
+                    className="flex-shrink-0"
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 1, ease: 'easeOut', delay: 1.2 }}
+                  >
+                    <p className="text-black text-base sm:text-lg lg:text-xl font-semibold leading-none font-['Montserrat'] text-center" style={{ lineHeight: '1.25' }}>
+                      Build a brand that<br />
+                      connects and<br />
+                      converts...
+                    </p>
+                  </motion.div>
+
+                  {/* Tagline Text - Right */}
+                  <motion.div 
+                    className="flex-shrink-0"
+                    style={{ marginLeft: '-4px' }}
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 1, ease: 'easeOut', delay: 1.4 }}
+                  >
+                    <p className="text-black text-base sm:text-lg lg:text-xl font-semibold leading-none font-['Montserrat'] text-center" style={{ lineHeight: '1.25' }}>
+                      ...without losing<br />
+                      your authentic<br />
+                      voice.
+                    </p>
+                  </motion.div>
                 </div>
-              </motion.h1>
-              {/* Tagline Text - Bottom Left */}
-              <motion.div 
-                className="absolute z-20 bottom-16"
-                style={{ 
-                  left: '100px'
-                }}
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 1, ease: 'easeOut', delay: 1.2 }}
-              >
-                <p className="text-black text-base sm:text-lg lg:text-xl font-medium leading-relaxed tagline-left">
-                  Build a brand that<br />
-                  <span className="text-[#a8e10c]">connects</span> and<br />
-                  converts...
-                </p>
-              </motion.div>
+              </div>
 
-              {/* Tagline Text - Bottom Right */}
-              <motion.div 
-                className="absolute z-20 bottom-16"
-                style={{ 
-                  right: '100px'
-                }}
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 1, ease: 'easeOut', delay: 1.4 }}
-              >
-                <p className="text-black text-base sm:text-lg lg:text-xl font-medium leading-relaxed tagline-right">
-                  ...without losing<br />
-                  your <span className="text-[#a8e10c]">authentic</span><br />
-                  voice.
-                </p>
-              </motion.div>
-
-              <motion.div 
+              <div 
                 className="w-full h-full flex items-end justify-center relative z-10"
-                initial={{ opacity: 0, scale: 0.9 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.8, ease: 'easeOut' }}
+                style={{ marginLeft: '25px' }}
               >
-                <motion.img
+                <img
                   src="/Izzy-home-finals.png"
                   alt="Izzy Prior"
                   className="w-auto h-full object-contain object-bottom rounded-[15px] sm:rounded-[18px] lg:rounded-[22.5px] image-1440-responsive"
                 />
-              </motion.div>
+              </div>
             </div>
           </div>
 
@@ -183,28 +180,28 @@ export const MainContentSection = (): JSX.Element => {
                   transition={{ ...ANIMATIONS.text.reveal.transition, delay: ANIMATION_DELAYS.lg }}
                   viewport={VIEWPORT_SETTINGS}
                 >
-                  Hey I'm Izzy.
+                  Hey, I'm Izzy.
                 </motion.h3>
 
                 {/* Main Description */}
                 <motion.div 
-                  className={`max-w-[500px] text-[#0f0f10] mb-8 space-y-4`}
+                  className={`max-w-[500px] text-[#374151] mb-8 space-y-4`}
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.8, ease: "easeOut", delay: 0.8 }}
                   viewport={{ once: true, margin: "-100px" }}
                 >
-                  <p className={TYPOGRAPHY.body.large.classes}>
-                    After years leading creative for VC-backed startups, I kept seeing the same thing: brilliant ideas buried under bloated messaging and brand bloat.
+                  <p className="text-sm lg:text-base">
+                    After years leading creative and marketing inside fast-moving startups, I kept seeing the same thing: brilliant ideas and incredible products buried under jargon-heavy messaging, bloated brand decks and marketing that made everything feel harder than it had to be.
                   </p>
-                  <p className={TYPOGRAPHY.body.large.classes}>
-                    That's why I now work directly with founders, cutting through the noise, shaping their story, and helping them scale with substance.
+                  <p className="text-sm lg:text-base">
+                    So I started cutting back the filler, stripping things down to the parts that actually matter.
                   </p>
-                  <p className={TYPOGRAPHY.body.large.classes}>
-                    I partner with femtech, healthtech, and mission-driven teams to build bold, heart-led brands that move people.
+                  <p className="text-sm lg:text-base">
+                    Now, I partner with founders and brands in femtech, healthtech and mission-driven spaces - helping them to bring their big ideas into the light and make marketing feel less of a headache.
                   </p>
-                  <p className={TYPOGRAPHY.body.large.classes}>
-                    What would your brand unlock if it finally spoke with clarity, courage, and heart?
+                  <p className="text-sm lg:text-base">
+                    I'm a fractional marketing and brand strategist. In plain English: I get your strategy, voice and visibility in sync so your brand doesn't just look good on paper - it connects. So good that your audience doesn't just notice you, they choose you.
                   </p>
                 </motion.div>
 
@@ -259,13 +256,14 @@ export const MainContentSection = (): JSX.Element => {
               />
             </motion.div>
             <motion.p 
-              className={`max-w-3xl text-center text-[#0f0f10] mt-8 sm:mt-10 ${TYPOGRAPHY.body.large.classes}`}
+              className={`max-w-3xl text-center text-[#374151] mt-8 sm:mt-10 ${TYPOGRAPHY.body.large.classes}`}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, ease: "easeOut", delay: 0.4 }}
               viewport={{ once: true, margin: "-100px" }}
             >
-              You don't need more noise. You need strategy that actually fits, a voice that actually sounds like you, and visibility that doesn't feel like screaming into the void. I help you shape all three, so your brand moves with meaning, not just motion.
+              Most founders obsess over shiny top-of-funnel bits, and ignore the rest. That's why growth flatlines.
+              But branding only works when all three pieces click together. Miss one and everything wobbles. Nail all three and your brand is bulletproof.
             </motion.p>
             <motion.div 
               className="flex justify-center mt-6 sm:mt-8"
@@ -335,13 +333,13 @@ export const MainContentSection = (): JSX.Element => {
                     Brand Strategy
                   </motion.h3>
                   <motion.p 
-                    className={`${TYPOGRAPHY.body.small.classes} text-gray-700 pb-6`}
+                    className="text-sm lg:text-base text-[#374151] pb-6"
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.6, ease: "easeOut", delay: 0.4 }}
                     viewport={{ once: true, margin: "-100px" }}
                   >
-                    For founders who want to build authority, trust, and momentum, without dancing for the algorithm gods.
+                    Most founders post for the algorithm. I'll help you build authority and trust without the circus tricks.
                   </motion.p>
                 </div>
 
@@ -374,14 +372,13 @@ export const MainContentSection = (): JSX.Element => {
                           />
                         </div>
                         <motion.p 
-                          className={`${TYPOGRAPHY.body.small.classes} text-gray-700`}
+                          className="text-sm lg:text-base text-[#374151]"
                           initial={{ opacity: 0, y: 20 }}
                           whileInView={{ opacity: 1, y: 0 }}
                           transition={{ duration: 0.6, ease: "easeOut", delay: 1.0 + (index + 1) * 0.2 }}
                           viewport={{ once: true, margin: "-100px" }}
-                        >
-                          {feature}
-                        </motion.p>
+                          dangerouslySetInnerHTML={{ __html: feature }}
+                        />
                       </div>
                     </motion.div>
                   ))}
@@ -444,13 +441,13 @@ export const MainContentSection = (): JSX.Element => {
                   Fractional Marketing<br />&amp; Brand Direction
                 </motion.h3>
                 <motion.p 
-                  className={`${TYPOGRAPHY.body.small.classes} text-gray-700 pb-6`}
+                  className={`${TYPOGRAPHY.body.small.classes} text-[#374151] pb-6`}
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, ease: "easeOut", delay: 0.6 }}
                   viewport={{ once: true, margin: "-100px" }}
                 >
-                  For startups ready to grow with clarity. I help you build a content system that performs, refine the messaging behind it, and turn brand thinking into execution that scales.
+                  For brands ready to grow with focus (and without pouring budget into things that don't work).
                 </motion.p>
               </div>
 
@@ -483,14 +480,13 @@ export const MainContentSection = (): JSX.Element => {
                         />
                       </div>
                       <motion.p 
-                        className={`${TYPOGRAPHY.body.small.classes} text-gray-700`}
+                        className={`${TYPOGRAPHY.body.small.classes} text-[#374151]`}
                         initial={{ opacity: 0, x: 20 }}
                         whileInView={{ opacity: 1, x: 0 }}
                         transition={{ duration: 0.6, ease: "easeOut", delay: 1.4 + (index + 1) * 0.2 }}
                         viewport={{ once: true, margin: "-100px" }}
-                      >
-                        {feature}
-                      </motion.p>
+                        dangerouslySetInnerHTML={{ __html: feature }}
+                      />
                     </div>
                   </motion.div>
                 ))}

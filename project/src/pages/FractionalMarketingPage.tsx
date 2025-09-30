@@ -33,23 +33,33 @@ export const FractionalMarketingPage: React.FC = () => {
               {/* Hero Content */}
               <div className="absolute w-full h-full flex flex-col items-center justify-center px-4 pt-32 pb-32" style={{ paddingTop: 'calc(8rem + 80px)' }}>
                 
-                <motion.h1 
-                  className={`${TYPOGRAPHY.headings.h1.classes} max-w-4xl mx-auto text-center mb-6`}
-                  style={{ color: '#0f0f10' }}
+                <motion.div 
+                  className="max-w-4xl mx-auto text-center mb-6"
                   initial={ANIMATIONS.fadeIn.up.initial}
                   animate={ANIMATIONS.fadeIn.up.animate}
                   transition={{ ...ANIMATIONS.fadeIn.up.transition, delay: ANIMATION_DELAYS.lg }}
                 >
-                  Strategic Brand Direction Built to Scale
-                </motion.h1>
+                  <h1 
+                    className={`${TYPOGRAPHY.headings.h1.classes}`}
+                    style={{ color: '#0f0f10', marginBottom: '0' }}
+                  >
+                    The Big Picture Strategy
+                  </h1>
+                  <div 
+                    className="text-2xl"
+                    style={{ color: '#e44782', marginTop: '1rem' }}
+                  >
+                    (without the big-shot CMO salary)
+                  </div>
+                </motion.div>
                 
                 <motion.p 
-                  className={`${TYPOGRAPHY.body.large.classes} max-w-3xl text-center text-[#0f0f10] opacity-90`}
+                  className={`${TYPOGRAPHY.body.large.classes} max-w-2xl text-center text-[#0f0f10] opacity-90`}
                   initial={{ opacity: 0, y: 30 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.8, delay: 0.8 }}
                 >
-                  I help early-stage startups turn brand chaos into clarity, with messaging that lands, content that converts, and strategy built to scale.
+                  Hiring a full-time exec is like buying the whole orchestra when all you really need is the conductor. With me, you get the brains and direction of a CMO, without the overhead or the "we'll circle back" nonsense.
                 </motion.p>
                 
                 <motion.button 
@@ -157,23 +167,23 @@ export const FractionalMarketingPage: React.FC = () => {
 const faqs = [
   {
     q: "What is fractional marketing, exactly?",
-    a: "It's like having a senior marketing lead in your corner without the overhead of a full-time hire. Strategy, content, and execution, tailored to your growth stage."
+    a: "It's like having a senior marketing lead in your corner… someone who sees the full chessboard, not just the next move. You get strategy, content and execution tailored to your stage of growth."
   },
   {
     q: "How is this different from hiring a freelancer or agency?",
-    a: "This isn't about checking boxes or churning content. You get strategic direction, execution support, and brand alignment all from someone who actually thinks like a founder."
+    a: "Freelancers often serve you one slice of the pie (copy, design, ads). Agencies love glossy presentations but aren't inside your business enough to see what's really broken. I sit in the middle: big-picture strategy and hands-on direction, without the layers of account managers."
   },
   {
     q: "Do you work with in-house teams?",
-    a: "Yes. Whether you have a marketing hire or no one in place yet, we plug in where it makes sense and build systems your team can run with."
+    a: "Absolutely. In fact, that's where I thrive - giving your existing team creative direction and processes so they stop spinning their wheels. Think of me as the glue between your brand's vision and your team's execution."
   },
   {
     q: "Will this help with both strategy and execution?",
-    a: "Yep. We don't just tell you what to do we help you do it. That means messaging, content systems, visibility planning, and everything in between."
+    a: "Yes. Strategy without execution is just a Google Doc gathering dust whilst execution without strategy is chaos on repeat. With me, you get both: clear priorities, a system to deliver and the know-how to actually make it stick."
   },
   {
     q: "Is this just for early-stage startups?",
-    a: "Not at all. If you've hit product-market fit and want brand-market clarity, this work gives your marketing the traction it's been missing."
+    a: "Nope. Early-stage founders love it because it gives them structure fast. But I also work with scaling teams who've outgrown DIY marketing and need a clear strategy that doesn't collapse the second they add a new channel."
   }
 ];
 

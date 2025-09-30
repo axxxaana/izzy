@@ -29,11 +29,11 @@ export const CaseStudiesSection: React.FC = () => {
             viewport={{ once: true, amount: 0.3 }}
             transition={{ duration: 0.6, ease: "easeOut" }}
           >
-            <h3 className="[font-family:'Montserrat',Helvetica] font-semibold text-[#091329] text-[40px]  leading-[50px] mb-6">
+             <h3 className="[font-family:'Montserrat',Helvetica] font-semibold text-[#091329] text-[40px]  leading-[50px]" style={{ marginBottom: '8px' }}>
               Client Results
             </h3>
-            <p className="[font-family:'Inter',Helvetica] text-[#091329]/70 text-[16px] leading-[24px] max-w-lg mx-auto">
-              Real work with real outcomes. Strategy, voice, and visibility in action, built to perform, not just impress.
+            <p className="[font-family:'Inter',Helvetica] text-[#374151] text-[16px] leading-[24px] max-w-md mx-auto">
+              Pretty branding is easy, commercial impact isn't. Here's how I've helped startups build brands that do both.
             </p>
           </motion.div>
             
@@ -53,7 +53,7 @@ export const CaseStudiesSection: React.FC = () => {
                   className={`px-10 py-4 rounded-2xl font-semibold transition-all duration-500 ease-out ${
                     activeCategory === category
                       ? 'bg-gradient-to-r from-[#e44782] to-[#e44782]/90 text-white shadow-xl shadow-[#e44782]/25'
-                      : 'text-gray-500 hover:text-gray-700 hover:bg-gray-50/80'
+                      : 'text-[#374151] hover:text-[#374151] hover:bg-gray-50/80'
                   }`}
                 >
                   {category}
@@ -94,7 +94,7 @@ export const CaseStudiesSection: React.FC = () => {
                             Nexus Connected
                           </h4>
                         </div>
-                        <p className="[font-family:'Inter',Helvetica] text-[#091329]/70 text-[15px] leading-[20px] mb-8 font-medium">
+                        <p className="[font-family:'Inter',Helvetica] text-[#374151] text-[16px] leading-[20px] mb-8 font-medium">
                           Strategic marketing leadership and brand development for innovative femtech platform.
                         </p>
                         <div className="flex items-center text-[#e44782] text-sm font-semibold hover:text-[#e44782]/80 transition-colors duration-300">
@@ -127,7 +127,7 @@ export const CaseStudiesSection: React.FC = () => {
                             Parent Promise
                           </h4>
                         </div>
-                        <p className="[font-family:'Inter',Helvetica] text-[#091329]/70 text-[15px] leading-[20px] mb-8 font-medium">
+                        <p className="[font-family:'Inter',Helvetica] text-[#374151] text-[16px] leading-[20px] mb-8 font-medium">
                           Content creation and ghostwriting for Dear Bump, connecting parents through authentic storytelling.
                         </p>
                         <div className="flex items-center text-[#e44782] text-sm font-semibold hover:text-[#e44782]/80 transition-colors duration-300">
@@ -160,7 +160,7 @@ export const CaseStudiesSection: React.FC = () => {
                             Dear Bump
                           </h4>
                         </div>
-                        <p className="[font-family:'Inter',Helvetica] text-[#091329]/70 text-[15px] leading-[20px] mb-8 font-medium">
+                        <p className="[font-family:'Inter',Helvetica] text-[#374151] text-[16px] leading-[20px] mb-8 font-medium">
                           Ghostwriting and content creation for pregnancy and parenting community platform.
                         </p>
                         <div className="flex items-center text-[#e44782] text-sm font-semibold hover:text-[#e44782]/80 transition-colors duration-300">
@@ -207,7 +207,7 @@ export const CaseStudiesSection: React.FC = () => {
                             GoFounder
                           </h4>
                         </div>
-                        <p className="[font-family:'Inter',Helvetica] text-[#091329]/70 text-[15px] leading-[20px] mb-8 font-medium">
+                        <p className="[font-family:'Inter',Helvetica] text-[#374151] text-[16px] leading-[20px] mb-8 font-medium">
                           Marketing, content creation, ghostwriting, and founder onboarding for startup community platform.
                         </p>
                         <div className="flex items-center text-[#e44782] text-sm font-semibold hover:text-[#e44782]/80 transition-colors duration-300">
@@ -240,7 +240,7 @@ export const CaseStudiesSection: React.FC = () => {
                             Wellnergy
                           </h4>
                         </div>
-                        <p className="[font-family:'Inter',Helvetica] text-[#091329]/70 text-[15px] leading-[20px] mb-8 font-medium">
+                        <p className="[font-family:'Inter',Helvetica] text-[#374151] text-[16px] leading-[20px] mb-8 font-medium">
                           Ghostwriting, branding, and influencer partnership outreach for wellness community.
                         </p>
                         <div className="flex items-center text-[#e44782] text-sm font-semibold hover:text-[#e44782]/80 transition-colors duration-300">
@@ -273,7 +273,7 @@ export const CaseStudiesSection: React.FC = () => {
                             Enara
                           </h4>
                         </div>
-                        <p className="[font-family:'Inter',Helvetica] text-[#091329]/70 text-[15px] leading-[20px] mb-8 font-medium">
+                        <p className="[font-family:'Inter',Helvetica] text-[#374151] text-[16px] leading-[20px] mb-8 font-medium">
                           Brand creation, visual identity, social strategy, lead magnets, founder ghostwriting, and creator acquisition.
                         </p>
                         <div className="flex items-center text-[#e44782] text-sm font-semibold hover:text-[#e44782]/80 transition-colors duration-300">

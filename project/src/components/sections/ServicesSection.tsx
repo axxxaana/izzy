@@ -7,11 +7,11 @@ export const ServicesSection: React.FC = () => {
     <>
       {/* Services Intro Section */}
       <div className="w-full max-w-[1512px] mt-16 mx-auto flex flex-col items-center" style={{marginTop: '164px'}}>
-        <h2 className="[font-family:'Montserrat',Helvetica] font-semibold text-[#0f0f10] text-[50px] text-center leading-[1.2] mb-8">
+        <h2 className="[font-family:'Montserrat',Helvetica] font-semibold text-[#374151] text-[50px] text-center leading-[1.2] mb-8">
           Strategy. Voice. Visibility
         </h2>
 
-        <p className="max-w-[467px] opacity-60 [font-family:'Inter',Helvetica] font-normal text-[#0f0f10] text-[16.9px] text-center tracking-[0] leading-[25.3px] mb-16">
+        <p className="max-w-[467px] opacity-60 [font-family:'Inter',Helvetica] font-normal text-[#374151] text-[16.9px] text-center tracking-[0] leading-[25.3px] mb-16">
           End-to-end brand and marketing solutions, refining your core
           message, building scalable content systems, and executing
           data-driven campaigns that drive real growth.
@@ -36,7 +36,7 @@ export const ServicesSection: React.FC = () => {
                 Founder personal <br />
                 brand strategy
               </h3>
-              <p className="[font-family:'Inter',Helvetica] font-normal text-gray-700 text-[15.9px] tracking-[0] leading-[25.2px] pb-6">
+              <p className="[font-family:'Inter',Helvetica] font-normal text-[#374151] text-[16px] tracking-[0] leading-[25.2px] pb-6">
                 For founders who want to build authority, trust and momentum{" "}
                 <br />
                 without posting daily just for the algorithm gods.
@@ -54,7 +54,7 @@ export const ServicesSection: React.FC = () => {
                       src="/vector-8.svg"
                     />
                   </div>
-                  <p className="[font-family:'Inter',Helvetica] font-normal text-gray-700 text-[15px] tracking-[0] leading-[25.2px]">
+                  <p className="[font-family:'Inter',Helvetica] font-normal text-[#374151] text-[16px] tracking-[0] leading-[25.2px]">
                     {FOUNDER_BRAND_FEATURES[0]}
                   </p>
                 </div>
@@ -70,7 +70,7 @@ export const ServicesSection: React.FC = () => {
                         src="/vector-8.svg"
                       />
                     </div>
-                    <p className="[font-family:'Inter',Helvetica] font-normal text-gray-700 text-[15px] tracking-[0] leading-[25.2px]">
+                    <p className="[font-family:'Inter',Helvetica] font-normal text-[#374151] text-[16px] tracking-[0] leading-[25.2px]">
                       {feature}
                     </p>
                   </div>
@@ -89,7 +89,7 @@ export const ServicesSection: React.FC = () => {
                 Fractional marketing <br />
                 &amp; brand direction
               </h3>
-              <p className="[font-family:'Inter',Helvetica] font-normal text-gray-700 text-[15.9px] tracking-[0] leading-[25.2px] pb-6">
+              <p className="[font-family:'Inter',Helvetica] font-normal text-[#374151] text-[16px] tracking-[0] leading-[25.2px] pb-6">
                 For startups ready to grow with clarity. I help you refine your messaging, build a content system that performs, and turn brand thinking into strategic execution.
               </p>
             </div>
@@ -105,7 +105,7 @@ export const ServicesSection: React.FC = () => {
                       src="/vector-8.svg"
                     />
                   </div>
-                  <p className="[font-family:'Inter',Helvetica] font-normal text-gray-700 text-[16px] tracking-[0] leading-[25.2px]">
+                  <p className="[font-family:'Inter',Helvetica] font-normal text-[#374151] text-[16px] tracking-[0] leading-[25.2px]">
                     {FRACTIONAL_MARKETING_FEATURES[0]}
                   </p>
                 </div>
@@ -121,7 +121,7 @@ export const ServicesSection: React.FC = () => {
                         src="/vector-8.svg"
                       />
                     </div>
-                    <p className="[font-family:'Inter',Helvetica] font-normal text-gray-700 text-[16px] tracking-[0] leading-[25.2px]">
+                    <p className="[font-family:'Inter',Helvetica] font-normal text-[#374151] text-[16px] tracking-[0] leading-[25.2px]">
                       {feature}
                     </p>
                   </div>

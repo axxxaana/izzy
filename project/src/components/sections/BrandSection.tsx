@@ -245,8 +245,8 @@ export const ImageArchSection: React.FC = () => {
             viewport={{ once: true, amount: 0.3 }}
             transition={{ duration: 0.6, ease: "easeOut", delay: 0.2 }}
           >
-            <p className="text-lg leading-[1.6] text-gray-700 text-center max-w-md mt-0 mb-0">
-              Chosen by founders, startups, and brands who want real impact, not just pretty words.
+            <p className="text-lg leading-[1.6] text-gray-700 text-center max-w-xs mt-0 mb-0">
+              Chosen by brands and founders who expect more than likes.
             </p>
           </motion.div>
         </div>

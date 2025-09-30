@@ -12,7 +12,7 @@ interface Value {
 const values: Value[] = [
   {
     title: "Purpose-Driven",
-    text: "Strategy starts with clarity, not campaigns. We define the problem and anchor every message in what matters.",
+    text: "Brands without an anchor drift. I help you drop that anchor deep into mission and meaning so every decision has weight and direction.",
     icon: (
       <img src="/eye-marketing.svg" alt="Eye Marketing" width="36" height="36" />
     ),
@@ -20,7 +20,7 @@ const values: Value[] = [
   },
   {
     title: "Heart-First",
-    text: "People buy into people. I help you show up with honesty and care. Your message should feel human, not hollow.",
+    text: "When your brand is grounded in honesty and care, people feel it. I help you put people at the centre so growth serves more than just the bottom line.",
     icon: (
       <img src="/heart.svg" alt="Heart" width="36" height="36" />
     ),
@@ -28,7 +28,7 @@ const values: Value[] = [
   },
   {
     title: "No Fluff",
-    text: "No jargon. No filler. Just clear, sharp messaging that makes people feel something and take action.",
+    text: "If it sounds like word soup, it's out. I strip it down to the bones so your message sticks (without the meaningless fluff).",
     icon: (
       <img src="/time.svg" alt="Time" width="36" height="36" />
     ),
@@ -129,7 +129,7 @@ export const MyValuesAnimated: React.FC = () => {
                       <h3 className="[font-family:'Montserrat',Helvetica] font-semibold text-[#e44782] text-[24px]  leading-[30px] mb-4 flex-shrink-0 text-center">
                         {value.title}
                       </h3>
-                      <p className="[font-family:'Inter',Helvetica] font-normal text-[#091329] text-[16px] tracking-[0] leading-[25.2px] text-center">
+                      <p className={`[font-family:'Inter',Helvetica] font-normal text-[#091329] text-[16px] tracking-[0] leading-[25.2px] text-center ${value.title === 'No Fluff' ? 'lg:max-w-[220px]' : ''}`}>
                         {value.text}
                       </p>
                     </div>

@@ -63,13 +63,14 @@ export const AboutStorySection: React.FC = () => {
               viewport={{ once: true, margin: "-100px" }}
             >
               <p className={`${TYPOGRAPHY.body.large.classes} text-[#4F4F4F] mb-6`}>
-                Whether you're a founder building your personal brand or a startup scaling your reach, the symptoms are the same, scattered messaging, inconsistent content, draining platforms, and growth that doesn't match your effort.
+                Most startups and founder-led brands don't fail because they're short on ideas. They're struggling because their story is scattered, the content is patchy and their growth never quite matches the grind.
               </p>
               <p className={`${TYPOGRAPHY.body.large.classes} text-[#4F4F4F] mb-6`}>
-                You're showing up and saying something worth hearing. But the message isn't landing. The content isn't converting. And the brand feels like it's trying too hard while still missing the mark.
+                You're showing up. You're saying something worth hearing.
+                But the message feels off. The content feels forced. And the brand feels like it's trying too hard while still missing the mark.
               </p>
               <p className={`${TYPOGRAPHY.body.large.classes} text-[#4F4F4F] mb-8`}>
-                This isn't about posting more or hiring a social media manager. It's about clarity and knowing what you stand for, how to say it, and where to show up so everything you share actually works.
+                At the root of it all is clarity. Knowing what you stand for, how to say it and where to show up so every drop of energy is rewarded.
               </p>
 
               {/* Book a Call Button */}
@@ -187,19 +188,19 @@ export const AboutStorySection: React.FC = () => {
               viewport={{ once: true, margin: "-100px" }}
             >
               <p className={`${TYPOGRAPHY.body.large.classes} text-[#4F4F4F] mb-6`}>
-                Most marketing advice tells you to do more. I help you do less, better.
+                Most marketing advice is like being told to run faster on a treadmill. More posts, more funnels, more hacks. But more speed on the wrong machine gets you nowhere.
               </p>
               <p className={`${TYPOGRAPHY.body.large.classes} text-[#4F4F4F] mb-6`}>
-                That starts by getting to the root of what you're really about. We dig into your story, your strengths, your positioning and build a clear foundation that makes everything else easier.
+                I help you do less, better.
               </p>
               <p className={`${TYPOGRAPHY.body.large.classes} text-[#4F4F4F] mb-6`}>
-                Then we shape your voice: the words, tone, and messaging that actually sound like you and land with the right people.
+                That starts by unearthing what you're really about - the core of your story, the spine of your brand. From there, we sharpen your voice until it feels unmistakably yours and land with the people you most want to reach.
               </p>
               <p className={`${TYPOGRAPHY.body.large.classes} text-[#4F4F4F] mb-6`}>
-                Finally, we map where and how to show up. Whether it's content, brand, or campaigns, you'll have a strategy that's focused, aligned, and built to grow.
+                Then we map the path forward - where to show up and where not to. The platforms, the rhythm, the campaigns that move the needle.
               </p>
               <p className={`${TYPOGRAPHY.body.large.classes} text-[#4F4F4F] mb-8`}>
-                Because when the message is clear, the marketing works.
+                Because when the message is clear, the marketing finally clicks.
               </p>
 
               {/* Book a Call Button */}

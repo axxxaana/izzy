@@ -127,7 +127,7 @@ const GetStartedFooter = (): JSX.Element => {
               />
             </motion.div>
             <motion.p 
-              className="[font-family:'Inter',Helvetica] text-gray-600 text-sm leading-relaxed mb-6"
+              className="[font-family:'Inter',Helvetica] text-[#374151] text-sm leading-relaxed mb-6"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, ease: "easeOut", delay: 0.3 }}
@@ -196,13 +196,13 @@ const GetStartedFooter = (): JSX.Element => {
               viewport={{ once: true, margin: "-100px" }}
             >
               <motion.li whileHover={{ x: 5 }} transition={{ duration: 0.2 }}>
-                <Link to="/about" className="[font-family:'Inter',Helvetica] text-gray-600 hover:text-[#e44782] transition-colors duration-200 text-sm">About</Link>
+                <Link to="/about" className="[font-family:'Inter',Helvetica] text-[#374151] hover:text-[#e44782] transition-colors duration-200 text-sm">About</Link>
               </motion.li>
               <motion.li whileHover={{ x: 5 }} transition={{ duration: 0.2 }}>
-                <Link to="/portfolio" className="[font-family:'Inter',Helvetica] text-gray-600 hover:text-[#e44782] transition-colors duration-200 text-sm">Portfolio</Link>
+                <Link to="/portfolio" className="[font-family:'Inter',Helvetica] text-[#374151] hover:text-[#e44782] transition-colors duration-200 text-sm">Portfolio</Link>
               </motion.li>
               <motion.li whileHover={{ x: 5 }} transition={{ duration: 0.2 }}>
-                <Link to="/get-started" className="[font-family:'Inter',Helvetica] text-gray-600 hover:text-[#e44782] transition-colors duration-200 text-sm">Book a Call</Link>
+                <Link to="/get-started" className="[font-family:'Inter',Helvetica] text-[#374151] hover:text-[#e44782] transition-colors duration-200 text-sm">Book a Call</Link>
               </motion.li>
             </motion.ul>
           </motion.div>
@@ -231,10 +231,10 @@ const GetStartedFooter = (): JSX.Element => {
               viewport={{ once: true, margin: "-100px" }}
             >
               <motion.li whileHover={{ x: 5 }} transition={{ duration: 0.2 }}>
-                <Link to="/services/founder-brand-strategy" className="[font-family:'Inter',Helvetica] text-gray-600 hover:text-[#e44782] transition-colors duration-200 text-sm">Founder Brand Strategy</Link>
+                <Link to="/services/founder-brand-strategy" className="[font-family:'Inter',Helvetica] text-[#374151] hover:text-[#e44782] transition-colors duration-200 text-sm">Founder Brand Strategy</Link>
               </motion.li>
               <motion.li whileHover={{ x: 5 }} transition={{ duration: 0.2 }}>
-                <Link to="/services/fractional-marketing" className="[font-family:'Inter',Helvetica] text-gray-600 hover:text-[#e44782] transition-colors duration-200 text-sm">Fractional Marketing</Link>
+                <Link to="/services/fractional-marketing" className="[font-family:'Inter',Helvetica] text-[#374151] hover:text-[#e44782] transition-colors duration-200 text-sm">Fractional Marketing</Link>
               </motion.li>
             </motion.ul>
           </motion.div>
@@ -256,7 +256,7 @@ const GetStartedFooter = (): JSX.Element => {
               Get Free Resources
             </motion.h3>
             <motion.p 
-              className="[font-family:'Inter',Helvetica] text-gray-600 text-sm mb-4"
+              className="[font-family:'Inter',Helvetica] text-[#374151] text-sm mb-4"
               initial={{ opacity: 0, y: 15 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, ease: "easeOut", delay: 0.6 }}
@@ -300,7 +300,7 @@ const GetStartedFooter = (): JSX.Element => {
         >
           <div className="flex flex-col md:flex-row justify-between items-center">
             <motion.p 
-              className="[font-family:'Inter',Helvetica] text-gray-500 text-sm mb-4 md:mb-0"
+              className="[font-family:'Inter',Helvetica] text-[#374151] text-sm mb-4 md:mb-0"
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.5, ease: "easeOut", delay: 0.6 }}
@@ -317,7 +317,7 @@ const GetStartedFooter = (): JSX.Element => {
             >
               <motion.a 
                 href="#" 
-                className="[font-family:'Inter',Helvetica] text-gray-500 hover:text-[#e44782] transition-colors duration-200 text-sm"
+                className="[font-family:'Inter',Helvetica] text-[#374151] hover:text-[#e44782] transition-colors duration-200 text-sm"
                 whileHover={{ x: 3 }}
                 transition={{ duration: 0.2 }}
               >
@@ -325,7 +325,7 @@ const GetStartedFooter = (): JSX.Element => {
               </motion.a>
               <motion.a 
                 href="#" 
-                className="[font-family:'Inter',Helvetica] text-gray-500 hover:text-[#e44782] transition-colors duration-200 text-sm"
+                className="[font-family:'Inter',Helvetica] text-[#374151] hover:text-[#e44782] transition-colors duration-200 text-sm"
                 whileHover={{ x: 3 }}
                 transition={{ duration: 0.2 }}
               >
@@ -404,9 +404,10 @@ export const GetStartedPage: React.FC = () => {
                 transition={{ duration: 0.8, ease: "easeOut", delay: 0.4 }}
               >
                 <p 
-                  className={`${TYPOGRAPHY.body.large.classes} text-gray-600`}
+                  className="text-base text-[#374151]"
                 >
-                  Whether you're building your personal brand or scaling your startup it starts with clarity.
+                  If you've made it this far, you probably already know: your brand has more to give.
+                  I'm not about stiff sales calls, I'm more about conversation. A chance to:
                 </p>
               </motion.div>
               
@@ -419,9 +420,9 @@ export const GetStartedPage: React.FC = () => {
                         <img src="/check-list-marketing.svg" alt="Check list" className="w-[40px] h-[40px]" />
                       </div>
                     </div>
-                    <div className="flex-1 max-w-none">
-                      <p className={`${TYPOGRAPHY.body.medium.classes} text-gray-700 max-w-4xl`}>
-                        We'll sharpen your story so it actually connects not just sounds good on paper.
+                    <div className="flex-1 max-w-sm">
+                      <p className="text-base text-[#374151]">
+                        Untangle the messy bits of your story so people actually get it.
                       </p>
                     </div>
                   </div>
@@ -436,9 +437,9 @@ export const GetStartedPage: React.FC = () => {
                         <img src="/announcement-marketing.svg" alt="Announcement" className="w-[40px] h-[40px]" />
                       </div>
                     </div>
-                    <div className="flex-1 max-w-none">
-                      <p className={`${TYPOGRAPHY.body.medium.classes} text-gray-700 max-w-4xl`}>
-                        We'll create high-impact content that builds trust and authority without draining your time.
+                    <div className="flex-1 max-w-sm">
+                      <p className="text-base text-[#374151]">
+                        Spot simple ways to build trust and authority without burning yourself out online.
                       </p>
                     </div>
                   </div>
@@ -453,24 +454,32 @@ export const GetStartedPage: React.FC = () => {
                         <img src="/eye-marketing.svg" alt="Eye" className="w-[40px] h-[40px]" />
                       </div>
                     </div>
-                    <div className="flex-1 max-w-none">
-                      <p className={`${TYPOGRAPHY.body.medium.classes} text-gray-700 max-w-4xl`}>
-                        We'll map a visibility strategy that fits your energy and goals and drives real growth.
+                    <div className="flex-1 max-w-sm">
+                      <p className="text-base text-[#374151]">
+                        Sketch out where to show up (and where not to) so your effort actually adds up.
                       </p>
                     </div>
                   </div>
                 </div>
               </div>
+              
+              {/* Call to Action Text */}
+              <motion.div
+                className="pb-12"
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, ease: "easeOut", delay: 0.8 }}
+              >
+                <p 
+                  className="text-base text-[#374151]"
+                >
+                  Think of it as hitting pause for 20 minutes - to get a plan that finally feels doable.
+                  <br />
+                  <br />
+                  Pick a time that works for you and let's start shaping your brand into something people can't ignore.
+                </p>
+              </motion.div>
             
-            {/* Trusted By Section */}
-            <div className="pb-16">
-              <SlowTrustedByBanner />
-
-
-
-
-
-            </div>
           </motion.div>
         </div>
       </section>

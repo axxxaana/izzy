@@ -24,7 +24,7 @@ export const PortfolioSection: React.FC = () => {
             transition={{ duration: 0.6, ease: 'easeOut' }}
           >
             <div className="relative inline-block">
-              <h3 className="[font-family:'Montserrat',Helvetica] font-semibold text-[#091329] text-[40px]  leading-[50px] mb-6 relative z-10">
+              <h3 className="[font-family:'Montserrat',Helvetica] font-semibold text-[#091329] text-[40px]  leading-[50px] relative z-10" style={{ marginBottom: '8px' }}>
                 Client Results
               </h3>
               
@@ -37,8 +37,8 @@ export const PortfolioSection: React.FC = () => {
               />
             </div>
             
-            <p className="[font-family:'Inter',Helvetica] text-[#091329]/70 text-[16px] leading-[24px] max-w-sm mx-auto">
-              Strategy, voice, and visibility in action, built to perform, not just impress.
+            <p className="[font-family:'Inter',Helvetica] text-[#374151] text-[16px] leading-[24px] mx-auto" style={{ maxWidth: '340px' }}>
+              Pretty branding is easy, commercial impact isn't. Here's how I've helped startups build brands that do both.
             </p>
           </motion.div>
           {/* Portfolio Cards - Only Nexus, Wellnergy, GoFounder */}
@@ -64,14 +64,14 @@ export const PortfolioSection: React.FC = () => {
                     </div>
                     <div className="flex-1 flex flex-col justify-center">
                       <div className="mb-4">
-                        <Badge className="bg-white border border-[#e44782] text-[#e44782] text-xs px-3 py-1.5 rounded-[0.84rem] font-medium shadow-sm mb-3 hover:bg-[#e44782] hover:text-white transition-colors duration-300">
+                        <Badge className="bg-white border border-[#e44782] text-[#e44782] text-xs px-3 py-1.5 !rounded-lg font-medium shadow-sm mb-3 hover:bg-[#e44782] hover:text-white transition-colors duration-300">
                           Marketing
                         </Badge>
                         <h4 className="[font-family:'Montserrat',Helvetica] font-bold text-[#091329] text-[26px] tracking-tight">
                           Nexus Connected
                         </h4>
                       </div>
-                      <p className="[font-family:'Inter',Helvetica] text-[#091329]/70 text-[15px] leading-[20px] mb-8 font-medium">
+                      <p className="[font-family:'Inter',Helvetica] text-[#374151] text-[16px] leading-[20px] mb-8 font-medium">
                         Strategic marketing leadership and brand development for innovative femtech platform.
                       </p>
                       <div className="flex items-center text-[#e44782] text-sm font-semibold hover:text-[#e44782]/80 transition-colors duration-300">
@@ -98,14 +98,14 @@ export const PortfolioSection: React.FC = () => {
                     </div>
                     <div className="flex-1 flex flex-col justify-center">
                       <div className="mb-4">
-                        <Badge className="bg-white border border-[#e44782] text-[#e44782] text-xs px-3 py-1.5 rounded-[0.84rem] font-medium shadow-sm mb-3 hover:bg-[#e44782] hover:text-white transition-colors duration-300">
+                        <Badge className="bg-white border border-[#e44782] text-[#e44782] text-xs px-3 py-1.5 !rounded-lg font-medium shadow-sm mb-3 hover:bg-[#e44782] hover:text-white transition-colors duration-300">
                           Multi-Service
                         </Badge>
                         <h4 className="[font-family:'Montserrat',Helvetica] font-bold text-[#091329] text-[26px] tracking-tight">
                           Wellnergy
                         </h4>
                       </div>
-                      <p className="[font-family:'Inter',Helvetica] text-[#091329]/70 text-[15px] leading-[20px] mb-8 font-medium">
+                      <p className="[font-family:'Inter',Helvetica] text-[#374151] text-[16px] leading-[20px] mb-8 font-medium">
                         Ghostwriting, branding, and influencer partnership outreach for wellness community.
                       </p>
                       <div className="flex items-center text-[#e44782] text-sm font-semibold hover:text-[#e44782]/80 transition-colors duration-300">
@@ -132,14 +132,14 @@ export const PortfolioSection: React.FC = () => {
                     </div>
                     <div className="flex-1 flex flex-col justify-center">
                       <div className="mb-4">
-                        <Badge className="bg-white border border-[#e44782] text-[#e44782] text-xs px-3 py-1.5 rounded-[0.84rem] font-medium shadow-sm mb-3 hover:bg-[#e44782] hover:text-white transition-colors duration-300">
+                        <Badge className="bg-white border border-[#e44782] text-[#e44782] text-xs px-3 py-1.5 !rounded-lg font-medium shadow-sm mb-3 hover:bg-[#e44782] hover:text-white transition-colors duration-300">
                           Multi-Service
                         </Badge>
                         <h4 className="[font-family:'Montserrat',Helvetica] font-bold text-[#091329] text-[26px] tracking-tight">
                           GoFounder
                         </h4>
                       </div>
-                      <p className="[font-family:'Inter',Helvetica] text-[#091329]/70 text-[15px] leading-[20px] mb-8 font-medium">
+                      <p className="[font-family:'Inter',Helvetica] text-[#374151] text-[16px] leading-[20px] mb-8 font-medium">
                         Marketing, content creation, ghostwriting, and founder onboarding for startup community platform.
                       </p>
                       <div className="flex items-center text-[#e44782] text-sm font-semibold hover:text-[#e44782]/80 transition-colors duration-300">

@@ -15,21 +15,21 @@ const processSteps: ProcessStep[] = [
     title: "Strategy",
     bgColor: "#F8F9FA",
     textColor: "#1e1e1e",
-    contentText: "Before any brand shows up boldly, it needs to get clear. This is where we go deep into your goals, your audience, and your positioning. We define what sets you apart and shape a foundation that guides every move.",
+    contentText: "This is about us getting brutally clear on your goals, audience and identity. You leave with a bedrock that guides decisions instead of another brand guidelines PDF collecting dust.",
     tags: []
   },
   {
     title: "Voice",
     bgColor: "#F8F9FA",
     textColor: "#1e1e1e",
-    contentText: "Forget bloated decks and buzzword soup. This is where we sharpen your message. We craft clear, human, confident language that sounds like you and actually connects.",
+    contentText: "Buzzwords are banned. If it sounds like AI sludge, it's gone. Together, we'll find the words that sound like you - the kind people actually stop and pay attention to.",
     tags: []
   },
   {
     title: "Visibility",
     bgColor: "#F8F9FA",
     textColor: "#1e1e1e",
-    contentText: "Now we bring it to life. From content systems to design direction, we shape how your brand shows up with consistency, intention, and impact.",
+    contentText: "Forget showing up everywhere, I'll put you in places that matter most. The right channels that carry furthest and the right rhythm you can keep, without burning out.",
     tags: []
   }
 ];
@@ -83,13 +83,13 @@ export const IzzyProcessAccordion: React.FC = () => {
               </div>
               
               {/* Main Title */}
-              <h2 className="text-[36px] md:text-[48px] lg:text-[56px] font-bold text-gray-900 mb-6 font-['Montserrat'] tracking-tight leading-[1.1]">
+              <h2 className="text-[36px] md:text-[48px] lg:text-[56px] font-semibold text-gray-900 mb-6 font-['Montserrat'] tracking-tight leading-[1.1]">
                 A Brand Process That Actually Works
               </h2>
               
               {/* Subtitle */}
-              <p className="text-[16px] md:text-[18px] lg:text-[20px] text-gray-600 leading-relaxed mb-8 max-w-[480px] mx-auto lg:mx-0">
-                A clear, human, and commercially-minded journey to brand clarity built to cut through the noise, simplify decisions, and drive results that actually move the needle.
+              <p className="text-[18px] text-[#374151] leading-relaxed mb-8 max-w-[480px] mx-auto lg:mx-0">
+                Clarity isn't rocket science but it does take focus. My process is designed to stick (no 57-step funnel in sight).
               </p>
               
               {/* Book a Call Button */}
@@ -149,7 +149,7 @@ export const IzzyProcessAccordion: React.FC = () => {
                   
                   {/* Description */}
                   <p 
-                    className="text-[15px] lg:text-[16px] leading-relaxed mb-6 lg:mb-8 opacity-90"
+                    className="text-[16px] lg:text-[16px] leading-relaxed mb-6 lg:mb-8 opacity-90"
                     style={{ color: step.textColor }}
                   >
                     {step.contentText}

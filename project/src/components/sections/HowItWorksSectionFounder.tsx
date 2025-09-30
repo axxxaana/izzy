@@ -11,9 +11,9 @@ import { TestimonialsSection } from './TestimonialsSection';
 const stages = [
   {
     tag: "Strategy",
-    heading: "Clarify Your Brand",
+    heading: "Define Your Brand",
     subtext:
-      "We'll cut the noise and get clear on what makes you different. This is the foundation built on your story, not someone else's playbook.",
+      "We start by getting brutally honest about what you actually stand for. Not the fluffy \"we help people\" spiel, but the story, strengths and positioning that make you worth listening to. Think of it as brand therapy, minus the incense sticks.",
     accordion: [
       {
         title: "Own Your Narrative",
@@ -35,9 +35,9 @@ const stages = [
   },
   {
     tag: "Voice",
-    heading: "Create Amazing Content",
+    heading: "Align and Communicate to Your Audience",
     subtext:
-      "Your story deserves more than recycled tips and a bloated calendar. We turn strategy into content that connects without chasing trends or dancing for the algorithm.",
+      "Most brands are recycling Canva templates and hashtagging their way to engagement. Yours won't. Together we'll align who you are with how you show up, and then find the words that actually land with the people that matter. This is your voice, sharper.",
     accordion: [
       {
         title: "Say what actually matters",
@@ -59,9 +59,9 @@ const stages = [
   },
   {
     tag: "Visibility",
-    heading: "Grow With Intention",
+    heading: "Amplify Your Presence",
     subtext:
-      "You don't need to be everywhere. You need to show up in the right places with the right message. We help you grow with clarity, not chaos.",
+      "Here's the part most people mess up: trying to be everywhere. We'll pick the places that actually matter, set a rhythm you can actually sustain and build campaigns that keep working even when you log off. Growth without the hamster wheel.",
     accordion: [
       {
         title: "Choose what actually works",
@@ -116,7 +116,7 @@ export const HowItWorksSectionFounder: React.FC = () => {
           </div>
           
           <p className="[font-family:'Inter',Helvetica] text-[#091329]/70 text-[16px] leading-[24px] max-w-sm mx-auto">
-            Just a clear, proven system to turn your story into a magnetic personal brand without burning out.
+            Don't worry, this isn't another 47-step funnel or a deck you'll never open again. Just a clear process that actually gets you moving.
           </p>
         </div>
         
@@ -144,10 +144,10 @@ export const HowItWorksSectionFounder: React.FC = () => {
                     <span className="inline-block mb-4 px-6 py-2 text-[#e44782] text-base font-semibold shadow-sm bg-white uppercase tracking-wide border" style={{ fontFamily: 'Inter, Helvetica', borderRadius: '0.5rem', letterSpacing: '0.04em', borderColor: '#e44782', fontWeight: 600 }}>
                       {stage.tag}
                     </span>
-                    <h3 className="text-[34px] font-extrabold mb-4" style={{ color: '#0f0f10', fontFamily: 'Montserrat, Helvetica' }}>
+                    <h3 className="text-[34px] font-extrabold mb-4 leading-tight" style={{ color: '#0f0f10', fontFamily: 'Montserrat, Helvetica' }}>
                       {stage.heading}
                     </h3>
-                    <p className="text-lg mb-6 max-w-lg opacity-80" style={{ fontFamily: 'Inter, Helvetica' }}>{stage.subtext}</p>
+                    <p className="text-base mb-6 max-w-lg opacity-80" style={{ fontFamily: 'Inter, Helvetica' }}>{stage.subtext}</p>
                     <div className="flex flex-col gap-1 w-full h-[400px]">
                       {stage.accordion.map((row, i) => {
                         const isOpen = openIndexes[idx] === i;
@@ -257,23 +257,23 @@ export const HowItWorksSectionFounder: React.FC = () => {
 const faqs = [
   {
     q: "What exactly is the founder brand strategy?",
-    a: "It's your message, your positioning, and your visibility, aligned. We get clear on what you stand for, how you say it, and where you show up so people trust you before they even hit your site."
+    a: "It's your story, your positioning, and your visibility - all lined up so people actually get who you are and why they should care. We cut the jargon, sharpen your message and decide where you should show up so your brand builds trust (and sales)."
   },
   {
     q: "How is this different from other personal brand services?",
-    a: "Most services focus on surface-level visibility and more posts, more noise. This goes deeper. We build a strategic foundation so everything you say and share is rooted, intentional, and aligned with where you're headed."
+    a: "I don't follow the \"post 5 times a week and hope for the best\" parade and I don't give you cookie-cutter content calendars to meddle with. Instead, we build a system that actually fits you (your goals, your voice, your stage of growth) and keeps working long after I've left your Slack."
   },
   {
     q: "Is this just for early-stage founders?",
-    a: "Not at all. Whether you're just starting or scaling fast, having a clear, strategic brand helps you lead with confidence and attract the right people."
+    a: "Nope. Early-stage, scaling, mid-pivot, post-raise - the problems are usually the same. If you're a human leading a business and you want clarity, this is for you."
   },
   {
     q: "Do I need to be posting every day for this to work?",
-    a: "Nope. This is about consistency, not quantity. We'll build a content rhythm that fits your life and still gets results, no daily grind required."
+    a: "Absolutely not. Unless you love the idea of running in circles for vanity metrics. What you actually need is the right rhythm, the right message and the right people paying attention. Quality > quantity, always."
   },
   {
     q: "Is this just for LinkedIn?",
-    a: "Nope. LinkedIn's great but this is about your whole ecosystem. Whether it's podcasts, longform, newsletters, or whatever channels make sense for you, we build a strategy that meets your goals, not just the algorithm."
+    a: "Nope. LinkedIn's just one piece of the puzzle. This is about your whole ecosystem - podcasts, long-form, newsletters, events, whatever channels actually make sense for you. We'll build a strategy that gets you seen with intention. (P.S. Don't worry, no TikTok dancing required… unless you're into that.)"
   }
 ];
 

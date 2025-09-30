@@ -71,7 +71,7 @@ const ResourcesHero: React.FC = () => {
               </motion.h1>
 
               <motion.p
-                className={`${TYPOGRAPHY.body.large.classes} max-w-lg text-center text-[#0f0f10] opacity-90`}
+                className={`${TYPOGRAPHY.body.large.classes} max-w-lg text-center text-[#374151] opacity-90`}
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.8 }}
@@ -137,13 +137,13 @@ const ResourceCard: React.FC<{ resource: typeof resources[0]; index: number }> =
           </h3>
 
           {/* Description */}
-          <p className={`${TYPOGRAPHY.body.medium.classes} text-gray-600 mb-4`}>
+          <p className={`${TYPOGRAPHY.body.medium.classes} text-[#374151] mb-4`}>
             {resource.description}
           </p>
 
           {/* Download Button */}
           <div className="flex items-center justify-between">
-            <span className="text-sm text-gray-500">Free Download</span>
+            <span className="text-sm text-[#374151]">Free Download</span>
             <span className="text-pink-600 font-semibold group-hover:translate-x-1 transition-transform duration-300">
               Download →
             </span>
@@ -177,7 +177,7 @@ export const ResourcesPage: React.FC = () => {
             <h2 className={`${TYPOGRAPHY.headings.h2.classes} text-gray-900 mb-4 max-w-lg mx-auto`}>
               Free Resources
             </h2>
-            <p className={`${TYPOGRAPHY.body.large.classes} text-gray-600 max-w-xl mx-auto`}>
+            <p className={`${TYPOGRAPHY.body.large.classes} text-[#374151] max-w-xl mx-auto`}>
               Download these free resources to help you build a stronger brand.
             </p>
           </motion.div>
