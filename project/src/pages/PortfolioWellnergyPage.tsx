@@ -167,7 +167,7 @@ const PortfolioWellnergyPage: React.FC = () => {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, ease: 'easeOut', delay: 0.4 }}
-              className="text-5xl md:text-6xl lg:text-7xl font-black mb-6 leading-[0.9] font-['Montserrat'] text-gray-900 tracking-tight"
+              className="text-4xl md:text-5xl lg:text-6xl font-black mb-4 leading-[0.9] font-['Montserrat'] text-gray-900 tracking-tight"
             >
               <span className="bg-gradient-to-r from-gray-900 via-pink-800 to-pink-600 bg-clip-text text-transparent">
                 {HERO_HEADING}
@@ -179,9 +179,9 @@ const PortfolioWellnergyPage: React.FC = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.6 }}
-              className="mb-8"
+              className="mb-6"
             >
-              <span className="text-2xl md:text-3xl font-bold text-pink-500 tracking-wide">
+              <span className="text-xl md:text-2xl font-bold text-pink-500 tracking-wide">
                 Case Study
               </span>
             </motion.div>

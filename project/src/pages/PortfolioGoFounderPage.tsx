@@ -155,7 +155,7 @@ const PortfolioGoFounderPage: React.FC = () => {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, ease: 'easeOut', delay: 0.4 }}
-              className={`${TYPOGRAPHY.headings.h1.classes} mb-6 text-gray-900`}
+              className={`${TYPOGRAPHY.headings.h2.classes} mb-4 text-gray-900`}
             >
               <span className="bg-gradient-to-r from-gray-900 via-pink-800 to-pink-600 bg-clip-text text-transparent">
                 {HERO_HEADING}
@@ -167,9 +167,9 @@ const PortfolioGoFounderPage: React.FC = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.6 }}
-              className="mb-8"
+              className="mb-6"
             >
-              <span className="text-2xl md:text-3xl font-bold text-pink-500 tracking-wide">
+              <span className="text-xl md:text-2xl font-bold text-pink-500 tracking-wide">
                 Case Study
               </span>
             </motion.div>
