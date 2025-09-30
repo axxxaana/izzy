@@ -14,9 +14,9 @@ export const Layout: React.FC<LayoutProps> = ({
   // Update document title if provided
   React.useEffect(() => {
     if (title) {
-      document.title = `${title} | ${APP_CONFIG.title}`;
+      document.title = `${title} | Izzy Prior`;
     } else {
-      document.title = APP_CONFIG.title;
+      document.title = 'Izzy Prior';
     }
   }, [title]);
 
