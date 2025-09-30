@@ -1,4 +1,5 @@
 import React from 'react';
+import { motion } from 'framer-motion';
 import { LayoutProps } from '../../types';
 import { APP_CONFIG } from '../../constants/config';
 import { Navigation } from './Navigation';
@@ -39,12 +40,18 @@ export const Layout: React.FC<LayoutProps> = ({
   }, [description]);
 
   return (
-    <div className={`min-h-screen bg-white ${className}`}>
+    <motion.div 
+      className={`min-h-screen bg-white ${className}`}
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      transition={{ duration: 1.3, ease: "easeOut" }}
+    >
       {/* Cursor Trail Effect */}
       <CursorTrail />
       {/* Navigation - Consistent across all pages */}
       <Navigation />
       {children}
-    </div>
+    </motion.div>
   );
 }; 

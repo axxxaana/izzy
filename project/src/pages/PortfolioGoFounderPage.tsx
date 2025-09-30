@@ -145,10 +145,8 @@ const PortfolioGoFounderPage: React.FC = () => {
               transition={{ duration: 0.6, delay: 0.5 }}
               className="mb-8"
             >
-              <span className="inline-flex items-center px-6 py-3 rounded-full bg-white border border-pink-200 shadow-lg backdrop-blur-sm">
-                <span className="text-pink-700 font-medium text-sm tracking-wide">
-                  B2B COACHING
-                </span>
+              <span className="px-4 py-2 bg-white border border-[#e44782] rounded-lg text-sm font-bold text-[#e44782] tracking-widest uppercase">
+                B2B COACHING
               </span>
             </motion.div>
 
