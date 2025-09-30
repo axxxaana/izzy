@@ -15,7 +15,7 @@ const SlowTrustedByBanner: React.FC = () => {
     if (!scrollElement) return;
 
     let position = 0;
-    const speed = 0.8; // Slightly faster than before but still slower than other pages
+    const speed = 0.5; // Even slower for GetStartedPage
 
     const animate = () => {
       position -= speed;

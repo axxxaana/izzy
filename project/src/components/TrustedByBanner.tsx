@@ -13,7 +13,7 @@ export const TrustedByBanner: React.FC<TrustedByBannerProps> = ({ className = ''
     if (!scrollElement) return;
 
     let position = 0;
-    const speed = 1.5; // Standardized speed for all pages
+    const speed = 0.6; // Slower speed for more relaxed scrolling
 
     const animate = () => {
       position -= speed;
