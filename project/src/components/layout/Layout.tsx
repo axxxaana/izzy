@@ -22,9 +22,19 @@ export const Layout: React.FC<LayoutProps> = ({
 
   // Update meta description if provided
   React.useEffect(() => {
-    const metaDescription = document.querySelector('meta[name="description"]');
-    if (metaDescription && description) {
-      metaDescription.setAttribute('content', description);
+    let metaDescription = document.querySelector('meta[name="description"]');
+    
+    if (description) {
+      if (metaDescription) {
+        // Update existing meta description
+        metaDescription.setAttribute('content', description);
+      } else {
+        // Create new meta description if it doesn't exist
+        metaDescription = document.createElement('meta');
+        metaDescription.setAttribute('name', 'description');
+        metaDescription.setAttribute('content', description);
+        document.head.appendChild(metaDescription);
+      }
     }
   }, [description]);
 
