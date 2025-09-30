@@ -12,7 +12,7 @@ import { FooterSection } from '../screens/ElementLight/sections/FooterSection';
 export const AboutPage: React.FC = () => {
   return (
     <Layout 
-      title="About Izzy Prior" 
+      title="About" 
       description="Learn about Izzy Prior, a fractional CMO and brand strategist helping femtech, healthtech and social-impact founders create bold, heart-felt brands."
     >
       <div className="flex flex-col items-start w-full bg-white">

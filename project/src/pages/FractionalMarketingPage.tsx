@@ -14,7 +14,7 @@ export const FractionalMarketingPage: React.FC = () => {
 
   return (
     <Layout 
-      title="Fractional Marketing Services | Izzy Prior"
+      title="Fractional Marketing Services"
       description="Get expert fractional marketing leadership without the full-time cost. Strategic marketing planning, team building, and execution for femtech and healthtech startups."
     >
       <div className="flex flex-col items-center w-full bg-white" style={{ minHeight: 'auto', height: 'auto', flexWrap: 'nowrap' }}>

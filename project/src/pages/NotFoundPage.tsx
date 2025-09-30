@@ -8,7 +8,7 @@ import { BUTTON_STYLES, BUTTON_ANIMATIONS } from '../constants/buttons';
 export const NotFoundPage: React.FC = () => {
   return (
     <Layout 
-      title="Page Not Found - Izzy Prior" 
+      title="Page Not Found" 
       description="The page you're looking for doesn't exist. Let's get you back on track with Izzy Prior's brand strategy services."
     >
       <div className="flex flex-col items-start w-full bg-white">
