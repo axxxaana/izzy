@@ -2,3 +2,5 @@
 /resources/founder-brand-audit        /resources/hook-framework     301
 /resources/content-calendar           /resources/daca-method        301
 
+# SPA fallback - redirect all non-file requests to index.html
+/*    /index.html   200
