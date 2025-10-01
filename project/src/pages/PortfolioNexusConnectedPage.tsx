@@ -77,7 +77,7 @@ const PortfolioCard: React.FC<{ item: typeof portfolioItems[0]; index: number }>
               </span>
             )}
             {item.title === 'GoFounder' && (
-              <span className="px-4 py-2 bg-white border border-[#e44782] rounded-lg text-sm font-bold text-[#e44782] tracking-widest uppercase">
+              <span className="inline-block mb-6 px-6 py-2 rounded-[0.84rem] bg-transparent border border-pink-500 text-pink-600 text-lg font-bold shadow-sm uppercase" style={{ fontFamily: 'Inter, Helvetica' }}>
                 B2B COACHING
               </span>
             )}

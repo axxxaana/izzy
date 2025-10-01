@@ -25,7 +25,7 @@ export const portfolioItems = [
     id: 3,
     title: 'GoFounder',
     subtitle: 'Startup Community Platform',
-    description: 'GoFounder is a coaching platform for startup founders focused on accountability and performance. I built the brand presence from the ground up — leading social strategy, ghostwriting thought leadership, and designing onboarding experiences that elevated visibility and drove community growth.',
+    description: 'GoFounder is a coaching platform for startup founders. I built the brand from the ground up with social strategy, thought leadership, and onboarding experiences that boosted visibility and community growth.',
     tags: ['Community Building', 'Content Strategy', 'Founder Support'],
     image: '/GoFounder Cover.png',
     color: '',

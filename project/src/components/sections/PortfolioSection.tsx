@@ -133,14 +133,14 @@ export const PortfolioSection: React.FC = () => {
                     <div className="flex-1 flex flex-col justify-center">
                       <div className="mb-4">
                         <Badge className="bg-white border border-[#e44782] text-[#e44782] text-xs px-3 py-1.5 !rounded-lg font-medium shadow-sm mb-3 hover:bg-[#e44782] hover:text-white transition-colors duration-300">
-                          Multi-Service
+                          B2B COACHING
                         </Badge>
                         <h4 className="[font-family:'Montserrat',Helvetica] font-bold text-[#091329] text-[26px] tracking-tight">
                           GoFounder
                         </h4>
                       </div>
                       <p className="[font-family:'Inter',Helvetica] text-[#374151] text-[16px] leading-[20px] mb-8 font-medium">
-                        Marketing, content creation, ghostwriting, and founder onboarding for startup community platform.
+                        GoFounder is a coaching platform for startup founders. I built the brand from the ground up with social strategy, thought leadership, and onboarding experiences that boosted visibility and community growth.
                       </p>
                       <div className="flex items-center text-[#e44782] text-sm font-semibold hover:text-[#e44782]/80 transition-colors duration-300">
                         <span>Read More</span>

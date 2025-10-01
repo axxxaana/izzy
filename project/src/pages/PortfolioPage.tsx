@@ -301,7 +301,12 @@ const PortfolioCard: React.FC<{ item: typeof portfolioItems[0]; index: number }>
           <div className="relative z-10 flex-1 flex flex-col justify-between pt-20 px-8 pb-8 max-w-xl">
             <div>
               {/* Service badges for each card */}
-              {(item.title === 'GoFounder' || item.title === 'Wellnergy') && (
+              {item.title === 'GoFounder' && (
+                <span className="inline-block mb-6 px-6 py-2 rounded-[0.84rem] bg-transparent border border-pink-500 text-pink-600 text-lg font-bold shadow-sm uppercase" style={{ fontFamily: 'Inter, Helvetica' }}>
+                  B2B COACHING
+                </span>
+              )}
+              {item.title === 'Wellnergy' && (
                 <span className="inline-block mb-6 px-6 py-2 rounded-[0.84rem] bg-transparent border border-pink-500 text-pink-600 text-lg font-bold shadow-sm uppercase" style={{ fontFamily: 'Inter, Helvetica' }}>
                   Multi-Service
                 </span>

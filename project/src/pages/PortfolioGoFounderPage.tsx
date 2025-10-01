@@ -67,6 +67,12 @@ const PortfolioCard: React.FC<{ item: typeof portfolioItems[0]; index: number }>
         {/* Content - Left Side */}
         <div className="relative z-10 flex-1 flex flex-col justify-center py-8 px-8 max-w-xl">
           <div>
+            {/* Service badges for each card */}
+            {item.title === 'GoFounder' && (
+              <span className="inline-block mb-6 px-6 py-2 rounded-[0.84rem] bg-transparent border border-pink-500 text-pink-600 text-lg font-bold shadow-sm uppercase" style={{ fontFamily: 'Inter, Helvetica' }}>
+                B2B COACHING
+              </span>
+            )}
             <h2 className={`${TYPOGRAPHY.headings.h3.classes} text-[#e44782] mb-4 group-hover:text-pink-600 transition-colors duration-300`}>
               {item.title}
             </h2>
