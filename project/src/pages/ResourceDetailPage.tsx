@@ -79,14 +79,7 @@ export const ResourceDetailPage: React.FC = () => {
     );
   }
 
-  const handleDownload = async (e: React.FormEvent) => {
-    e.preventDefault();
-    if (!email) return;
-
-    setIsSubmitting(true);
-    
-    // Simulate API call
-    await new Promise(resolve => setTimeout(resolve, 1000));
+  const triggerDownload = () => {
     // Trigger file download for the selected resource
     const link = document.createElement('a');
     let pdfPath = '/7-Messaging-Gaps.pdf';
@@ -97,9 +90,27 @@ export const ResourceDetailPage: React.FC = () => {
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
+  };
+
+  const handleDownload = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!email) return;
+
+    setIsSubmitting(true);
+    
+    // Simulate API call
+    await new Promise(resolve => setTimeout(resolve, 1000));
+    
+    // Trigger the download
+    triggerDownload();
 
     setIsDownloaded(true);
     setIsSubmitting(false);
+  };
+
+  const handleDownloadAgain = () => {
+    // Direct download without email requirement
+    triggerDownload();
   };
 
   return (
@@ -190,7 +201,7 @@ export const ResourceDetailPage: React.FC = () => {
                   </p>
                   <div className="space-y-3">
                     <button
-                      onClick={() => window.location.reload()}
+                      onClick={handleDownloadAgain}
                       className="block w-full px-8 py-3 text-white font-bold transition-colors duration-200 font-['Inter'] hover:opacity-90"
                       style={{ backgroundColor: '#e44782', borderRadius: '0.84rem' }}
                     >
